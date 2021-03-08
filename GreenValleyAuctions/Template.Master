@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template.master.cs" Inherits="Lab2.Template" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Jimmy Magnier and Jon Asay</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+              <%--Create home button--%> 
+            <asp:Table ID="TableHomeBar" runat="server" Width="1282px">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Button ID="BtnHome" runat="server" Text="Home"  OnClick="BtnHome_Click" CausesValidation="false"/>
+                    </asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Right">
+                        <asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Right">
+                        <asp:Button ID="btnLogOut" runat="server" Text="Logout"  OnClick="btnLogOut_Click"/>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+            <hr />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+     <footer>
+         <br />
+        Created By: Jimmy Magnier and Jon Asay
+    </footer>
+</body>
+</html>
