@@ -1,0 +1,37 @@
+﻿/*CSS code to style some elements of the webpage*/
+/*Also created by Ben Ortt*/
+
+td {
+   padding:15px;
+   width:150px;
+}
+
+th {
+    vertical-align:bottom;
+}
+
+table.header {
+    background-color: darkgoldenrod;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+    border: 1px solid black;
+    width:70%
+}
+
+div.errorMsg {
+    color:red;
+}
+
+td.bigText {
+    font-weight: bold;
+    font-size:150%;
+}
+
+div.hidden {
+    visibility:hidden;
+}

@@ -1,0 +1,66 @@
+﻿<!--Created by Ben Ortt-->
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Lab1.master.cs" Inherits="Lab1.Lab1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Ben Ortt Website</title>
+    <!--Links style sheet-->
+    <link rel="stylesheet" href="Style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!--Table to organize info-->
+            <table class="header" style="width:66%" >
+                <tr>
+                    <!--Makes the heading for the master page with links to the other pages and a JMU logo-->
+
+                    <th><asp:Image ID="Image1" runat="server" ImageUrl="/Images/JMU.png" Height="108px" Width="316px"/></th>
+                    <th></th>
+                    <th class="auto-style3"><asp:Button ID="customerBtn" runat="server" Text="Customer" Width="250px" /></th>
+                    <th class="auto-style4"><asp:Button ID="serviceBtn" runat="server" Text="Service Tickets" Width="250px"/></th>
+                    <th><asp:Button ID="Button1" runat="server" Text="Notes" Width="195px" /></th>
+                </tr>
+                <tr>
+                    <!--Holds links to the other webforms-->
+                    <th><asp:Label ID="Label" runat="server" Text="Created by Ben Ortt"></asp:Label></th>
+                    <th><a href="createUser.aspx">Create User</a></th>
+                    <th><a href="AddCustomer.aspx">Add Customer</a></th>
+                    <th><a href="AddService.aspx">Add Service Ticket</a></th>
+                    <th><a href="TakeNotes.aspx">Take Notes</a></th>
+                </tr>
+                <tr>
+                    <th><asp:Button ID="btnLoginLogout" runat="server" Text="Login" OnClick="btnLoginLogout_Click"/></th>
+                    <th></th>
+                    <th><a href="CustomerListing.aspx">Customer Listing</a></th>
+                    <th><a href="EditService.aspx">Move Service</a></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th><asp:Label ID="txtbxUser" runat="server" Text=""></asp:Label></th>
+                    <th></th>
+                    <th><a href="RequestList.aspx" runat="server">Request List</a></th>
+                    <th><a href="EditServiceTicket.aspx">Edit Service</a></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th><a href="CustomerSearch.aspx" runat="server">Customer Search</a></th>
+                    <th><a href="ViewNotes.aspx">View Service History</a></th>
+                    <th></th>
+                </tr>
+                </table>
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<%--Created by Ben Ortt--%>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="noLogin.master.cs" Inherits="Lab3.noLogin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Ben Ortt Website</title>
+    <!--Links style sheet-->
+    <link rel="stylesheet" href="Style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!--Table to organize info-->
+            <table class="header" style="width:66%" >
+                <tr>
+                    <!--Makes the heading for the master page with links to the other pages and a JMU logo-->
+
+                    <th><asp:Image ID="Image1" runat="server" ImageUrl="/Images/JMU.png" Height="108px" Width="316px"/></th>
+                    <th></th>
+                    <th class="auto-style3"></th>
+                    <th class="auto-style4"></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <!--Holds links to the other webforms-->
+                    <th><asp:Label ID="Label" runat="server" Text="Created by Ben Ortt"></asp:Label></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th><a href="userLogin.aspx">Login</a></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th><asp:Label ID="txtbxUser" runat="server" Text=""></asp:Label></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </table>
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+
