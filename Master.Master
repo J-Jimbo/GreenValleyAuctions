@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="Lab_3.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <asp:Table ID="Table1" runat="server" Height="668px" Width="1149px">
+            <asp:TableRow>
+                <asp:TableCell BorderStyle="Solid" Width="800px" Height="80px" BackColor="#999999" HorizontalAlign="Center">
+                    <h1>Lab 2</h1>
+                    <asp:Table ID="tblLogout" runat="server" HorizontalAlign="Right">
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:Button ID="btnCreate" runat="server" Text="Create Customer" OnClick="btnCreate_Click" BorderColor="SkyBlue" />
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Button ID="btnServiceT" runat="server" Text="Service Ticket" OnClick="btnServiceT_Click" BorderColor="SkyBlue" />
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Button ID="btnEditST" runat="server" Text="Edit Service Ticket" OnClick="btnEditST_Click" BorderColor="SkyBlue" />
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Button ID="btnServiceHistory" runat="server" Text="Service History" OnClick="btnServiceHistory_Click" BorderColor="SkyBlue"/>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Button ID="btnSearch" runat="server" Text="Search Customer" OnClick="btnSearch_Click" BorderColor="SkyBlue"/>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Button ID="btnNotifications" runat="server" Text="Notifications" ForeColor="Red" BorderColor="SkyBlue" OnClick="btnNotifications_Click" />
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Button ID="btnAuctions" runat="server" Text="Auctions" BorderColor="SkyBlue" OnClick="btnAuctions_Click" />
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label ID="lblUserLoggedIn" runat="server" Text=""></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell HorizontalAlign="Right">
+                                <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" Width="150px" BorderColor="SkyBlue" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell Height="500px" BackColor="#c0c0c0" Width="650px">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                        </asp:ContentPlaceHolder>
+
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" BackColor="#999999" HorizontalAlign="Center">
+                    <b>Created by Hunter Bader and Camdyn Rowlison</b>
+
+                </asp:TableCell>
+            </asp:TableRow>
+
+        </asp:Table>
+
+
+    </form>
+</body>
+</html>
