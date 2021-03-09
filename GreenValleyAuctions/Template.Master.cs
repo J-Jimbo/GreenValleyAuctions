@@ -37,5 +37,30 @@ namespace Lab2
             Session.Abandon();
             Response.Redirect("Login_Page.aspx?loggedOut=true");
         }
+
+        protected void btnCreate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Create_Customer.aspx");
+        }
+
+        protected void btnServiceT_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Service_Ticket.aspx");
+        }
+
+        protected void btnEditST_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("view_serviceTicket.aspx");
+        }
+
+        protected void btnServiceHistory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Customer_History.aspx");
+        }
+
+        protected void btnServiceEvent_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Create_ServiceEvent");
+        }
     }
 }

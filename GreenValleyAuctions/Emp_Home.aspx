@@ -21,12 +21,31 @@
                      <asp:TableCell HorizontalAlign="Right">
                         <asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label>
                     </asp:TableCell>
+                     <asp:TableCell>
+                        <asp:Button ID="btnCreateCustomer" runat="server" Text="Create Customer" OnClick="btnCreateCustomer_Click"/>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnCreateServiceEvent" runat="server" Text="Create Serice Event" OnClick="btnCreateServiceEvent_Click"/>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnNote" runat="server" Text="Create Note"  OnClick="btnNote_Click"/>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnViewWorkFlow" runat="server" Text="View WorkFlow"  OnClick="btnViewWorkFlow_Click"/>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnHistory" runat="server" Text="View History" OnClick="btnHistory_Click"/>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnReport" runat="server" Text="View Reports"  OnClick="btnReport_Click"/>
+                    </asp:TableCell>
                     <asp:TableCell >
                         <asp:Button ID="btnLogin" runat="server" Text="Login" HorizontalAlign="Right" OnClick="btnLogin_Click"/>
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Right">
                         <asp:Button ID="btnLogOut" runat="server" Text="Logout"  OnClick="btnLogOut_Click"/>
                     </asp:TableCell>
+                    
                 </asp:TableRow>
             </asp:Table>
             <hr />
@@ -40,28 +59,6 @@
                         <asp:Label ID="lblWelcome" runat="server" Text="Welcome Employee"></asp:Label>
                         <br />
                          <asp:Label ID="Label1" runat="server" Text="Created by: Jimmy Magnier and Jon Asay" ></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Button ID="btnCreateCustomer" runat="server" Text="Create Customer" OnClick="btnCreateCustomer_Click"/>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:Button ID="btnCreateServiceEvent" runat="server" Text="Create Serice Event" OnClick="btnCreateServiceEvent_Click"/>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:Button ID="btnNote" runat="server" Text="Create Note"  OnClick="btnNote_Click"/>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Button ID="btnViewWorkFlow" runat="server" Text="View WorkFlow"  OnClick="btnViewWorkFlow_Click"/>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:Button ID="btnHistory" runat="server" Text="View History" OnClick="btnHistory_Click"/>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:Button ID="btnReport" runat="server" Text="View Reports"  OnClick="btnReport_Click"/>
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
