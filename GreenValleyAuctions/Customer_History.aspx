@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Table ID="tableInception" runat="server">
-        <asp:TableRow>
+    <asp:Table ID="tableInception" runat="server" Width="1063px">
+        <asp:TableRow HorizontalAlign="Center">
             <asp:TableCell VerticalAlign="Top">
                 <asp:Table ID="tblPage" runat="server" >
                     <asp:TableRow>
@@ -27,6 +27,8 @@
                      </asp:TableRow>
                     </asp:Table>
             </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow HorizontalAlign="Center">
             <asp:TableCell>
                 <asp:Table ID="tblNote" runat="server">
                     <asp:TableRow>
@@ -61,7 +63,7 @@
    <asp:SqlDataSource ID="datasrcWorkFlow" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>"  
        SelectCommand="Select trim(FirstName) + ' ' + trim(LastName) as FullName,EngagmentDate,CompletionDate,Review,CurrentStatus 
        from WorkFlow wf inner join customer c on c.CustomerID = wf.CustomerID  
-       where FirstName = @FullName or  LastName = @FullName or trim(FirstName) + ' ' + trim(LastName) = @FullName ">
+       where  FirstName = @FullName or  LastName = @FullName or trim(FirstName) + ' ' + trim(LastName) = @FullName " >
         <SelectParameters>
             <asp:ControlParameter Name="FullName" Type="string"  ControlID="lbResults"/>
         </SelectParameters>

@@ -42,13 +42,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Table Table1;
 
         /// <summary>
-        /// lblEmpLogin control.
+        /// lblLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmpLogin;
+        protected global::System.Web.UI.WebControls.Label lblLogin;
 
         /// <summary>
         /// btnEmpLogin control.
@@ -58,24 +58,6 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEmpLogin;
-
-        /// <summary>
-        /// lblCustomerLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCustomerLogin;
-
-        /// <summary>
-        /// btnCustomerLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomerLogin;
 
         /// <summary>
         /// btnRequest control.
@@ -112,14 +94,5 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblWelcome;
-
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }

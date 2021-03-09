@@ -13,6 +13,14 @@
             <asp:Table ID="tblLogin" runat="server">
                 <asp:TableRow>
                     <asp:TableCell>
+                        <asp:DropDownList ID="ddlSelectLoginType" runat="server" AutoPostBack="true">
+                            <asp:ListItem Text="Employee" Value="Employee"></asp:ListItem>
+                            <asp:ListItem Text="Customer" Value="Customer"></asp:ListItem>
+                        </asp:DropDownList>
+                    </asp:TableCell>
+                </asp:TableRow>
+                 <asp:TableRow>
+                    <asp:TableCell>
                         <asp:Label ID="lblUsername" runat="server" Text="UserName:"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>

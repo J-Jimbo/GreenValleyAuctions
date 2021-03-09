@@ -15,7 +15,7 @@
             <asp:Table ID="TableHomeBar" runat="server" Width="1282px">
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Button ID="BtnHome" runat="server" Text="Home"  OnClick="BtnHome_Click" CausesValidation="false"/>
+                        <asp:Button ID="BtnHome" runat="server" Text="Home"  OnClick="BtnHome_Click" CausesValidation="false" BorderColor="#266141"/>
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Right">
                         <asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label>
@@ -25,16 +25,16 @@
                         <asp:Button ID="btnCreate" runat="server" Text="Create Customer" OnClick="btnCreate_Click" BorderColor="#266141" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnServiceEvent" runat="server" Text="Create Servce Event " BorderColor="SkyBlue" OnClick="btnServiceEvent_Click" />
+                        <asp:Button ID="btnServiceEvent" runat="server" Text="Create Servce Event " BorderColor="#266141" OnClick="btnServiceEvent_Click" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnServiceT" runat="server" Text="Service Ticket" OnClick="btnServiceT_Click" BorderColor="SkyBlue" />
+                        <asp:Button ID="btnServiceT" runat="server" Text="Service Ticket" OnClick="btnServiceT_Click" BorderColor="#266141" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnEditST" runat="server" Text="Edit Service Ticket" OnClick="btnEditST_Click" BorderColor="SkyBlue" />
+                        <asp:Button ID="btnEditST" runat="server" Text="Edit Service Ticket" OnClick="btnEditST_Click" BorderColor="#266141" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnServiceHistory" runat="server" Text="Service History" OnClick="btnServiceHistory_Click" />
+                        <asp:Button ID="btnServiceHistory" runat="server" Text="Service History" OnClick="btnServiceHistory_Click" bordercolor="#266141"/>
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Right">
                         <asp:Button ID="btnLogOut" runat="server" Text="Logout"  OnClick="btnLogOut_Click"/>

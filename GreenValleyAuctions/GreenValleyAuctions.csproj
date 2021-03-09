@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="Create_Customer.aspx" />
     <Content Include="Create_Customer_Account.aspx" />
+    <Content Include="Create_Employee.aspx" />
     <Content Include="Create_ServiceEvent.aspx" />
     <Content Include="Customer_History.aspx" />
     <Content Include="Customer_Home.aspx" />
@@ -103,6 +104,13 @@
     </Compile>
     <Compile Include="Create_Customer_Account.aspx.designer.cs">
       <DependentUpon>Create_Customer_Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Employee.aspx.cs">
+      <DependentUpon>Create_Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create_Employee.aspx.designer.cs">
+      <DependentUpon>Create_Employee.aspx</DependentUpon>
     </Compile>
     <Compile Include="Create_ServiceEvent.aspx.cs">
       <DependentUpon>Create_ServiceEvent.aspx</DependentUpon>

@@ -20,7 +20,7 @@ namespace Lab3
             else
             {
                 Session["NoCustomer"] = "You Must first Login or create an Account";
-                Response.Redirect("Customer_Login.aspx");
+                Response.Redirect("Login_Page.aspx");
             }
             
         }

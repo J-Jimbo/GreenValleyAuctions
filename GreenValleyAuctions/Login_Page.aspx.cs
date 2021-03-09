@@ -15,6 +15,7 @@ namespace Lab2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             //check log out or no user
             if (Request.QueryString.Get("loggedOut") == "true")
             {
@@ -28,63 +29,119 @@ namespace Lab2
                 lblLoginStatus.Font.Bold = true;
                 lblLoginStatus.Text = Session["NoUser"].ToString();
             }
+            if (Session["NoCustomer"] != null)
+            {
+                lblLoginStatus.ForeColor = Color.Red;
+                lblLoginStatus.Font.Bold = true;
+                lblLoginStatus.Text = Session["NoCustomer"].ToString();
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-
-            // connect to database to retrieve stored password string
-            try
+            if (ddlSelectLoginType.SelectedItem.Text.Equals("Employee"))
             {
-                SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
-                //lblStatus.Text = "Database Connection Successful";
-
-                sc.Open();
-                SqlCommand findPass = new SqlCommand();
-                findPass.Connection = sc;
-                findPass.CommandType = CommandType.StoredProcedure;
-                // SELECT PASSWORD STRING WHERE THE ENTERED USERNAME MATCHES
-                findPass.CommandText = "EmployeeLogin";
-                findPass.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUserName.Text)));
-
-                SqlDataReader reader = findPass.ExecuteReader(); // create a reader
-
-                if (reader.HasRows) // if the username exists, it will continue
+                // connect to database to retrieve stored password string
+                try
                 {
-                    while (reader.Read()) // this will read the single record that matches the entered username
+                    SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
+                    //lblStatus.Text = "Database Connection Successful";
+
+                    sc.Open();
+                    SqlCommand findPass = new SqlCommand();
+                    findPass.Connection = sc;
+                    findPass.CommandType = CommandType.StoredProcedure;
+                    // SELECT PASSWORD STRING WHERE THE ENTERED USERNAME MATCHES
+                    findPass.CommandText = "EmployeeLogin";
+                    findPass.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUserName.Text)));
+
+                    SqlDataReader reader = findPass.ExecuteReader(); // create a reader
+
+                    if (reader.HasRows) // if the username exists, it will continue
                     {
-                        string storedHash = reader["PassWordHash"].ToString(); // store the database password into this variable
-
-                        if (PasswordHash.ValidatePassword(txtPassWord.Text, storedHash)) // if the entered password matches what is stored, it will show success
+                        while (reader.Read()) // this will read the single record that matches the entered username
                         {
-                            //lblStatus.Text = "Success!";
-                            btnLogin.Enabled = false;
-                            txtUserName.Enabled = false;
-                            txtPassWord.Enabled = false;
+                            string storedHash = reader["PassWordHash"].ToString(); // store the database password into this variable
 
-                            Session["UserName"] = HttpUtility.HtmlEncode(txtUserName.Text);
-                            Response.Redirect("Emp_Home.aspx");
-                        }
-                        else
-                        {
-                            lblLoginStatus.ForeColor = Color.Red;
-                            lblLoginStatus.Font.Bold = true;
-                            lblLoginStatus.Text = "Either the UserName and or PassWord are inccorect";
+                            if (PasswordHash.ValidatePassword(txtPassWord.Text, storedHash)) // if the entered password matches what is stored, it will show success
+                            {
+                                //lblStatus.Text = "Success!";
+                                btnLogin.Enabled = false;
+                                txtUserName.Enabled = false;
+                                txtPassWord.Enabled = false;
+
+                                Session["UserName"] = HttpUtility.HtmlEncode(txtUserName.Text);
+                                Response.Redirect("Emp_Home.aspx");
+                            }
+                            else
+                            {
+                                lblLoginStatus.ForeColor = Color.Red;
+                                lblLoginStatus.Font.Bold = true;
+                                lblLoginStatus.Text = "Either the UserName and or PassWord are inccorect";
+                            }
                         }
                     }
-                }
-                else // if the username doesn't exist, it will show failure
-                {
-                    lblLoginStatus.ForeColor = Color.Red;
-                    lblLoginStatus.Font.Bold = true;
-                    lblLoginStatus.Text = "Either the UserName and or PassWord are inccorect";
-                }
+                    else // if the username doesn't exist, it will show failure
+                    {
+                        lblLoginStatus.ForeColor = Color.Red;
+                        lblLoginStatus.Font.Bold = true;
+                        lblLoginStatus.Text = "Either the UserName and or PassWord are inccorect";
+                    }
 
-                sc.Close();
+                    sc.Close();
+                }
+                catch
+                {
+                    lblLoginStatus.Text = "Database Error.";
+                }
             }
-            catch
+            else
             {
-                lblLoginStatus.Text = "Database Error.";
+                // connect to database to retrieve stored password string
+                try
+                {
+                    SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
+                    lblLoginStatus.Text = "Database Connection Successful";
+
+                    sc.Open();
+                    SqlCommand findPass = new SqlCommand();
+                    findPass.Connection = sc;
+                    findPass.CommandType = CommandType.StoredProcedure;
+                    // SELECT PASSWORD STRING WHERE THE ENTERED USERNAME MATCHES
+                    findPass.CommandText = "JeremyEzellLab3";
+                    findPass.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUserName.Text)));
+
+                    SqlDataReader reader = findPass.ExecuteReader(); // create a reader
+
+                    if (reader.HasRows) // if the username exists, it will continue
+                    {
+                        while (reader.Read()) // this will read the single record that matches the entered username
+                        {
+                            string storedHash = reader["PassWordHash"].ToString(); // store the database password into this variable
+
+                            if (PasswordHash.ValidatePassword(txtPassWord.Text, storedHash)) // if the entered password matches what is stored, it will show success
+                            {
+                                lblLoginStatus.Text = "Success!";
+                                btnLogin.Enabled = false;
+                                txtUserName.Enabled = false;
+                                txtPassWord.Enabled = false;
+
+                                Session["Customer"] = HttpUtility.HtmlEncode(txtUserName.Text);
+                                Response.Redirect("Customer_Home.aspx");
+                            }
+                            else
+                                lblLoginStatus.Text = "Password is wrong.";
+                        }
+                    }
+                    else // if the username doesn't exist, it will show failure
+                        lblLoginStatus.Text = "Login failed.";
+
+                    sc.Close();
+                }
+                catch
+                {
+                    lblLoginStatus.Text = "Database Error.";
+                }
             }
 
             
@@ -94,5 +151,7 @@ namespace Lab2
         {
             Response.Redirect("LandingPage.aspx");
         }
+
+        
     }
 }

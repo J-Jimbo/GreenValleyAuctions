@@ -11,17 +11,11 @@
         <div>
             <asp:Label ID="lblStatus" runat="server" Text="" ></asp:Label>
             <asp:Table ID="Table1" runat="server" Height="682px" Width="1283px">
-                <asp:TableRow>
+                <asp:TableRow HorizontalAlign="Center">
                     <asp:TableCell VerticalAlign="Middle">
-                        <asp:Label ID="lblEmpLogin" runat="server" Text="Employee Login:"></asp:Label>
+                        <asp:Label ID="lblLogin" runat="server" Text="Login:"></asp:Label>
                         <br />
                         <asp:Button ID="btnEmpLogin" runat="server" Text="Login"  OnClick="btnEmpLogin_Click"/>
-                        <br />
-                    </asp:TableCell>
-                    <asp:TableCell VerticalAlign="Middle">
-                        <asp:Label ID="lblCustomerLogin" runat="server" Text="Customer Login:"></asp:Label>
-                        <br />
-                        <asp:Button ID="btnCustomerLogin" runat="server" Text="Login" OnClick="btnCustomerLogin_Click"/>
                         &nbsp;
                         <asp:Button ID="btnRequest" runat="server" Text="Create Service Request" OnClick="btnRequest_Click" />
                         <br />
@@ -32,8 +26,6 @@
                 <asp:TableRow>
                     <asp:TableCell>
                      <asp:Label ID="lblWelcome" runat="server" Text="Welcome To Our Application"></asp:Label>
-                        <br />
-                         <asp:Label ID="Label1" runat="server" Text="Created by: Jimmy Magnier and Jon Asay" ></asp:Label>
                      </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
@@ -41,7 +33,7 @@
     </form>
     <footer>
          <br />
-        Created By: Jimmy Magnier and Jon Asay
+        Created By: Madison Consulting 04
     </footer>
 </body>
 

@@ -58,7 +58,7 @@
                     <asp:TableCell ColumnSpan="2">
                         <asp:Label ID="lblWelcome" runat="server" Text="Welcome Employee"></asp:Label>
                         <br />
-                         <asp:Label ID="Label1" runat="server" Text="Created by: Jimmy Magnier and Jon Asay" ></asp:Label>
+                         <asp:Label ID="Label1" runat="server" Text="Created by: Madison Consulting 04" ></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>

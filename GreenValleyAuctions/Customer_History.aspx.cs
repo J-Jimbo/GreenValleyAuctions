@@ -31,7 +31,7 @@ namespace Lab3
 
             string sqlQueryID = "SELECT distinct c.FirstName, c.LastName,trim(FirstName) + ' ' + trim(LastName) as FullName " +
                 " from Inventory i full join ServiceEvent SE  on i.ItemID = SE.ItemID  full join WorkFlow wf on wf.WorkFlowID = SE.WorkFlowID " +
-                "full join Customer c on c.CustomerID = WF.CustomerID where FirstName = @CustomerName " +
+                "full join Customer c on c.CustomerID = WF.CustomerID where trim(FirstName) + ' ' + trim(LastName) LIKE @CustomerName+'%' or FirstName = @CustomerName " +
                 "or  LastName = @CustomerName or trim(FirstName) + ' ' + trim(LastName) = @CustomerName ";
             //Create sql command to receive ID
             SqlCommand sqlCommand = new SqlCommand();

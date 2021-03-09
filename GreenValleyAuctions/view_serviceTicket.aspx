@@ -3,8 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Table ID="tblTbles" runat="server" Width="1181px">
-        <asp:TableRow>
-            <asp:TableCell VerticalAlign="Top">
+        <asp:TableRow HorizontalAlign="Center">
+            <asp:TableCell VerticalAlign="Top" >
                  <asp:Table ID="tblView" runat="server">
                     <asp:TableRow>
                          <asp:TableCell>
@@ -20,6 +20,8 @@
                     </asp:TableRow>
                     </asp:Table>
             </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow HorizontalAlign="Center">
             <asp:TableCell VerticalAlign="Top">
                  <asp:Table ID="tblHistory" runat="server">
                      <asp:TableRow>
@@ -47,6 +49,8 @@
                             
                 </asp:Table>
             </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow HorizontalAlign="Center">
             <asp:TableCell VerticalAlign="Top">
                 <asp:Table ID="tblEmpSwitch" runat="server">
                     <asp:TableRow>
