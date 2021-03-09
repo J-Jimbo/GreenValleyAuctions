@@ -1,0 +1,7 @@
+CREATE TABLE EmployeeUser (AccountID Int Primary Key,UserName char(30) not null,FirstName Char(30),LastName char(30));
+CREATE TABLE EmployeeVerfication(AccountID Int Primary Key references EmployeeUser, PassWordHash varchar(100));
+CREATE TABLE CustomerUser (AccountID Int Primary Key,UserName char(30) not null,FirstName Char(30),LastName char(30));
+CREATE TABLE CustomerVerfication(AccountID Int Primary Key references CustomerUser, PassWordHash varchar(256));
+
+Insert Into EmployeeUser(AccountID,UserName,FirstName,LastName)Values(0,'admin','admin','admin');
+Insert Into EmployeeVerfication(AccountID,PassWordHash)Values(0,'1000:1DRYHk00PnSmv7gy1Td8I+WUFj/pCzm7:IT8cKvrg7YgdXDEZB2WOEPKQRbI=');

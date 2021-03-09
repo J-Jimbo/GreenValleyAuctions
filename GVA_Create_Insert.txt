@@ -1,0 +1,67 @@
+CREATE TABLE Inventory ( ItemID int primary key, ItemDescription char(100), ItemCost int,InventoryDate char(30));
+CREATE TABLE Employee( EmployeeID int primary key, EmployeeFirstName char(30), EmployeeLastName char(30), EmployeePhone char(30));
+CREATE TABLE Equipment( EquipmentID int primary key, EquipmentName char(30), EquipmentDescription char(100));
+CREATE Table Customer ( CustomerID int primary key, FirstName char(30), LastName char(30), CustomerAddress char(100), CustomerPhone char(30), PhoneType char(30) check(PhoneType in('Business','Cell','Home')),CustomerEmail char(30),HereAbout char(100),ContactThrough char(100), TotalEarnings int, DateAdded Datetime); 
+CREATE TABLE WorkFlow ( WorkFlowID int primary key, EngagmentDate datetime, CompletionDate date, Review char(500), CurrentStatus char(40), CustomerID int references Customer not null, EmployeeID int references Employee);
+CREATE TABLE ServiceEvent ( ServiceID int primary key, ServiceDate Date,ServiceEndDate Date, ServiceCost int, ServiceType char(30) check(ServiceType in ('Moving','Auction')), WorkFlowID int references WorkFlow not null, ItemID int references Inventory, EquipmentID int references Equipment);
+CREATE TABLE Auction (ServiceID int references ServiceEvent not null,Status char(30), SalePrice int, Address char(100),PRIMARY KEY(ServiceID));
+CREATE TABLE Moving( ServiceID int references ServiceEvent not null, OriginAddress char(100), DestinationAddress char(100), PRIMARY KEY(ServiceID));
+CREATE TABLE WorkFlowHistory(WFHistoryID int primary key,TicketSwitchDate date, TicketName char(30),TicketNote varchar(500) ,EmployeeID int references Employee,WorkFlowID int references WorkFlow);
+CREATE TABLE CustomerRequest(CustomerRequestID int primary key, FirstName char(30), LastName Char(30), Email char(50),Street Char(30), City char(30), State char(30), Zip char(10),  Phone char(30), Status char(30) check(Status in('Completed','In Progress')));
+CREATE TABLE ServiceRequest(ServiceRequestID int primary key, ServiceType char(30) check(ServiceType in ('Moving','Auction')), DateCreated DateTime,Description char(150), CustomerRequestID int references CustomerRequest );
+
+
+Insert Into Inventory ( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES (1,'Lamp',10,'10/12/2021');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 3,'Bed Frame','250','3/24/2019');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 4,' Fine Art','150','3/31/2019');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 5,'Table','125','6/20/2019');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 7,'Pool Table','170','9/4/2020');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 8,' Dining Table','350','3/24/2020');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 9,'TV','550','2/8/2021');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 10,'Weight Set','300','1/30/2021');
+
+INSERT Into Employee(EmployeeID,EmployeeFirstName,EmployeeLastName,EmployeePhone) VALUES (1,'Jake','Williams','789 563 5542');
+INSERT Into Employee(EmployeeID,EmployeeFirstName,EmployeeLastName,EmployeePhone) VALUES (2,'Sarah','Scahefer','789 238 3312');
+
+INSERT Into Equipment(EquipmentID,EquipmentName,EquipmentDescription) VALUES (1,'Truck','Transport Invenotry Items');
+INSERT Into Equipment(EquipmentID,EquipmentName,EquipmentDescription) VALUES (2,'Fork Lift','Carries Heavy Items');
+
+INSERT Into Customer (CustomerID,FirstName,LastName,CustomerAddress,CustomerPhone,PhoneType,CustomerEmail,HereAbout,ContactThrough,TotalEarnings) VALUES(2,'George','James','21 Mountain Rd Boulder Colorado 29762','720 340 3876','Cell','mountains@Mail.com','From a Friend','In Person',4000);
+INSERT Into Customer (CustomerID,FirstName,LastName,CustomerAddress,CustomerPhone,PhoneType,CustomerEmail,HereAbout,ContactThrough,TotalEarnings) VALUES(3,'Kate','Jones','1 Railway Rd York Maine 34541','750 281 8896','Home','Lobster@Mail.com','Found Online','By Email',00);
+INSERT Into Customer (CustomerID,FirstName,LastName,CustomerAddress,CustomerPhone,PhoneType,CustomerEmail,HereAbout,ContactThrough,TotalEarnings) VALUES(4,'Ben','Michaels','104 City st New York New York 92617','140 550 3286','Cell','BigApple@Mail.com','NewsPaper','By Phone',20);
+INSERT Into Customer (CustomerID,FirstName,LastName,CustomerAddress,CustomerPhone,PhoneType,CustomerEmail,HereAbout,ContactThrough,TotalEarnings) VALUES(5,'Meghan','Johnson','11 Brick Rd Tulsa Oklahoma 34914','570 232 7087','Business','FoamFinger@Mail.com','On TV','In Person',500);
+
+INSERT Into WorkFlow(WorkFlowID,EngagmentDate,CompletionDate, Review, CurrentStatus,CustomerID,EmployeeID) VALUES(3,'3/10/2019','3/25/2019','Great Service','Complete',3,1);
+INSERT Into WorkFlow(WorkFlowID,EngagmentDate,CompletionDate, Review, CurrentStatus,CustomerID,EmployeeID) VALUES(4,'4/15/2019','5/1/2019',' Okay Service','Complete',2,2);
+INSERT Into WorkFlow(WorkFlowID,EngagmentDate,CompletionDate, Review, CurrentStatus,CustomerID,EmployeeID) VALUES(5,'6/20/2019','6/23/2019','Fast Service','Complete',3,1);
+INSERT Into WorkFlow(WorkFlowID,EngagmentDate,CompletionDate, Review, CurrentStatus,CustomerID,EmployeeID) VALUES(6,'2/1/2020','2/27/2020',' Good Customer Service','Complete',4,2);
+INSERT Into WorkFlow(WorkFlowID,EngagmentDate,CompletionDate, Review, CurrentStatus,CustomerID,EmployeeID) VALUES(7,'8/11/2020','9/10/2020','Average Service','Complete',5,2);
+INSERT Into WorkFlow(WorkFlowID,EngagmentDate,CompletionDate, Review, CurrentStatus,CustomerID,EmployeeID) VALUES(8,'1/13/2019','3/25/2019','Very Slow Service','Complete',2,1);
+INSERT Into WorkFlow(WorkFlowID,EngagmentDate,CurrentStatus,CustomerID,EmployeeID) VALUES(9,'2/2/2021','In Progress',3,1);
+INSERT Into WorkFlow(WorkFlowID,EngagmentDate,CurrentStatus,CustomerID,EmployeeID) VALUES(10,'1/15/2021','In Progress',4,2);
+
+INSERT Into ServiceEvent(ServiceID, ServiceDate, ServiceEndDate ,ServiceCost, ServiceType,WorkFlowID,ItemID,EquipmentID) VALUES (3,'3/24/2019','4/1/2019','500','Moving',3,1,1);
+INSERT Into ServiceEvent(ServiceID, ServiceDate, ServiceCost, ServiceType,WorkFlowID,ItemID,EquipmentID) VALUES (4,'5/1/2019','200','Auction',4,3,2);
+INSERT Into ServiceEvent(ServiceID, ServiceDate, ServiceEndDate ,ServiceCost, ServiceType,WorkFlowID,ItemID,EquipmentID) VALUES (5,'6/22/2019','7/3/2019','500','Moving',5,4,1);
+INSERT Into ServiceEvent(ServiceID, ServiceDate, ServiceCost, ServiceType,WorkFlowID,ItemID,EquipmentID) VALUES (6,'2/24/2020','1000','Moving',6,5,2);
+INSERT Into ServiceEvent(ServiceID, ServiceDate, ServiceCost, ServiceType,WorkFlowID,ItemID,EquipmentID) VALUES (7,'9/10/2020','250','Auction',7,7,2);
+INSERT Into ServiceEvent(ServiceID, ServiceDate, ServiceEndDate ,ServiceCost, ServiceType,WorkFlowID,ItemID,EquipmentID) VALUES (8,'3/25/2019','3/31/2019','500','Moving',8,8,1);
+INSERT Into ServiceEvent(ServiceID, ServiceDate, ServiceCost, ServiceType,WorkFlowID,ItemID,EquipmentID) VALUES (9,'2/10/2021','750','Moving',9,9,2);
+INSERT Into ServiceEvent(ServiceID, ServiceDate, ServiceCost, ServiceType,WorkFlowID,ItemID,EquipmentID) VALUES (10,'2/11/2021','500','Auction',10,10,2);
+
+
+INSERT Into Auction(ServiceID,Status,SalePrice,Address) VALUES (4,'Sold',4000,'21 Mountain Rd Boulder Colorado 29762');
+INSERT Into Auction(ServiceID,Status,SalePrice, Address) VALUES (7,'Sold',500,'11 Brick Rd Tulsa Oklahoma 34914');
+INSERT Into Auction(ServiceID,Status, Address) VALUES (10,'In Progress','104 City st New York New York 92617');
+
+INSERT Into Moving(ServiceID,OriginAddress, DestinationAddress) VALUES (3,'1 Railway Rd York Maine 34541','20 NewHouse Rd York Maine'); 
+INSERT Into Moving(ServiceID,OriginAddress, DestinationAddress) VALUES (5,'1 Railway Rd York Maine 34541','20 NewHouse Rd York Maine'); 
+INSERT Into Moving(ServiceID,OriginAddress, DestinationAddress) VALUES (6,'104 City st New York New York 92617','12 Apple st New York New York 94617'); 
+INSERT Into Moving(ServiceID,OriginAddress, DestinationAddress) VALUES (8,'21 Mountain Rd Boulder Colorado 29762','33 Summit Dr Boulder Colorado 25661');
+INSERT Into Moving(ServiceID,OriginAddress, DestinationAddress) VALUES (9,'1 Railway Rd York Maine 34541','20 NewHouse Rd York Maine');
+
+
+INSERT Into WorkFlowHistory(WFHistoryID, TicketSwitchDate, TicketName, TicketNote, EmployeeID, WorkFlowID) VALUES(3, '3/31/2019','Item note','Handle item with care', 1, 9);
+INSERT Into WorkFlowHistory(WFHistoryID, TicketSwitchDate, TicketName, TicketNote, EmployeeID, WorkFlowID) VALUES(4, '3/31/2019','Customer Note','She is angry, because we were not careful enough', 1, 9);
+INSERT Into WorkFlowHistory(WFHistoryID, TicketSwitchDate, TicketName, TicketNote, EmployeeID, WorkFlowID) VALUES(5, '3/31/2019','About Customer','He is very sad to sell his item', 1, 10);
+INSERT Into WorkFlowHistory(WFHistoryID, TicketSwitchDate, TicketName, TicketNote, EmployeeID, WorkFlowID) VALUES(6, '3/31/2019','About Item','The item we are hanlding is an ancient relic from the 10th century of mongolia ', 1, 10);
