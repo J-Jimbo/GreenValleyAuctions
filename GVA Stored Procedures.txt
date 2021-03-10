@@ -1,0 +1,25 @@
+Create Procedure JeremyEzellLab3
+--Paramters
+@Username AS NVARCHAR(50)
+
+as
+BEGIN
+SET NOCOUNT ON;
+SELECT PassWordHash 
+FROM CustomerVerfication cv inner join CustomerUser cu on cv.AccountID = cu.AccountID  
+WHERE cu.Username = @Username;
+END
+
+
+
+Create Procedure EmployeeLogin
+--Paramters
+@Username AS NVARCHAR(50)
+
+as
+BEGIN
+SET NOCOUNT ON;
+SELECT PassWordHash 
+FROM EmployeeVerfication Ev inner join EmployeeUser Eu on Ev.AccountID = Eu.AccountID  
+WHERE Eu.Username = @Username;
+END
