@@ -60,13 +60,13 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.Label lblCurrentUser;
 
         /// <summary>
-        /// btnCreate control.
+        /// btnCreateCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreate;
+        protected global::System.Web.UI.WebControls.Button btnCreateCustomer;
 
         /// <summary>
         /// btnServiceEvent control.
@@ -78,22 +78,22 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.Button btnServiceEvent;
 
         /// <summary>
-        /// btnServiceT control.
+        /// btnServiceTicket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnServiceT;
+        protected global::System.Web.UI.WebControls.Button btnServiceTicket;
 
         /// <summary>
-        /// btnEditST control.
+        /// btnViewServiceTicket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditST;
+        protected global::System.Web.UI.WebControls.Button btnViewServiceTicket;
 
         /// <summary>
         /// btnServiceHistory control.

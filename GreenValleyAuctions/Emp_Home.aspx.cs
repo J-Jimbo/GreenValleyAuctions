@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
-using System.Drawing;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
@@ -105,6 +104,11 @@ namespace Lab2
         {
             Session["ServiceRequest"] = lbNotifications.SelectedValue.ToString();
             Response.Redirect("Create_Customer.aspx");
+        }
+
+        protected void btnCustomer_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Customer_Search.aspx");
         }
     }
        

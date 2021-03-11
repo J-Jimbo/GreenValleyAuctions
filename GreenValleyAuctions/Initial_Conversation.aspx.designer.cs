@@ -7,209 +7,191 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lab2
+namespace GreenValleyAuctions
 {
 
 
-    public partial class Home
+    public partial class Initial_Conversation
     {
 
         /// <summary>
-        /// form1 control.
+        /// tblFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Table tblFrom;
 
         /// <summary>
-        /// TableHomeBar control.
+        /// lblForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table TableHomeBar;
+        protected global::System.Web.UI.WebControls.Label lblForm;
 
         /// <summary>
-        /// BtnHome control.
+        /// lblServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnHome;
+        protected global::System.Web.UI.WebControls.Label lblServices;
 
         /// <summary>
-        /// lblCurrentUser control.
+        /// CblServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCurrentUser;
+        protected global::System.Web.UI.WebControls.CheckBoxList CblServices;
 
         /// <summary>
-        /// btnCreateCustomer control.
+        /// cvServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateCustomer;
+        protected global::System.Web.UI.WebControls.CustomValidator cvServices;
 
         /// <summary>
-        /// btnCreateServiceEvent control.
+        /// lblLookat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateServiceEvent;
+        protected global::System.Web.UI.WebControls.Label lblLookat;
 
         /// <summary>
-        /// btnNote control.
+        /// rblLookAt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNote;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblLookAt;
 
         /// <summary>
-        /// btnViewWorkFlow control.
+        /// lblQuestions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnViewWorkFlow;
+        protected global::System.Web.UI.WebControls.Label lblQuestions;
 
         /// <summary>
-        /// btnHistory control.
+        /// lblDownsizing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHistory;
+        protected global::System.Web.UI.WebControls.Label lblDownsizing;
 
         /// <summary>
-        /// btnReport control.
+        /// rblDownsizing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReport;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblDownsizing;
 
         /// <summary>
-        /// btnLogin control.
+        /// lblEstate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.Label lblEstate;
 
         /// <summary>
-        /// btnLogOut control.
+        /// rblEstate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogOut;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblEstate;
 
         /// <summary>
-        /// tblTasks control.
+        /// lblMoving control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblTasks;
+        protected global::System.Web.UI.WebControls.Label lblMoving;
 
         /// <summary>
-        /// tblNotifications control.
+        /// rblMoving control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblNotifications;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblMoving;
 
         /// <summary>
-        /// lblNotifications control.
+        /// lblQuantityToSell control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNotifications;
+        protected global::System.Web.UI.WebControls.Label lblQuantityToSell;
 
         /// <summary>
-        /// lbNotifications control.
+        /// txtQuanity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbNotifications;
+        protected global::System.Web.UI.WebControls.TextBox txtQuanity;
 
         /// <summary>
-        /// btnProcess control.
+        /// lblWhatToSell control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnProcess;
+        protected global::System.Web.UI.WebControls.Label lblWhatToSell;
 
         /// <summary>
-        /// Table1 control.
+        /// txtWhatToSell control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.TextBox txtWhatToSell;
 
         /// <summary>
-        /// btnCustomer control.
+        /// lblConversationNotes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer;
+        protected global::System.Web.UI.WebControls.Label lblConversationNotes;
 
         /// <summary>
-        /// btnViewReports control.
+        /// txtNote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnViewReports;
-
-        /// <summary>
-        /// btnWorkFlow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnWorkFlow;
-
-        /// <summary>
-        /// datasrcNotifications control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource datasrcNotifications;
+        protected global::System.Web.UI.WebControls.TextBox txtNote;
     }
 }

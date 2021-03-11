@@ -5,9 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style> 
-        .footer{position:absolute; bottom: 0;}
-    </style>
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -49,34 +47,55 @@
                 </asp:TableRow>
             </asp:Table>
             <hr />
-            <asp:Table ID="tblHome" runat="server" Height="200px" Width="800px" style="margin-top: 9px" HorizontalAlign="left">
-                 <%--Create Buttons for Navigation--%> 
+            <asp:Table ID="tblTasks" runat="server">
                 <asp:TableRow>
+                 <asp:TableCell>
+                         <%--  <asp:Table ID="tblHome" runat="server" Height="200px" Width="800px" style="margin-top: 9px" HorizontalAlign="left">
+                             Create Buttons for Navigation
+                            <asp:TableRow>
+                                <asp:TableCell ColumnSpan="2">
+                                    <asp:Label ID="lblWelcome" runat="server" Text="Welcome Employee"></asp:Label>
+                                    <br />
+                                     <asp:Label ID="Label1" runat="server" Text="Created by: Madison Consulting 04" ></asp:Label>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>--%>
+                        <asp:Table ID="tblNotifications" runat="server">
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <asp:Label ID="lblNotifications" runat="server" Text="Notifications: "></asp:Label>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <asp:ListBox ID="lbNotifications" runat="server" DataSourceID="datasrcNotifications" AutoPostBack="true" DataTextField="CustomerName" DataValueField="CustomerRequestID" Width="500"></asp:ListBox>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <asp:Button ID="btnProcess" runat="server" Text="Process Request" OnClick="btnProcess_Click"/>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                          </asp:Table>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow >
+                    <asp:TableCell>
+                        <asp:Table ID="Table1" runat="server" >
+                            <asp:TableRow>
+                                <asp:TableCell >
+                                    <asp:Button ID="btnCustomer" runat="server" Text="View Customers" OnClick="btnCustomer_Click"/>
+                                </asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:Button ID="btnViewReports" runat="server" Text="Reports" />
+                                </asp:TableCell>
+                                <asp:TableCell>
+                                     <asp:Button ID="btnWorkFlow" runat="server" Text="WorkFLow" />
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
+                    </asp:TableCell>
                     
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell ColumnSpan="2">
-                        <asp:Label ID="lblWelcome" runat="server" Text="Welcome Employee"></asp:Label>
-                        <br />
-                         <asp:Label ID="Label1" runat="server" Text="Created by: Madison Consulting 04" ></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="tblNotifications" runat="server">
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblNotifications" runat="server" Text="Notifications: "></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:ListBox ID="lbNotifications" runat="server" DataSourceID="datasrcNotifications" AutoPostBack="true" DataTextField="CustomerName" DataValueField="CustomerRequestID" Width="500"></asp:ListBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Button ID="btnProcess" runat="server" Text="Process Request" OnClick="btnProcess_Click"/>
-                    </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
 
@@ -86,9 +105,6 @@
          
         </div>
     </form>
-    <footer class="footer" >
-         <br />
-        Created By: Jimmy Magnier and Jon Asay
-    </footer>
+   
 </body>
 </html>

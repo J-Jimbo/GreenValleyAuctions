@@ -76,8 +76,11 @@
     <Content Include="Create_ServiceEvent.aspx" />
     <Content Include="Customer_History.aspx" />
     <Content Include="Customer_Home.aspx" />
+    <Content Include="Customer_Info.aspx" />
     <Content Include="Customer_Login.aspx" />
+    <Content Include="Customer_Search.aspx" />
     <Content Include="Emp_Home.aspx" />
+    <Content Include="Initial_Conversation.aspx" />
     <Content Include="LandingPage.aspx" />
     <Content Include="Login_Page.aspx" />
     <Content Include="Reports.aspx" />
@@ -133,6 +136,13 @@
     <Compile Include="Customer_Home.aspx.designer.cs">
       <DependentUpon>Customer_Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer_Info.aspx.cs">
+      <DependentUpon>Customer_Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Info.aspx.designer.cs">
+      <DependentUpon>Customer_Info.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer_Login.aspx.cs">
       <DependentUpon>Customer_Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,12 +150,26 @@
     <Compile Include="Customer_Login.aspx.designer.cs">
       <DependentUpon>Customer_Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer_Search.aspx.cs">
+      <DependentUpon>Customer_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Search.aspx.designer.cs">
+      <DependentUpon>Customer_Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Emp_Home.aspx.cs">
       <DependentUpon>Emp_Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Emp_Home.aspx.designer.cs">
       <DependentUpon>Emp_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Initial_Conversation.aspx.cs">
+      <DependentUpon>Initial_Conversation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Initial_Conversation.aspx.designer.cs">
+      <DependentUpon>Initial_Conversation.aspx</DependentUpon>
     </Compile>
     <Compile Include="LandingPage.aspx.cs">
       <DependentUpon>LandingPage.aspx</DependentUpon>
