@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/* Custom CSS declarations below  */
+
+
+/*navigation bar*/
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #98ab9d !important;
+}
+
+/*nav pills*/
+a {
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/*color changes when hovered over nav pills*/
+a:hover {
+    color: #98ab9d;
+}
+
+
+
+/*heading */
+h1 {
+  font: bold 2.5em Bodoni 72, serif;
+  height: 65px;
+  color: #98ab9d;
+}
+
+/*heading 2*/
+h2 {
+  font: bold 4.0em Quicksand, serif;
+  height: 65px;
+  color: #47697e;
+  padding-top: 15px;
+  padding-bottom: 90px;
+}
+
+/*heading 3*/
+h3 { font: bold 1.5em Quicksand, serif;
+    color: #688b9a;
+    
+    padding-bottom: 15px;
+}
+
+/*heading 4*/
+h4 {
+  font: bold 1.0em Bodoni 72, serif;
+  height: 45px;
+  color: #98ab9d;
+  margin: auto;
+}
+
+/*heading 5*/
+h5 {
+  font: bold 1.1em Bodoni 72, serif;
+  color: #98ab9d;
+  
+}
+
+/*paragraph text*/
+p {
+    font: 1.0em Bodoni 72, serif;
+    color: #000000;
+}
+
+/*body and background color*/
+body {
+    font-family: Bodoni 72, serif;
+    font-size: 100%;
+    line-height: 175%;
+    margin: 0 10% 0;
+    background-color: #fcf1d1;
+}
+
+
+div.b {
+	color: #E9967A;
+	font-size: 400%;
+	font-weight: bold;
+}
+
+div.c {
+	color: #000000;
+}
+
+
+
+/* Logo */
+.logo {
+  width: 90%;
+  padding-top: 5px;
+}
+
+.logo1 {
+  width: 70%;
+  padding-top:25px;
+  padding-bottom:25px;
+}
+
+.logo2 {
+  width: 20%;
+  padding-top:25px;
+  padding-bottom:25px;
+}
+
+.logo3 {
+  width: 20%;
+}
+
+.form-line {
+  padding-top: 10px;
+}
+
+.topnav {
+  float: left;
+}
+
+/* Footer */
+.footer {
+	padding-top: 100px;
+}
+
+/* Cards */
+.card {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.clientcard {
+  padding-bottom:50px;
+}
+
+.bg-primary {
+  background-color: #a3c586 !important;
+}
+
+.bg-warning {
+
+  background-color: #a3c586 !important;
+}
+
+.bg-success {
+  background-color: #a3c586 !important;
+}
+
+.buttons {
+  padding-bottom: 40px;
+}
+
+.card-text {
+  color: white;
+}
+
+.form-row {
+  
+  align-items: center;
+}
+
+.btn {
+  background-color: #47697e;
+  border: none;
+  align-items: center;
+}
+
+.employee-btn {
+  padding-bottom: 10px;
+}
+
+.login-btn {
+  padding-top: 30px;
+}
+
+.card-text {
+  font-size: 150%;
+}
+
+.card-text:hover {
+  color: #688b9a;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+.home {
+  padding-top: 25px;
+}
+
+.btn:hover {
+    background-color: #688b9a;
+    text-decoration: underline;
+}
+ 
+
+/* Font Awesome Icons */
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 30px;
+  text-align: right;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+/* FA Hover */
+.fa:hover {
+  opacity: 0.7;
+
+}
+
+/* Instagram */
+.fa-instagram {
+  background: none;
+  color: #98ab9d;
+}
+/* Mail Icon */
+.fa-envelope {
+	color: #98ab9d;
+
+}
+/* Phone icon */
+.fa-phone {
+	color: #98ab9d;
+}
+
+
+/* Dropdown menu */
+.dropdown-menu, .dropdown-item {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+}
+
+/* Dropdown menu */
+.dropdown-menu, .dropdown-item:hover {
+    color: #98ab9d;
+    background-color: white;
+} 
+
