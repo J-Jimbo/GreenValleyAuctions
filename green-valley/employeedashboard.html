@@ -10,62 +10,67 @@
 		<!-- Bootstrap v4.4.1 -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
 		<link href="css/custom.css" rel="stylesheet" type="text/css" media="screen">
-		<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+		
 		<script src="https://kit.fontawesome.com/92cf74d3dd.js" crossorigin="anonymous"></script>
 
 	</head>
 
 	<body>
 
-		<header class="row"> <!-- Logo Starts Here -->
+		<header class="row headernav"> <!-- Logo Starts Here -->
 				
 
 				<nav class="col-md-4"> <!-- header starts here - nav pills -->
 					 <ul class="nav nav-pills justify-content-start">
 		              <li class="nav-item">
-		                <a class="nav-link" href="index.html">Clients</a>
+		                <a class="nav-link" href="clients.html">Clients</a>
 		              </li>
 		              
 		              <li class="nav-item">
-		                <a class="nav-link" href="about.html">Warehouse</a>
+		                <a class="nav-link" href="warehouse.html">Warehouse</a>
 		              </li>
 
-		              <li class="nav-item">
-		                <a class="nav-link" href="contact.html">Workflow</a>
-		              </li>
+		              
 		            </ul>
 		            </nav>
 				
 
-					<div class ="col-md-4 offset-md-1">
+					<div class ="col-md-2 offset-md-1">
 					<div class="logo3">
-					<img class="img-fluid logo" src="images/TheHubLogoPlain.png" alt="The Hub Logo">
+					<img class="img-fluid logo" src="images/gvalogo.png" alt="Green Valley Auctions and Moving Logo">
 					</div>
 				</div><!-- end logo -->
 
-				<form class="form-line">
-					<input class="form-control mr-sm-5" type="search" placeholder="Search" aria-label="Search">
-				</form>
-
-			
+				<div class ="col-md-2 offset-md-1">
+				<a class="btn btn-primary btn-intake rounded-pill" href="intakeform.html" role="button" target="_blank">New Client</a>
 			</div>
+
+				<div class ="col-md-2">
+				<i class="fas fa-search fa-2x"></i>
+				<i class="fas fa-calendar-alt fa-2x"></i>
+				<a href="index.html"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+			</div>
+
+
 
 			
 
 			</header> <!-- end row header -->
 
 
-			
-
-		</header>
-
 			<div class="text-center">
 			<h2>Welcome!</h2>
 		</div>
 
-		<div class="heading">
+		<div class="row">
+		<div class="heading col-md-9">
 			<h3>Pinned Notifications</h3>
 		</div>
+
+		<div class="heading col-md-3">
+			<h3>New Notification</h3>
+		</div>
+	</div>
 
 
 		<div class="buttons">
@@ -79,35 +84,34 @@
 
 	<div class="card-columns">
   <div class="card bg-primary">
-    <div class="card-body text-center">
-      <a class="card-text" href="clients.html">Clients</p>
+    <div class="card-body" style="height: 18rem;">
+    	
+      <a class="card-text">TO DO: <br> <ul><li> <li> <li></ul></a>
+
     </div>
   </div>
   <div class="card bg-warning">
-    <div class="card-body text-center">
-      <a class="card-text" href="warehouse.html">Warehouse</p>
+    <div class="card-body" style="height: 18rem;">
+      <a class="card-text">STICKY NOTE <br> <br> Type note...</a>
     </div>
   </div>
   <div class="card bg-success">
-    <div class="card-body text-center">
-      <a class="card-text" href="workflow.html">Workflow</p>
+    <div class="card-body text-center" style="height: 18rem;">
+      <a class="card-text"> + <br> STICKY NOTE</a>
     </div>
   </div>
 </div>
-</body>
+
 
 				
 	
 
-
-
-		<!-- jQuery and Bootstrap links - do not delete! -->
+<!-- jQuery and Bootstrap links - do not delete! -->
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<!-- end of do not delete -->
 
-		<!-- load p5.js -->
-		<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+		
 
 
 	</body>
