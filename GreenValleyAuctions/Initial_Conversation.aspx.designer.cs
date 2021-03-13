@@ -51,13 +51,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.CheckBoxList CblServices;
 
         /// <summary>
-        /// cvServices control.
+        /// CvServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvServices;
+        protected global::System.Web.UI.WebControls.CustomValidator CvServices;
 
         /// <summary>
         /// lblLookat control.
@@ -76,6 +76,15 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblLookAt;
+
+        /// <summary>
+        /// rfvLookAt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLookAt;
 
         /// <summary>
         /// lblQuestions control.
@@ -105,6 +114,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RadioButtonList rblDownsizing;
 
         /// <summary>
+        /// rfvDownsizing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDownsizing;
+
+        /// <summary>
         /// lblEstate control.
         /// </summary>
         /// <remarks>
@@ -121,6 +139,15 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblEstate;
+
+        /// <summary>
+        /// rfvEstate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEstate;
 
         /// <summary>
         /// lblMoving control.
@@ -141,6 +168,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RadioButtonList rblMoving;
 
         /// <summary>
+        /// rfvMoving control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMoving;
+
+        /// <summary>
         /// lblQuantityToSell control.
         /// </summary>
         /// <remarks>
@@ -157,6 +193,15 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtQuanity;
+
+        /// <summary>
+        /// rfvquantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvquantity;
 
         /// <summary>
         /// lblWhatToSell control.
@@ -177,6 +222,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtWhatToSell;
 
         /// <summary>
+        /// rfvWhatToSell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWhatToSell;
+
+        /// <summary>
         /// lblConversationNotes control.
         /// </summary>
         /// <remarks>
@@ -193,5 +247,41 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNote;
+
+        /// <summary>
+        /// rfvNote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNote;
+
+        /// <summary>
+        /// btnClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClear;
+
+        /// <summary>
+        /// btnPopulate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPopulate;
+
+        /// <summary>
+        /// btnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

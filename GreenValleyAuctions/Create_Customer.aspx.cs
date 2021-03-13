@@ -107,7 +107,24 @@ namespace Lab2
                 txtOther.Text = "";
                 
             }
-            
+
+            //create arrays to draw random data from
+            string[] quantity = { "2  ", "1 ", "1 ", "14 " };
+            string[] sell = { "chair", "sofa", "guitar", "bed" };
+            string[] note = { "fragile", "want it sold quick", "want a reserve price" };
+
+
+            //filling txtboxes
+            txtNote.Text = note[random.Next(0, note.Length)];
+            txtQuanity.Text = quantity[random.Next(0, quantity.Length)];
+            txtWhatToSell.Text = sell[random.Next(0, sell.Length)];
+            //select ddl
+            CblServices.SelectedIndex = random.Next(0, 4);
+            rblLookAt.SelectedIndex = random.Next(0, 2);
+            rblEstate.SelectedIndex = random.Next(0, 2);
+            rblDownsizing.SelectedIndex = random.Next(0, 2);
+            rblMoving.SelectedIndex = random.Next(0, 2);
+
 
         }
 
@@ -119,84 +136,132 @@ namespace Lab2
 
             if (Page.IsValid == true)
             {
-
-                // query to search for last customer ID
-                string sqlQueryID = "SELECT MAX(CustomerID) from Customer";
-
-
-
-
-                //Define the connection to the Database
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
-
-
-                //Create sql command to receive ID
-                SqlCommand sqlCommandID = new SqlCommand();
-                sqlCommandID.Connection = sqlConnect;
-                sqlCommandID.CommandType = CommandType.Text;
-                sqlCommandID.CommandText = sqlQueryID;
-                //open connection to send ID query 
-                sqlConnect.Open();
-                SqlDataReader queryValue = sqlCommandID.ExecuteReader();
-
-
+                
+                    //Define the connection to the Database
+                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    sqlConnect.Open();
                 int customerID = 0;
-                while (queryValue.Read())
+                if (rblChoice.SelectedValue.Equals("New Customer"))
                 {
+                    // query to search for last customer ID
+                    string sqlQueryID = "SELECT MAX(CustomerID) from Customer";
 
-                    try
+
+
+                    //Create sql command to receive ID
+                    SqlCommand sqlCommandID = new SqlCommand();
+                    sqlCommandID.Connection = sqlConnect;
+                    sqlCommandID.CommandType = CommandType.Text;
+                    sqlCommandID.CommandText = sqlQueryID;
+                    //open connection to send ID query 
+                    
+                    SqlDataReader queryValue = sqlCommandID.ExecuteReader();
+
+
+                    
+                    while (queryValue.Read())
                     {
-                        customerID = queryValue.GetInt32(0);
+
+                        try
+                        {
+                            customerID = queryValue.GetInt32(0);
+                        }
+                        catch (Exception)
+                        {
+                            customerID = 0;
+                        }
+
+
+
                     }
-                    catch (Exception)
-                    {
-                        customerID = 0;
-                    }
+
+                    //increase customerID
+                    customerID++;
+
+                    // Close conecctions
+                    queryValue.Close();
+                
+
+                    // Concatenate the gathered values for Customer info
+                    string phoneType = rblPhoneType.SelectedValue.ToString();
+                    string contacted;
+                    if (ddlContact.SelectedValue.Equals("Other"))
+                        contacted = HttpUtility.HtmlEncode(txtOther.Text.ToString());
+                    else
+                        contacted = ddlContact.SelectedValue.ToString();
 
 
 
+                    String sqlQuery = "Insert INTO Customer (CustomerID, FirstName, LastName, CustomerAddress, CustomerPhone,PhoneType, CustomerEmail,HereAbout,ContactThrough,DateAdded) VALUES (  @CustomerID  , @FirstName , @LastName " +
+                        ", @Street +' ' + @City + ' '+ @State + ' ' + @Zip , @Phone  , @PhoneType, @Email , @Hear, @Contacted , GetDate())";
+
+                    // Create SQL Command Object to send the query
+                    SqlCommand sqlCommandCreate = new SqlCommand();
+                    sqlCommandCreate.Connection = sqlConnect;
+                    sqlCommandCreate.CommandType = CommandType.Text;
+                    sqlCommandCreate.CommandText = sqlQuery;
+
+                    sqlCommandCreate.Parameters.AddWithValue("@CustomerID", customerID);
+                    sqlCommandCreate.Parameters.AddWithValue("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@LastName", HttpUtility.HtmlEncode(txtLastName.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@Street", HttpUtility.HtmlEncode(txtStreet.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@City", HttpUtility.HtmlEncode(txtCIty.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@State", HttpUtility.HtmlEncode(txtState.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@Zip", HttpUtility.HtmlEncode(txtZip.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@Phone", HttpUtility.HtmlEncode(txtPhone.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@PhoneType", phoneType);
+                    sqlCommandCreate.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtEmail.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@Hear", HttpUtility.HtmlEncode(txtHear.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@Contacted", contacted);
+                    //Open COnnection, send query
+
+                    SqlDataReader queryAnswer = sqlCommandCreate.ExecuteReader();
+
+
+                    // Close conecctions
+                    queryAnswer.Close();
                 }
+                //--------------------------------------------
 
-                //increase customerID
-                customerID++;
 
-                // Close conecctions
-                queryValue.Close();
-                sqlConnect.Close();
+                String sqlInsert = "Insert INTO InitialContact (ContactID, ReqServices, LookAt, DownSize, Estate, Moving, QSold, WhatSold,ConversationNotes,DateContacted,CustomerID) VALUES ( (Select ISNULL(max(ContactID)+1,1) from InitialContact) , @ReqServices , @LookAt " +
+                    ", @DownSize  , @Estate, @Moving , @QSold, @WhatSold , @ConversationNotes, GetDate(), @CustomerID )";
 
-                // Concatenate the gathered values for Customer info
-                string phoneType = rblPhoneType.SelectedValue.ToString();
-                string contacted;
-                if (ddlContact.SelectedValue.Equals("Other"))
-                    contacted = HttpUtility.HtmlEncode(txtOther.Text.ToString());
-                else
-                    contacted = ddlContact.SelectedValue.ToString();
+
+                // loop to get all checked values
+                string serviceList = "";
+                foreach (ListItem item in CblServices.Items)
+                {
+                    if (item.Selected)
+                    {
+                        serviceList += item.Value.ToString() + ", ";
+                    }
+                }
+                //get customer id 
                 
-                
-
-                String sqlQuery = "Insert INTO Customer (CustomerID, FirstName, LastName, CustomerAddress, CustomerPhone,PhoneType, CustomerEmail,HereAbout,ContactThrough,DateAdded) VALUES (  @CustomerID  , @FirstName , @LastName " +
-                    ", @Street +' ' + @City + ' '+ @State + ' ' + @Zip , @Phone  , @PhoneType, @Email , @Hear, @Contacted , GetDate())";
-
+                if(rblChoice.SelectedValue.Equals("Existing Customer"))
+                {
+                     customerID = int.Parse(ddlCustomer.SelectedValue);
+                }
+                serviceList = serviceList.Remove(serviceList.Length - 2);
                 // Create SQL Command Object to send the query
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = sqlConnect;
                 sqlCommand.CommandType = CommandType.Text;
-                sqlCommand.CommandText = sqlQuery;
+                sqlCommand.CommandText = sqlInsert;
 
-                sqlCommand.Parameters.AddWithValue("@CustomerID",customerID);
-                sqlCommand.Parameters.AddWithValue("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text));
-                sqlCommand.Parameters.AddWithValue("@LastName", HttpUtility.HtmlEncode(txtLastName.Text));
-                sqlCommand.Parameters.AddWithValue("@Street", HttpUtility.HtmlEncode(txtStreet.Text));
-                sqlCommand.Parameters.AddWithValue("@City", HttpUtility.HtmlEncode(txtCIty.Text));
-                sqlCommand.Parameters.AddWithValue("@State", HttpUtility.HtmlEncode(txtState.Text));
-                sqlCommand.Parameters.AddWithValue("@Zip", HttpUtility.HtmlEncode(txtZip.Text));
-                sqlCommand.Parameters.AddWithValue("@Phone", HttpUtility.HtmlEncode(txtPhone.Text));
-                sqlCommand.Parameters.AddWithValue("@PhoneType", phoneType);
-                sqlCommand.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtEmail.Text));
-                sqlCommand.Parameters.AddWithValue("@Hear", HttpUtility.HtmlEncode(txtHear.Text));
-                sqlCommand.Parameters.AddWithValue("@Contacted",contacted);
+
+                sqlCommand.Parameters.AddWithValue("@ReqServices", HttpUtility.HtmlEncode(serviceList));
+                sqlCommand.Parameters.AddWithValue("@LookAt", rblLookAt.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@DownSize", rblDownsizing.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@Estate", rblEstate.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@Moving", rblMoving.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@QSold", HttpUtility.HtmlEncode(txtQuanity.Text));
+                sqlCommand.Parameters.AddWithValue("@WhatSold", HttpUtility.HtmlEncode(txtWhatToSell.Text));
+                sqlCommand.Parameters.AddWithValue("@ConversationNotes", HttpUtility.HtmlEncode(txtNote.Text));
+                sqlCommand.Parameters.AddWithValue("@CustomerID", customerID);
                 //Open COnnection, send query
-                sqlConnect.Open();
+                
                 SqlDataReader queryResults = sqlCommand.ExecuteReader();
 
 
@@ -207,9 +272,11 @@ namespace Lab2
                 lblStatus.ForeColor = Color.Green;
                 lblStatus.Font.Bold = true;
                 lblStatus.Text = "Customer Created";
+
+                lblCreateStatus.ForeColor = Color.Green;
+                lblCreateStatus.Font.Bold = true;
+                lblCreateStatus.Text = "Customer Created";
             }
-
-
 
 
         }
@@ -218,6 +285,20 @@ namespace Lab2
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
+
+            //----------------------
+            //clear checkboxes
+            CblServices.ClearSelection();
+            //clear radio button lists
+            rblLookAt.ClearSelection();
+            rblEstate.ClearSelection();
+            rblDownsizing.ClearSelection();
+            rblMoving.ClearSelection();
+            //clear text boxes
+            txtNote.Text = "";
+            txtQuanity.Text = "";
+            txtWhatToSell.Text = "";
+            //-----------------------
             //Clear name
             HttpUtility.HtmlEncode(txtFirstName.Text = " ");
             HttpUtility.HtmlEncode(txtLastName.Text = " ");
@@ -233,6 +314,9 @@ namespace Lab2
             HttpUtility.HtmlEncode(txtHear.Text = " ");
             //Cleat COntacted Through
             HttpUtility.HtmlEncode(txtOther.Text = " ");
+            //clear phone type
+            rblPhoneType.ClearSelection();
+
         }
 
         protected void cvFirstName_ServerValidate(object source, ServerValidateEventArgs args)
@@ -301,6 +385,55 @@ namespace Lab2
         protected void btnNextProcess_Click(object sender, EventArgs e)
         {
             Response.Redirect("Create_ServiceEvent.aspx");
+        }
+
+        protected void cvServices_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            // see if item is checked
+            int counter = 0;
+            foreach (ListItem item in CblServices.Items)
+            {
+                if (item.Selected)
+                {
+                    counter++;
+                }
+            }
+            //  validate based off counter
+            if (counter == 0)
+            {
+                args.IsValid = false;
+            }
+            else
+                args.IsValid = true;
+        }
+
+        protected void rblChoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // new or existing customer
+            if(rblChoice.SelectedValue.Equals("New Customer"))
+            {
+                tblCreateCustomer.Visible = true;
+                tblExistingCustomer.Visible = false;
+                
+            }
+            else
+            {
+                //show table
+                tblExistingCustomer.Visible = true;
+                //hide table
+                tblCreateCustomer.Visible = false;
+                //temp remove validation
+                txtFirstName.CausesValidation = false;
+                txtLastName.CausesValidation = false;
+                txtCIty.CausesValidation = false;
+                txtState.CausesValidation = false;
+                txtStreet.CausesValidation = false;
+                txtZip.CausesValidation = false;
+                txtPhone.CausesValidation = false;
+                txtEmail.CausesValidation = false;
+                rblPhoneType.CausesValidation = false;
+
+            }
         }
     }
 

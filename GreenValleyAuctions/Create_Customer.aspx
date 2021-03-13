@@ -2,8 +2,154 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Table ID="tblFrom" runat="server" HorizontalAlign="Center">
+        <asp:TableRow>
+            <asp:TableCell>
+                 <asp:Label ID="lblForm" runat="server" Text="Initial Conversation Form"></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblServices" runat="server" Text="Services Customer Requires: "></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell ColumnSpan="2" >
+                 <asp:CheckBoxList ID="CblServices" RepeatDirection="Horizontal" runat="server">
+                    <asp:ListItem Text="Auction" Value="Auction"></asp:ListItem>
+                    <asp:ListItem Text="Appraisal" Value="Appraisal"></asp:ListItem>
+                    <asp:ListItem Text="Move" Value="Move"></asp:ListItem>
+                    <asp:ListItem Text="Consignment" Value="Consignment"></asp:ListItem>
+                </asp:CheckBoxList>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:CustomValidator ID="CvServices" runat="server" ErrorMessage="CustomValidator" Text="Required" ForeColor="Red"  OnServerValidate="cvServices_ServerValidate"></asp:CustomValidator>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblLookat" runat="server" Text="Requires Look at"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RadioButtonList ID="rblLookAt" RepeatDirection="Horizontal" runat="server">
+                    <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                    <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                </asp:RadioButtonList>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RequiredFieldValidator ID="rfvLookAt" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ControlToValidate="rblLookAt" ForeColor="Red"></asp:RequiredFieldValidator>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblQuestions" runat="server" Text="Questions: "></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell >
+                <asp:Label ID="lblDownsizing" runat="server" Text="Downsizing: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RadioButtonList ID="rblDownsizing" RepeatDirection="Horizontal" runat="server">
+                    <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                    <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                </asp:RadioButtonList>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RequiredFieldValidator ID="rfvDownsizing" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ControlToValidate="rblDownsizing" ForeColor="Red"></asp:RequiredFieldValidator>
+            </asp:TableCell>
+        </asp:TableRow>
+         <asp:TableRow>
+            <asp:TableCell >
+                <asp:Label ID="lblEstate" runat="server" Text="Settling an Estate: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RadioButtonList ID="rblEstate" RepeatDirection="Horizontal" runat="server">
+                    <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                    <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                </asp:RadioButtonList>
+             </asp:TableCell>
+             <asp:TableCell>
+                <asp:RequiredFieldValidator ID="rfvEstate" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ControlToValidate="rblEstate" ForeColor="Red"></asp:RequiredFieldValidator>
+             </asp:TableCell>
+        </asp:TableRow>
+         <asp:TableRow>
+            <asp:TableCell >
+                <asp:Label ID="lblMoving" runat="server" Text="Moving: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RadioButtonList ID="rblMoving" RepeatDirection="Horizontal" runat="server">
+                    <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                    <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                </asp:RadioButtonList>
+             </asp:TableCell>
+             <asp:TableCell>
+                <asp:RequiredFieldValidator ID="rfvMoving" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ControlToValidate="rblMoving" ForeColor="Red"></asp:RequiredFieldValidator>
+             </asp:TableCell>
+        </asp:TableRow>
+         <asp:TableRow>
+            <asp:TableCell >
+                <asp:Label ID="lblQuantityToSell" runat="server" Text="How much is being sold: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:TextBox ID="txtQuanity" runat="server"></asp:TextBox>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RequiredFieldValidator ID="rfvquantity" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ControlToValidate="txtQuanity" ForeColor="Red"></asp:RequiredFieldValidator>
+             </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell >
+                <asp:Label ID="lblWhatToSell" runat="server" Text="What is being sold: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:TextBox ID="txtWhatToSell" runat="server"></asp:TextBox>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RequiredFieldValidator ID="rfvWhatToSell" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ControlToValidate="txtWhatToSell" ForeColor="Red"></asp:RequiredFieldValidator>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell ColumnSpan="2" >
+                <asp:Label ID="lblConversationNotes" runat="server" Text="Conversation Notes: "></asp:Label>
+                <br />
+                <asp:TextBox ID="txtNote" runat="server" Height="300" Width="500" TextMode="MultiLine" Wrap="true"></asp:TextBox>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RequiredFieldValidator ID="rfvNote" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ControlToValidate="txtNote" ForeColor="Red"></asp:RequiredFieldValidator>
+            </asp:TableCell>
+        </asp:TableRow>
+       
+    </asp:Table>
+    <hr />
+    <asp:Table ID="tblCustomerChoice" runat="server">
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblCHoice" runat="server" Text="New or existing Customer ?"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:RadioButtonList ID="rblChoice" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="rblChoice_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:ListItem Text="New Customer" Value="New Customer"></asp:ListItem>
+                    <asp:ListItem Text="Existing Customer" Value="Existing Customer"></asp:ListItem>
+                </asp:RadioButtonList>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+    <hr />
+    <asp:Table ID="tblExistingCustomer" runat="server" Visible="false">
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblSelect" runat="server" Text="Select Customer: "></asp:Label>
+                <asp:DropDownList ID="ddlCustomer" runat="server" DataTextField="customerName" DataValueField="CustomerID"  DataSourceID="datasrcCustomerList"></asp:DropDownList>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="lblCreateStatus" runat="server" Text=""></asp:Label>
+            </asp:TableCell>
+            
+        </asp:TableRow>
+    </asp:Table>
      <%--Table for all customer inputs--%> 
-            <asp:Table ID="tblCreateCustomer" runat="server">
+            <asp:Table ID="tblCreateCustomer" runat="server" Visible="false">
                 <asp:TableRow >
                     <asp:TableCell Width="500">
                         <asp:Label ID="lblFirstName" runat="server" Text="First Name: "></asp:Label>
@@ -117,4 +263,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
              </asp:Table>
+    <%--Data Sources--%>
+    <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+                SelectCommand="SELECT distinct trim(FirstName) + ' ' + trim(LastName) as customerName, c.CustomerID from Inventory i full join ServiceEvent SE  on i.ItemID = SE.ItemID  full join WorkFlow wf on wf.WorkFlowID = SE.WorkFlowID full join Customer c on c.CustomerID = WF.CustomerID where NOT Wf.CurrentStatus = 'In Progress' order by customerName"></asp:SqlDataSource>
 </asp:Content>
