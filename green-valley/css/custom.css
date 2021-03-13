@@ -5,7 +5,7 @@
 /*navigation bar*/
 .nav-pills .nav-link.active, .nav-pills .show, .nav-link {
     color: #266141 ;
-     font: 1.6em Georgia, serif;
+     font: 1.6em Quattrocento, serif;
 }
 
 /*nav pills*/
@@ -24,14 +24,14 @@ a:hover {
 
 /*heading */
 h1 {
-  font: bold 2.5em Georgia, serif;
+  font: bold 2.5em Quattrocento, serif;
   height: 65px;
   color: #266141;
 }
 
 /*heading 2*/
 h2 {
-  font: bold 4.0em Georgia, serif;
+  font: bold 4.0em Quattrocento, serif;
   height: 65px;
   color: #266141;
   padding-top: 15px;
@@ -47,7 +47,7 @@ h3 { font: 1.5em Open Sans, sans-serif;
 
 /*heading 4*/
 h4 {
-  font: 1.9em Georgia, serif;
+  font: 1.9em Quattrocento, serif;
   height: 45px;
   color: #266141;
   margin: auto;
@@ -57,13 +57,21 @@ h4 {
 h5 {
   font: bold 1.5em Open Sans, sans-serif;
   color: #4D697C;
-  
 }
+
+h6 {
+  font: 1.3em Quattrocento, serif;
+  color: grey;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background-color: white;
+}
+
 
 /*paragraph text*/
 p {
     font: 1.0em Open Sans, sans-serif;
-    color: #000000;
+    color: #707070
 }
 
 /*body and background color*/
@@ -74,6 +82,7 @@ body {
     margin: 0 10% 0;
     background-color: #fcf1d1;
 }
+
 
 
 div.b {
@@ -89,6 +98,7 @@ div.c {
 /* Header Navigation All */
 .headernav {
   padding-top:6px;
+     background-color: white;
 }
 
 /* Logo */
@@ -141,18 +151,18 @@ div.c {
 
 /* To Do Card */
 .bg-primary {
-  background-color: #a3c586 !important;
+  background-color: #A3C586 !important;
 }
 
 /* Sticky Note Card Middle */
 .bg-warning {
 
-  background-color: #688B9A !important;
+  background-color: #95BBCB !important;
 }
 
 /* Sticky Note Card Right Create New */
 .bg-success {
-  background-color: #FFD762 !important;
+  background-color: #FFE086 !important;
 }
 
 .buttons {
@@ -174,7 +184,6 @@ div.c {
   background-color: #266141;
   font: 1.0em Georgia, serif;
   border: none;
-  align-items: center;
 }
 
 .btn:hover {
@@ -184,6 +193,7 @@ div.c {
 
 .btn-intake {
   background-color: #266141;
+
   height: 30px;
 }
 
@@ -200,6 +210,52 @@ div.c {
   padding-bottom: 20px;
 }
 
+.forms {
+  padding-top: 20px;
+}
+
+/* notification 1 button */
+.notification {
+  background-color: #FFD762;
+}
+
+/* creating a new notification text */
+.newnotification {
+  padding-left: 90px;
+}
+
+.profile1 {
+  padding-top: 100px;
+}
+
+.profileicon1 {
+ width: 70% !important;
+}
+
+.jumbotron {
+  background-color: white;
+}
+
+.comments {
+  padding-left: 80px;
+}
+
+/* Client info and contacts on profile page */
+.clientinfo {
+  padding-top: 15px;
+}
+
+.chair {
+  width: 100px !important;
+}
+
+.antiquechair {
+  padding-right: 300px;
+}
+
+.media {
+  padding-top: 50px;
+}
 
 
 
@@ -247,6 +303,18 @@ div.c {
 /* Font Icon Sign Out */
 .fa-sign-out-alt {
   color: #266141;
+}
+
+.fa-bell {
+  padding-left:770px;
+}
+
+.bell2 {
+  padding-left: 823px;
+}
+
+.fa-edit {
+  padding-left: 25px;
 }
 
 
