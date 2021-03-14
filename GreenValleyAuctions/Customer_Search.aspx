@@ -12,7 +12,7 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:ListBox ID="lbResults" runat="server" Height="500px" Width="500px" AutoPostBack="true" DataTextField="customerName" DataValueField="FullName"></asp:ListBox>
+                            <asp:ListBox ID="lbResults" runat="server" Height="500px" Width="500px" AutoPostBack="true" DataTextField="customerName" DataValueField="CustomerID"></asp:ListBox>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>

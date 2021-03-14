@@ -24,7 +24,7 @@ namespace GreenValleyAuctions
             //define connection to the DB
             SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
 
-            string sqlQueryID = "SELECT distinct c.FirstName, c.LastName,trim(FirstName) + ' ' + trim(LastName) as FullName " +
+            string sqlQueryID = "SELECT distinct c.FirstName, c.LastName,trim(FirstName) + ' ' + trim(LastName) as FullName, c.CustomerID " +
                 " from Inventory i full join ServiceEvent SE  on i.ItemID = SE.ItemID  full join WorkFlow wf on wf.WorkFlowID = SE.WorkFlowID " +
                 "full join Customer c on c.CustomerID = WF.CustomerID where trim(FirstName) + ' ' + trim(LastName) LIKE @CustomerName+'%' or FirstName = @CustomerName " +
                 "or  LastName = @CustomerName or trim(FirstName) + ' ' + trim(LastName) = @CustomerName ";
@@ -44,7 +44,8 @@ namespace GreenValleyAuctions
 
             while (queryValue.Read())
             {
-                ListItem customerName = new ListItem(queryValue["FullName"].ToString(), queryValue["FullName"].ToString());
+                ListItem customerName = new ListItem(queryValue["FullName"].ToString(), queryValue["CustomerID"].ToString());
+                
                 lbResults.Items.Add(customerName);
 
 
@@ -56,6 +57,7 @@ namespace GreenValleyAuctions
 
         protected void btnSelect_Click(object sender, EventArgs e)
         {
+            Session["Customer"] = lbResults.SelectedValue.ToString();
             Response.Redirect("Customer_Info.aspx");
         }
     }

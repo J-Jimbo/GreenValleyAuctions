@@ -190,7 +190,7 @@
             <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
                 SelectCommand="SELECT trim(FirstName) + ' ' + trim(LastName) as customerName, customerID from Customer"></asp:SqlDataSource>
             <asp:SqlDataSource ID="datasrcEmployeeList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
-                SelectCommand="SELECT trim(EmployeeFirstName) + ' ' + trim(EmployeeLastName) as employeeName, EmployeeID from Employee"></asp:SqlDataSource>
+                SelectCommand="SELECT trim(EmployeeFirstName) + ' ' + trim(ISNULL(EmployeeLastName,'')) as employeeName, EmployeeID from Employee"></asp:SqlDataSource>
      
 
 </asp:Content>
