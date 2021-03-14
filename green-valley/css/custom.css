@@ -10,14 +10,14 @@
 
 /*nav pills*/
 a {
-    color: #000000;
+    color: grey;
     text-decoration: none;
     background-color: transparent;
 }
 
 /*color changes when hovered over nav pills*/
 a:hover {
-    color: #a3c586;
+    color: grey;
     text-decoration: underline;
 }
 
@@ -82,7 +82,6 @@ body {
     margin: 0 10% 0;
     background-color: #fcf1d1;
 }
-
 
 
 div.b {
@@ -197,13 +196,16 @@ div.c {
   height: 30px;
 }
 
+/* Employee Button Home Page */
 .employee-btn {
   padding-bottom: 10px;
 }
 
+/* Log In Button Home Page */
 .login-btn {
   padding-top: 30px;
 }
+
 
 .progress1 {
   width: 10%;
@@ -224,14 +226,17 @@ div.c {
   padding-left: 90px;
 }
 
+
 .profile1 {
   padding-top: 100px;
 }
 
+/* Profile Icon */
 .profileicon1 {
  width: 70% !important;
 }
 
+/* Jumbotron Profile */
 .jumbotron {
   background-color: white;
 }
@@ -279,8 +284,37 @@ div.c {
 }
 
 
- 
+ .lookat {
+  padding-left: 150px;
+ }
 
+ .questions {
+  padding-left: 194px;
+ }
+
+ .downsizing {
+  padding-left: 185px;
+ }
+
+ .estate {
+  padding-left: 142px;
+ }
+
+ .moving {
+  padding-left: 215px;
+ }
+
+ .howsoldbox {
+  padding-left: 90px;
+ }
+
+ .whatsoldbox {
+  padding-left: 130px;
+ }
+
+.newexisting {
+  padding-left: 80px;
+}
 
 
 /* FA Hover */
