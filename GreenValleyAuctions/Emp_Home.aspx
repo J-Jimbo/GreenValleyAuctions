@@ -58,9 +58,9 @@
 			</div>
 
 				<div class ="col-md-2">
-				<i class="fas fa-search fa-2x"></i>
-				<i class="fas fa-calendar-alt fa-2x"></i>
-				<%--<a id="logout" href="LandingPage.aspx" onclick="btnLogOut_Click"><i class="fas fa-sign-out-alt fa-2x"></i></a>--%>
+				<i class="fas fa-search fa-1x"></i>
+				<i class="fas fa-calendar-alt fa-1x"></i>
+				<a class="nav-link" href="Confirm_Logout.aspx"><i class="fas fa-sign-out-alt fa-1x"></i></a>
 
 								
 			    <br />

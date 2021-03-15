@@ -468,5 +468,10 @@ namespace Lab2
            else
                 tblDestination.Visible = false;
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Customer_Info.aspx");
+        }
     }
 }

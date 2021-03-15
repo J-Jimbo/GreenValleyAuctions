@@ -20,7 +20,7 @@ namespace Lab2
             {
                 lblCurrentUser.ForeColor = Color.Green;
                 lblCurrentUser.Font.Bold = true;
-                lblCurrentUser.Text = Session["UserName"].ToString() + " Succesfully Logged IN";
+                lblCurrentUser.Text = Session["UserName"].ToString() + "Logged IN";
             }
             else
             {

@@ -163,7 +163,10 @@
                             <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click"/>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:Button ID="btnClear" runat="server" Text="Clear"  OnClick="btnClear_Click"/>
+                            <asp:Button ID="btnClear" runat="server" Text="Clear"  OnClick="btnClear_Click" CausesValidation="false"/>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:Button ID="btnBack" runat="server" Text="Back"  OnClick="btnBack_Click" CausesValidation="false"/>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

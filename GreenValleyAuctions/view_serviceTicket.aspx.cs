@@ -199,5 +199,10 @@ namespace Lab2
         {
             dvWorkFlow.Rows[0].Visible = false;
         }
+
+        protected void BtBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Customer_Info.aspx");
+        }
     }
 }

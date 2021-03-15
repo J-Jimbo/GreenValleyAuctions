@@ -57,6 +57,7 @@ namespace GreenValleyAuctions
 
         protected void btnSelect_Click(object sender, EventArgs e)
         {
+            Session["Customer"] = null;
             Session["Customer"] = lbResults.SelectedValue.ToString();
             Response.Redirect("Customer_Info.aspx");
         }

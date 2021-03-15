@@ -181,6 +181,9 @@
                         <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" CausesValidation="false"/>
                     </asp:TableCell>
                     <asp:TableCell>
+                        <asp:Button ID="btnBack" runat="server" Text="Return to Customer" OnClick="btnBack_Click" />
+                    </asp:TableCell>
+                    <asp:TableCell>
                         <asp:Button ID="btnNotes" runat="server" Text="Go to Notes"  OnClick="btnNotes_Click" CausesValidation="false"/>
                     </asp:TableCell>
                 </asp:TableRow>

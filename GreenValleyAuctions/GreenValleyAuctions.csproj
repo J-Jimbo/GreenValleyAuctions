@@ -74,6 +74,7 @@
   <ItemGroup>
     <Content Include="Auction_Pick_Up.aspx" />
     <Content Include="Completion_Form.aspx" />
+    <Content Include="Confirm_Logout.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="Completion_Form.aspx.designer.cs">
       <DependentUpon>Completion_Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirm_Logout.aspx.cs">
+      <DependentUpon>Confirm_Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirm_Logout.aspx.designer.cs">
+      <DependentUpon>Confirm_Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Create_Customer.aspx.cs">
       <DependentUpon>Create_Customer.aspx</DependentUpon>

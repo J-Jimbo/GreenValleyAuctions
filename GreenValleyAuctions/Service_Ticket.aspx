@@ -32,6 +32,11 @@
             </asp:TableCell>
             
         </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Button ID="btnBack" runat="server" Text="Return to Customer" OnClick="btnBack_Click"  CausesValidation="false"/>
+            </asp:TableCell>
+        </asp:TableRow>
     </asp:Table>
 
       <%--sql Data scources --%>

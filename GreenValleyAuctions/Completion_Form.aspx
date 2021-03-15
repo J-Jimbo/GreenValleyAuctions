@@ -1,15 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Completion_Form.aspx.cs" Inherits="GreenValleyAuctions.Completion_Form" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:Table ID="tblCFCustomer" runat="server" HorizontalAlign="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid" Width="600px"  >
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template.Master" AutoEventWireup="true" CodeBehind="Completion_Form.aspx.cs" Inherits="GreenValleyAuctions.Completion_Form1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <asp:Table ID="tblCFCustomer" runat="server" HorizontalAlign="Center"  Width="600px"  >
                 <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblSearch" runat="server" Text="Search Customer: "></asp:Label>
@@ -27,7 +20,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-            <asp:Table ID="tblCFExpenses" runat="server" HorizontalAlign ="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid" Width="600px" >
+            <asp:Table ID="tblCFExpenses" runat="server" HorizontalAlign ="Center"  Width="600px" >
                 <asp:TableRow>
                     <asp:TableCell>
                         <asp:Label ID="lblFinanceHeader" Text="Finances: " Font-Bold="true" runat="server" ></asp:Label>
@@ -75,7 +68,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-            <asp:Table ID="tblCFEmployees" runat="server" HorizontalAlign ="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid" Width="600px" >
+            <asp:Table ID="tblCFEmployees" runat="server" HorizontalAlign ="Center"  Width="600px" >
                 <asp:TableRow>
                     <asp:TableCell>
                         <asp:Label ID="lblEEtitle" runat="server" Font-Bold="true" Text="Employees and Equipment Involved: "></asp:Label>
@@ -113,7 +106,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-            <asp:Table ID="tblCFNotes" runat="server" HorizontalAlign ="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid" Width="600px">
+            <asp:Table ID="tblCFNotes" runat="server" HorizontalAlign ="Center"  Width="600px">
                 <asp:TableRow>
                     <asp:TableCell>
                         <asp:Label ID="lblHeaderNotes" runat="server" Text="Additional Notes: " Font-Bold="true" ></asp:Label>
@@ -128,7 +121,7 @@
             <asp:Table ID="tblsave" runat="server" HorizontalAlign ="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid">
                 <asp:TableRow>
                     <asp:TableCell>
-            <asp:Button ID="btnSave" Text="Save" runat="server" OnClick="btnSave_Click" /> </asp:TableCell> <asp:TableCell> <asp:Button ID="btnpopulate" runat="server" Text="Populate" /> <asp:Button ID="btnHistory" runat="server" Text="Show History" OnClick="btnHistory_Click" /> </asp:TableCell>
+            <asp:Button ID="btnSave" Text="Save" runat="server" OnClick="btnSave_Click" /> </asp:TableCell> <asp:TableCell> <asp:Button ID="btnpopulate" OnClick="btnpopulate_Click" runat="server" Text="Populate" /> <asp:Button ID="btnHistory" runat="server" Text="Show History" OnClick="btnHistory_Click" /> <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CausesValidation="false" /></asp:TableCell>
                 </asp:TableRow>
                 </asp:Table>
             <asp:Table ID="tblHistory" runat="server" HorizontalAlign="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid" Width="600px">
@@ -139,7 +132,4 @@
                 </asp:TableRow>
             </asp:Table>
 
-        </div>
-    </form>
-</body>
-</html>
+</asp:Content>

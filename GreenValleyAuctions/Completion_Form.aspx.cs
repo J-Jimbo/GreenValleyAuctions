@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Web.Configuration;
 namespace GreenValleyAuctions
 {
-    public partial class Completion_Form : System.Web.UI.Page
+    public partial class Completion_Form1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -122,7 +122,7 @@ namespace GreenValleyAuctions
             sqlConnectCF.Close();
 
 
-            Session["Customer"] = null;
+            
         }
 
         protected void btnHistory_Click(object sender, EventArgs e)
@@ -139,6 +139,40 @@ namespace GreenValleyAuctions
             grdHistory.DataSource = dtforHistory;
             grdHistory.DataBind();
 
+        }
+
+        protected void btnpopulate_Click(object sender, EventArgs e)
+        {
+            // creaing random number
+            Random random = new Random();
+
+            //creating array to draw random data from
+            string[] money = { "400", "5000", "30", "200", "250", "10", "1000" };
+            string[] notes = { "none", "paid with check", " paid cash" };
+            //moneybased text boxes
+            txtSubtotal.Text = money[random.Next(0, money.Length)];
+            txtaddexpenses.Text = money[random.Next(0, money.Length)];
+
+            //employe based 
+            RBLEmployees.SelectedIndex = random.Next(0, 6);
+            RBLEquipment.SelectedIndex = random.Next(0, 7);
+            Rblpaymentreceived.SelectedIndex = random.Next(0, 3);
+
+            if (Rblpaymentreceived.SelectedValue.Equals("Partial"))
+            {
+                txtpartial.Visible = true;
+                txtpartial.Text = money[random.Next(0, money.Length)];
+            }
+            else
+                txtpartial.Visible = false;
+
+            //notes
+            txtAdditionalNotes.Text = notes[random.Next(0, notes.Length)];
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Customer_Info.aspx");
         }
     }
 }

@@ -50,6 +50,11 @@
                              <asp:TextBox ID="txtNoteBody" runat="server" width="400" height="200" TextMode="MultiLine" Wrap="true"></asp:TextBox>
                         </asp:TableCell>
                     </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Button ID="btnBack" runat="server" Text="Return to Customer" OnClick="btnBack_Click" />
+                        </asp:TableCell>
+                    </asp:TableRow>
                     </asp:Table>
             </asp:TableCell>
         </asp:TableRow>

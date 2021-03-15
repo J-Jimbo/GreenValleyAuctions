@@ -150,8 +150,8 @@ namespace GreenValleyAuctions
             // Close conecctions
             queryValue.Close();
             sqlConnect.Close();
-            Response.Redirect("Emp_Home.aspx");
-            Session["Customer"] = null;
+            
+           
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
@@ -183,6 +183,11 @@ namespace GreenValleyAuctions
                 lblLocation.Visible = false;
                 txtLocation.Visible = false;
             }
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Customer_Info.aspx");
         }
     }
 }

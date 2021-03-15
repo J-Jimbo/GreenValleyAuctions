@@ -14,7 +14,39 @@ namespace GreenValleyAuctions
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //On Page load grab customer info
 
+            string Query = "select trim(c.CustomerAddress) as CA,trim(M.DestinationAddress) as DA,trim(c.firstname)+' '+trim(c.lastname) as CustomerName,c.CustomerPhone,IC.DateContacted,C.HereAbout ,MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID inner join Moving M on M.ServiceID = SE.ServiceID inner join InitialContact IC on IC.CustomerID = C.CustomerID where C.CustomerID = @ID group by c.CustomerAddress,M.DestinationAddress,trim(c.firstname)+' '+trim(c.lastname),c.CustomerPhone,IC.DateContacted,C.HereAbout; ";
+
+            //Define the connection to the Database
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+
+            //Create sql command 
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = Query;
+
+            sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryResult = sqlCommand.ExecuteReader();
+
+
+            while (queryResult.Read())
+            {
+                txtTAddress.Text = queryResult["CA"].ToString();
+                txtFAddress.Text = queryResult["DA"].ToString();
+                txtFName.Text = queryResult["CustomerName"].ToString();
+                txtFPhone.Text = queryResult["CustomerPhone"].ToString();
+                txtTName.Text = queryResult["CustomerName"].ToString();
+                txtTPhone.Text = queryResult["CustomerPhone"].ToString();
+                txtHear.Text = queryResult["HereAbout"].ToString();
+                txtCDate.Text = queryResult["DateContacted"].ToString();
+            }
+
+            queryResult.Close();
+            sqlConnect.Close();
         }
         protected void btnSave_Click(object sender, EventArgs e)
         {
@@ -83,7 +115,72 @@ namespace GreenValleyAuctions
             sqlConnectMF.Close();
 
 
-            Session["Customer"] = null;
+            
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Customer_Info.aspx");
+        }
+
+        protected void bnClear_Click(object sender, EventArgs e)
+        {
+           HttpUtility.HtmlEncode(txtCDate.Text= "");
+           RBLConsign.ClearSelection();
+           RBLSmalls.ClearSelection();
+           HttpUtility.HtmlEncode(txtBedrooms.Text = "");
+           HttpUtility.HtmlEncode(txtLivingRoom.Text="");
+           HttpUtility.HtmlEncode(txtDining.Text="");
+           HttpUtility.HtmlEncode(txtStairs.Text="");
+           HttpUtility.HtmlEncode(txtSQF.Text="");
+           HttpUtility.HtmlEncode(txtAttic.Text="");
+           HttpUtility.HtmlEncode(txtBasement.Text="");
+           HttpUtility.HtmlEncode(txtOut.Text="");
+           HttpUtility.HtmlEncode(txtGarage.Text="");
+           HttpUtility.HtmlEncode(txtLarge.Text="");
+           HttpUtility.HtmlEncode(txtCollectibles.Text="");
+           HttpUtility.HtmlEncode(txtAppliance.Text="");
+           RBLPiano.ClearSelection();
+           RBLMower.ClearSelection();
+           HttpUtility.HtmlEncode(txtDistance.Text="");
+           HttpUtility.HtmlEncode(txtObstacles.Text="");
+           HttpUtility.HtmlEncode(txtNote.Text="");
+            
+        }
+
+        protected void btnPopulate_Click(object sender, EventArgs e)
+        {
+
+            // random number 
+            Random random = new Random();
+            //create arrays to draw random data from
+            string[] num = { "2", "4", "9", "1", "11", "21", "15", "3", "30" };
+            string[] items = { "fridge", "sofa", "tv", "desk", "dining table" };
+            string[] exists = { "yes", "no" };
+            string[] obstacles = { "Rockey Path", "Tight Hallway", "tree" };
+            string[] notes = { "lot of stairs", "hard to get to house" };
+
+            HttpUtility.HtmlEncode(txtDate.Text = num[random.Next(0, num.Length)]);
+            RBLConsign.SelectedIndex = random.Next(0, 2);
+            RBLSmalls.SelectedIndex = random.Next(0, 2);
+            HttpUtility.HtmlEncode(txtBedrooms.Text = num[random.Next(0, num.Length)]); 
+            HttpUtility.HtmlEncode(txtLivingRoom.Text = exists[random.Next(0, exists.Length)]);
+            HttpUtility.HtmlEncode(txtDining.Text = exists[random.Next(0, exists.Length)]);
+            HttpUtility.HtmlEncode(txtStairs.Text = exists[random.Next(0, exists.Length)]);
+            HttpUtility.HtmlEncode(txtSQF.Text = num[random.Next(0, num.Length)]);
+            HttpUtility.HtmlEncode(txtAttic.Text = exists[random.Next(0, exists.Length)]);
+            HttpUtility.HtmlEncode(txtBasement.Text = exists[random.Next(0, exists.Length)]);
+            HttpUtility.HtmlEncode(txtOut.Text = num[random.Next(0, num.Length)]);
+            HttpUtility.HtmlEncode(txtGarage.Text = exists[random.Next(0, exists.Length)]);
+            HttpUtility.HtmlEncode(txtLarge.Text = items[random.Next(0, items.Length)]);
+            HttpUtility.HtmlEncode(txtCollectibles.Text = items[random.Next(0, items.Length)]);
+            HttpUtility.HtmlEncode(txtAppliance.Text = items[random.Next(0, items.Length)]);
+            RBLPiano.SelectedIndex = random.Next(0, 2);
+            RBLMower.SelectedIndex = random.Next(0, 2);
+            HttpUtility.HtmlEncode(txtDistance.Text = num[random.Next(0, num.Length)]);
+            HttpUtility.HtmlEncode(txtObstacles.Text = obstacles[random.Next(0, obstacles.Length)]); 
+            HttpUtility.HtmlEncode(txtNote.Text = notes[random.Next(0, notes.Length)]);
+
         }
     }
 }

@@ -81,6 +81,11 @@
                             <asp:Button ID="btnSaveSwitch" runat="server" Text="Save Employee Switch"   OnClick="btnSaveSwitch_Click"/>
                         </asp:TableCell>
                     </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Button ID="BtBack" runat="server" Text="Return to Customer"  OnClick="BtBack_Click"/>
+                        </asp:TableCell>
+                    </asp:TableRow>
                 </asp:Table>
             </asp:TableCell>
 
