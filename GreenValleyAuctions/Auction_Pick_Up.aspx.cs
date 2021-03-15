@@ -1,0 +1,188 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web.Configuration;
+namespace GreenValleyAuctions
+{
+    public partial class Auction_Pick_Up : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //On Page load grab customer info
+
+            string Query = "Select trim(FirstName) +' ' + trim(LastName) as CustomerName,CustomerPhone,CustomerEmail,IC.DateContacted ,MAX(IC.ContactID) as ID from Customer C inner join InitialContact IC on C.CustomerID = IC.CustomerID where c.customerID = 6 group by trim(FirstName) +' ' + trim(LastName),CustomerPhone,CustomerEmail,DateContacted; ";
+
+            //Define the connection to the Database
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+
+            //Create sql command 
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = Query;
+
+            sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryResult = sqlCommand.ExecuteReader();
+
+
+            while (queryResult.Read())
+            {
+                lblShowName.Text = queryResult["CustomerName"].ToString();
+                lblShowPhone.Text = queryResult["CustomerPhone"].ToString();
+                lblSHowEmai.Text = queryResult["CustomerEmail"].ToString();
+                lblShowDate.Text = queryResult["DateContacted"].ToString().Trim();
+            }
+
+            queryResult.Close();
+            sqlConnect.Close();
+        }
+
+        protected void btnPopulate_Click(object sender, EventArgs e)
+        {
+            // random number 
+            Random random = new Random();
+            //create arrays to draw random data from
+            string[] Date = {"1/25/2021","3/12/2021","6/7/2021","8/10/2021","2/1/2021","9/2/2021","10/20/2021","4/17/2021","10/1/2021","9/7/2021"  };
+            string[] Location = {"L1 ","H2","A1 ","A7","J8","K10","C3","D4" };
+           
+
+            //filling txtboxes
+            txtAppraisal.Text = Date[random.Next(0, Date.Length)];
+            txtAppraisalConfirmed.Text = Date[random.Next(0, Date.Length)];
+            txtBringIn.Text = Date[random.Next(0, Date.Length)];
+            txtBringInConfirmed.Text = Date[random.Next(0, Date.Length)];
+            txtLookAt.Text = Date[random.Next(0, Date.Length)];
+            txtLookAtConfirmed.Text = Date[random.Next(0, Date.Length)];
+            txtPickUp.Text = Date[random.Next(0, Date.Length)];
+            txtPickUpConfirmed.Text = Date[random.Next(0, Date.Length)];
+            txtSaleDateConfirmed.Text = Date[random.Next(0, Date.Length)];
+            txtLocation.Text = Location[random.Next(0, Location.Length)];
+            //select ddl
+
+            rblStorage.SelectedIndex = random.Next(0, 2);
+            if (rblStorage.SelectedValue.ToString().Equals("Yes"))
+            {
+                lblLocation.Visible = true;
+                txtLocation.Visible = true;
+            }
+            else
+            {
+                lblLocation.Visible = false;
+                txtLocation.Visible = false;
+            }
+        }
+
+            protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string Query = "select MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID; ";
+
+            //Define the connection to the Database
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+
+            //Create sql command 
+            SqlCommand sqlCommandID = new SqlCommand();
+            sqlCommandID.Connection = sqlConnect;
+            sqlCommandID.CommandType = CommandType.Text;
+            sqlCommandID.CommandText = Query;
+
+            sqlCommandID.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryResult = sqlCommandID.ExecuteReader();
+
+            string workFLow = "";
+            while (queryResult.Read())
+            {
+                workFLow = queryResult["WFID"].ToString();
+
+
+            }
+
+            queryResult.Close();
+            sqlConnect.Close();
+
+
+
+
+
+            // query to check workflow id
+            string sqlQueryID = "Insert into AuctionPickUP(AuctionPickUpID , BringInDate, PickupDate, LookAtDate, AppraisalDate," +
+                " BringInDateConfirmed,PickUpDateConfirmed ,LookAtDateConfirmed ,AppraisalDateConfirmed ,SaleDate ,Location ,WorkFlowID)" +
+                "Values((Select ISNULL(max(AuctionPickUPID)+1,1) from AuctionPickUP),@BringIn,@PickUp,@LookAt,@Appraisal,@BringInConfirmed,@PickUpConfirmed,@LookAtConfirmed,@AppraisalConfirmed" +
+                ",@Sale,@Location,@ID)";
+
+            //Create sql command to receive ID
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = sqlQueryID;
+
+           
+
+
+            //Parameter
+            sqlCommand.Parameters.AddWithValue("@Appraisal", HttpUtility.HtmlEncode(txtAppraisal.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@AppraisalConfirmed", HttpUtility.HtmlEncode(txtAppraisalConfirmed.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@BringIn", HttpUtility.HtmlEncode(txtBringIn.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@BringInConfirmed", HttpUtility.HtmlEncode(txtBringInConfirmed.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@Location", HttpUtility.HtmlEncode(txtLocation.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@LookAt", HttpUtility.HtmlEncode(txtLookAt.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@LookAtConfirmed", HttpUtility.HtmlEncode(txtLookAtConfirmed.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@PickUp", HttpUtility.HtmlEncode(txtPickUp.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@PickUpConfirmed", HttpUtility.HtmlEncode(txtPickUpConfirmed.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@Sale", HttpUtility.HtmlEncode(txtSaleDateConfirmed.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(workFLow));
+
+           
+
+
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryValue = sqlCommand.ExecuteReader();
+
+            // Close conecctions
+            queryValue.Close();
+            sqlConnect.Close();
+            Response.Redirect("Emp_Home.aspx");
+            Session["Customer"] = null;
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            
+            HttpUtility.HtmlEncode(txtAppraisal.Text = " ");
+            HttpUtility.HtmlEncode(txtAppraisalConfirmed.Text = " ");
+            HttpUtility.HtmlEncode(txtBringIn.Text = " ");
+            HttpUtility.HtmlEncode(txtBringInConfirmed.Text = " ");
+            HttpUtility.HtmlEncode(txtLocation.Text = " ");
+            HttpUtility.HtmlEncode(txtLookAt.Text = " ");
+            HttpUtility.HtmlEncode(txtLookAtConfirmed.Text = " ");
+            HttpUtility.HtmlEncode(txtPickUpConfirmed.Text = " ");
+            HttpUtility.HtmlEncode(txtSaleDateConfirmed.Text = " ");
+            HttpUtility.HtmlEncode(txtPickUp.Text = " ");
+
+
+        }
+
+        protected void rblStorage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rblStorage.SelectedValue.ToString().Equals("Yes"))
+            {
+                lblLocation.Visible = true;
+                txtLocation.Visible = true;
+            }
+            else
+            {
+                lblLocation.Visible = false;
+                txtLocation.Visible = false;
+            }
+        }
+    }
+}

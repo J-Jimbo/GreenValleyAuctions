@@ -47,7 +47,7 @@ namespace GreenValleyAuctions
             //----------------------------------------------------------------
             //On Page load grab customer info
 
-            string Query = "select trim(ServiceType) as ServiceType, MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID=WF.CustomerID inner join Customer C on WF.CustomerID= C.CustomerID   where C.CustomerID = @ID group by ServiceType;";
+            string Query = "select top 1 trim(ServiceType) as ServiceType, MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID=WF.WorkFlowID inner join Customer C on WF.CustomerID= C.CustomerID   where C.CustomerID = @ID group by ServiceType order by WFID DESC;";
 
            
 
@@ -61,13 +61,11 @@ namespace GreenValleyAuctions
             //open connection to send ID query 
             sqlConnect.Open();
             SqlDataReader queryResult = sqlCommand.ExecuteReader();
-
             
-            while (queryResult.Read())
-            {
+                while (queryResult.Read())
+                {
 
 
-               
                     if (queryResult["ServiceType"].ToString().Equals("Moving"))
                     {
                         btnCreateServiceEvent.Visible = false;
@@ -90,8 +88,20 @@ namespace GreenValleyAuctions
                         btnCompletion.Visible = false;
                     }
 
-                
+
+                }
+
+            if (queryResult.HasRows != true)
+            {
+                btnMoveForm.Visible = false;
+                btnMoveScreen.Visible = false;
+                btnAuctionPickup.Visible = false;
+                btnAuctionSchedule.Visible = false;
+                btnCompletion.Visible = false;
+
             }
+
+
 
             // Close conecctions
             queryResult.Close();
@@ -110,12 +120,12 @@ namespace GreenValleyAuctions
 
         protected void btnAuctionPickup_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Auction_Pick_Up.aspx");
         }
 
         protected void btnMoveForm_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Move_Form.aspx");
         }
 
         protected void btnMoveScreen_Click(object sender, EventArgs e)
@@ -125,7 +135,7 @@ namespace GreenValleyAuctions
 
         protected void btnCompletion_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Completion_Form.aspx");
         }
 
         protected void btnNote_Click(object sender, EventArgs e)

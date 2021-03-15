@@ -9,7 +9,7 @@
 	<meta name="description" content="The Hub"/>
 	<meta name="author" content="Lindsey McKim"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>The Hub Client Log In Page</title>
+	<title>Green Valley Auctions Employee Log In Page</title>
     
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen"/>
     <link href="css/custom.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="text-center">
-	    <h4> Client Log In </h4>
+	    <h4> Employee Log In </h4>
     </div>
 
 

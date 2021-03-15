@@ -63,5 +63,10 @@ namespace Lab2
         {
             Response.Redirect("Create_Customer.aspx");
         }
+
+        protected void lbViewCUstomers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

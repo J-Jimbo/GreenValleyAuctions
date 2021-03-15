@@ -72,6 +72,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Auction_Pick_Up.aspx" />
+    <Content Include="Completion_Form.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -91,6 +93,7 @@
     <Content Include="Initial_Conversation.aspx" />
     <Content Include="LandingPage.aspx" />
     <Content Include="Login_Page.aspx" />
+    <Content Include="Move_Form.aspx" />
     <Content Include="Move_Schedule_Screen.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -197,6 +200,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auction_Pick_Up.aspx.cs">
+      <DependentUpon>Auction_Pick_Up.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auction_Pick_Up.aspx.designer.cs">
+      <DependentUpon>Auction_Pick_Up.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Completion_Form.aspx.cs">
+      <DependentUpon>Completion_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Completion_Form.aspx.designer.cs">
+      <DependentUpon>Completion_Form.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Create_Customer.aspx.cs">
       <DependentUpon>Create_Customer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,6 +304,13 @@
     </Compile>
     <Compile Include="Login_Page.aspx.designer.cs">
       <DependentUpon>Login_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Move_Form.aspx.cs">
+      <DependentUpon>Move_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Move_Form.aspx.designer.cs">
+      <DependentUpon>Move_Form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Move_Schedule_Screen.aspx.cs">
       <DependentUpon>Move_Schedule_Screen.aspx</DependentUpon>
