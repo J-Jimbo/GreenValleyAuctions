@@ -15,6 +15,34 @@ namespace Lab2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ////On Page load grab customer info
+
+            //string Query = "SELECT MAX(WorkFlowID) as WorkFlowID, C.CustomerID from WorkFlow WF inner join Customer C  on WF.CustomerID=c.CustomerID where c.customerID = @ID group by C.CustomerID; ";
+
+            ////Define the connection to the Database
+            //SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+
+            ////Create sql command 
+            //SqlCommand sqlCommand = new SqlCommand();
+            //sqlCommand.Connection = sqlConnect;
+            //sqlCommand.CommandType = CommandType.Text;
+            //sqlCommand.CommandText = Query;
+
+            //sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            ////open connection to send ID query 
+            //sqlConnect.Open();
+            //SqlDataReader queryResult = sqlCommand.ExecuteReader();
+
+            //int workID;
+            //while (queryResult.Read())
+            //{
+            //    workID = int.Parse(queryResult["WorkFlowID"].ToString());
+            //    ddlHistory.SelectedValue = workID.ToString();
+                
+            //}
+
+            //queryResult.Close();
+            //sqlConnect.Close();
 
 
         }

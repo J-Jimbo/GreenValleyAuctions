@@ -97,7 +97,7 @@
         from WorkFlow wf inner join customer c on wf.CustomerID = c.CustomerID inner join Employee e on wf.EmployeeID = e.EmployeeID where CurrentStatus = 'In Progress'"
         UpdateCommand="UPDATE WorkFlow SET CompletionDate=@CompletionDate, Review=@Review, CurrentStatus=@CurrentStatus where WorkFlowID=@WorkFlowID" ></asp:SqlDataSource>
     <asp:SqlDataSource ID="datasrcEmployeeList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
-                SelectCommand="SELECT trim(EmployeeFirstName) + ' ' + trim(EmployeeLastName) as employeeName, EmployeeID from Employee"></asp:SqlDataSource>
+                SelectCommand="SELECT trim(EmployeeFirstName) + ' ' + ISNULL(trim(EmployeeLastName),'') as employeeName, EmployeeID from Employee"></asp:SqlDataSource>
      <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
                 SelectCommand="SELECT trim(FirstName) + ' ' + trim(LastName) as customerName, wf.WorkFlowID from Inventory i full join ServiceEvent SE  on i.ItemID = SE.ItemID  full join WorkFlow wf on wf.WorkFlowID = SE.WorkFlowID full join Customer c on c.CustomerID = WF.CustomerID where Wf.CurrentStatus = 'In Progress'"></asp:SqlDataSource>
     <asp:SqlDataSource ID="datasrcCustomerHistory" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 

@@ -49,6 +49,11 @@
                             <asp:Button ID="btnAuctionPickup" runat="server" Text="Create Auction PickUp" OnClick="btnAuctionPickup_Click"  width="200px"/>
                         </asp:TableCell>
                     </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Button ID="btnAddInventory" runat="server" Text="Add Item" OnClick="btnAddInventory_Click" Width="200px" />
+                        </asp:TableCell>
+                    </asp:TableRow>
                      <asp:TableRow>
                         <asp:TableCell>
                             <asp:Button ID="btnMoveForm" runat="server" Text="Create Move Form" OnClick="btnMoveForm_Click" width="200px"/>

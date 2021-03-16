@@ -15,7 +15,7 @@ namespace GreenValleyAuctions
         {
             //On Page load grab customer info
 
-            string Query = "Select trim(FirstName) +' ' + trim(LastName) as CustomerName,CustomerPhone,CustomerEmail,IC.DateContacted ,MAX(IC.ContactID) as ID from Customer C inner join InitialContact IC on C.CustomerID = IC.CustomerID where c.customerID = 6 group by trim(FirstName) +' ' + trim(LastName),CustomerPhone,CustomerEmail,DateContacted; ";
+            string Query = "Select trim(FirstName) +' ' + trim(LastName) as CustomerName,CustomerPhone,CustomerEmail,IC.DateContacted ,MAX(IC.ContactID) as ID from Customer C inner join InitialContact IC on C.CustomerID = IC.CustomerID where c.customerID = @ID group by trim(FirstName) +' ' + trim(LastName),CustomerPhone,CustomerEmail,DateContacted; ";
 
             //Define the connection to the Database
             SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
