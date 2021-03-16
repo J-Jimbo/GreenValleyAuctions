@@ -105,7 +105,7 @@ namespace Lab3
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Customer_Login.aspx");
+            Response.Redirect("Login_Page.aspx");
         }
 
         protected void cvFirstName_ServerValidate(object source, ServerValidateEventArgs args)
