@@ -40,7 +40,7 @@
     </asp:Table>
 
       <%--sql Data scources --%>
-            <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+            <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="SELECT trim(FirstName) + ' ' + trim(LastName) as customerName, wf.WorkFlowID from Inventory i full join ServiceEvent SE  on i.ItemID = SE.ItemID  full join WorkFlow wf on wf.WorkFlowID = SE.WorkFlowID full join Customer c on c.CustomerID = WF.CustomerID where Wf.CurrentStatus = 'In Progress'"></asp:SqlDataSource>
             
 </asp:Content>

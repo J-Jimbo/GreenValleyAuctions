@@ -19,7 +19,7 @@ namespace GreenValleyAuctions
             string Query = "select trim(c.CustomerAddress) as CA,trim(M.DestinationAddress) as DA,trim(c.firstname)+' '+trim(c.lastname) as CustomerName,c.CustomerPhone,IC.DateContacted,C.HereAbout ,MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID inner join Moving M on M.ServiceID = SE.ServiceID inner join InitialContact IC on IC.CustomerID = C.CustomerID where C.CustomerID = @ID group by c.CustomerAddress,M.DestinationAddress,trim(c.firstname)+' '+trim(c.lastname),c.CustomerPhone,IC.DateContacted,C.HereAbout; ";
 
             //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Create sql command 
             SqlCommand sqlCommand = new SqlCommand();
@@ -53,7 +53,7 @@ namespace GreenValleyAuctions
             string Query = "select MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID; ";
 
             //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Create sql command 
             SqlCommand sqlCommandID = new SqlCommand();
@@ -78,7 +78,7 @@ namespace GreenValleyAuctions
             sqlConnect.Close();
 
             //Connecting to Database 
-            SqlConnection sqlConnectMF = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnectMF = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
             SqlCommand sqlCommandMF = new SqlCommand();
             sqlCommandMF.Connection = sqlConnectMF;
             sqlCommandMF.CommandType = CommandType.Text;

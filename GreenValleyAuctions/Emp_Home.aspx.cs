@@ -35,7 +35,7 @@ namespace Lab2
                 string edit = "Update CustomerRequest Set Status = 'Completed' where CustomerRequestID = @Request";
 
                 //Define the connection to the Database
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
                 //Create sql command to receive ID
                 SqlCommand sqlCommandID = new SqlCommand();

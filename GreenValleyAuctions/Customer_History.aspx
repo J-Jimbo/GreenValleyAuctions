@@ -65,7 +65,7 @@
         
     
     <%--SQL DATA Sources  --%> 
-   <asp:SqlDataSource ID="datasrcWorkFlow" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>"  
+   <asp:SqlDataSource ID="datasrcWorkFlow" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>"  
        SelectCommand="Select trim(FirstName) + ' ' + trim(LastName) as FullName,EngagmentDate,CompletionDate,Review,CurrentStatus 
        from WorkFlow wf inner join customer c on c.CustomerID = wf.CustomerID  
        where  FirstName = @FullName or  LastName = @FullName or trim(FirstName) + ' ' + trim(LastName) = @FullName " >

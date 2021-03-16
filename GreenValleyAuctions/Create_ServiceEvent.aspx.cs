@@ -16,7 +16,9 @@ namespace Lab2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+           
+            
+
             // set visiblity of destination address
             if (dplServiceType.SelectedValue.Equals("Moving"))
                 tblDestination.Visible = true;
@@ -38,7 +40,7 @@ namespace Lab2
                     string sqlQuery = "SELECT * from ServiceRequest sr inner join CustomerRequest cr on sr.CustomerRequestID = cr.CustomerRequestID where sr.CustomerRequestID = @CustomerRequestID";
 
                     //Define the connection to the Database
-                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
                     //Create sql command
                     SqlCommand sqlCommandID = new SqlCommand();
@@ -102,7 +104,7 @@ namespace Lab2
             if (Page.IsValid == true)
             {
                 //define connection to the DB
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
                 // query to check workflow id
                 string sqlQueryID = "SELECT MAX(WorkFlowID) from WorkFlow";
@@ -393,7 +395,7 @@ namespace Lab2
             string sqlQueryCompletionDate = "Select CurrentStatus from Customer c inner join WorkFlow wf on c.CustomerID = wf.CustomerID  where c.CustomerID = " + customer;
 
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
 

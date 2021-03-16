@@ -18,7 +18,7 @@ namespace GreenValleyAuctions
             string Query = "Select trim(FirstName) +' ' + trim(LastName) as CustomerName,CustomerPhone,CustomerEmail,IC.DateContacted ,MAX(IC.ContactID) as ID from Customer C inner join InitialContact IC on C.CustomerID = IC.CustomerID where c.customerID = @ID group by trim(FirstName) +' ' + trim(LastName),CustomerPhone,CustomerEmail,DateContacted; ";
 
             //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Create sql command 
             SqlCommand sqlCommand = new SqlCommand();
@@ -84,7 +84,7 @@ namespace GreenValleyAuctions
             string Query = "select MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID; ";
 
             //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Create sql command 
             SqlCommand sqlCommandID = new SqlCommand();

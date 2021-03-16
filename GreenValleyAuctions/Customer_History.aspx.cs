@@ -27,7 +27,7 @@ namespace Lab3
             txtNoteBody.Text = "";
 
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             string sqlQueryID = "SELECT distinct c.FirstName, c.LastName,trim(FirstName) + ' ' + trim(LastName) as FullName " +
                 " from Inventory i full join ServiceEvent SE  on i.ItemID = SE.ItemID  full join WorkFlow wf on wf.WorkFlowID = SE.WorkFlowID " +
@@ -64,7 +64,7 @@ namespace Lab3
         protected void dtvTicketHistory_PageIndexChanged(object sender, EventArgs e)
         {
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             string sqlQuery = "Select  WFHistoryID, ISNUll(TicketName,'No Note') as TicketName from WorkFlow wf full join customer c on c.CustomerID = wf.CustomerID full join WorkFlowHistory wfh on wf.WorkFlowID = wfh.WorkFlowID where trim(FirstName) +' ' + trim(LastName) = @CustomerName and wf.EngagmentDate = @CustomerDate";
 
@@ -93,7 +93,7 @@ namespace Lab3
 
             //---------------------------------------------------------------------------
             //define connection to the DB
-            SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
                 //----------------------------------------------------------------------------------------
                 // query to check employee history 
@@ -134,7 +134,7 @@ namespace Lab3
         protected void lbNoteTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
             // query to check workflow id

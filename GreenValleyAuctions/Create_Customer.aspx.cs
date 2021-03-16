@@ -22,6 +22,15 @@ namespace Lab2
                 btnNextProcess.Visible = true;
                 btnNext.Visible = false;
 
+
+                txtFirstName.Enabled = false;
+                txtLastName.Enabled = false;
+                txtEmail.Enabled = false;
+                txtStreet.Enabled = false;
+                txtCIty.Enabled = false;
+                txtState.Enabled = false;
+                txtZip.Enabled = false;
+                txtPhone.Enabled = false;
                 //Parse Service request info
 
                 string sqlQuery = "SELECT * from CustomerRequest where CustomerRequestID = @CustomerRequestID";
@@ -30,7 +39,7 @@ namespace Lab2
 
 
                 //Define the connection to the Database
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
                 //Create sql command 
@@ -81,50 +90,76 @@ namespace Lab2
             string[] hereAbout = { "Radio Ad", "Email Ad", "From a Friend", "News Paper", "Commercial" };
             string[] other = { "Bat Signal", "Morse Code", "Carrier Pigeon" };
 
-            //filling txtboxes
-            txtFirstName.Text = firstName[random.Next(0, firstName.Length)];
-            txtLastName.Text = lastName[random.Next(0, lastName.Length)];
-            txtStreet.Text = street[random.Next(0, street.Length)];
-            txtZip.Text = zip[random.Next(0, zip.Length)];
-            txtCIty.Text = city[random.Next(0, city.Length)];
-            txtState.Text = state[random.Next(0, state.Length)];
-            txtPhone.Text = phone[random.Next(0, phone.Length)];
-            txtEmail.Text = email[random.Next(0, email.Length)];
-            txtHear.Text = hereAbout[random.Next(0, hereAbout.Length)];
-            //select ddl
-            ddlContact.SelectedIndex = random.Next(0, 4);
-            rblPhoneType.SelectedIndex = random.Next(0, 3);
-            if (ddlContact.SelectedValue.Equals("Other"))
+            if (Session["ServiceRequest"] != null)
             {
-                lblOther.Visible = true;
-                txtOther.Visible = true;
-                txtOther.Text = other[random.Next(0, other.Length)].ToString();
+                txtHear.Text = hereAbout[random.Next(0, hereAbout.Length)];
+                //select ddl
+                ddlContact.SelectedIndex = random.Next(0, 4);
+                rblPhoneType.SelectedIndex = random.Next(0, 3);
+                if (ddlContact.SelectedValue.Equals("Other"))
+                {
+                    lblOther.Visible = true;
+                    txtOther.Visible = true;
+                    txtOther.Text = other[random.Next(0, other.Length)].ToString();
+                }
+                else
+                {
+                    lblOther.Visible = false;
+                    txtOther.Visible = false;
+                    txtOther.Text = "";
+
+                }
+
             }
             else
             {
-                lblOther.Visible = false;
-                txtOther.Visible = false;
-                txtOther.Text = "";
-                
+
+
+
+                //filling txtboxes
+                txtFirstName.Text = firstName[random.Next(0, firstName.Length)];
+                txtLastName.Text = lastName[random.Next(0, lastName.Length)];
+                txtStreet.Text = street[random.Next(0, street.Length)];
+                txtZip.Text = zip[random.Next(0, zip.Length)];
+                txtCIty.Text = city[random.Next(0, city.Length)];
+                txtState.Text = state[random.Next(0, state.Length)];
+                txtPhone.Text = phone[random.Next(0, phone.Length)];
+                txtEmail.Text = email[random.Next(0, email.Length)];
+                txtHear.Text = hereAbout[random.Next(0, hereAbout.Length)];
+                //select ddl
+                ddlContact.SelectedIndex = random.Next(0, 4);
+                rblPhoneType.SelectedIndex = random.Next(0, 3);
+                if (ddlContact.SelectedValue.Equals("Other"))
+                {
+                    lblOther.Visible = true;
+                    txtOther.Visible = true;
+                    txtOther.Text = other[random.Next(0, other.Length)].ToString();
+                }
+                else
+                {
+                    lblOther.Visible = false;
+                    txtOther.Visible = false;
+                    txtOther.Text = "";
+
+                }
             }
+                //create arrays to draw random data from
+                string[] quantity = { "2  ", "1 ", "1 ", "14 " };
+                string[] sell = { "chair", "sofa", "guitar", "bed" };
+                string[] note = { "fragile", "want it sold quick", "want a reserve price" };
 
-            //create arrays to draw random data from
-            string[] quantity = { "2  ", "1 ", "1 ", "14 " };
-            string[] sell = { "chair", "sofa", "guitar", "bed" };
-            string[] note = { "fragile", "want it sold quick", "want a reserve price" };
 
-
-            //filling txtboxes
-            txtNote.Text = note[random.Next(0, note.Length)];
-            txtQuanity.Text = quantity[random.Next(0, quantity.Length)];
-            txtWhatToSell.Text = sell[random.Next(0, sell.Length)];
-            //select ddl
-            CblServices.SelectedIndex = random.Next(0, 4);
-            rblLookAt.SelectedIndex = random.Next(0, 2);
-            rblEstate.SelectedIndex = random.Next(0, 2);
-            rblDownsizing.SelectedIndex = random.Next(0, 2);
-            rblMoving.SelectedIndex = random.Next(0, 2);
-
+                //filling txtboxes
+                txtNote.Text = note[random.Next(0, note.Length)];
+                txtQuanity.Text = quantity[random.Next(0, quantity.Length)];
+                txtWhatToSell.Text = sell[random.Next(0, sell.Length)];
+                //select ddl
+                CblServices.SelectedIndex = random.Next(0, 4);
+                rblLookAt.SelectedIndex = random.Next(0, 2);
+                rblEstate.SelectedIndex = random.Next(0, 2);
+                rblDownsizing.SelectedIndex = random.Next(0, 2);
+                rblMoving.SelectedIndex = random.Next(0, 2);
+            
 
         }
 
@@ -138,7 +173,7 @@ namespace Lab2
             {
                 
                     //Define the connection to the Database
-                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
                     sqlConnect.Open();
                 int customerID = 0;
                 if (rblChoice.SelectedValue.Equals("New Customer"))
@@ -328,7 +363,7 @@ namespace Lab2
 
 
             //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
             //Create sql command to receive ID

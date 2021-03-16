@@ -134,7 +134,7 @@
             </asp:Table>
 			<br />
               <%--sql Data scources --%>
-            <asp:SqlDataSource ID="datasrcNotifications" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+            <asp:SqlDataSource ID="datasrcNotifications" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="SELECT trim(FirstName) + ' ' + trim(LastName)+'--'+CAST(DateCreated as VARCHAR)+'-->'+ Status as CustomerName, cr.CustomerRequestID, DateCreated from ServiceRequest sr inner join CustomerRequest cr  on sr.CustomerRequestID = cr.CustomerRequestID order by DateCreated DESC"></asp:SqlDataSource>
          
         </div>

@@ -41,7 +41,7 @@
     </form>
     <footer>
          <br />
-        Created By: Jimmy Magnier and Jon Asay
+        Created By: Madison Consulting 04
     </footer>
 </body>
 </html>

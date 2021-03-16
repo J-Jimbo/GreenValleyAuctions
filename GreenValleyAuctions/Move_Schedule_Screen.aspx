@@ -235,8 +235,8 @@
         </asp:TableRow>
     </asp:Table>
     <%--sql Data Sources--%>
-    <asp:SqlDataSource ID="datasrcTruckList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+    <asp:SqlDataSource ID="datasrcTruckList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="select EquipmentName from Equipment; "></asp:SqlDataSource>
-    <asp:SqlDataSource ID="datasrcMovers" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+    <asp:SqlDataSource ID="datasrcMovers" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="Select trim(EmployeeFirstName)+ ' '+ trim(ISNULL(EmployeeLastName,'')) as Worker from Employee; "></asp:SqlDataSource>
 </asp:Content>

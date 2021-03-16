@@ -181,7 +181,7 @@
                         <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" CausesValidation="false"/>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnBack" runat="server" Text="Return to Customer" OnClick="btnBack_Click" />
+                        <asp:Button ID="btnBack" runat="server" Text="Return to Customer" OnClick="btnBack_Click" CausesValidation="false" />
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:Button ID="btnNotes" runat="server" Text="Go to Notes"  OnClick="btnNotes_Click" CausesValidation="false"/>
@@ -190,9 +190,9 @@
              </asp:Table>
 
             <%--sql Data scources --%>
-            <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+            <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="SELECT trim(FirstName) + ' ' + trim(LastName) as customerName, customerID from Customer"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="datasrcEmployeeList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+            <asp:SqlDataSource ID="datasrcEmployeeList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="SELECT trim(EmployeeFirstName) + ' ' + trim(ISNULL(EmployeeLastName,'')) as employeeName, EmployeeID from Employee"></asp:SqlDataSource>
      
 

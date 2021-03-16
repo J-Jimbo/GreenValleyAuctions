@@ -37,7 +37,7 @@ namespace GreenValleyAuctions
             string Query = "INSERT INTO Inventory (ItemID, ItemDescription, ItemCost, InventoryDate) Values ((Select ISNULL(max(ItemID)+1,1) from Inventory),@Item,@ItemCost,GetDate()) ";
 
             //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Create sql command 
             SqlCommand sqlCommand = new SqlCommand();

@@ -21,7 +21,7 @@ namespace GreenValleyAuctions
             String sqlQuerySearch = "SELECT FirstName + LastName as 'CustomerName', CustomerAddress, CustomerPhone, CustomerEmail FROM Customer WHERE FirstName + LastName LIKE '%" + txtSearch.Text + "%'";
 
             //sql Connection
-            SqlConnection sqlConnectSearch = new SqlConnection("Server = Localhost; Database = Lab3;Trusted_Connection = Yes;");
+            SqlConnection sqlConnectSearch = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
             SqlDataAdapter sqlAdapterSearch = new SqlDataAdapter(sqlQuerySearch, sqlConnectSearch);
 
             DataTable dtforSearch = new DataTable();
@@ -70,7 +70,7 @@ namespace GreenValleyAuctions
             string Query = "select MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID; ";
 
             //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Create sql command 
             SqlCommand sqlCommandID = new SqlCommand();
@@ -95,7 +95,7 @@ namespace GreenValleyAuctions
             sqlConnect.Close();
 
             //Connecting to Database 
-            SqlConnection sqlConnectCF = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnectCF = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
             SqlCommand sqlCommandCF = new SqlCommand();
             sqlCommandCF.Connection = sqlConnectCF;
             sqlCommandCF.CommandType = CommandType.Text;
@@ -131,7 +131,7 @@ namespace GreenValleyAuctions
 
             //Sql Connection 
 
-            SqlConnection sqlConnectHisotry = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnectHisotry = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
             SqlDataAdapter sqlAdapterHistory = new SqlDataAdapter(sqlQueryHistory, sqlConnectHisotry);
 
             DataTable dtforHistory = new DataTable();

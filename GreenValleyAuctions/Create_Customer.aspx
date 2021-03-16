@@ -264,6 +264,6 @@
                 </asp:TableRow>
              </asp:Table>
     <%--Data Sources--%>
-    <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+    <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="SELECT distinct trim(FirstName) + ' ' + trim(LastName) as customerName, c.CustomerID from Inventory i full join ServiceEvent SE  on i.ItemID = SE.ItemID  full join WorkFlow wf on wf.WorkFlowID = SE.WorkFlowID full join Customer c on c.CustomerID = WF.CustomerID where NOT Wf.CurrentStatus = 'In Progress' order by customerName"></asp:SqlDataSource>
 </asp:Content>

@@ -24,7 +24,7 @@ namespace Lab2
             CustomerGrid.DataSource = null;
             CustomerGrid.DataBind();
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             int customerID = int.Parse(ddlCustomer.SelectedValue);
 
@@ -57,7 +57,7 @@ namespace Lab2
             // query to grab customer data
             string sqlQueryID = "SELECT ServiceDate, ItemDescription, ServiceType from Inventory i full join ServiceEvent SE  on i.ItemID = SE.ItemID  full join WorkFlow wf on wf.WorkFlowID = SE.WorkFlowID full join Customer c on c.CustomerID = WF.CustomerID where c.CustomerID = c.CustomerID ORDER BY ServiceDate";
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
             SqlDataAdapter sqlAdaptor = new SqlDataAdapter(sqlQueryID, sqlConnect);
@@ -75,7 +75,7 @@ namespace Lab2
             ServiceGrid.DataSource = null;
             ServiceGrid.DataBind();
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Service Type
             string serviceType = ddlService.SelectedValue;
@@ -106,7 +106,7 @@ namespace Lab2
             ServiceGrid.DataSource = null;
             ServiceGrid.DataBind();
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Service Type
             string serviceType = ddlService.SelectedValue;

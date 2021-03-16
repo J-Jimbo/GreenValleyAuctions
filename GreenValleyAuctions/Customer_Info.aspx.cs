@@ -18,7 +18,7 @@ namespace GreenValleyAuctions
             string sqlQuery = "Select trim(FirstName)+' '+trim(LastName) as Name,CustomerPhone,CustomerEmail,CustomerAddress from Customer where customerID = @ID;";
 
             //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
             //Create sql command
             SqlCommand sqlCommandID = new SqlCommand();
@@ -160,86 +160,6 @@ namespace GreenValleyAuctions
             Response.Redirect("Add_Inventory.aspx");
         }
 
-        //protected void ddlHistory_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    //define connection to the DB
-        //    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
-
-
-        //    // query to check workflow id
-        //    //try: dddl/listbox catch: if no service event created
-        //    try
-        //    {
-        //        int workFlowID = int.Parse(ddlHistory.SelectedValue);
-
-
-        //        string sqlQueryID = "SELECT ISNULL(TicketName, 'Employee Switch') as TicketName, WFHistoryID from WorkFlowHistory wfh inner join WorkFlow wf on wfh.WorkFlowID = wf.WorkFlowID  where wf.WorkFlowID = " + workFlowID;
-        //        //Create sql command to receive ID
-        //        SqlCommand sqlCommandID = new SqlCommand();
-        //        sqlCommandID.Connection = sqlConnect;
-        //        sqlCommandID.CommandType = CommandType.Text;
-        //        sqlCommandID.CommandText = sqlQueryID;
-
-        //        //open connection to send ID query 
-        //        sqlConnect.Open();
-        //        SqlDataReader queryValue = sqlCommandID.ExecuteReader();
-        //        lbTitleList.Items.Clear();
-        //        txtNoteBody.Text = " ";
-
-        //        while (queryValue.Read())
-        //        {
-
-        //            lbTitleList.Items.Add(queryValue["TicketName"].ToString());
-
-
-        //        }
-
-        //        // close connection
-
-        //        queryValue.Close();
-        //        sqlConnect.Close();
-
-
-        //        //----------------------------------------------------------------------------------------
-        //        // query to check employee history 
-
-        //        string sqlQueryEmployee = "SELECT WFHistoryID, EmployeeFirstName + ' '+ EmployeeLastName as employeeName from WorkFlowHistory wfh inner join WorkFlow wf on wfh.WorkFlowID = wf.WorkFlowID inner join Employee e on wfh.EmployeeID = e.EmployeeID  where wf.WorkFlowID = " + workFlowID;
-
-
-        //        //Create sql command to receive EMps
-        //        SqlCommand sqlCommandEmployee = new SqlCommand();
-        //        sqlCommandEmployee.Connection = sqlConnect;
-        //        sqlCommandEmployee.CommandType = CommandType.Text;
-        //        sqlCommandEmployee.CommandText = sqlQueryEmployee;
-
-        //        sqlConnect.Open();
-        //        SqlDataReader queryAnswer = sqlCommandEmployee.ExecuteReader();
-
-        //        lbEmployeeList.Items.Clear();
-        //        while (queryAnswer.Read())
-        //        {
-
-
-        //            lbEmployeeList.Items.Add(queryAnswer["employeeName"].ToString());
-
-        //        }
-
-        //        // close connection
-
-        //        queryAnswer.Close();
-        //        sqlConnect.Close();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        lbTitleList.Items.Clear();
-        //        lbEmployeeList.Items.Clear();
-        //        txtNoteBody.Text = "No Service Event Created For Selected Customer";
-        //    }
-        //}
-
-        //protected void lbTitleList_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-
-        //}
+        
     }
 }

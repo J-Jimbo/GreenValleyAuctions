@@ -15,42 +15,14 @@ namespace Lab2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ////On Page load grab customer info
-
-            //string Query = "SELECT MAX(WorkFlowID) as WorkFlowID, C.CustomerID from WorkFlow WF inner join Customer C  on WF.CustomerID=c.CustomerID where c.customerID = @ID group by C.CustomerID; ";
-
-            ////Define the connection to the Database
-            //SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
-
-            ////Create sql command 
-            //SqlCommand sqlCommand = new SqlCommand();
-            //sqlCommand.Connection = sqlConnect;
-            //sqlCommand.CommandType = CommandType.Text;
-            //sqlCommand.CommandText = Query;
-
-            //sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
-            ////open connection to send ID query 
-            //sqlConnect.Open();
-            //SqlDataReader queryResult = sqlCommand.ExecuteReader();
-
-            //int workID;
-            //while (queryResult.Read())
-            //{
-            //    workID = int.Parse(queryResult["WorkFlowID"].ToString());
-            //    ddlHistory.SelectedValue = workID.ToString();
-                
-            //}
-
-            //queryResult.Close();
-            //sqlConnect.Close();
-
+           
 
         }
 
         protected void btnSaveSwitch_Click(object sender, EventArgs e)
         {
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
             // query to check workflow id
@@ -116,7 +88,7 @@ namespace Lab2
         protected void lbTitleList_SelectedIndexChanged(object sender, EventArgs e)
         {
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
             // query to check workflow id
@@ -149,7 +121,7 @@ namespace Lab2
         protected void ddlHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
             //define connection to the DB
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
             // query to check workflow id
@@ -189,7 +161,7 @@ namespace Lab2
             //----------------------------------------------------------------------------------------
             // query to check employee history 
 
-            string sqlQueryEmployee = "SELECT WFHistoryID, EmployeeFirstName + ' '+ EmployeeLastName as employeeName from WorkFlowHistory wfh inner join WorkFlow wf on wfh.WorkFlowID = wf.WorkFlowID inner join Employee e on wfh.EmployeeID = e.EmployeeID  where wf.WorkFlowID = " + workFlowID;
+            string sqlQueryEmployee = "SELECT WFHistoryID, EmployeeFirstName + ' '+ ISNULL(EmployeeLastName,'') as employeeName from WorkFlowHistory wfh inner join WorkFlow wf on wfh.WorkFlowID = wf.WorkFlowID inner join Employee e on wfh.EmployeeID = e.EmployeeID  where wf.WorkFlowID = " + workFlowID;
 
 
             //Create sql command to receive EMps

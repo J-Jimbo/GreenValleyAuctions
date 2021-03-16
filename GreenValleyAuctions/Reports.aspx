@@ -46,7 +46,7 @@
 
 
                <%--sql Data scources --%>
-            <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:Lab3 %>" 
+            <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="SELECT FirstName + ' ' + LastName as customerName, customerID from Customer"></asp:SqlDataSource>
 
 
