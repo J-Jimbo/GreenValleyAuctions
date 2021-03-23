@@ -117,7 +117,7 @@ namespace GreenValleyAuctions
 
         protected void btnAuctionSchedule_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("Auction_Scheduling.aspx");
         }
 
         protected void btnAuctionPickup_Click(object sender, EventArgs e)

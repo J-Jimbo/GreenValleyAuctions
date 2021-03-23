@@ -74,6 +74,7 @@
   <ItemGroup>
     <Content Include="Add_Inventory.aspx" />
     <Content Include="Auction_Pick_Up.aspx" />
+    <Content Include="Auction_Scheduling.aspx" />
     <Content Include="Completion_Form.aspx" />
     <Content Include="Confirm_Logout.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="Auction_Pick_Up.aspx.designer.cs">
       <DependentUpon>Auction_Pick_Up.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auction_Scheduling.aspx.cs">
+      <DependentUpon>Auction_Scheduling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auction_Scheduling.aspx.designer.cs">
+      <DependentUpon>Auction_Scheduling.aspx</DependentUpon>
     </Compile>
     <Compile Include="Completion_Form.aspx.cs">
       <DependentUpon>Completion_Form.aspx</DependentUpon>
