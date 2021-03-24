@@ -116,7 +116,7 @@
         <asp:TableRow ID="whichtrucks" Visible="false">
             <asp:TableCell>
                 <asp:Label ID="lblTrucks" runat="server" Text="Select which Trucks: "></asp:Label>
-                <asp:DropDownList ID="ddlTrucks" runat="server" DataTextField="EquipmentName" DataValueField="EquipmentName" DataSourceID="datasrcTruckList"></asp:DropDownList>
+                <asp:DropDownList ID="ddlTrucks" runat="server" DataTextField="EquipmentName" DataValueField="EquipmentID" DataSourceID="datasrcTruckList"></asp:DropDownList>
                 <asp:Button ID="btnAdd" runat="server" Text="Add Truck" OnClick="btnAdd_Click" CausesValidation="false"/>
                 <asp:Button ID="btnRemoveTruck" runat="server" Text="Remove Truck" OnClick="btnRemoveTruck_Click" CausesValidation="false"/>
             </asp:TableCell>
@@ -136,7 +136,7 @@
         <asp:TableRow ID="whichCrew" Visible="false">
             <asp:TableCell>
                 <asp:Label ID="lblSelecetMovers" runat="server" Text="Select which Employee: "></asp:Label>
-                <asp:DropDownList ID="ddlMovers" runat="server"  DataTextField="Worker" DataValueField="Worker" DataSourceID="datasrcMovers"></asp:DropDownList>
+                <asp:DropDownList ID="ddlMovers" runat="server"  DataTextField="Worker" DataValueField="EmployeeID" DataSourceID="datasrcMovers"></asp:DropDownList>
                 <asp:Button ID="btnAddMover" runat="server" Text="Add Movers" OnClick="btnAddMover_Click" CausesValidation="false"/>
                 <asp:Button ID="btnRemove" runat="server" Text="Remove Movers" OnClick="btnRemove_Click" CausesValidation="false"/>
             </asp:TableCell>
@@ -146,11 +146,22 @@
                 <asp:ListBox ID="lbMovers" runat="server"></asp:ListBox>
             </asp:TableCell>
         </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" />
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"/>
+            </asp:TableCell>
+        </asp:TableRow>
         
     </asp:Table>
      <%--sql Data Sources--%>
     <asp:SqlDataSource ID="datasrcTruckList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
-                SelectCommand="select EquipmentName from Equipment; "></asp:SqlDataSource>
+                SelectCommand="select EquipmentName, EquipmentID from Equipment; "></asp:SqlDataSource>
     <asp:SqlDataSource ID="datasrcMovers" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
-                SelectCommand="Select trim(EmployeeFirstName)+ ' '+ trim(ISNULL(EmployeeLastName,'')) as Worker from Employee; "></asp:SqlDataSource>
+                SelectCommand="Select trim(EmployeeFirstName)+ ' '+ trim(ISNULL(EmployeeLastName,'')) as Worker, EmployeeID from Employee; "></asp:SqlDataSource>
 </asp:Content>
