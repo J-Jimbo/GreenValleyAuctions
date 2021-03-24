@@ -123,7 +123,9 @@ div.c {
   width: 120%;
 }
 
-
+.li {
+  color: grey;
+}
 
 .form-line {
   padding-top: 10px;
