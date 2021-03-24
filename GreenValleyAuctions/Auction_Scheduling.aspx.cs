@@ -58,6 +58,7 @@ namespace GreenValleyAuctions
             }
             else
             {
+                hfFileInv.Value = "";
                 invForm.Visible = false;
                 RowLookAt.Visible = false;
                 UploadList.Visible = false;
@@ -77,23 +78,30 @@ namespace GreenValleyAuctions
         }
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            lbTrucks.Items.Add(ddlTrucks.SelectedItem.Text.ToString());
+            ListItem truck = new ListItem(ddlTrucks.SelectedItem.Text.ToString(), ddlTrucks.SelectedValue.ToString());
+            lbTrucks.Items.Add(truck);
+            ddlTrucks.Items.Remove(ddlTrucks.Items.FindByValue(truck.Value));
         }
 
         protected void btnAddMover_Click(object sender, EventArgs e)
         {
-            lbMovers.Items.Add(ddlMovers.SelectedItem.Text.ToString());
+            ListItem mover = new ListItem(ddlMovers.SelectedItem.Text.ToString(), ddlMovers.SelectedValue.ToString());
+            lbMovers.Items.Add(mover);
+            ddlMovers.Items.Remove(ddlMovers.Items.FindByValue(mover.Value));
         }
 
         protected void btnRemoveTruck_Click(object sender, EventArgs e)
         {
-            lbTrucks.Items.Remove(lbTrucks.SelectedValue);
-
+            ListItem truck = new ListItem(lbTrucks.SelectedItem.Text.ToString(), lbTrucks.SelectedValue.ToString());
+            lbTrucks.Items.Remove(lbTrucks.SelectedItem);
+            ddlTrucks.Items.Add(truck);
         }
 
         protected void btnRemove_Click(object sender, EventArgs e)
         {
-            lbMovers.Items.Remove(lbMovers.SelectedValue);
+            ListItem mover = new ListItem(lbMovers.SelectedItem.Text.ToString(), lbMovers.SelectedValue.ToString());
+            lbMovers.Items.Remove(lbMovers.SelectedItem);
+            ddlMovers.Items.Add(mover);
         }
 
         protected void btnFile_Click(object sender, EventArgs e)
@@ -115,6 +123,7 @@ namespace GreenValleyAuctions
             //save to trucks
             //save to employees
             //save to photos (loop through lists to save file paths )
+            string strPath = "";
             string LookAt = "";
             if (cbLookAt.Checked.Equals(true))
             {
@@ -143,7 +152,15 @@ namespace GreenValleyAuctions
             sqlCommand.Parameters.AddWithValue("@Supplies", HttpUtility.HtmlEncode(txtSupplies.Text.ToString()));
             sqlCommand.Parameters.AddWithValue("@NumBoxes", HttpUtility.HtmlEncode(txtNumBoxes.Text.ToString()));
             sqlCommand.Parameters.AddWithValue("@BoxType", HttpUtility.HtmlEncode(txtBoxType.Text.ToString()));
-            sqlCommand.Parameters.AddWithValue("@InventoryFile", HttpUtility.HtmlEncode(Request.PhysicalApplicationPath + "Auction_Photos\\" + hfFileInv.Value.ToString()));
+            if (cbLookAt.Checked.Equals(true))
+            {
+                //string path
+                strPath = Request.PhysicalApplicationPath + "Auction_Photos\\" + hfFileInv.Value.ToString();
+                fuInventory.SaveAs(strPath);
+                sqlCommand.Parameters.AddWithValue("@InventoryFile", HttpUtility.HtmlEncode(strPath));
+            }
+            else
+                sqlCommand.Parameters.AddWithValue("@InventoryFile", HttpUtility.HtmlEncode(""));
 
             //open connection to send ID query 
             sqlConnect.Open();
@@ -156,15 +173,18 @@ namespace GreenValleyAuctions
             //loop through list of trucks
             foreach (ListItem TRUCK in lbTrucks.Items)
             {
+
                 
-                string SecondQuery = "Insert into ASEquipment(SchedulingFormID, EquipmentID,)Values((Select max(SchedulingFormID) from AuctionSchedulingForm),Cast( @EquipmentID as int)); ";
+                string SecondQuery = "Insert into ASEquipment(SchedulingFormID, EquipmentID)Values((Select max(SchedulingFormID) from AuctionSchedulingForm),(Select EquipmentID from Equipment where EquipmentID  = @EquipmentID))";
                 //Create sql command 
                 SqlCommand sqlCommandUpdate = new SqlCommand();
                 sqlCommandUpdate.Connection = sqlConnect;
                 sqlCommandUpdate.CommandType = CommandType.Text;
                 sqlCommandUpdate.CommandText = SecondQuery;
 
-
+                
+                
+               
                 sqlCommandUpdate.Parameters.AddWithValue("@EquipmentID", HttpUtility.HtmlEncode(TRUCK.Value));
                 //open connection to send ID query 
                 
@@ -177,14 +197,15 @@ namespace GreenValleyAuctions
             foreach (ListItem Employee in lbMovers.Items)
             {
 
-                string ThirdQuery = "Insert into ASEmployee(SchedulingFormID, EmployeeID  )Values((Select max(SchedulingFormID) from AuctionSchedulingForm), cast(@EmployeeID as int)); ";
+                
+                string ThirdQuery = "Insert into ASEmployee(SchedulingFormID, EmployeeID  )Values((Select max(SchedulingFormID) from AuctionSchedulingForm),(Select EmployeeID from Employee where EmployeeID  = @EmployeeID))";
                 //Create sql command 
                 SqlCommand sqlCommandUpdate = new SqlCommand();
                 sqlCommandUpdate.Connection = sqlConnect;
                 sqlCommandUpdate.CommandType = CommandType.Text;
                 sqlCommandUpdate.CommandText = ThirdQuery;
 
-
+               
                 sqlCommandUpdate.Parameters.AddWithValue("@EmployeeID  ", HttpUtility.HtmlEncode(Employee.Value));
                 //open connection to send ID query 
 
@@ -193,19 +214,24 @@ namespace GreenValleyAuctions
                 queryAnswer.Close();
             }
             //loop through list of photos
+            
             foreach (ListItem Photo in lbUploads.Items)
             {
 
-                string FinalQuery = "Insert into AuctionPhotos(PhotoID, PhotoPath  )Values((Select max(PhotoID) from AuctionPhotos), @PhotoPath  ); ";
+                string FinalQuery = "Insert into AuctionPhotos(PhotoID, PhotoPath,SchedulingFormID  )Values((Select ISNULL(max(PhotoID)+1,1) from AuctionPhotos), @PhotoPath,(Select max(SchedulingFormID) from AuctionSchedulingForm)); ";
                 //Create sql command 
                 SqlCommand sqlCommandUpdate = new SqlCommand();
                 sqlCommandUpdate.Connection = sqlConnect;
                 sqlCommandUpdate.CommandType = CommandType.Text;
                 sqlCommandUpdate.CommandText = FinalQuery;
 
-
-                sqlCommandUpdate.Parameters.AddWithValue("@PhotoPath", HttpUtility.HtmlEncode(Request.PhysicalApplicationPath + "Auction_Photos\\" + Photo.Value.ToString()));
-                //open connection to send ID query 
+                // get string path
+                strPath = Request.PhysicalApplicationPath + "Auction_Photos\\" + Photo.Value.ToString();
+                // save photo to directory
+                fuPhotos.SaveAs(strPath);
+                //put path into database
+                sqlCommandUpdate.Parameters.AddWithValue("@PhotoPath", HttpUtility.HtmlEncode(strPath));
+                //open connection to send  query 
 
                 SqlDataReader queryAnswer = sqlCommandUpdate.ExecuteReader();
 
