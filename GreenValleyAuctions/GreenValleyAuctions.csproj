@@ -199,6 +199,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Service_Ticket.aspx" />
+    <Content Include="test_photos.aspx" />
     <Content Include="view_serviceTicket.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -365,6 +366,13 @@
     </Compile>
     <Compile Include="Template.Master.designer.cs">
       <DependentUpon>Template.Master</DependentUpon>
+    </Compile>
+    <Compile Include="test_photos.aspx.cs">
+      <DependentUpon>test_photos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test_photos.aspx.designer.cs">
+      <DependentUpon>test_photos.aspx</DependentUpon>
     </Compile>
     <Compile Include="view_serviceTicket.aspx.cs">
       <DependentUpon>view_serviceTicket.aspx</DependentUpon>

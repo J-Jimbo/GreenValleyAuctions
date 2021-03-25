@@ -16,24 +16,9 @@ namespace GreenValleyAuctions
 
         }
 
-        protected void btnAddFile_Click(object sender, EventArgs e)
-        {
+       
 
-            if (fuPhotos.HasFile == true)
-            {
-                string filename = fuPhotos.FileName;
-                lbUploads.Items.Add(filename.ToString());
-
-
-            }
-            
-            
-        }
-
-        protected void btnRemoveFile_Click(object sender, EventArgs e)
-        {
-            lbUploads.Items.Remove(lbUploads.SelectedValue);
-        }
+       
 
         protected void cbLookAt_CheckedChanged(object sender, EventArgs e)
         {
@@ -41,7 +26,6 @@ namespace GreenValleyAuctions
             {
                 invForm.Visible = true;
                 RowLookAt.Visible = true;
-                UploadList.Visible = true;
                 truck.Visible = true;
                 accesbility.Visible = true;
                 driveway.Visible = true;
@@ -58,10 +42,9 @@ namespace GreenValleyAuctions
             }
             else
             {
-                hfFileInv.Value = "";
+                
                 invForm.Visible = false;
                 RowLookAt.Visible = false;
-                UploadList.Visible = false;
                 truck.Visible = false;
                 accesbility.Visible = false;
                 driveway.Visible = false;
@@ -104,13 +87,7 @@ namespace GreenValleyAuctions
             ddlMovers.Items.Add(mover);
         }
 
-        protected void btnFile_Click(object sender, EventArgs e)
-        {
-            hfFileInv.Value = fuInventory.FileName.ToString();
-            lblInvFile.Text = fuInventory.FileName.ToString();
-
-
-        }
+        
 
         protected void btnPopulate_Click(object sender, EventArgs e)
         {
@@ -155,9 +132,9 @@ namespace GreenValleyAuctions
             if (cbLookAt.Checked.Equals(true))
             {
                 //string path
-                strPath = Request.PhysicalApplicationPath + "Auction_Photos\\" + hfFileInv.Value.ToString();
+                strPath = Request.PhysicalApplicationPath + "Auction_Photos\\" + fuInventory.FileName;
                 fuInventory.SaveAs(strPath);
-                sqlCommand.Parameters.AddWithValue("@InventoryFile", HttpUtility.HtmlEncode(strPath));
+                sqlCommand.Parameters.AddWithValue("@InventoryFile", HttpUtility.HtmlEncode(fuInventory.FileName.ToString())); ;
             }
             else
                 sqlCommand.Parameters.AddWithValue("@InventoryFile", HttpUtility.HtmlEncode(""));
@@ -214,8 +191,9 @@ namespace GreenValleyAuctions
                 queryAnswer.Close();
             }
             //loop through list of photos
+
             
-            foreach (ListItem Photo in lbUploads.Items)
+            foreach(HttpPostedFile file in fuPhotos.PostedFiles) 
             {
 
                 string FinalQuery = "Insert into AuctionPhotos(PhotoID, PhotoPath,SchedulingFormID  )Values((Select ISNULL(max(PhotoID)+1,1) from AuctionPhotos), @PhotoPath,(Select max(SchedulingFormID) from AuctionSchedulingForm)); ";
@@ -226,11 +204,11 @@ namespace GreenValleyAuctions
                 sqlCommandUpdate.CommandText = FinalQuery;
 
                 // get string path
-                strPath = Request.PhysicalApplicationPath + "Auction_Photos\\" + Photo.Value.ToString();
+                strPath = Request.PhysicalApplicationPath + "Auction_Photos\\" + file.FileName.ToString();
                 // save photo to directory
                 fuPhotos.SaveAs(strPath);
                 //put path into database
-                sqlCommandUpdate.Parameters.AddWithValue("@PhotoPath", HttpUtility.HtmlEncode(strPath));
+                sqlCommandUpdate.Parameters.AddWithValue("@PhotoPath", HttpUtility.HtmlEncode(file.FileName.ToString()));
                 //open connection to send  query 
 
                 SqlDataReader queryAnswer = sqlCommandUpdate.ExecuteReader();
