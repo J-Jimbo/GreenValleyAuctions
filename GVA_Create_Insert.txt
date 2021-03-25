@@ -15,6 +15,10 @@ Create Table MovingScreen(MovingScreenID int primary key, FinalMoveDate datetime
 Create Table AuctionPickUP(AuctionPickUpID int primary key, BringinDate datetime, PickupDate datetime, LookAtDate datetime, AppraisalDate datetime, BringInDateConfirmed datetime,PickUpDateConfirmed datetime, LookAtDateConfirmed datetime, AppraisalDateConfirmed datetime, SaleDate datetime, Location char(10),WorkFlowID int references WorkFlow);
 CREATE TABLE CompletionForm (CompletionFormID	BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,CustomerName VARCHAR(100) NOT NULL,SubTotal	VARCHAR(100) NOT NULL, AdditonalExpenses VARCHAR(100),Total VARCHAR(100) NOT NULL,PaidAmount VARCHAR(100) NOT NULL,Remaining VARCHAR(100),AdditionalNotes VARCHAR(500),EmployeeID INT references Employee(EmployeeID),EquipmentID INT references Equipment(EquipmentID),WorkFlowID INT references WorkFLow);
 CREATE TABLE MoveForm (MoveFormID BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,ContactDate	VARCHAR(100),Consign VARCHAR(100),Smalls VARCHAR(100),Bedrooms	VARCHAR(100),LivingRoom	VARCHAR(100),DiningRoom	VARCHAR(100),Stories VARCHAR(100),SQF VARCHAR(100),Attic VARCHAR(100),Basement	VARCHAR(100),OutBuilding VARCHAR(100),Garage VARCHAR(100),AwkwardItems	VARCHAR(100),Collectibles VARCHAR(100),Appliances VARCHAR(100),Piano VARCHAR(100),LawnMower	VARCHAR(100),DistanceDoor VARCHAR(100),Obstructions	VARCHAR(100),AddNotes	VARCHAR(100), WorkFlowID int references WorkFlow);
+CREATE TABLE AuctionSchedulingForm(SchedulingFormID int primary key, LookAt char(10) check(LookAt in('Yes','No') ),Source char(10) check( Source in('Bring In','Pick Up') ), Distance char(50), DrieWay char(50), Supplies char(50), NumBoxes int, BoxType char(20),InventoryFile char(500));
+CREATE TABLE ASEquipment(SchedulingFormID int references AuctionSchedulingForm,EquipmentID int references Equipment, primary key (SchedulingFormID,EquipmentID));
+CREATE TABLE ASEmployee(SchedulingFormID int references AuctionSchedulingForm, EmployeeID  int references Employee,primary key (SchedulingFormID,EmployeeID ));
+CREATE TABLE AuctionPhotos(PhotoID int Primary key, PhotoPath char(500),SchedulingFormID int references AuctionSchedulingForm);
 
 Insert Into Inventory ( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES (1,'Lamp',10,'10/12/2021');
 INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 3,'Bed Frame','250','3/24/2019');
@@ -82,6 +86,7 @@ INSERT Into WorkFlowHistory(WFHistoryID, TicketSwitchDate, TicketName, TicketNot
 INSERT Into WorkFlowHistory(WFHistoryID, TicketSwitchDate, TicketName, TicketNote, EmployeeID, WorkFlowID) VALUES(6, '3/31/2019','About Item','The item we are hanlding is an ancient relic from the 10th century of mongolia ', 1, 10);
 
 INSERT INTO CompletionForm( CustomerName,SubTotal, AdditonalExpenses,Total ,PaidAmount ,Remaining ,AdditionalNotes ,EmployeeID ,EquipmentID,WorkFlowID) VALUES ('George James', '600', '125', '725', '725','', 'Excellent Service! Employees worked hard and were efficent in the move!', '1', '1','8');
+
 
 
 
