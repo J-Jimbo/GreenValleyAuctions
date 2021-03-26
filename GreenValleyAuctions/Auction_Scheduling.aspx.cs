@@ -38,7 +38,8 @@ namespace GreenValleyAuctions
                 Qmovers.Visible = true;
                 whichCrew.Visible = true;
                 listCrew.Visible = true;
-                    
+                AuctionDate.Visible = true;
+                noPostback.Visible = true;
             }
             else
             {
@@ -57,6 +58,8 @@ namespace GreenValleyAuctions
                 Qmovers.Visible = false;
                 whichCrew.Visible = false;
                 listCrew.Visible = false;
+                AuctionDate.Visible = false;
+                noPostback.Visible = false;
             }
         }
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -216,12 +219,45 @@ namespace GreenValleyAuctions
                 queryAnswer.Close();
             }
 
+            foreach(ListItem date in lbDate.Items)
+            {
+                string ThirdQuery = "Insert into AuctionDates(AuctionDateID, AuctionDate)Values((Select ISNULL(max(AuctionDateID)+1,1) from AuctionDates),@Date);" +
+                    "Insert into ASDate(SchedulingFormID,AuctionDateID)Values((Select max(SchedulingFormID) from AuctionSchedulingForm),(Select max(AuctionDateID) from AuctionDates));";
+                //Create sql command 
+                SqlCommand sqlCommandUpdate = new SqlCommand();
+                sqlCommandUpdate.Connection = sqlConnect;
+                sqlCommandUpdate.CommandType = CommandType.Text;
+                sqlCommandUpdate.CommandText = ThirdQuery;
+
+
+                sqlCommandUpdate.Parameters.AddWithValue("@Date", HttpUtility.HtmlEncode(date.Value.ToString()));
+                //open connection to send ID query 
+
+                SqlDataReader queryAnswer = sqlCommandUpdate.ExecuteReader();
+
+                queryAnswer.Close();
+            }
+
             sqlConnect.Close();
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnAddDate_Click(object sender, EventArgs e)
+        {
+            
+            lbDate.Items.Add(txtDate.Text.ToString());
+            
+        }
+
+        protected void btnRemoveDate_Click(object sender, EventArgs e)
+        {
+           
+            lbDate.Items.Remove(lbDate.SelectedItem);
+            
         }
     }
 }

@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="smAuctionSchedule" runat="server"></asp:ScriptManager>
+    <%--<asp:ScriptManager ID="smAuctionSchedule" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="postbackAffect" runat="server">
-        <ContentTemplate>
+        <ContentTemplate>--%>
             <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
 
                 <asp:TableRow>
@@ -130,13 +130,37 @@
                 </asp:TableRow>
         
             </asp:Table>
-     </ContentTemplate>
+     <%--</ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="ddlMovers" />
         </Triggers>
-</asp:UpdatePanel>
-
-    <asp:Table ID="noPostback" runat="server">
+</asp:UpdatePanel>--%>
+    <br />
+    <asp:Table ID="AuctionDate" runat="server" Visible="false" HorizontalAlign="Center">
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblDate" runat="server" Text="Select Auction Dates "></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:TextBox ID="txtDate" runat="server" TextMode="Date"></asp:TextBox>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="btnAddDate" runat="server" Text="Add Date" OnClick="btnAddDate_Click" />
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="btnRemoveDate" runat="server" Text="Remove Date" OnClick="btnRemoveDate_Click" />
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:ListBox ID="lbDate" runat="server"></asp:ListBox>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+    <br />
+    <asp:Table ID="noPostback" runat="server" HorizontalAlign="Center" Visible="false">
             <asp:TableRow ID="invForm" Visible="false">
                 <asp:TableCell>
                     <asp:Label ID="lblInventoryForm" runat="server" Text="Upload Inventory Form: "></asp:Label>
