@@ -34,7 +34,7 @@ namespace GreenValleyAuctions
 
        
 
-            string Query = "INSERT INTO Inventory (ItemID, ItemDescription, ItemCost, InventoryDate) Values ((Select ISNULL(max(ItemID)+1,1) from Inventory),@Item,@ItemCost,GetDate()) ";
+            string Query = "INSERT INTO Inventory (ItemID, ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) Values ((Select ISNULL(max(ItemID)+1,1) from Inventory),@Item,@ItemCost,GetDate(),@Storage,@Location) ";
 
             //Define the connection to the Database
             SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
@@ -48,6 +48,8 @@ namespace GreenValleyAuctions
             
             sqlCommand.Parameters.AddWithValue("@Item", HttpUtility.HtmlEncode(txtItem.Text.ToString()));
             sqlCommand.Parameters.AddWithValue("@ItemCost", HttpUtility.HtmlEncode(txtCost.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@Storage", HttpUtility.HtmlEncode(ddlBay.SelectedValue.ToString()));
+            sqlCommand.Parameters.AddWithValue("@Location", HttpUtility.HtmlEncode(ddlPlace.SelectedValue.ToString()));
             //open connection to send ID query 
             sqlConnect.Open();
             SqlDataReader queryResult = sqlCommand.ExecuteReader();
@@ -87,6 +89,76 @@ namespace GreenValleyAuctions
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("Customer_Info.aspx");
+        }
+
+        protected void ddlStorage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ddlStorage.SelectedValue == "L" )
+            {
+                ddlBay.Items.Clear();
+                ddlPlace.Items.Clear();
+
+                ListItem L1 = new ListItem("1", "L1");
+                ListItem L2 = new ListItem("2", "L2");
+                ListItem L3 = new ListItem("3", "L3");
+                ListItem L4 = new ListItem("4", "L4");
+                ListItem L5 = new ListItem("5", "L5");
+                ddlBay.Items.Add( L1 );
+                ddlBay.Items.Add(L2);
+                ddlBay.Items.Add(L3);
+                ddlBay.Items.Add(L4);
+                ddlBay.Items.Add(L5);
+
+                ddlPlace.Items.Add("Front");
+                ddlPlace.Items.Add("Middle");
+                ddlPlace.Items.Add("Back");
+            }
+            else if(ddlStorage.SelectedValue == "R")
+            {
+                ddlBay.Items.Clear();
+                ddlPlace.Items.Clear();
+
+                ListItem R1 = new ListItem("1", "R1");
+                ListItem R2 = new ListItem("2", "R2");
+                ListItem R3 = new ListItem("3", "R3");
+                ListItem R4 = new ListItem("4", "R4");
+                ListItem R5 = new ListItem("5", "R5");
+                ddlBay.Items.Add(R1);
+                ddlBay.Items.Add(R2);
+                ddlBay.Items.Add(R3);
+                ddlBay.Items.Add(R4);
+                ddlBay.Items.Add(R5);
+
+                ddlPlace.Items.Add("Front");
+                ddlPlace.Items.Add("Middle");
+                ddlPlace.Items.Add("Back");
+            }
+            else
+            {
+                ddlBay.Items.Clear();
+                ddlPlace.Items.Clear();
+
+                ListItem T1 = new ListItem("1", "T1");
+                ListItem T2 = new ListItem("2", "T2");
+                ListItem T3 = new ListItem("3", "T3");
+                ListItem T4 = new ListItem("4", "T4");
+                ListItem T5 = new ListItem("5", "T5");
+                ListItem T6 = new ListItem("6", "T6");
+                ListItem T7 = new ListItem("7", "T7");
+                ListItem T8 = new ListItem("8", "T8");
+                ddlBay.Items.Add(T1);
+                ddlBay.Items.Add(T2);
+                ddlBay.Items.Add(T3);
+                ddlBay.Items.Add(T4);
+                ddlBay.Items.Add(T5);
+                ddlBay.Items.Add(T6);
+                ddlBay.Items.Add(T7);
+                ddlBay.Items.Add(T8);
+
+                ddlPlace.Items.Add("Doors");
+                ddlPlace.Items.Add("Nose");
+                ddlPlace.Items.Add("Middle");
+            }
         }
     }
 }

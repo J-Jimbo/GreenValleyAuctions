@@ -201,6 +201,7 @@
     <Content Include="Service_Ticket.aspx" />
     <Content Include="test_photos.aspx" />
     <Content Include="view_serviceTicket.aspx" />
+    <Content Include="WareHouse.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -380,6 +381,13 @@
     </Compile>
     <Compile Include="view_serviceTicket.aspx.designer.cs">
       <DependentUpon>view_serviceTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareHouse.aspx.cs">
+      <DependentUpon>WareHouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareHouse.aspx.designer.cs">
+      <DependentUpon>WareHouse.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

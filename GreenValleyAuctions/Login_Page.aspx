@@ -56,6 +56,7 @@
 <div class ="text-center login-btn">
 <asp:Button ID="btnLogin" runat="server" Text="Login"  OnClick="btnLogin_Click" Class="btn btn-primary btn-lg"/>
  <asp:Button ID="btnLanding" runat="server" Text="Return to Landing Page"  OnClick="btnLanding_Click"  Class="btn btn-primary btn-lg"/>
+    <br />
 <asp:Label ID="lblLoginStatus" runat="server" Text=""></asp:Label>
 </div>
 </form>

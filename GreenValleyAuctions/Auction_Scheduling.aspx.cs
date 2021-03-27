@@ -31,7 +31,6 @@ namespace GreenValleyAuctions
                 driveway.Visible = true;
                 supplies.Visible = true;
                 Boxes.Visible = true;
-                Boxestyle.Visible = true;
                 Qtruck.Visible = true;
                 whichtrucks.Visible = true;
                 listTrucks.Visible = true;
@@ -51,7 +50,6 @@ namespace GreenValleyAuctions
                 driveway.Visible = false;
                 supplies.Visible = false;
                 Boxes.Visible = false;
-                Boxestyle.Visible = false;
                 Qtruck.Visible = false;
                 whichtrucks.Visible = false;
                 listTrucks.Visible = false;
@@ -95,6 +93,26 @@ namespace GreenValleyAuctions
         protected void btnPopulate_Click(object sender, EventArgs e)
         {
 
+            // random number 
+            Random random = new Random();
+            //create arrays to draw random data from
+            string[] numBoxes = { "1", "10", "5", "20", "30" };
+            string[] boxType = { "Folding Carton", "Rigid", "Corrugated" };
+            string[] supplies = {"tape","dolley","Packing foam" };
+            string[] conditions = { "Stone", "Paved", "Dirt", "Snow", "Hill" };
+            string[] distance = { "10 ft", "20 ft", "30 ft" };
+            string[] date = { "1/15/2021", "4/25/2021", "10/01/2021", "9/06/2021", "5/05/2021", "2/12/2021" };
+            Boolean[] check = { true, false };
+
+            cbLookAt.Checked = check[random.Next(0,check.Length)];
+          //  txtBoxType.Text = boxType[random.Next(0,boxType.Length)];
+            txtDate.Text = date[random.Next(0,date.Length)];
+            txtDistance.Text = distance[random.Next(0,distance.Length)];
+            txtDriveWayConditions.Text = conditions[random.Next(0,conditions.Length)];
+          //  txtNumBoxes.Text = numBoxes[random.Next(0,numBoxes.Length)];
+            txtQuantityMovers.Text = random.Next(0,ddlMovers.Items.Count).ToString();
+            txtQuantityTrucks.Text = random.Next(0, ddlTrucks.Items.Count).ToString();
+          //  txtSupplies.Text = supplies[random.Next(0,supplies.Length)];
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -113,7 +131,7 @@ namespace GreenValleyAuctions
                 LookAt = "No";
 
 
-            string Query = "INSERT into AuctionSchedulingForm(SchedulingFormID, LookAt, Source, Distance, DrieWay, Supplies, NumBoxes,BoxType,InventoryFile)Values((Select ISNULL(max(SchedulingFormID)+1,1) from AuctionSchedulingForm),@LookAt,@Source,@Distance,@DrieWay,@Supplies,@NumBoxes,@BoxType,@InventoryFile);";
+            string Query = "INSERT into AuctionSchedulingForm(SchedulingFormID, LookAt, Source, Distance, DrieWay,SmallBox,MediumBox,LargeBox,ArtBox,SmallPad,LargePad,InventoryFile)Values((Select ISNULL(max(SchedulingFormID)+1,1) from AuctionSchedulingForm),@LookAt,@Source,@Distance,@DrieWay,@smallBox,@medBox,@LrgBox,@ArtBox,@sPadBox,@LPadBox,@InventoryFile);";
 
             //Define the connection to the Database
             SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
@@ -129,9 +147,13 @@ namespace GreenValleyAuctions
             sqlCommand.Parameters.AddWithValue("@Source", HttpUtility.HtmlEncode(rblBringInOrPickUP.SelectedValue.ToString()));
             sqlCommand.Parameters.AddWithValue("@Distance", HttpUtility.HtmlEncode(txtDistance.Text.ToString()));
             sqlCommand.Parameters.AddWithValue("@DrieWay", HttpUtility.HtmlEncode(txtDriveWayConditions.Text.ToString()));
-            sqlCommand.Parameters.AddWithValue("@Supplies", HttpUtility.HtmlEncode(txtSupplies.Text.ToString()));
-            sqlCommand.Parameters.AddWithValue("@NumBoxes", HttpUtility.HtmlEncode(txtNumBoxes.Text.ToString()));
-            sqlCommand.Parameters.AddWithValue("@BoxType", HttpUtility.HtmlEncode(txtBoxType.Text.ToString()));
+           sqlCommand.Parameters.AddWithValue("@smallBox", HttpUtility.HtmlEncode(int.Parse(txtsmallBox.Text)));
+            sqlCommand.Parameters.AddWithValue("@medBox", HttpUtility.HtmlEncode(int.Parse(txtMedBox.Text.ToString())));
+            sqlCommand.Parameters.AddWithValue("@LrgBox", HttpUtility.HtmlEncode(int.Parse(txtLrgBox.Text.ToString())));
+            sqlCommand.Parameters.AddWithValue("@ArtBox", HttpUtility.HtmlEncode(int.Parse(txtArtBox.Text.ToString())));
+            sqlCommand.Parameters.AddWithValue("@sPadBox", HttpUtility.HtmlEncode(int.Parse(txtLPads.Text.ToString())));
+            sqlCommand.Parameters.AddWithValue("@LPadBox", HttpUtility.HtmlEncode(int.Parse(txtsPads.Text.ToString())));
+            
             if (cbLookAt.Checked.Equals(true))
             {
                 //string path
@@ -238,12 +260,55 @@ namespace GreenValleyAuctions
                 queryAnswer.Close();
             }
 
+
+            foreach (ListItem supply in cblSupplies.Items)
+            {
+                if (supply.Selected)
+                {
+                    string SecondQuery = "Insert into ASSupplies(SchedulingFormID, SupplyID)Values((Select max(SchedulingFormID) from AuctionSchedulingForm),(Select SupplyID from Supplies where SupplyID  = @SupplyID))";
+                    //Create sql command 
+                    SqlCommand sqlCommandUpdate = new SqlCommand();
+                    sqlCommandUpdate.Connection = sqlConnect;
+                    sqlCommandUpdate.CommandType = CommandType.Text;
+                    sqlCommandUpdate.CommandText = SecondQuery;
+
+
+                    sqlCommandUpdate.Parameters.AddWithValue("@SupplyID", HttpUtility.HtmlEncode(supply.Value));
+                    //open connection to send ID query 
+
+                    SqlDataReader queryAnswer = sqlCommandUpdate.ExecuteReader();
+
+                    queryAnswer.Close();
+                }
+            }
             sqlConnect.Close();
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-
+            cbLookAt.Checked = false;
+           // txtBoxType.Text = "";
+            txtDate.Text = "";
+            txtDistance.Text = "";
+            txtDriveWayConditions.Text ="";
+           // txtNumBoxes.Text = "";
+            txtQuantityMovers.Text = "";
+            txtQuantityTrucks.Text = "";
+           // txtSupplies.Text = "";
+            
+            foreach(ListItem truck in lbTrucks.Items)
+            {
+                ListItem equipment = new ListItem(truck.Text.ToString(), truck.Value.ToString());
+                ddlTrucks.Items.Add(equipment);
+            }
+            lbTrucks.Items.Clear();
+            foreach(ListItem mover in lbMovers.Items)
+            {
+                ListItem person = new ListItem(mover.Text.ToString(), mover.Value.ToString());
+                ddlMovers.Items.Add(person);
+            }
+            lbMovers.Items.Clear();
+            //for now postback is clearing the file upload 
         }
 
         protected void btnAddDate_Click(object sender, EventArgs e)
@@ -258,6 +323,26 @@ namespace GreenValleyAuctions
            
             lbDate.Items.Remove(lbDate.SelectedItem);
             
+        }
+
+        protected void cvnumMovers_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (int.Parse(txtQuantityMovers.Text) == lbMovers.Items.Count)
+            {
+                args.IsValid = true;
+            }
+            else
+                args.IsValid = false;
+        }
+
+        protected void cvTrucks_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (int.Parse(txtQuantityTrucks.Text) == lbTrucks.Items.Count)
+            {
+                args.IsValid = true;
+            }
+            else
+                args.IsValid = false;
         }
     }
 }

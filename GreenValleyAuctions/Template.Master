@@ -57,7 +57,7 @@
 				<div class ="col-md-2 offset-md-1">
 				<ul class="nav nav-pills ">
                <li class="nav-item active">
-						<a class="nav-link" href="Reports.aspx">Warehouse</a>
+						<a class="nav-link" href="WareHouse.aspx">Warehouse</a>
                           
 		              </li>
 				

@@ -26,6 +26,34 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
+                <asp:Label ID="lblStorage" runat="server" Text="Select Location: " ></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:DropDownList ID="ddlStorage" runat="server" OnSelectedIndexChanged="ddlStorage_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:ListItem Text="Left" Value="L"></asp:ListItem>
+                    <asp:ListItem Text="Right" Value="R"></asp:ListItem>
+                    <asp:ListItem Text="Trailer" Value="T"></asp:ListItem>
+                </asp:DropDownList>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblBay" runat="server" Text="Select Bay: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:DropDownList ID="ddlBay" runat="server"></asp:DropDownList>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblPlace" runat="server" Text="Select Placement: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:DropDownList ID="ddlPlace" runat="server"></asp:DropDownList>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
                 <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" CausesValidation="false" />
             </asp:TableCell>
             <asp:TableCell>
