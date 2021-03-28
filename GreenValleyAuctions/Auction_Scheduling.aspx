@@ -66,7 +66,7 @@
                         <asp:Label ID="lblSupplies" runat="server" Text="Supplies needed: "></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBoxList ID="cblSupplies" runat="server" RepeatDirection="Horizontal" RepeatColumns="2" DataSourceID="datasrcSupplies" DataTextField="SupplyType" DataValueField="SupplyID"></asp:CheckBoxList>
+                        <asp:CheckBoxList ID="cblSupplies" runat="server" RepeatDirection="Horizontal" RepeatColumns="2" DataSourceID="datasrcSupplies" DataTextField="SupplyType" DataValueField="SupplyID" OnDataBound="cblSupplies_DataBound"></asp:CheckBoxList>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow ID="Boxes" Visible="false">
@@ -113,9 +113,10 @@
                 <asp:TableRow ID="whichtrucks" Visible="false">
                     <asp:TableCell>
                         <asp:Label ID="lblTrucks" runat="server" Text="Select which Trucks: "></asp:Label>
-                        <asp:DropDownList ID="ddlTrucks" runat="server" DataTextField="EquipmentName" DataValueField="EquipmentID" DataSourceID="datasrcTruckList"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlTrucks" runat="server" DataTextField="EquipmentName" DataValueField="EquipmentID" DataSourceID="datasrcTruckList" OnDataBound="ddlTrucks_DataBound"></asp:DropDownList>
                         <asp:Button ID="btnAdd" runat="server" Text="Add Truck" OnClick="btnAdd_Click" CausesValidation="false"/>
                         <asp:Button ID="btnRemoveTruck" runat="server" Text="Remove Truck" OnClick="btnRemoveTruck_Click" CausesValidation="false"/>
+                        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow ID="listTrucks" Visible="false">
@@ -134,14 +135,15 @@
                 <asp:TableRow ID="whichCrew" Visible="false">
                     <asp:TableCell>
                         <asp:Label ID="lblSelecetMovers" runat="server" Text="Select which Employee: "></asp:Label>
-                        <asp:DropDownList ID="ddlMovers" runat="server"  DataTextField="Worker" DataValueField="EmployeeID" DataSourceID="datasrcMovers"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlMovers" runat="server"  DataTextField="Worker" DataValueField="EmployeeID" DataSourceID="datasrcMovers" OnDataBound="ddlMovers_DataBound"></asp:DropDownList>
                         <asp:Button ID="btnAddMover" runat="server" Text="Add Movers" OnClick="btnAddMover_Click" CausesValidation="false"/>
                         <asp:Button ID="btnRemove" runat="server" Text="Remove Movers" OnClick="btnRemove_Click" CausesValidation="false"/>
+                        <asp:Label ID="lblMoverError" runat="server" Text=""></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow ID="listCrew" Visible="false">
                     <asp:TableCell>
-                        <asp:ListBox ID="lbMovers" runat="server"></asp:ListBox>
+                        <asp:ListBox ID="lbMovers" runat="server" ></asp:ListBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 
@@ -161,13 +163,14 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
-                <asp:TextBox ID="txtDate" runat="server" TextMode="Date"></asp:TextBox>
+                <asp:TextBox ID="txtDate" runat="server" TextMode="Date" ></asp:TextBox>
             </asp:TableCell>
             <asp:TableCell>
                 <asp:Button ID="btnAddDate" runat="server" Text="Add Date" OnClick="btnAddDate_Click" CausesValidation="false" />
             </asp:TableCell>
             <asp:TableCell>
                 <asp:Button ID="btnRemoveDate" runat="server" Text="Remove Date" OnClick="btnRemoveDate_Click" CausesValidation="false" />
+                <asp:Label ID="lblDateError" runat="server" Text=""></asp:Label>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -216,4 +219,5 @@
                 SelectCommand="Select trim(EmployeeFirstName)+ ' '+ trim(ISNULL(EmployeeLastName,'')) as Worker, EmployeeID from Employee; "></asp:SqlDataSource>
      <asp:SqlDataSource ID="datasrcSupplies" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="Select SupplyID, SupplyType from Supplies; "></asp:SqlDataSource>
+    
 </asp:Content>

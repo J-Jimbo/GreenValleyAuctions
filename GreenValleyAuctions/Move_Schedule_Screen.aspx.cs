@@ -159,7 +159,7 @@ namespace GreenValleyAuctions
 
             
 
-            // query to check workflow id
+            // query to insert
             string sqlQueryID = "Insert into MovingScreen(MovingScreenID, FinalMoveDate, PricingSource, QuantityTrucks, Trucks," +
                 " QuantityMovers, Movers,Price,Consumables,EstimatedHours,ActualHours,OriginMiles,DestMiles,OtherMiles,TotalMiles,FuelCosts,InsuranceCosts,CostPerWorker,Food,WorkFlowID)" +
                 "Values((Select ISNULL(max(MovingScreenID)+1,1) from MovingScreen),@FinalMoveDate,@PricingScource,@QuantityTrucks,@Trucks,@QuantityMovers,@Movers,@Price,@Consumbles" +

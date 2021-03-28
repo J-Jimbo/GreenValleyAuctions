@@ -411,6 +411,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Button btnRemoveTruck;
 
         /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
         /// listTrucks control.
         /// </summary>
         /// <remarks>
@@ -519,6 +528,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Button btnRemove;
 
         /// <summary>
+        /// lblMoverError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMoverError;
+
+        /// <summary>
         /// listCrew control.
         /// </summary>
         /// <remarks>
@@ -580,6 +598,15 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRemoveDate;
+
+        /// <summary>
+        /// lblDateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDateError;
 
         /// <summary>
         /// lbDate control.
