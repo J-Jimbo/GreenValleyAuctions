@@ -68,6 +68,7 @@
 			<h3>Pinned Notifications</h3>
 		</div>
 
+
 		<!--<div class="heading col-md-3 newnotification">
 			<h3>New Notification</h3>
 		</div>
@@ -79,9 +80,10 @@
   New Notification
 </button>
 </div>
+</div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -93,52 +95,66 @@
         </button>
       </div>
       <div class="modal-body">
+      	<div class="row">
       	<div class="col-md-3">
         <p> Send to... </p>
     </div>
-        <div class="dropdown col-md-10">
+        <div class="dropdown col-md-9">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
+    View All Contacts
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  	<a class="dropdown-item" href="#">View All Contacts</a>
     <a class="dropdown-item" href="#">Greg</a>
     <a class="dropdown-item" href="#">Self</a>
     <a class="dropdown-item" href="#">All Contacts</a>
   </div>
 </div>
+</div>
 <div class="form-group">
-    <label for="exampleFormControlTextarea1"><p>Message</p></label>
+    <label for="exampleFormControlTextarea1">Message</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
+  <div class="row">
   <div class="col-md-3">
         <p> Priority </p>
     </div>
 
-    <a class="btn btn-primary btn-intake rounded-pill" role="button" target="_blank">Low</a>
+    <div class="col-md-9">
+    <button type="button" class="btn btn-secondary rounded-pill lowbutton" data-dismiss="modal">Low</button>
 
-    <a class="btn btn-primary btn-intake rounded-pill" role="button" target="_blank">Medium</a>
+    <button type="button" class="btn btn-secondary rounded-pill mediumbutton" data-dismiss="modal">Medium</button>
 
-    <a class="btn btn-primary btn-intake rounded-pill" role="button" target="_blank">High</a>
+    <button type="button" class="btn btn-secondary rounded-pill highbutton" data-dismiss="modal">High</button>
+</div>
+</div>
 
+	<div class="row">
     <div class="col-md-3">
         <p> Date</p>
     </div>
 
+    <div class="col-md-9">
     <label class="switch">
   <input type="checkbox">
   <span class="slider round"></span>
 </label>
+</div>
+</div>
+
+	<div class="row">
     <div class="col-md-3">
         <p> Time</p>
     </div>
 
+    <div class="col-md-9">
     <label class="switch">
   <input type="checkbox">
   <span class="slider round"></span>
 </label>
-</form>
       </div>
+  </div>
+</div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
