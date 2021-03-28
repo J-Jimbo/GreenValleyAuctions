@@ -208,6 +208,17 @@ div.c {
   padding-top: 30px;
 }
 
+.lowbutton {
+  background-color: #9ABE6F;
+}
+
+.mediumbutton {
+  background-color: #688B9A;
+}
+
+.highbutton {
+  background-color: #FFCC33;
+}
 
 .progress1 {
   width: 10%;
