@@ -92,7 +92,7 @@ namespace GreenValleyAuctions
 
 
                 }
-
+            // if no info 
             if (queryResult.HasRows != true)
             {
                 btnMoveForm.Visible = false;
