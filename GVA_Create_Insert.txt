@@ -1,10 +1,11 @@
 
-CREATE TABLE Inventory ( ItemID int primary key, ItemDescription char(100), ItemCost int,InventoryDate char(30));
+CREATE TABLE Inventory ( ItemID int primary key, ItemDescription char(100), ItemCost int,InventoryDate char(30),ItemStorage Char(20),ItemLocation char(20));
 CREATE TABLE Employee( EmployeeID int primary key, EmployeeFirstName char(30), EmployeeLastName char(30), EmployeePhone char(30));
 CREATE TABLE Equipment( EquipmentID int primary key, EquipmentName char(30), EquipmentDescription char(100));
+CREATE TABLE Supplies(SupplyID int primary key, SupplyType char(30));
 CREATE Table Customer ( CustomerID int primary key, FirstName char(30), LastName char(30), CustomerAddress char(100), CustomerPhone char(30), PhoneType char(30) check(PhoneType in('Business','Cell','Home')),CustomerEmail char(30),HereAbout char(100),ContactThrough char(100), TotalEarnings int, DateAdded Datetime);
 CREATE TABLE WorkFlow ( WorkFlowID int primary key, EngagmentDate datetime, CompletionDate date, Review char(500), CurrentStatus char(40) check(CurrentStatus in('Completed','In Progress', NULL)), CustomerID int references Customer not null, EmployeeID int references Employee);
-CREATE TABLE ServiceEvent ( ServiceID int primary key, ServiceDate Date,ServiceEndDate Date, ServiceCost int, ServiceType char(30) check(ServiceType in ('Moving','Auction')), WorkFlowID int references WorkFlow not null, ItemID int references Inventory, EquipmentID int references Equipment);
+CREATE TABLE ServiceEvent ( ServiceID int primary key,PotentialDate1 Date ,PotentialDate2 Date,ServiceDate Date,ServiceEndDate Date, ServiceCost int, ServiceType char(30) check(ServiceType in ('Moving','Auction')), WorkFlowID int references WorkFlow not null, ItemID int references Inventory, EquipmentID int references Equipment);
 CREATE TABLE Auction (ServiceID int references ServiceEvent not null,Status char(30), SalePrice int, Address char(100),PRIMARY KEY(ServiceID));
 CREATE TABLE Moving( ServiceID int references ServiceEvent not null, OriginAddress char(100), DestinationAddress char(100), PRIMARY KEY(ServiceID));
 CREATE TABLE WorkFlowHistory(WFHistoryID int primary key,TicketSwitchDate date, TicketName char(30),TicketNote varchar(500) ,EmployeeID int references Employee,WorkFlowID int references WorkFlow);
@@ -15,19 +16,29 @@ Create Table MovingScreen(MovingScreenID int primary key, FinalMoveDate datetime
 Create Table AuctionPickUP(AuctionPickUpID int primary key, BringinDate datetime, PickupDate datetime, LookAtDate datetime, AppraisalDate datetime, BringInDateConfirmed datetime,PickUpDateConfirmed datetime, LookAtDateConfirmed datetime, AppraisalDateConfirmed datetime, SaleDate datetime, Location char(10),WorkFlowID int references WorkFlow);
 CREATE TABLE CompletionForm (CompletionFormID	BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,CustomerName VARCHAR(100) NOT NULL,SubTotal	VARCHAR(100) NOT NULL, AdditonalExpenses VARCHAR(100),Total VARCHAR(100) NOT NULL,PaidAmount VARCHAR(100) NOT NULL,Remaining VARCHAR(100),AdditionalNotes VARCHAR(500),EmployeeID INT references Employee(EmployeeID),EquipmentID INT references Equipment(EquipmentID),WorkFlowID INT references WorkFLow);
 CREATE TABLE MoveForm (MoveFormID BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,ContactDate	VARCHAR(100),Consign VARCHAR(100),Smalls VARCHAR(100),Bedrooms	VARCHAR(100),LivingRoom	VARCHAR(100),DiningRoom	VARCHAR(100),Stories VARCHAR(100),SQF VARCHAR(100),Attic VARCHAR(100),Basement	VARCHAR(100),OutBuilding VARCHAR(100),Garage VARCHAR(100),AwkwardItems	VARCHAR(100),Collectibles VARCHAR(100),Appliances VARCHAR(100),Piano VARCHAR(100),LawnMower	VARCHAR(100),DistanceDoor VARCHAR(100),Obstructions	VARCHAR(100),AddNotes	VARCHAR(100), WorkFlowID int references WorkFlow);
-CREATE TABLE AuctionSchedulingForm(SchedulingFormID int primary key, LookAt char(10) check(LookAt in('Yes','No') ),Source char(10) check( Source in('Bring In','Pick Up') ), Distance char(50), DrieWay char(50), Supplies char(50), NumBoxes int, BoxType char(20),InventoryFile char(500));
+CREATE TABLE AuctionSchedulingForm(SchedulingFormID int primary key, LookAt char(10) check(LookAt in('Yes','No') ),Source char(10) check( Source in('Bring In','Pick Up') ), Distance char(50), DrieWay char(50),SmallBox int, MediumBox int, LargeBox int, ArtBox int, SmallPad int,LargePad int,NumberTrucks int,NumberMovers int,InventoryFile char(500),WorkFlowID int references WorkFlow);
+CREATE TABLE AuctionDates(AuctionDateID int primary key, AuctionDate date);
+CREATE TABLE ASSupplies(SchedulingFormID int references AuctionSchedulingForm,SupplyID int references Supplies,primary key(SchedulingFormID,SupplyID));
+CREATE TABLE ASDate(SchedulingFormID int references AuctionSchedulingForm, AuctionDateID int references AuctionDates, primary key (SchedulingFormID,AuctionDateID));
 CREATE TABLE ASEquipment(SchedulingFormID int references AuctionSchedulingForm,EquipmentID int references Equipment, primary key (SchedulingFormID,EquipmentID));
 CREATE TABLE ASEmployee(SchedulingFormID int references AuctionSchedulingForm, EmployeeID  int references Employee,primary key (SchedulingFormID,EmployeeID ));
 CREATE TABLE AuctionPhotos(PhotoID int Primary key, PhotoPath char(500),SchedulingFormID int references AuctionSchedulingForm);
 
-Insert Into Inventory ( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES (1,'Lamp',10,'10/12/2021');
-INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 3,'Bed Frame','250','3/24/2019');
-INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 4,' Fine Art','150','3/31/2019');
-INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 5,'Table','125','6/20/2019');
-INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 7,'Pool Table','170','9/4/2020');
-INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 8,' Dining Table','350','3/24/2020');
-INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 9,'TV','550','2/8/2021');
-INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate) VALUES ( 10,'Weight Set','300','1/30/2021');
+
+Insert Into Supplies(SupplyID,SupplyType)Values(1,'Appliance Cart');
+Insert Into Supplies(SupplyID,SupplyType)Values(2,'Piano Dolly');
+Insert Into Supplies(SupplyID,SupplyType)Values(3,'Piano Board');
+Insert Into Supplies(SupplyID,SupplyType)Values(4,'Gun Safe Cart');
+Insert Into Supplies(SupplyID,SupplyType)Values(5,'Extra Blankets');
+
+Insert Into Inventory ( ItemID,ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) VALUES (1,'Lamp',10,'10/12/2021','L1','Front');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) VALUES ( 3,'Bed Frame','250','3/24/2019','L1','Middle');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) VALUES ( 4,' Fine Art','150','3/31/2019','R3','Back');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) VALUES ( 5,'Table','125','6/20/2019','R2','Front');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) VALUES ( 7,'Pool Table','170','9/4/2020','Trailer 3','Doors');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) VALUES ( 8,' Dining Table','350','3/24/2020','Trailer 3','Nose');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) VALUES ( 9,'TV','550','2/8/2021','Trailer 2','Middle');
+INSERT Into Inventory( ItemID,ItemDescription, ItemCost, InventoryDate,ItemStorage,ItemLocation) VALUES ( 10,'Weight Set','300','1/30/2021','Trailer 1','Nose');
 
 INSERT Into Employee(EmployeeID,EmployeeFirstName,EmployeeLastName) VALUES (1,'Brad','Campbell');
 INSERT Into Employee(EmployeeID,EmployeeFirstName) VALUES (2,'Sabastian');
@@ -86,6 +97,20 @@ INSERT Into WorkFlowHistory(WFHistoryID, TicketSwitchDate, TicketName, TicketNot
 INSERT Into WorkFlowHistory(WFHistoryID, TicketSwitchDate, TicketName, TicketNote, EmployeeID, WorkFlowID) VALUES(6, '3/31/2019','About Item','The item we are hanlding is an ancient relic from the 10th century of mongolia ', 1, 10);
 
 INSERT INTO CompletionForm( CustomerName,SubTotal, AdditonalExpenses,Total ,PaidAmount ,Remaining ,AdditionalNotes ,EmployeeID ,EquipmentID,WorkFlowID) VALUES ('George James', '600', '125', '725', '725','', 'Excellent Service! Employees worked hard and were efficent in the move!', '1', '1','8');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
