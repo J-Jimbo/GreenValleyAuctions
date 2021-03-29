@@ -19,9 +19,28 @@
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblPotentialDates" runat="server" Text="Potential Dates: "></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>   
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblSuggestedDate1" runat="server" Text="Date: "></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="txtPotentialDate1" runat="server" ></asp:TextBox>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Label ID="lblSuggestedDate2" runat="server" Text="Date: "></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="txtPotentialDate2" runat="server" ></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
                     
                     <asp:TableCell>
-                         <asp:Label ID="lblServiceDate" runat="server" Text="Service Dead Line Date: "></asp:Label>
+                         <asp:Label ID="lblServiceDate" runat="server" Text="Final Service Dead Line Date: "></asp:Label>
                         
                     </asp:TableCell>
                     <asp:TableCell >
@@ -35,7 +54,7 @@
                 </asp:TableRow>
                 <asp:TableRow >
                     <asp:TableCell>
-                        <asp:Label ID="lblEndDate" runat="server" Text="Dead Line End Date" Visible="false"></asp:Label>
+                        <asp:Label ID="lblEndDate" runat="server" Text="Final Dead Line End Date" Visible="false"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell >
                         <asp:TextBox ID="txtDateRange" runat="server" Visible="false"></asp:TextBox>

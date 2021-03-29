@@ -215,12 +215,12 @@ namespace Lab2
                 String sqlQuerySE = "";
                 if (cbRange.Checked.Equals(false))
                 {
-                     sqlQuerySE = "Insert INTO ServiceEvent (ServiceID, ServiceDate, ServiceCost, ServiceType, WorkFlowID ) VALUES ( @ServiceEventID, @ServiceDate,@ServiceCost," +
+                     sqlQuerySE = "Insert INTO ServiceEvent (ServiceID,PotentialDate1,PotentialDate2,ServiceDate, ServiceCost, ServiceType, WorkFlowID ) VALUES ( @ServiceEventID,CAST(@PotentialDate1 as DATE),CAST(@PotentialDate2 as DATE), @ServiceDate,@ServiceCost," +
                         "@ServiceType ,  @WorkFlowID )";
                 }
                 else
                 {
-                     sqlQuerySE = "Insert INTO ServiceEvent (ServiceID, ServiceDate, ServiceEndDate, ServiceCost, ServiceType, WorkFlowID ) VALUES ( @ServiceEventID , @ServiceDate  , @DateRange, @ServiceCost, @ServiceType, @WorkFlowID )";
+                     sqlQuerySE = "Insert INTO ServiceEvent (ServiceID,PotentialDate1,PotentialDate2, ServiceDate, ServiceEndDate, ServiceCost, ServiceType, WorkFlowID ) VALUES ( @ServiceEventID ,CAST(@PotentialDate1 as DATE),CAST(@PotentialDate2 as DATE), @ServiceDate  , @DateRange, @ServiceCost, @ServiceType, @WorkFlowID )";
                 }
                 
                 
@@ -233,6 +233,8 @@ namespace Lab2
                 sqlCommandSE.Parameters.AddWithValue("@ServiceEventID", serviceEventID);
                 sqlCommandSE.Parameters.AddWithValue("@ServiceDate", HttpUtility.HtmlEncode(txtServiceDate.Text));
                 sqlCommandSE.Parameters.AddWithValue("@DateRange", HttpUtility.HtmlEncode(txtDateRange.Text));
+                sqlCommandSE.Parameters.AddWithValue("@PotentialDate1", HttpUtility.HtmlEncode(txtPotentialDate1.Text));
+                sqlCommandSE.Parameters.AddWithValue("@PotentialDate2", HttpUtility.HtmlEncode(txtPotentialDate2.Text));
                 sqlCommandSE.Parameters.AddWithValue("@ServiceCost", int.Parse(HttpUtility.HtmlEncode(txtServiceCost.Text)));
                 sqlCommandSE.Parameters.AddWithValue("@ServiceType", dplServiceType.SelectedValue);
                 sqlCommandSE.Parameters.AddWithValue("@WorkFLowID", workFlowID);
@@ -304,6 +306,8 @@ namespace Lab2
             //clear genral service info
             HttpUtility.HtmlEncode(txtServiceDate.Text = "");
             HttpUtility.HtmlEncode(txtServiceCost.Text = "");
+            HttpUtility.HtmlEncode(txtPotentialDate1.Text = "");
+            HttpUtility.HtmlEncode(txtPotentialDate2.Text = "");
             //Clear Origin address
             HttpUtility.HtmlEncode(txtState.Text = "");
             HttpUtility.HtmlEncode(txtStreet.Text = "");
@@ -337,6 +341,8 @@ namespace Lab2
             //filling textboxes
             txtServiceDate.Text = serviceDate[random.Next(0, serviceDate.Length)];
             txtServiceCost.Text = serviceCost[random.Next(0, serviceCost.Length)];
+            txtPotentialDate1.Text = serviceDate[random.Next(0, serviceDate.Length)];
+            txtPotentialDate2.Text = serviceDate[random.Next(0, serviceDate.Length)];
             //origin
             txtStreet.Text = street[random.Next(0, street.Length)];
             txtZip.Text = zip[random.Next(0, zip.Length)];
