@@ -24,58 +24,121 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Table Table1;
 
         /// <summary>
-        /// lblCDate control.
+        /// lblContactInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCDate;
+        protected global::System.Web.UI.WebControls.Label lblContactInfo;
 
         /// <summary>
-        /// txtCDate control.
+        /// lblDtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCDate;
+        protected global::System.Web.UI.WebControls.Label lblDtName;
 
         /// <summary>
-        /// lblHear control.
+        /// lblName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHear;
+        protected global::System.Web.UI.WebControls.Label lblName;
 
         /// <summary>
-        /// txtHear control.
+        /// lblTContanctDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHear;
+        protected global::System.Web.UI.WebControls.Label lblTContanctDate;
 
         /// <summary>
-        /// lblMen control.
+        /// lblContactDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMen;
+        protected global::System.Web.UI.WebControls.Label lblContactDate;
 
         /// <summary>
-        /// txtMen control.
+        /// lblDtAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMen;
+        protected global::System.Web.UI.WebControls.Label lblDtAddress;
+
+        /// <summary>
+        /// lblAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddress;
+
+        /// <summary>
+        /// lblTMoveDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTMoveDate;
+
+        /// <summary>
+        /// txtMoveDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMoveDate;
+
+        /// <summary>
+        /// lblDtPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDtPhone;
+
+        /// <summary>
+        /// lblPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPhone;
+
+        /// <summary>
+        /// lblNumberOfMen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumberOfMen;
+
+        /// <summary>
+        /// ddlNumberOfMen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlNumberOfMen;
 
         /// <summary>
         /// lblFrom control.
@@ -96,112 +159,22 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblTo;
 
         /// <summary>
-        /// lblFName control.
+        /// txtFromAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFName;
+        protected global::System.Web.UI.WebControls.TextBox txtFromAddress;
 
         /// <summary>
-        /// txtFName control.
+        /// txtToAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFName;
-
-        /// <summary>
-        /// lblTName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTName;
-
-        /// <summary>
-        /// txtTName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTName;
-
-        /// <summary>
-        /// lblFPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFPhone;
-
-        /// <summary>
-        /// txtFPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFPhone;
-
-        /// <summary>
-        /// lblTPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTPhone;
-
-        /// <summary>
-        /// txtTPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTPhone;
-
-        /// <summary>
-        /// lblFAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFAddress;
-
-        /// <summary>
-        /// txtFAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFAddress;
-
-        /// <summary>
-        /// lblTAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTAddress;
-
-        /// <summary>
-        /// txtTAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtToAddress;
 
         /// <summary>
         /// lblConsign control.
@@ -240,24 +213,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RadioButtonList RBLSmalls;
 
         /// <summary>
-        /// lblDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDate;
-
-        /// <summary>
-        /// txtDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
-
-        /// <summary>
         /// lblLayout control.
         /// </summary>
         /// <remarks>
@@ -267,13 +222,40 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblLayout;
 
         /// <summary>
-        /// lblBedrooms control.
+        /// lblStories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBedrooms;
+        protected global::System.Web.UI.WebControls.Label lblStories;
+
+        /// <summary>
+        /// ddlStories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlStories;
+
+        /// <summary>
+        /// lblBedroom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBedroom;
+
+        /// <summary>
+        /// ddlBedrooms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBedrooms;
 
         /// <summary>
         /// txtBedrooms control.
@@ -312,6 +294,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblLivingRooom;
 
         /// <summary>
+        /// ddllivingroom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddllivingroom;
+
+        /// <summary>
         /// txtLivingRoom control.
         /// </summary>
         /// <remarks>
@@ -328,6 +319,15 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAttic;
+
+        /// <summary>
+        /// ddlAttic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAttic;
 
         /// <summary>
         /// txtAttic control.
@@ -348,6 +348,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblDining;
 
         /// <summary>
+        /// ddlDining control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDining;
+
+        /// <summary>
         /// txtDining control.
         /// </summary>
         /// <remarks>
@@ -364,6 +373,15 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBasement;
+
+        /// <summary>
+        /// ddlBasement control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBasement;
 
         /// <summary>
         /// txtBasement control.
@@ -384,6 +402,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblDenFam;
 
         /// <summary>
+        /// ddlDenFam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDenFam;
+
+        /// <summary>
         /// txtDenFam control.
         /// </summary>
         /// <remarks>
@@ -393,42 +420,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtDenFam;
 
         /// <summary>
-        /// lblOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOut;
-
-        /// <summary>
-        /// txtOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOut;
-
-        /// <summary>
-        /// lblStairs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStairs;
-
-        /// <summary>
-        /// txtStairs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStairs;
-
-        /// <summary>
         /// lblGarage control.
         /// </summary>
         /// <remarks>
@@ -436,6 +427,15 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGarage;
+
+        /// <summary>
+        /// ddlGarage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGarage;
 
         /// <summary>
         /// txtGarage control.
@@ -508,6 +508,24 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAppliance;
+
+        /// <summary>
+        /// lblOutBuildings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOutBuildings;
+
+        /// <summary>
+        /// txtOutBuildings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOutBuildings;
 
         /// <summary>
         /// lblPiano control.
@@ -598,15 +616,6 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNotes;
-
-        /// <summary>
-        /// lblNote control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNote;
 
         /// <summary>
         /// txtNote control.

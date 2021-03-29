@@ -2,96 +2,76 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      
+    
     <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
+        <asp:TableRow>
+                <asp:TableCell HorizontalAlign="center">
+                   <asp:Label ID="lblContactInfo" runat="Server" Text="Contact Information" Font-Bold="true"  Font-Size="Large"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+        <%-- Customer Info --%>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblCDate" runat="server" Text="Contact Date:"></asp:Label>
+                    <asp:Label ID="lblDtName" runat="server" Text="Name: " Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
                 </asp:TableCell>
+                <asp:TableCell></asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtCDate" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblTContanctDate" runat="server" Text="Contact Date: "></asp:Label>
+                    <asp:Label ID="lblContactDate" runat="server" Text=""></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblHear" runat="server" Text="How Did You Hear About Us?"></asp:Label>
+                    <asp:Label ID="lblDtAddress" runat="server" Text="Address: " Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblTMoveDate" runat="server" Text="Moving Date:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtHear" runat="server"></asp:TextBox>
+                    <asp:Textbox ID="txtMoveDate" runat="server"></asp:Textbox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblMen" runat="server" Text="# of Men:"></asp:Label>
+                      <asp:Label ID="lblDtPhone" runat="server" Text="Phone: "  Font-Bold="true" ></asp:Label>
+                      <asp:Label ID="lblPhone" runat="server" Text=""></asp:Label>
                 </asp:TableCell>
+                <asp:TableCell></asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtMen" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblNumberOfMen" runat="server" Text="Number Of Men: "></asp:Label>
+                    <asp:DropDownList ID="ddlNumberOfMen" runat="server" >
+                       <asp:ListItem Text="1" Value="1" ></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2" ></asp:ListItem>
+                        <asp:ListItem Text="3" Value="3" ></asp:ListItem>
+                        <asp:ListItem Text="4" Value="4" ></asp:ListItem>
+                        <asp:ListItem Text="5" Value="5" ></asp:ListItem>
+                    </asp:DropDownList>
+                </asp:TableCell>
+            </asp:TableRow>
+        <%-- TO AND FROM ADDRESS --%>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblFrom" runat="server" Text="From Address" Font-Bold="true"></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblTo" runat="server" Text="To Address" Font-Bold="true"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblFrom" runat="server" Text="From" Font-Bold="true"></asp:Label>
+                    <asp:TextBox ID="txtFromAddress" runat="server" Width="200px" ></asp:TextBox>
                 </asp:TableCell>
+                <asp:TableCell></asp:TableCell>
                 <asp:TableCell>
-
-                </asp:TableCell>
-                <asp:TableCell>
-
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="lblTo" runat="server" Text="To" Font-Bold="true"></asp:Label>
+                    <asp:TextBox ID="txtToAddress" runat="server"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblFName" runat="server" Text="Name:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtFName" runat="server"></asp:TextBox>
-                </asp:TableCell>
-                <asp:TableCell>
-
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="lblTName" runat="server" Text="Name:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtTName" runat="server"></asp:TextBox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblFPhone" runat="server" Text="Phone Number:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtFPhone" runat="server"></asp:TextBox>
-                </asp:TableCell>
-                <asp:TableCell>
-
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="lblTPhone" runat="server" Text="Phone Number:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtTPhone" runat="server"></asp:TextBox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblFAddress" runat="server" Text="Address:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtFAddress" runat="server"></asp:TextBox>
-                </asp:TableCell>
-                <asp:TableCell>
-
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="lblTAddress" runat="server" Text="Address:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtTAddress" runat="server"></asp:TextBox>
-                </asp:TableCell>
-            </asp:TableRow>
+        <%-- RADIO BUTTONS --%>
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblConsign" runat="server" Text="Items to Consign?"></asp:Label>
@@ -102,9 +82,6 @@
                         <asp:ListItem Value="No" Text="No"></asp:ListItem>
                     </asp:RadioButtonList>
                 </asp:TableCell>
-
-            </asp:TableRow>
-            <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblSmall" runat="server" Text="Smalls for Us to Pack?"></asp:Label>
                 </asp:TableCell>
@@ -115,25 +92,36 @@
                     </asp:RadioButtonList>
                 </asp:TableCell>
             </asp:TableRow>
+        <%-- HOUSE LAYOUT --%>
             <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblDate" runat="server" Text="Moving Date:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
+                <asp:TableCell HorizontalAlign="Center" >
+                    <asp:Label ID="lblLayout" runat="server" Text="House Layout" Font-Bold="true" ></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblLayout" runat="server" Text="House Layout" Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblStories" runat="server" Text="Stories:"></asp:Label>
+                     <asp:DropDownList id="ddlStories" runat="server" >
+                        <asp:ListItem Text="1" Value="2" ></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2" ></asp:ListItem>
+                    </asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblBedrooms" runat="server" Text="Bedrooms:"></asp:Label>
+                   <asp:Label ID="lblBedroom" runat="server" Text="Bedrooms: " ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtBedrooms" runat="server"></asp:TextBox>
+                    <asp:DropDownList id="ddlBedrooms" runat="server" >
+                        <asp:ListItem Text="1" Value="2" ></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2" ></asp:ListItem>
+                        <asp:ListItem Text="3" Value="3" ></asp:ListItem>
+                        <asp:ListItem Text="4" Value="4" ></asp:ListItem>
+                        <asp:ListItem Text="5" Value="5" ></asp:ListItem>
+                        <asp:ListItem Text="6" Value="6" ></asp:ListItem>
+                        <asp:ListItem Text="7" Value="7" ></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:TextBox ID="txtBedrooms" runat="server" ></asp:TextBox>
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblSQF" runat="server" Text="Square Footage:"></asp:Label>
@@ -144,15 +132,24 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblLivingRooom" runat="server" Text="Living Room:"></asp:Label>
+                    <asp:Label ID="lblLivingRooom" runat="server" Text="Living Room:"></asp:Label> 
                 </asp:TableCell>
                 <asp:TableCell>
+                    <asp:DropDownList ID="ddllivingroom" runat="server">
+                        <asp:ListItem Text="0" Value="0" ></asp:ListItem>
+                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                    </asp:DropDownList>
                     <asp:TextBox ID="txtLivingRoom" runat="server"></asp:TextBox>
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblAttic" runat="server" Text="Attic:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
+                    </asp:Tablecell>
+                    <asp:TableCell>
+                    <asp:DropDownList ID="ddlAttic" runat="server">
+                        <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                        <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                    </asp:DropDownList>
                     <asp:TextBox ID="txtAttic" runat="server"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
@@ -161,12 +158,21 @@
                     <asp:Label ID="lblDining" runat="server" Text="Dining Room:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
+                    <asp:DropDownList ID="ddlDining" runat="server">
+                        <asp:ListItem Text="0" Value="0" ></asp:ListItem>
+                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                    </asp:DropDownList>
                     <asp:TextBox ID="txtDining" runat="server"></asp:TextBox>
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblBasement" runat="server" Text="Basement:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
+                    <asp:DropDownList ID="ddlBasement" runat="server">
+                        <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
+                        <asp:ListItem Text="No" Value="No"></asp:ListItem>  
+                        </asp:DropDownList>
                     <asp:TextBox ID="txtBasement" runat="server"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
@@ -175,31 +181,27 @@
                     <asp:Label ID="lblDenFam" runat="server" Text="Den/Family Room:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
+                    <asp:DropDownList ID="ddlDenFam" runat="server">
+                        <asp:ListItem Text="0" Value="0" ></asp:ListItem>
+                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                        </asp:DropDownList>
                     <asp:TextBox ID="txtDenFam" runat="server"></asp:TextBox>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="lblOut" runat="server" Text="Out Buildings:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtOut" runat="server"></asp:TextBox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblStairs" runat="server" Text="Stairs/Stories:"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtStairs" runat="server"></asp:TextBox>
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblGarage" runat="server" Text="Garage:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
+                    <asp:DropDownList ID="ddlGarage" runat="server">
+                        <asp:ListItem Text="Yes" Value ="Yes"></asp:ListItem>
+                        <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                    </asp:DropDownList>
                     <asp:TextBox ID="txtGarage" runat="server"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
+        <%-- Additional Info --%>
             <asp:TableRow>
-                <asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center" >
                     <asp:Label ID="lblAdditional" runat="server" Text="Additional" Font-Bold="true"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
@@ -210,8 +212,6 @@
                 <asp:TableCell>
                     <asp:TextBox ID="txtLarge" runat="server"></asp:TextBox>
                 </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblCollectibles" runat="server" Text="Collectibles and High Value Items:"></asp:Label>
                 </asp:TableCell>
@@ -226,9 +226,15 @@
                 <asp:TableCell>
                     <asp:TextBox ID="txtAppliance" runat="server"></asp:TextBox>
                 </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblOutBuildings" runat="server" Text="Out Buildings: "></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtOutBuildings" runat="server"></asp:TextBox>
+                </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell>
+            <asp:TableCell>
                     <asp:Label ID="lblPiano" runat="server" Text="Piano:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
@@ -237,8 +243,6 @@
                         <asp:ListItem Value="No" Text="No"></asp:ListItem>
                     </asp:RadioButtonList>
                 </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblMower" runat="server" Text="Lawn Mower:"></asp:Label>
                 </asp:TableCell>
@@ -249,8 +253,9 @@
                     </asp:RadioButtonList>
                 </asp:TableCell>
             </asp:TableRow>
+        <%-- ACCESSIBILITY --%>
             <asp:TableRow>
-                <asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center" >
                     <asp:Label ID="lblAccessibility" runat="server" Text="Accessibility" Font-Bold="true"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
@@ -261,8 +266,6 @@
                 <asp:TableCell>
                     <asp:TextBox ID="txtDistance" runat="server"></asp:TextBox>
                 </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblObstacles" runat="server" Text="Obstacles?"></asp:Label>
                 </asp:TableCell>
@@ -270,19 +273,18 @@
                     <asp:TextBox ID="txtObstacles" runat="server"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
+        <%-- NOTES --%>
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblNotes" runat="server" Text="Additional Notes" Font-Bold="true"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblNote" runat="server" Text="Notes"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtNote" runat="server" Wrap="true" Height="100" TextMode="MultiLine"></asp:TextBox>
+                <asp:TableCell ColumnSpan="4">
+                    <asp:TextBox ID="txtNote" runat="server" Wrap="true" Height="100" Width="100%" TextMode="MultiLine"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
+        <%-- BUTTONS --%>
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell HorizontalAlign="Center">
                     <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click"/>

@@ -42,31 +42,31 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
-        /// btnleft control.
+        /// ibtnleft control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnleft;
+        protected global::System.Web.UI.WebControls.ImageButton ibtnleft;
 
         /// <summary>
-        /// btnRight control.
+        /// ibtnRight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRight;
+        protected global::System.Web.UI.WebControls.ImageButton ibtnRight;
 
         /// <summary>
-        /// btnTrailer control.
+        /// ibtTrailer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTrailer;
+        protected global::System.Web.UI.WebControls.ImageButton ibtTrailer;
 
         /// <summary>
         /// Left control.
