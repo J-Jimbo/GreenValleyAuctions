@@ -427,3 +427,13 @@ input:checked + .slider:before {
     background-color: white;
 } 
 
+/* Scrolling Note Sticky*/
+.sticky {
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fcf1d1;
+  padding: 50px;
+}
+
