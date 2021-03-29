@@ -198,6 +198,10 @@ div.c {
   height: 30px;
 }
 
+.btn-bay {
+  background-color: grey;
+}
+
 /* Employee Button Home Page */
 .employee-btn {
   padding-bottom: 10px;
