@@ -2,27 +2,30 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Table ID="TableInception" runat="server">
+     <asp:Table ID="TableInception" runat="server" Align="Left" Width="30%">
         <asp:TableRow>
             <asp:TableCell>
-                <asp:Table ID="CustomerInfo" runat="server">
-                      <asp:TableRow>
-                            <asp:TableCell>
-                                <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
-                            </asp:TableCell>
-                        </asp:TableRow>
+                <asp:Table ID="CustomerInfo" runat="server" BorderColor="Black" BorderWidth="1" >
                     <asp:TableRow>
                         <asp:TableCell>
+                            <asp:Label ID="lblContactInfo" runat="Server" Text="Contact Information" Font-Bold="true"  Font-Size="Large"></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label ID="lblTAddress" runat="server" Text="Address: " Font-Bold="true"></asp:Label>
                             <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
+                            <asp:label ID="lblTEmail" runat="server" Text="Email: "  Font-Bold="true"></asp:label>
                             <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
+                            <asp:Label ID="lblTPhone" runat="server" Text="Phone: "  Font-Bold="true" ></asp:Label>
                             <asp:Label ID="lblPhone" runat="server" Text=""></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
@@ -112,5 +115,86 @@
        </asp:TableRow>  
        
        
+    </asp:Table>
+    <asp:Table ID="tblCInfo" runat="server" Width="70%"  Align="Right">
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblName" runat="server" Text="" Font-Bold="true" Font-Size="XX-Large" ></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblStatusBar" runat="server" Text="Status Bar: " Font-Bold="true" ></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                            <asp:Image ID="InitialContact" runat="server" ImageUrl="images/ryanjones.png" Visible="false"/>
+                            <asp:Image ID="IntakeForm" runat="server" ImageUrl="images/benhill.png" Visible="false"/>
+                            <asp:Image ID="ServicePage" runat="server" ImageUrl="images/jennylakes.png" Visible="false" />
+                            <asp:Image ID="DateFinal" runat="server" ImageUrl="images/stephaniejames.png" Visible="false"/>
+                            <asp:Image ID="ServiceComplete" runat="server" ImageUrl="images/tyleroaks.png" Visible="false" />
+                            <asp:Image ID="FollowUp" runat="server" ImageUrl="images/emilywilliams.png" Visible="false" />
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblClientInformation" runat="server" Text="Client Information" Font-Bold="true"></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblTEngagement" runat="server" Text="Pick Up Date: "></asp:Label>
+                <asp:Label ID="lblEngagement" runat="server" Text=""></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="lblTCompletion" runat="server" Text="Completion: "></asp:Label>
+                <asp:Label ID="lblCompletion" runat="server" Text=""></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblTCurrentStatus" runat="server" Text="Current Status: "></asp:Label>
+                <asp:Label ID="lblCurrentStatus" runat="server" Text=""></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="lblTReview" runat="server" Text="Review: "></asp:Label>
+                <asp:Label ID="lblReview" runat="server" Text=""></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblTInitialNotes" runat="server" Text="Initial Notes: " Font-Bold="true"></asp:Label>
+                <asp:Label ID="lblInitialNotes" runat="server" Text="" ></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblTRecordedNotes" runat="server" Text="Previous Recorded Notes: " Font-Bold="true" ></asp:Label>
+                <asp:Label ID="lblRecordedNotes" runat="server" text="             " ></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblCustomerNotes" runat="server" Text="Add Customer Notes" Font-Bold="true"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:TextBox id="txtCustomerNotes" runat="server" ></asp:TextBox>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button  ID="btnCustomerNotes" runat="server" Text="Insert Notes" OnClick="btnCustomerNotes_Click" />
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblItems" runat="server" Text="Items" Font-Bold="true"></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblMedia" runat="server" Text="Media: " Font-Bold="true" ></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell ID="photoCell" Visible="false">
+                <asp:Image ID="imgtest" runat="server"  Height="100px" Width="100px" />
+            </asp:TableCell>
+        </asp:TableRow>
     </asp:Table>
 </asp:Content>

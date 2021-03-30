@@ -94,7 +94,7 @@
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Label ID="lblSelecetMovers" runat="server" Text="Select which Movers: "></asp:Label>
-                <asp:DropDownList ID="ddlMovers" runat="server"  DataTextField="Worker" DataValueField="Worker" DataSourceID="datasrcMovers"></asp:DropDownList>
+                <asp:DropDownList ID="ddlMovers" runat="server"  DataTextField="Worker" DataValueField="EmployeeID" DataSourceID="datasrcMovers"></asp:DropDownList>
                 <asp:Button ID="btnAddMover" runat="server" Text="Add Movers" OnClick="btnAddMover_Click" CausesValidation="false"/>
                 <asp:Button ID="btnRemove" runat="server" Text="Remove Movers" OnClick="btnRemove_Click" CausesValidation="false"/>
             </asp:TableCell>
@@ -238,5 +238,5 @@
     <asp:SqlDataSource ID="datasrcTruckList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="select EquipmentName from Equipment; "></asp:SqlDataSource>
     <asp:SqlDataSource ID="datasrcMovers" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
-                SelectCommand="Select trim(EmployeeFirstName)+ ' '+ trim(ISNULL(EmployeeLastName,'')) as Worker from Employee; "></asp:SqlDataSource>
+                SelectCommand="Select trim(EmployeeFirstName)+ ' '+ trim(ISNULL(EmployeeLastName,'')) as Worker, EmployeeID from Employee; "></asp:SqlDataSource>
 </asp:Content>

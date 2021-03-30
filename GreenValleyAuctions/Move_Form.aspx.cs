@@ -202,6 +202,7 @@ namespace GreenValleyAuctions
             Random random = new Random();
             //create arrays to draw random data from
             string[] num = { "2", "4", "9", "1", "11", "21", "15", "3", "30" };
+            string[] sqrFt = { "200", "8000", "4000", "12000" };
             string[] items = { "fridge", "sofa", "tv", "desk", "dining table" };
             string[] exists = { "bean bag chair", "sofa", "tv", "big lamp", "rocking chair" };
             string[] obstacles = { "Rockey Path", "Tight Hallway", "tree" };
@@ -211,13 +212,13 @@ namespace GreenValleyAuctions
 
             RBLConsign.SelectedIndex = random.Next(0, 2);
             RBLSmalls.SelectedIndex = random.Next(0, 2);
-            HttpUtility.HtmlEncode(txtBedrooms.Text = num[random.Next(0, num.Length)]);
+            HttpUtility.HtmlEncode(txtBedrooms.Text = items[random.Next(0, items.Length)]);
             HttpUtility.HtmlEncode(txtLivingRoom.Text = exists[random.Next(0, exists.Length)]);
             HttpUtility.HtmlEncode(txtDining.Text = exists[random.Next(0, exists.Length)]);
             HttpUtility.HtmlEncode(txtToAddress.Text = address[random.Next(0, address.Length)]);
             HttpUtility.HtmlEncode(txtDenFam.Text = exists[random.Next(0, exists.Length)]);
             HttpUtility.HtmlEncode(txtMoveDate.Text = date[random.Next(0, date.Length)]);
-            HttpUtility.HtmlEncode(txtSQF.Text = num[random.Next(0, num.Length)]);
+            HttpUtility.HtmlEncode(txtSQF.Text = sqrFt[random.Next(0, sqrFt.Length)]);
             HttpUtility.HtmlEncode(txtAttic.Text = exists[random.Next(0, exists.Length)]);
             HttpUtility.HtmlEncode(txtBasement.Text = exists[random.Next(0, exists.Length)]);
             HttpUtility.HtmlEncode(txtOutBuildings.Text = num[random.Next(0, num.Length)]);

@@ -53,7 +53,11 @@ namespace GreenValleyAuctions
 
         protected void btnAddMover_Click(object sender, EventArgs e)
         {
-            lbMovers.Items.Add(ddlMovers.SelectedValue.ToString());
+            ListItem mover = new ListItem(ddlMovers.SelectedItem.Text.ToString(), ddlMovers.SelectedValue.ToString());
+            lbMovers.Items.Add(mover);
+            ddlMovers.Items.Remove(ddlMovers.Items.FindByValue(mover.Value));
+
+            
         }
 
         protected void btnRemoveTruck_Click(object sender, EventArgs e)
@@ -161,8 +165,8 @@ namespace GreenValleyAuctions
 
             // query to insert
             string sqlQueryID = "Insert into MovingScreen(MovingScreenID, FinalMoveDate, PricingSource, QuantityTrucks, Trucks," +
-                " QuantityMovers, Movers,Price,Consumables,EstimatedHours,ActualHours,OriginMiles,DestMiles,OtherMiles,TotalMiles,FuelCosts,InsuranceCosts,CostPerWorker,Food,WorkFlowID)" +
-                "Values((Select ISNULL(max(MovingScreenID)+1,1) from MovingScreen),@FinalMoveDate,@PricingScource,@QuantityTrucks,@Trucks,@QuantityMovers,@Movers,@Price,@Consumbles" +
+                " QuantityMovers,Price,Consumables,EstimatedHours,ActualHours,OriginMiles,DestMiles,OtherMiles,TotalMiles,FuelCosts,InsuranceCosts,CostPerWorker,Food,WorkFlowID)" +
+                "Values((Select ISNULL(max(MovingScreenID)+1,1) from MovingScreen),@FinalMoveDate,@PricingScource,@QuantityTrucks,@Trucks,@QuantityMovers,@Price,@Consumbles" +
                 ",@EstimatedHours,@ActualHours,@OriginMiles,@DestMiles,@OtherMiles,@TotalMiles,@FuelCosts,@InsuranceCosts,@CostPerWorker,@Food,@ID)";
 
             //Create sql command to receive ID
@@ -180,15 +184,7 @@ namespace GreenValleyAuctions
                 
             }
             trucklist = trucklist.Remove(trucklist.Length - 2);
-            //get list of workers
-            string MoverList = "";
-            foreach (ListItem item in lbMovers.Items)
-            {
-
-                MoverList += item.Value.ToString().Trim() + ", ";
-
-            }
-            MoverList = MoverList.Remove(MoverList.Length - 2);
+            
 
 
             //Parameter
@@ -197,7 +193,7 @@ namespace GreenValleyAuctions
             sqlCommand.Parameters.AddWithValue("@QuantityTrucks", HttpUtility.HtmlEncode(txtQuantityTrucks.Text.ToString()));
             sqlCommand.Parameters.AddWithValue("@Trucks", HttpUtility.HtmlEncode(trucklist));
             sqlCommand.Parameters.AddWithValue("@QuantityMovers", HttpUtility.HtmlEncode(txtQuantityMovers.Text.ToString()));
-            sqlCommand.Parameters.AddWithValue("@Movers", HttpUtility.HtmlEncode(MoverList));
+            //sqlCommand.Parameters.AddWithValue("@Movers", HttpUtility.HtmlEncode(MoverList));
             sqlCommand.Parameters.AddWithValue("@Price", HttpUtility.HtmlEncode(txtPrice.Text.ToString()));
             sqlCommand.Parameters.AddWithValue("@Consumbles", HttpUtility.HtmlEncode(txtCostConsumables.Text.ToString()));
             sqlCommand.Parameters.AddWithValue("@EstimatedHours", HttpUtility.HtmlEncode(txtEstimateHours.Text.ToString()));
@@ -219,6 +215,35 @@ namespace GreenValleyAuctions
 
             // Close conecctions
             queryValue.Close();
+
+            //--------------------------------------
+            //update movers
+            
+
+            //get list of workers
+           
+            foreach (ListItem item in lbMovers.Items)
+            {
+                String sqlQuery = "INSERT into MSEmployee(MovingScreenID,EmployeeID)VALUES((Select Max(MovingScreenID) from MovingScreen),(Select EmployeeID from EMployee where EmployeeID = @EmployeeID))  ";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = sqlConnect;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = sqlQuery;
+                
+                cmd.Parameters.AddWithValue("@EmployeeID  ", HttpUtility.HtmlEncode(item.Value.ToString()));
+                //open connection to send ID query 
+                SqlDataReader Result = cmd.ExecuteReader();
+                Result.Close();
+
+            }
+           
+
+            
+           
+
+            
+
             sqlConnect.Close();
 
             
