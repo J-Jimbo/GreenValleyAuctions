@@ -27,7 +27,61 @@
 </head>
 <body>
 
-    <header class="row headernav" runat="server"> <!-- Logo Starts Here -->
+	<header class="row headernav"> <!-- Logo Starts Here -->
+				
+
+				<nav class="col-md-4"> <!-- header starts here - nav pills -->
+					 <ul class="nav nav-pills justify-content-start">
+		              <li class="nav-item">
+		                <a class="nav-link" href="Customer_Search.aspx">Clients</a>
+		              </li>
+		              
+		              <li class="nav-item">
+		                <a class="nav-link" href="WareHouse.aspx">Warehouse</a>
+		              </li>
+
+		              
+		            </ul>
+		            </nav>
+				
+
+					<div class ="col-md-2 offset-md-1">
+					<div class="logo3">
+					<a href="Emp_Home.aspx"><img class="img-fluid logo" src="images/gvalogo.png" alt="Green Valley Auctions and Moving Logo"></a>
+					</div>
+				</div><!-- end logo -->
+
+				<div class ="col-md-2 offset-md-1">
+				<a class="btn btn-primary btn-intake rounded-pill" href="Create_Customer.aspx" role="button">New Client</a>
+			</div>
+
+				<div class ="col-md-2">
+				<i class="fas fa-search fa-2x"></i>
+				<i class="fas fa-calendar-alt fa-2x"></i>
+				<a href="Confirm_Logout.aspx"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+		
+				 <br />
+				<asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label>	
+			</div>
+
+
+
+			
+
+			</header> <!-- end row header -->
+
+
+
+
+
+
+
+
+
+
+	<%--old--%>
+
+    <%--<header class="row headernav" runat="server"> <!-- Logo Starts Here -->
 				
 
 				<nav class="col-md-5"> <!-- header starts here - nav pills -->
@@ -75,7 +129,7 @@
 			</div>
 
 
-			</header> <!-- end row header -->
+			</header> <!-- end row header -->--%>
 
 
 

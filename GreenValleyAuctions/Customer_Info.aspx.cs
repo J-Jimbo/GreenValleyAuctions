@@ -211,7 +211,6 @@ namespace GreenValleyAuctions
             if (ContactResult.HasRows == true)
             {
                 InitialContact.Visible = true;
-                IntakeForm.Visible = false;
                 ServicePage.Visible = false;
                 DateFinal.Visible = false;
                 ServiceComplete.Visible = false;
@@ -238,7 +237,6 @@ namespace GreenValleyAuctions
             if (DateOptResult.HasRows == true)
             {
                 InitialContact.Visible = false;
-                IntakeForm.Visible = false;
                 ServicePage.Visible = true;
                 DateFinal.Visible = false;
                 ServiceComplete.Visible = false;
@@ -249,7 +247,7 @@ namespace GreenValleyAuctions
             sqlConnect.Close();
 
             //Progress Bar -- Final Dates 
-            string DateFinalQuery = "SELECT * FROM ServiceEvent SE inner join WorkFlow WF on WF.WorkFLowID = SE.WorkFlowID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID and SE.ServiceEndDate is not null;";
+            string DateFinalQuery = "SELECT * FROM  WorkFlow WF inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID and WF.CompletionDate is not null;";
 
             //Create sql command
             SqlCommand DateFinalCommand = new SqlCommand();
@@ -265,7 +263,6 @@ namespace GreenValleyAuctions
             if (DateFinalResult.HasRows == true)
             {
                 InitialContact.Visible = false;
-                IntakeForm.Visible = false;
                 ServicePage.Visible = false;
                 DateFinal.Visible = true;
                 ServiceComplete.Visible = false;
@@ -294,7 +291,6 @@ namespace GreenValleyAuctions
             if (CompletionResult.HasRows == true)
             {
                 InitialContact.Visible = false;
-                IntakeForm.Visible = false;
                 ServicePage.Visible = false;
                 DateFinal.Visible = false;
                 ServiceComplete.Visible = true;
@@ -304,7 +300,29 @@ namespace GreenValleyAuctions
             CompletionResult.Close();
             sqlConnect.Close();
 
+            string ReviewQuery = "Select * from WorkFlow where CustomerID = @ID and Review is not null";
 
+            SqlCommand ReviewCommand = new SqlCommand();
+            ReviewCommand.Connection = sqlConnect;
+            ReviewCommand.CommandType = CommandType.Text;
+            ReviewCommand.CommandText = ReviewQuery;
+
+            ReviewCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader ReviewResult = ReviewCommand.ExecuteReader();
+
+            if (ReviewResult.HasRows == true)
+            {
+                InitialContact.Visible = false;
+                ServicePage.Visible = false;
+                DateFinal.Visible = false;
+                ServiceComplete.Visible = false;
+                FollowUp.Visible = true;
+            }
+
+            ReviewResult.Close();
+            sqlConnect.Close();
             //Images 
             string Photo = "Select PhotoPath From Customer C inner join WorkFlow wf on C.CustomerID = wf.CustomerID inner join AuctionSchedulingForm asf on wf.WorkFlowID = asf.WorkFlowID inner join AuctionPhotos ap on asf.SchedulingFormID = ap.SchedulingFormID where C.CustomerID = @ID";
 

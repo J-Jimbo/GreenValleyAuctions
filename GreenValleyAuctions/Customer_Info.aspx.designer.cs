@@ -33,15 +33,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Table CustomerInfo;
 
         /// <summary>
-        /// lblContactInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactInfo;
-
-        /// <summary>
         /// lblTAddress control.
         /// </summary>
         /// <remarks>
@@ -58,15 +49,6 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAddress;
-
-        /// <summary>
-        /// lblTEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTEmail;
 
         /// <summary>
         /// lblEmail control.
@@ -229,15 +211,6 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image InitialContact;
-
-        /// <summary>
-        /// IntakeForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image IntakeForm;
 
         /// <summary>
         /// ServicePage control.

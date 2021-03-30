@@ -16,8 +16,12 @@ namespace Lab2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            
+
+            if (Session["Customer"] != null && IsPostBack.Equals(false))
+                {
+                    dplCustomer.SelectedValue = Session["Customer"].ToString();
+                }
+
 
             // set visiblity of destination address
             if (dplServiceType.SelectedValue.Equals("Moving"))
@@ -339,7 +343,7 @@ namespace Lab2
             string[] endRangeDate = { "01/24/2021", "05/13/2021", "12/21/2021", "9/17/2021", "06/12/2021" };
             
             //filling textboxes
-            txtServiceDate.Text = serviceDate[random.Next(0, serviceDate.Length)];
+            
             txtServiceCost.Text = serviceCost[random.Next(0, serviceCost.Length)];
             txtPotentialDate1.Text = serviceDate[random.Next(0, serviceDate.Length)];
             txtPotentialDate2.Text = serviceDate[random.Next(0, serviceDate.Length)];
@@ -358,7 +362,7 @@ namespace Lab2
             if (dplServiceType.Enabled.Equals(true))
             {
                 dplServiceType.SelectedIndex = random.Next(0, dplServiceType.Items.Count);
-                dplCustomer.SelectedIndex = random.Next(0, dplCustomer.Items.Count);
+               
             }
             //random check box
             cbRange.Checked = check[random.Next(0,check.Length)];

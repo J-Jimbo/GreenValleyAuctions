@@ -20,53 +20,46 @@
 </head>
 <body>
 
-    <header class="row headernav" runat="server"> <!-- Logo Starts Here -->
+   <header class="row headernav"> <!-- Logo Starts Here -->
 				
 
-				<nav class="col-md-5"> <!-- header starts here - nav pills -->
+				<nav class="col-md-4"> <!-- header starts here - nav pills -->
 					 <ul class="nav nav-pills justify-content-start">
-		             <li class="nav-item active">
-						<a class="nav-link" href="Create_Customer.aspx">New Customer</a>
-                          
-		              </li>
-						 <li class="nav-item active">
-						  <a class="nav-link" href="Customer_Search.aspx">Search Customer</a>
-						 
+		              <li class="nav-item">
+		                <a class="nav-link" href="Customer_Search.aspx">Clients</a>
 		              </li>
 		              
-		              
-					
+		              <li class="nav-item">
+		                <a class="nav-link" href="WareHouse.aspx">Warehouse</a>
+		              </li>
+
 		              
 		            </ul>
 		            </nav>
 				
 
-					<div class ="col-md-2 ">
+					<div class ="col-md-2 offset-md-1">
 					<div class="logo3">
 					<a href="Emp_Home.aspx"><img class="img-fluid logo" src="images/gvalogo.png" alt="Green Valley Auctions and Moving Logo"></a>
 					</div>
 				</div><!-- end logo -->
- 
+
 				<div class ="col-md-2 offset-md-1">
-				<ul class="nav nav-pills ">
-               <li class="nav-item active">
-						<a class="nav-link" href="WareHouse.aspx">Warehouse</a>
-                          
-		              </li>
-				
-					</ul>
+				<a class="btn btn-primary btn-intake rounded-pill" href="Create_Customer.aspx" role="button">New Client</a>
 			</div>
 
 				<div class ="col-md-2">
-				<i class="fas fa-search fa-1x"></i>
-				<i class="fas fa-calendar-alt fa-1x"></i>
-				<a class="nav-link" href="Confirm_Logout.aspx"><i class="fas fa-sign-out-alt fa-1x"></i></a>
-
-								
-			    <br />
-				 <asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label>
+				<i class="fas fa-search fa-2x"></i>
+				<i class="fas fa-calendar-alt fa-2x"></i>
+				<a href="Confirm_Logout.aspx"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+		
+				 <br />
+				<asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label>	
 			</div>
 
+
+
+			
 
 			</header> <!-- end row header -->
     <div class="text-center">
@@ -78,10 +71,143 @@
 			<h3>Pinned Notifications</h3>
 		</div>
 
-		<div class="heading col-md-3 newnotification">
+
+		<!--<div class="heading col-md-3 newnotification">
 			<h3>New Notification</h3>
 		</div>
-	</div>
+	</div> -->
+
+	<!-- Button trigger modal -->
+	<div class=" heading col-md-3 newnotification">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  New Notification
+</button>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-center" id="exampleModalLongTitle">Create New Notification</h3>
+
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+      	<div class="col-md-3">
+        <p> Send to... </p>
+    </div>
+        <div class="dropdown col-md-9">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    View All Contacts
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Greg</a>
+    <a class="dropdown-item" href="#">Self</a>
+    <a class="dropdown-item" href="#">All Contacts</a>
+  </div>
+</div>
+</div>
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Message</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="row">
+  <div class="col-md-3">
+        <p> Priority </p>
+    </div>
+
+    <div class="col-md-9">
+    <button type="button" class="btn btn-secondary rounded-pill lowbutton" data-dismiss="modal">Low</button>
+
+    <button type="button" class="btn btn-secondary rounded-pill mediumbutton" data-dismiss="modal">Medium</button>
+
+    <button type="button" class="btn btn-secondary rounded-pill highbutton" data-dismiss="modal">High</button>
+</div>
+</div>
+
+	<div class="row">
+    <div class="col-md-3">
+        <p> Date</p>
+    </div>
+
+    <div class="col-md-9">
+    <label class="switch">
+  <input type="checkbox"/>
+  <span class="slider round"></span>
+</label>
+</div>
+</div>
+
+	<div class="row">
+    <div class="col-md-3">
+        <p> Time</p>
+    </div>
+
+    <div class="col-md-9">
+    <label class="switch">
+  <input type="checkbox"/>
+  <span class="slider round"></span>
+</label>
+      </div>
+  </div>
+</div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+		
+		
+
+		<div class="modal fade" id="remindermodal" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-center" id="exampleModalLongTitle1">Set Reminder</h3>
+
+
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+      		<div class="col-md-3">
+        <p> Date  </p>
+    </div>
+</div>
+        
+        <div class="row">
+  <div class="col-md-4">
+        <p> Time</p>
+    </div>
+
+    
+</div>
+
+
+
+	
+</div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 		<div class="buttons">

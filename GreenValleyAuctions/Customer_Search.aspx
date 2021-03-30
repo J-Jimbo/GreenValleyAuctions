@@ -5,19 +5,18 @@
     <asp:Table ID="tblPage" runat="server" HorizontalAlign="Center" >
                     <asp:TableRow HorizontalAlign="Center">
                         <asp:TableCell>
-                             <asp:Label ID="lblSearch" runat="server" Text="Search for Customer:"></asp:Label>
-                             <asp:TextBox ID="txtSearch" runat="server" ></asp:TextBox>
-                             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"/>
+                             <asp:TextBox ID="txtSearch" runat="server" placeholder="Search Customer"></asp:TextBox>
+                             <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-primary btn-intake rounded-pill mediabutton" OnClick="btnSearch_Click"/>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:ListBox ID="lbResults" runat="server" Height="500px" Width="500px" AutoPostBack="true" DataTextField="customerName" DataValueField="CustomerID"></asp:ListBox>
+                            <asp:ListBox ID="lbResults" runat="server" Height="500px" Width="500px" AutoPostBack="true" Class="form-control" DataTextField="customerName" DataValueField="CustomerID"></asp:ListBox>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnSelect" runat="server" Text="View Customer" OnClick="btnSelect_Click"/>
+                            <asp:Button ID="btnSelect" runat="server" Text="View Customer" class="btn btn-primary btn-intake rounded-pill mediabutton" OnClick="btnSelect_Click"/>
                         </asp:TableCell>
                     </asp:TableRow>
      </asp:Table>

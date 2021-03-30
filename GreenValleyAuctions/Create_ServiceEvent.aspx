@@ -49,7 +49,7 @@
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:CheckBox ID="cbRange" runat="server" Text="Dead Line Range?" AutoPostBack="true" OnCheckedChanged="cbRange_CheckedChanged"/>
-                        <asp:RequiredFieldValidator ID="rfvServiceDate" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtServiceDate" Text="Required" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <%--<asp:RequiredFieldValidator ID="rfvServiceDate" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtServiceDate" Text="Required" ForeColor="Red"></asp:RequiredFieldValidator>--%>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow >

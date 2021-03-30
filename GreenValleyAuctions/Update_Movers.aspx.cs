@@ -66,16 +66,16 @@ namespace GreenValleyAuctions
                 //pulls an employee from the list box and fills in the text boxs and information
                 String empNameHold = lstBxEmpNames.SelectedValue;
 
-                String sqlQuery = "Select ISNULL(trim(EmployeeFirstName),'') as EmployeeFirstName, ISNULL(trim(EmployeeLastName),'') as EmployeeLastName, ISNULL(EmployeePhone,'') as EmployeePhone, EmployeeID FROM Employee WHERE  ISNULL(trim(EmployeeFirstName), '') +' '+ISNULL(trim(EmployeeLastName), '') LIKE '%@Name%'";
+                String sqlQuery = "Select ISNULL(trim(EmployeeFirstName),'') as EmployeeFirstName, ISNULL(trim(EmployeeLastName),'') as EmployeeLastName, ISNULL(EmployeePhone,'') as EmployeePhone, EmployeeID FROM Employee WHERE  ISNULL(trim(EmployeeFirstName), '') +' '+ISNULL(trim(EmployeeLastName), '') LIKE '%" + empNameHold + "%'"
+;
 
-                String conStr = WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString;
+            String conStr = WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString;
                 SqlConnection sqlConnect = new SqlConnection(conStr);
 
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = sqlConnect;
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.CommandText = sqlQuery;
-                sqlCommand.Parameters.AddWithValue("@Name", empNameHold);
                 sqlConnect.Open();
                 SqlDataReader queryResults = sqlCommand.ExecuteReader();
                  System.Diagnostics.Debug.WriteLine(empNameHold);
@@ -129,9 +129,10 @@ namespace GreenValleyAuctions
                 //code to run the search of all employees
                 String empNameHold = txtBxEmpSearchName.Text;
 
-                //fills the list box with the current emps containing whatever is in the search
-                String sqlQuery = "Select ISNULL(trim(EmployeeFirstName), '') +' '+ISNULL(trim(EmployeeLastName), '') as EmpName, ISNULL(EmployeePhone, '') as EmployeePhone, EmployeeID FROM Employee WHERE  ISNULL(trim(EmployeeFirstName), '') +' '+ISNULL(trim(EmployeeLastName), '') LIKE '%@Name%'";
-                lstBxEmpNames.Items.Clear();
+            //fills the list box with the current emps containing whatever is in the search
+            String sqlQuery = "Select ISNULL(trim(EmployeeFirstName), '') +' '+ISNULL(trim(EmployeeLastName), '') as EmpName, ISNULL(EmployeePhone, '') as EmployeePhone, EmployeeID FROM Employee WHERE  ISNULL(trim(EmployeeFirstName), '') +' '+ISNULL(trim(EmployeeLastName), '') LIKE @Name;";
+;
+            lstBxEmpNames.Items.Clear();
 
                 String conStr = WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString;
                 SqlConnection sqlConnect = new SqlConnection(conStr);
@@ -140,8 +141,9 @@ namespace GreenValleyAuctions
                 sqlCommand.Connection = sqlConnect;
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.CommandText = sqlQuery;
-                sqlCommand.Parameters.AddWithValue("@Name", empNameHold);
-                sqlConnect.Open();
+                sqlCommand.Parameters.AddWithValue("@Name", "%" + empNameHold + "%");
+
+            sqlConnect.Open();
                 SqlDataReader queryResults = sqlCommand.ExecuteReader();
                 //while the query has more results, concats first and last name and adds them to the list
                 while (queryResults.Read())
@@ -172,9 +174,10 @@ namespace GreenValleyAuctions
                 {
                     try
                     {
-                    String sqlQuery = "INSERT INTO Employee (EmployeeID,EmployeeFirstName,EmployeeLastName,EmployeePhone) VALUES ((Select ISNULL(MAX(EMployeeID) + 1,0)) from Employee,@empFirst, @empLast, @empPhone);";
+                    String sqlQuery = "INSERT INTO Employee(EmployeeID, EmployeeFirstName, EmployeeLastName, EmployeePhone) VALUES((Select(MAX(EmployeeID) + 1) FROM Employee),@empFirst, @empLast, @empPhone);";
+;
 
-                        String conStr = WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString;
+                    String conStr = WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString;
                         SqlConnection sqlConnect = new SqlConnection(conStr);
 
                         SqlCommand sqlCommand = new SqlCommand();
