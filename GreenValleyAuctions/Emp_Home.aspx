@@ -272,18 +272,18 @@
   <div class="card bg-primary">
     <div class="card-body" style="height: 18rem;">
     	
-      <a class="card-text">TO DO: <br> <ul><li> <li> <li></ul></a>
+      <%--<a class="card-text">TO DO: <br> <ul><li> <li> <li></ul></a>--%>
 
     </div>
   </div>
   <div class="card bg-warning">
     <div class="card-body" style="height: 18rem;">
-      <a class="card-text">STICKY NOTE <br> <br> Type note...</a>
+      <%--<a class="card-text">STICKY NOTE <br> <br> Type note...</a>--%>
     </div>
   </div>
   <div class="card bg-success">
     <div class="card-body text-center" style="height: 18rem;">
-      <a class="card-text"> + <br> STICKY NOTE</a>
+      <%--<a class="card-text"> + <br> STICKY NOTE</a>--%>
     </div>
   </div>
 </div>
