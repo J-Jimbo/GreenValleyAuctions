@@ -25,13 +25,30 @@ namespace Lab2
 
             // set visiblity of destination address
             if (dplServiceType.SelectedValue.Equals("Moving"))
-                tblDestination.Visible = true;
-            else
-                tblDestination.Visible = false;
+            {
+                txtDestCity.Visible = true;
+                txtDestState.Visible = true;
+                txtDestStrt.Visible = true;
+                txtDestZip.Visible = true;
+                lblDestAddress.Visible = true;
+                lblState_Zip.Visible = true;
+                lblCity_street.Visible = true;
 
-                //-----------------------------------------
-                // continue workflow
-                if (Session["ServiceRequest"] != null && IsPostBack.Equals(false))
+            }
+            else
+            {
+                txtDestCity.Visible = false;
+                txtDestState.Visible = false;
+                txtDestStrt.Visible = false;
+                txtDestZip.Visible = false;
+                lblDestAddress.Visible = false;
+                lblState_Zip.Visible = false;
+                lblCity_street.Visible = false;
+            }
+
+            //-----------------------------------------
+            // continue workflow
+            if (Session["ServiceRequest"] != null && IsPostBack.Equals(false))
                 {
                     dplCustomer.Enabled = false;
                     dplServiceType.Enabled = false;
@@ -337,7 +354,7 @@ namespace Lab2
             string[] serviceCost = { "20", "500", "75", "5000", "2500", "100", "3000", "45", };
             string[] street = { "1787 Go Dukes Rd", "10 Maple Way", "20 Main St" };
             string[] zip = { "38469", "08740", "27548", "01129", "05380", "02340" };
-            string[] city = { "New York", "HarrisonBurg", "Chicago", "Trenton", "Boston", "D.C." };
+            string[] city = { "New York", "Harrisonburg", "Chicago", "Trenton", "Boston", "D.C." };
             string[] state = { "New York", "Virginia", "Massachusetts", "Washington", "New Jersey", "Illinois" };
             Boolean[] check = { true, false };
             string[] endRangeDate = { "01/24/2021", "05/13/2021", "12/21/2021", "9/17/2021", "06/12/2021" };
@@ -384,7 +401,13 @@ namespace Lab2
             //destination
             if (dplServiceType.SelectedValue.Equals("Moving"))
             {
-                tblDestination.Visible = true;
+                txtDestCity.Visible = true;
+                txtDestState.Visible = true;
+                txtDestStrt.Visible = true;
+                txtDestZip.Visible = true;
+                lblDestAddress.Visible = true;
+                lblState_Zip.Visible = true;
+                lblCity_street.Visible = true;
                 txtDestStrt.Text = street[random.Next(0, street.Length)];
                 txtDestZip.Text = zip[random.Next(0, zip.Length)];
                 txtDestCity.Text = city[random.Next(0, city.Length)];
@@ -392,7 +415,15 @@ namespace Lab2
 
             }
             else
-                tblDestination.Visible = false;
+            {
+                txtDestCity.Visible = false;
+                txtDestState.Visible = false;
+                txtDestStrt.Visible = false;
+                txtDestZip.Visible = false;
+                lblDestAddress.Visible = false;
+                lblState_Zip.Visible = false;
+                lblCity_street.Visible = false;
+            }
         }
         
 
@@ -475,10 +506,26 @@ namespace Lab2
         protected void dplServiceType_SelectedIndexChanged(object sender, EventArgs e)
         {
             //visibility for destination address
-           if(dplServiceType.SelectedValue.Equals("Moving"))
-            tblDestination.Visible = true;
-           else
-                tblDestination.Visible = false;
+            if (dplServiceType.SelectedValue.Equals("Moving"))
+            {
+                txtDestCity.Visible = true;
+                txtDestState.Visible = true;
+                txtDestStrt.Visible = true;
+                txtDestZip.Visible = true;
+                lblDestAddress.Visible = true;
+                lblState_Zip.Visible = true;
+                lblCity_street.Visible = true;
+            }
+            else
+            {
+                txtDestCity.Visible = false;
+                txtDestState.Visible = false;
+                txtDestStrt.Visible = false;
+                txtDestZip.Visible = false;
+                lblDestAddress.Visible = false;
+                lblState_Zip.Visible = false;
+                lblCity_street.Visible = false;
+            }
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

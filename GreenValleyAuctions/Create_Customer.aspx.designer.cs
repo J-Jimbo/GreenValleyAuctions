@@ -15,33 +15,6 @@ namespace Lab2
     {
 
         /// <summary>
-        /// tblFrom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblFrom;
-
-        /// <summary>
-        /// lblForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblForm;
-
-        /// <summary>
-        /// lblServices control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServices;
-
-        /// <summary>
         /// CblServices control.
         /// </summary>
         /// <remarks>
@@ -58,15 +31,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator CvServices;
-
-        /// <summary>
-        /// lblLookat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLookat;
 
         /// <summary>
         /// rblLookAt control.
@@ -87,24 +51,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLookAt;
 
         /// <summary>
-        /// lblQuestions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuestions;
-
-        /// <summary>
-        /// lblDownsizing control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDownsizing;
-
-        /// <summary>
         /// rblDownsizing control.
         /// </summary>
         /// <remarks>
@@ -121,15 +67,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDownsizing;
-
-        /// <summary>
-        /// lblEstate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstate;
 
         /// <summary>
         /// rblEstate control.
@@ -150,15 +87,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEstate;
 
         /// <summary>
-        /// lblMoving control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMoving;
-
-        /// <summary>
         /// rblMoving control.
         /// </summary>
         /// <remarks>
@@ -175,15 +103,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMoving;
-
-        /// <summary>
-        /// lblQuantityToSell control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantityToSell;
 
         /// <summary>
         /// txtQuanity control.
@@ -204,15 +123,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvquantity;
 
         /// <summary>
-        /// lblWhatToSell control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWhatToSell;
-
-        /// <summary>
         /// txtWhatToSell control.
         /// </summary>
         /// <remarks>
@@ -229,15 +139,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWhatToSell;
-
-        /// <summary>
-        /// lblConversationNotes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConversationNotes;
 
         /// <summary>
         /// txtNote control.
@@ -258,24 +159,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNote;
 
         /// <summary>
-        /// tblCustomerChoice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblCustomerChoice;
-
-        /// <summary>
-        /// lblCHoice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCHoice;
-
-        /// <summary>
         /// rblChoice control.
         /// </summary>
         /// <remarks>
@@ -285,22 +168,13 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RadioButtonList rblChoice;
 
         /// <summary>
-        /// tblExistingCustomer control.
+        /// ExistingCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblExistingCustomer;
-
-        /// <summary>
-        /// lblSelect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSelect;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ExistingCustomer;
 
         /// <summary>
         /// ddlCustomer control.
@@ -321,22 +195,13 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.Label lblCreateStatus;
 
         /// <summary>
-        /// tblCreateCustomer control.
+        /// NewCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblCreateCustomer;
-
-        /// <summary>
-        /// lblFirstName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NewCustomer;
 
         /// <summary>
         /// txtFirstName control.
@@ -366,15 +231,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.CustomValidator cvFirstName;
 
         /// <summary>
-        /// lblLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastName;
-
-        /// <summary>
         /// txtLastName control.
         /// </summary>
         /// <remarks>
@@ -391,15 +247,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLastName;
-
-        /// <summary>
-        /// lblStreet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStreet;
 
         /// <summary>
         /// txtStreet control.
@@ -420,15 +267,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStreet;
 
         /// <summary>
-        /// lblCity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCity;
-
-        /// <summary>
         /// txtCIty control.
         /// </summary>
         /// <remarks>
@@ -445,15 +283,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCIty;
-
-        /// <summary>
-        /// lblState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblState;
 
         /// <summary>
         /// txtState control.
@@ -474,15 +303,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSTate;
 
         /// <summary>
-        /// lblZip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblZip;
-
-        /// <summary>
         /// txtZip control.
         /// </summary>
         /// <remarks>
@@ -499,15 +319,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvZip;
-
-        /// <summary>
-        /// lblPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhone;
 
         /// <summary>
         /// txtPhone control.
@@ -528,15 +339,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhone;
 
         /// <summary>
-        /// lblPhoneType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhoneType;
-
-        /// <summary>
         /// rfvPhoneType control.
         /// </summary>
         /// <remarks>
@@ -555,15 +357,6 @@ namespace Lab2
         protected global::System.Web.UI.WebControls.RadioButtonList rblPhoneType;
 
         /// <summary>
-        /// lblEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
-
-        /// <summary>
         /// txtEmail control.
         /// </summary>
         /// <remarks>
@@ -580,33 +373,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
-
-        /// <summary>
-        /// btnNext control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNext;
-
-        /// <summary>
-        /// btnNextProcess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNextProcess;
-
-        /// <summary>
-        /// lblHear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHear;
 
         /// <summary>
         /// txtHear control.
@@ -634,15 +400,6 @@ namespace Lab2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStatus;
-
-        /// <summary>
-        /// lblContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContact;
 
         /// <summary>
         /// rfvContact control.

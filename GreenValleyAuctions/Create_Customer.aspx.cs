@@ -19,8 +19,8 @@ namespace Lab2
             if(Session["ServiceRequest"] != null)
             {
                 //set buttons to continue workflow 
-                btnNextProcess.Visible = true;
-                btnNext.Visible = false;
+                //btnNextProcess.Visible = true;
+                //btnNext.Visible = false;
 
 
                 txtFirstName.Enabled = false;
@@ -447,16 +447,16 @@ namespace Lab2
             // new or existing customer
             if(rblChoice.SelectedValue.Equals("New Customer"))
             {
-                tblCreateCustomer.Visible = true;
-                tblExistingCustomer.Visible = false;
+                NewCustomer.Visible = true;
+                ExistingCustomer.Visible = false;
                 
             }
             else
             {
                 //show table
-                tblExistingCustomer.Visible = true;
+                ExistingCustomer.Visible = true;
                 //hide table
-                tblCreateCustomer.Visible = false;
+                NewCustomer.Visible = false;
                 //temp remove validation
                 txtFirstName.CausesValidation = false;
                 txtLastName.CausesValidation = false;

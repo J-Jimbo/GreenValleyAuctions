@@ -13,7 +13,7 @@ namespace GreenValleyAuctions
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ddlStorage_SelectedIndexChanged(sender, e);
         }
 
         protected void btnPopulate_Click(object sender, EventArgs e)
@@ -156,8 +156,9 @@ namespace GreenValleyAuctions
                 ddlBay.Items.Add(T8);
 
                 ddlPlace.Items.Add("Doors");
-                ddlPlace.Items.Add("Nose");
                 ddlPlace.Items.Add("Middle");
+                ddlPlace.Items.Add("Nose");
+                
             }
         }
     }
