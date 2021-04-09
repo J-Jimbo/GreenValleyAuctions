@@ -15,42 +15,6 @@ namespace GreenValleyAuctions
     {
 
         /// <summary>
-        /// Table1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
-
-        /// <summary>
-        /// lblMove control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMove;
-
-        /// <summary>
-        /// tblScourceAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblScourceAddress;
-
-        /// <summary>
-        /// lblOrignAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOrignAddress;
-
-        /// <summary>
         /// txtOrigin control.
         /// </summary>
         /// <remarks>
@@ -60,24 +24,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtOrigin;
 
         /// <summary>
-        /// tblDestination control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblDestination;
-
-        /// <summary>
-        /// lblDestinationAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDestinationAddress;
-
-        /// <summary>
         /// txtDest control.
         /// </summary>
         /// <remarks>
@@ -85,15 +31,6 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDest;
-
-        /// <summary>
-        /// lblMoveDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMoveDate;
 
         /// <summary>
         /// txtMoveDate control.
@@ -114,15 +51,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFinalDate;
 
         /// <summary>
-        /// lblPricingSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPricingSource;
-
-        /// <summary>
         /// rblPricingScource control.
         /// </summary>
         /// <remarks>
@@ -139,15 +67,6 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPriceScource;
-
-        /// <summary>
-        /// lblQTruck control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQTruck;
 
         /// <summary>
         /// txtQuantityTrucks control.
@@ -168,58 +87,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvQuantityTrucks;
 
         /// <summary>
-        /// lblTrucks control.
+        /// cvqTrucks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTrucks;
-
-        /// <summary>
-        /// ddlTrucks control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTrucks;
-
-        /// <summary>
-        /// btnAdd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
-
-        /// <summary>
-        /// btnRemoveTruck control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRemoveTruck;
-
-        /// <summary>
-        /// lbTrucks control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbTrucks;
-
-        /// <summary>
-        /// lblQMovers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQMovers;
+        protected global::System.Web.UI.WebControls.CompareValidator cvqTrucks;
 
         /// <summary>
         /// txtQuantityMovers control.
@@ -240,13 +114,31 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// lblSelecetMovers control.
+        /// cvMovers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSelecetMovers;
+        protected global::System.Web.UI.WebControls.CompareValidator cvMovers;
+
+        /// <summary>
+        /// ddlTrucks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTrucks;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
         /// ddlMovers control.
@@ -256,6 +148,33 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMovers;
+
+        /// <summary>
+        /// lblMoverError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMoverError;
+
+        /// <summary>
+        /// btnAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdd;
+
+        /// <summary>
+        /// btnRemoveTruck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRemoveTruck;
 
         /// <summary>
         /// btnAddMover control.
@@ -276,6 +195,24 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Button btnRemove;
 
         /// <summary>
+        /// lbTrucks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbTrucks;
+
+        /// <summary>
+        /// cvTrucks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvTrucks;
+
+        /// <summary>
         /// lbMovers control.
         /// </summary>
         /// <remarks>
@@ -285,13 +222,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.ListBox lbMovers;
 
         /// <summary>
-        /// lblPrice control.
+        /// cvnumMovers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrice;
+        protected global::System.Web.UI.WebControls.CustomValidator cvnumMovers;
 
         /// <summary>
         /// txtPrice control.
@@ -312,13 +249,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrice;
 
         /// <summary>
-        /// lblCostConsumables control.
+        /// cvPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostConsumables;
+        protected global::System.Web.UI.WebControls.CompareValidator cvPrice;
 
         /// <summary>
         /// txtCostConsumables control.
@@ -339,22 +276,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvConsumables;
 
         /// <summary>
-        /// lblHours control.
+        /// cvConsumables control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHours;
-
-        /// <summary>
-        /// lblEstimate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstimate;
+        protected global::System.Web.UI.WebControls.CompareValidator cvConsumables;
 
         /// <summary>
         /// txtEstimateHours control.
@@ -375,13 +303,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEstimateHours;
 
         /// <summary>
-        /// lblActualHours control.
+        /// cvEstimatedHours control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblActualHours;
+        protected global::System.Web.UI.WebControls.CompareValidator cvEstimatedHours;
 
         /// <summary>
         /// txtActualHours control.
@@ -402,22 +330,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvActualHours;
 
         /// <summary>
-        /// lblMilage control.
+        /// cvActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMilage;
-
-        /// <summary>
-        /// OriginMilage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label OriginMilage;
+        protected global::System.Web.UI.WebControls.CompareValidator cvActual;
 
         /// <summary>
         /// txtOriginMilage control.
@@ -438,13 +357,40 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOrigin;
 
         /// <summary>
-        /// lblDestinationMilage control.
+        /// cvOGMiles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDestinationMilage;
+        protected global::System.Web.UI.WebControls.CompareValidator cvOGMiles;
+
+        /// <summary>
+        /// txtFuel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFuel;
+
+        /// <summary>
+        /// rfvFuel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFuel;
+
+        /// <summary>
+        /// cvFuels control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvFuels;
 
         /// <summary>
         /// txtMilage control.
@@ -465,103 +411,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMilage;
 
         /// <summary>
-        /// lblOtherMilage control.
+        /// cvMiles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOtherMilage;
-
-        /// <summary>
-        /// txtOtherMilage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOtherMilage;
-
-        /// <summary>
-        /// rfvOther control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOther;
-
-        /// <summary>
-        /// lbTotalMilage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTotalMilage;
-
-        /// <summary>
-        /// sumMilage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label sumMilage;
-
-        /// <summary>
-        /// lblFuel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFuel;
-
-        /// <summary>
-        /// txtFuel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFuel;
-
-        /// <summary>
-        /// lblInsurance control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInsurance;
-
-        /// <summary>
-        /// txtInsurance control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtInsurance;
-
-        /// <summary>
-        /// rfvInsurance control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInsurance;
-
-        /// <summary>
-        /// lblWorkerCost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWorkerCost;
+        protected global::System.Web.UI.WebControls.CompareValidator cvMiles;
 
         /// <summary>
         /// txtWorkerCost control.
@@ -582,13 +438,76 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWorkerCost;
 
         /// <summary>
-        /// lblFood control.
+        /// cvWorkerCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFood;
+        protected global::System.Web.UI.WebControls.CompareValidator cvWorkerCost;
+
+        /// <summary>
+        /// txtOtherMilage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOtherMilage;
+
+        /// <summary>
+        /// rfvOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOther;
+
+        /// <summary>
+        /// cvOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvOther;
+
+        /// <summary>
+        /// txtInsurance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtInsurance;
+
+        /// <summary>
+        /// rfvInsurance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInsurance;
+
+        /// <summary>
+        /// cvInsurance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvInsurance;
+
+        /// <summary>
+        /// sumMilage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label sumMilage;
 
         /// <summary>
         /// txtFood control.
@@ -607,6 +526,15 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFood;
+
+        /// <summary>
+        /// cvFood control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvFood;
 
         /// <summary>
         /// btnpopulate control.

@@ -23,7 +23,8 @@
     
     
     <div class="text-center">
-        <img class="img-fluid logo2" src="images/gvalogo.png" alt="Green Valley Auctions and Moving Logo"/>
+        <asp:Image ID="logo" runat="server" ImageUrl="~/images/gvalogo.png" alt="Green Valley Auctions and Moving Logo" class="img-fluid logo2" />
+<%--        <img class="img-fluid logo2" src="~/GreenValley/images/gvalogo.png" alt="Green Valley Auctions and Moving Logo"/>--%>
     </div>
 
     <div class="text-center">
@@ -58,6 +59,7 @@
  <asp:Button ID="btnLanding" runat="server" Text="Return to Landing Page"  OnClick="btnLanding_Click"  Class="btn btn-primary btn-lg"/>
     <br />
 <asp:Label ID="lblLoginStatus" runat="server" Text=""></asp:Label>
+
 </div>
 </form>
 

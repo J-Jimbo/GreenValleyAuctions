@@ -94,8 +94,12 @@
 
 <%--SQL DATA Sources  --%> 
     <asp:SqlDataSource ID="datasrcWorkFlow" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>"  SelectCommand="Select WorkFLowID,EngagmentDate,CompletionDate,Review,CurrentStatus, trim(c.FirstName)+' '+trim(c.LastName) as CustomerName,trim(e.EmployeeFirstName)+' '+trim(e.EmployeeLastName) as EmployeeName
-        from WorkFlow wf inner join customer c on wf.CustomerID = c.CustomerID inner join Employee e on wf.EmployeeID = e.EmployeeID where CurrentStatus = 'In Progress'"
-        UpdateCommand="UPDATE WorkFlow SET CompletionDate=@CompletionDate, Review=@Review, CurrentStatus=@CurrentStatus where WorkFlowID=@WorkFlowID" ></asp:SqlDataSource>
+        from WorkFlow wf inner join customer c on wf.CustomerID = c.CustomerID inner join Employee e on wf.EmployeeID = e.EmployeeID where CurrentStatus = 'In Progress' and c.CustomerID = @ID"
+        UpdateCommand="UPDATE WorkFlow SET CompletionDate=@CompletionDate, Review=@Review, CurrentStatus=@CurrentStatus where WorkFlowID=@WorkFlowID" >
+     <SelectParameters>
+         <asp:SessionParameter Name="ID" Type="Int32" SessionField="Customer" />
+     </SelectParameters>
+    </asp:SqlDataSource>
     <asp:SqlDataSource ID="datasrcEmployeeList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="SELECT trim(EmployeeFirstName) + ' ' + ISNULL(trim(EmployeeLastName),'') as employeeName, EmployeeID from Employee"></asp:SqlDataSource>
      <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
