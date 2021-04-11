@@ -113,7 +113,7 @@ namespace Lab2
         protected void btnSave_Click(object sender, EventArgs e)
         {
             //  used to confirm validation before saving to DB
-            if(dplServiceType.SelectedIndex.Equals("Moving"))
+            if(dplServiceType.SelectedValue.Equals("Auction"))
             {
                 rfvDestCity.IsValid = true;
                 rfvDestState.IsValid = true;

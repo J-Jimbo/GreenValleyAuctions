@@ -10,14 +10,17 @@
           <p> Item: </p>
             </div>
           <div class="col-md-4">
-              <asp:TextBox ID="txtItem" runat="server" class="form-control"></asp:TextBox>
+              <asp:TextBox ID="txtItem" runat="server" class="form-control" placeholder="Item Name"></asp:TextBox>
+              <asp:RequiredFieldValidator ID="rfvItme" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ForeColor="Red" ControlToValidate="txtItem" Display="Dynamic"></asp:RequiredFieldValidator>
             </div>
           <div class="col-md-2">
            <p> Cost: </p>
         </div>
         <div class="col-md-4">
-              <asp:TextBox ID="txtCost" runat="server" class="form-control"></asp:TextBox>
-            </div>
+              <asp:TextBox ID="txtCost" runat="server" class="form-control" placeholder="0.00"></asp:TextBox>
+              <asp:RequiredFieldValidator ID="rfvCost" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ForeColor="Red" ControlToValidate="txtCost" Display="Dynamic"></asp:RequiredFieldValidator>
+              <asp:CompareValidator ID="CVCost" runat="server" ErrorMessage="CompareValidator" Operator="DataTypeCheck" Type="Double" Text="Must Be A Number" ControlToValidate="txtCost" Display="Dynamic"></asp:CompareValidator>
+        </div>
           </div>
     <asp:Table ID="Table1" runat="server">
        

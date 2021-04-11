@@ -15,51 +15,6 @@ namespace GreenValleyAuctions
     {
 
         /// <summary>
-        /// tableForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tableForm;
-
-        /// <summary>
-        /// lblForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblForm;
-
-        /// <summary>
-        /// TableContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table TableContact;
-
-        /// <summary>
-        /// lblContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContact;
-
-        /// <summary>
-        /// lblName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
-
-        /// <summary>
         /// lblShowName control.
         /// </summary>
         /// <remarks>
@@ -67,15 +22,6 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblShowName;
-
-        /// <summary>
-        /// lblPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhone;
 
         /// <summary>
         /// lblShowPhone control.
@@ -87,15 +33,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblShowPhone;
 
         /// <summary>
-        /// lblEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
-
-        /// <summary>
         /// lblSHowEmai control.
         /// </summary>
         /// <remarks>
@@ -103,15 +40,6 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSHowEmai;
-
-        /// <summary>
-        /// lblContactDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactDate;
 
         /// <summary>
         /// lblShowDate control.
@@ -123,33 +51,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblShowDate;
 
         /// <summary>
-        /// TablePossibleDates control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table TablePossibleDates;
-
-        /// <summary>
-        /// lblDates control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDates;
-
-        /// <summary>
-        /// lblBringIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBringIn;
-
-        /// <summary>
         /// txtBringIn control.
         /// </summary>
         /// <remarks>
@@ -159,76 +60,13 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtBringIn;
 
         /// <summary>
-        /// lblPickUp control.
+        /// rfvBringIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPickUp;
-
-        /// <summary>
-        /// txtPickUp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPickUp;
-
-        /// <summary>
-        /// lblLookAt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLookAt;
-
-        /// <summary>
-        /// txtLookAt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLookAt;
-
-        /// <summary>
-        /// lblAppraisal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAppraisal;
-
-        /// <summary>
-        /// txtAppraisal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAppraisal;
-
-        /// <summary>
-        /// lblConfirmedDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfirmedDate;
-
-        /// <summary>
-        /// lblBringConfirmed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBringConfirmed;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBringIn;
 
         /// <summary>
         /// txtBringInConfirmed control.
@@ -240,13 +78,22 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtBringInConfirmed;
 
         /// <summary>
-        /// lblPickUpConfirmed control.
+        /// txtPickUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPickUpConfirmed;
+        protected global::System.Web.UI.WebControls.TextBox txtPickUp;
+
+        /// <summary>
+        /// rfvPickUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPickUp;
 
         /// <summary>
         /// txtPickUpConfirmed control.
@@ -258,13 +105,22 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtPickUpConfirmed;
 
         /// <summary>
-        /// lblLookAtConfirmed control.
+        /// txtLookAt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLookAtConfirmed;
+        protected global::System.Web.UI.WebControls.TextBox txtLookAt;
+
+        /// <summary>
+        /// rfvLookAt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLookAt;
 
         /// <summary>
         /// txtLookAtConfirmed control.
@@ -276,13 +132,22 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtLookAtConfirmed;
 
         /// <summary>
-        /// lblAppraisalConfirmed control.
+        /// txtAppraisal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAppraisalConfirmed;
+        protected global::System.Web.UI.WebControls.TextBox txtAppraisal;
+
+        /// <summary>
+        /// rfvAppraisal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAppraisal;
 
         /// <summary>
         /// txtAppraisalConfirmed control.
@@ -294,15 +159,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtAppraisalConfirmed;
 
         /// <summary>
-        /// lblSaleConfirmed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSaleConfirmed;
-
-        /// <summary>
         /// txtSaleDateConfirmed control.
         /// </summary>
         /// <remarks>
@@ -310,15 +166,6 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSaleDateConfirmed;
-
-        /// <summary>
-        /// lblStorage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStorage;
 
         /// <summary>
         /// rblStorage control.

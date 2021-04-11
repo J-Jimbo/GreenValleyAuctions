@@ -13,6 +13,92 @@ namespace GreenValleyAuctions
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // On page load check for existing file to view/edit
+            if (IsPostBack != true)
+            {
+                try
+                {
+                    //query to check for existing form based on workflow
+                    //query to grab workflow
+                    string WFQuery = "select MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID; ";
+
+                    //Define the connection to the Database
+                    SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+
+                    //Create sql command 
+                    SqlCommand sqlCommandID = new SqlCommand();
+                    sqlCommandID.Connection = sqlConnection;
+                    sqlCommandID.CommandType = CommandType.Text;
+                    sqlCommandID.CommandText = WFQuery;
+
+                    sqlCommandID.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+                    //open connection to send ID query 
+                    sqlConnection.Open();
+                    SqlDataReader Result = sqlCommandID.ExecuteReader();
+
+                    string workFLow = "";
+                    while (Result.Read())
+                    {
+                        workFLow = Result["WFID"].ToString();
+
+
+                    }
+
+                    Result.Close();
+
+                    //query to grab move screww form 
+                    string formQuery = "Select * from AuctionPickUP where WorkFlowID = @ID;";
+
+                    //Create sql command 
+                    SqlCommand sqlCommandScreen = new SqlCommand();
+                    sqlCommandScreen.Connection = sqlConnection;
+                    sqlCommandScreen.CommandType = CommandType.Text;
+                    sqlCommandScreen.CommandText = formQuery;
+
+
+                    sqlCommandScreen.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(workFLow));
+
+                    SqlDataReader answer = sqlCommandScreen.ExecuteReader();
+                    while (answer.Read())
+                    {
+                        
+                        //fill info
+                      
+                        txtAppraisal.Text = DateTime.Parse(answer["AppraisalDate"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtAppraisalConfirmed.Text = DateTime.Parse(answer["AppraisalDateConfirmed"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtBringIn.Text = DateTime.Parse(answer["BringinDate"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtBringInConfirmed.Text= DateTime.Parse(answer["BringInDateConfirmed"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtLookAt.Text= DateTime.Parse(answer["LookAtDate"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtLookAtConfirmed.Text= DateTime.Parse(answer["LookAtDateConfirmed"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtPickUp.Text= DateTime.Parse(answer["PickupDate"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtPickUpConfirmed.Text= DateTime.Parse(answer["PickUpDateConfirmed"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtSaleDateConfirmed.Text= DateTime.Parse(answer["SaleDate"].ToString()).ToString("yyyy-MM-dd").Trim();
+                        txtLocation.Text = answer["Location"].ToString().Trim();
+                        if (answer["Location"].ToString().Trim().Equals(null))
+                        {
+                            rblStorage.SelectedValue = "No";
+                            rblStorage_SelectedIndexChanged(sender, e);
+                        }
+                        else
+                        {
+                            rblStorage.SelectedValue = "Yes";
+                            rblStorage_SelectedIndexChanged(sender, e);
+                        }
+
+                    }
+
+                    answer.Close();
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+            //-------------------------------------------------------------
             //On Page load grab customer info
 
             string Query = "Select trim(FirstName) +' ' + trim(LastName) as CustomerName,CustomerPhone,CustomerEmail,IC.DateContacted ,MAX(IC.ContactID) as ID from Customer C inner join InitialContact IC on C.CustomerID = IC.CustomerID where c.customerID = @ID group by trim(FirstName) +' ' + trim(LastName),CustomerPhone,CustomerEmail,DateContacted; ";
@@ -81,43 +167,88 @@ namespace GreenValleyAuctions
 
             protected void btnSave_Click(object sender, EventArgs e)
         {
-            string Query = "select MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID; ";
+
+            //grab workflow id
+
+            string WFQuery = "select MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID; ";
 
             //Define the connection to the Database
             SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+
 
             //Create sql command 
             SqlCommand sqlCommandID = new SqlCommand();
             sqlCommandID.Connection = sqlConnect;
             sqlCommandID.CommandType = CommandType.Text;
-            sqlCommandID.CommandText = Query;
+            sqlCommandID.CommandText = WFQuery;
 
             sqlCommandID.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
             //open connection to send ID query 
             sqlConnect.Open();
-            SqlDataReader queryResult = sqlCommandID.ExecuteReader();
+            SqlDataReader response = sqlCommandID.ExecuteReader();
 
             string workFLow = "";
-            while (queryResult.Read())
+            while (response.Read())
             {
-                workFLow = queryResult["WFID"].ToString();
+                workFLow = response["WFID"].ToString();
 
 
             }
 
-            queryResult.Close();
-            sqlConnect.Close();
+            response.Close();
+
+            //----------------------------------------------------
+
+            //check for existing form
+
+            string AuctionPickUpID = "None";
 
 
 
+            string existsQuery = "Select AuctionPickUpID  from AuctionPickUP where WorkFlowID = @ID; ";
+
+
+            //Create sql command 
+            SqlCommand sqlCommandExists = new SqlCommand();
+            sqlCommandExists.Connection = sqlConnect;
+            sqlCommandExists.CommandType = CommandType.Text;
+            sqlCommandExists.CommandText = existsQuery;
+
+            sqlCommandExists.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(workFLow.ToString()));
+            //open connection to send ID query 
+
+            SqlDataReader answer = sqlCommandExists.ExecuteReader();
+
+
+            while (answer.Read())
+            {
+                if (answer.HasRows)
+                    AuctionPickUpID = answer["AuctionPickUpID"].ToString().Trim();
+                else
+                    AuctionPickUpID = "None";
+
+            }
+
+            answer.Close();
+
+            //--------------------------------------------------------------------------------------------------------------------------
 
 
             // query to check workflow id
-            string sqlQueryID = "Insert into AuctionPickUP(AuctionPickUpID , BringInDate, PickupDate, LookAtDate, AppraisalDate," +
-                " BringInDateConfirmed,PickUpDateConfirmed ,LookAtDateConfirmed ,AppraisalDateConfirmed ,SaleDate ,Location ,WorkFlowID)" +
-                "Values((Select ISNULL(max(AuctionPickUPID)+1,1) from AuctionPickUP),@BringIn,@PickUp,@LookAt,@Appraisal,@BringInConfirmed,@PickUpConfirmed,@LookAtConfirmed,@AppraisalConfirmed" +
-                ",@Sale,@Location,@ID)";
-
+            string sqlQueryID = "";
+            if (AuctionPickUpID.Equals("None"))
+            {
+                sqlQueryID = "Insert into AuctionPickUP(AuctionPickUpID , BringInDate, PickupDate, LookAtDate, AppraisalDate," +
+               " BringInDateConfirmed,PickUpDateConfirmed ,LookAtDateConfirmed ,AppraisalDateConfirmed ,SaleDate ,Location ,WorkFlowID)" +
+               "Values((Select ISNULL(max(AuctionPickUPID)+1,1) from AuctionPickUP),@BringIn,@PickUp,@LookAt,@Appraisal,@BringInConfirmed,@PickUpConfirmed,@LookAtConfirmed,@AppraisalConfirmed" +
+               ",@Sale,@Location,@ID)";
+            }
+            else
+            {
+                sqlQueryID = "UPDATE AuctionPickUP SET BringInDate =@BringIn, PickupDate = @PickUp, LookAtDate = @LookAt, AppraisalDate =@Appraisal," +
+                    "BringInDateConfirmed = @BringInConfirmed,PickUpDateConfirmed =@PickUpConfirmed ,LookAtDateConfirmed =@LookAtConfirmed ,AppraisalDateConfirmed =@AppraisalConfirmed ," +
+                    "SaleDate =@Sale ,Location = @Location WHERE WorkFlowID = @ID ";
+            }
             //Create sql command to receive ID
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = sqlConnect;
@@ -144,7 +275,6 @@ namespace GreenValleyAuctions
 
 
             //open connection to send ID query 
-            sqlConnect.Open();
             SqlDataReader queryValue = sqlCommand.ExecuteReader();
 
             // Close conecctions

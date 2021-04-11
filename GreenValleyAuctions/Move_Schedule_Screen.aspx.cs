@@ -63,9 +63,9 @@ namespace GreenValleyAuctions
                     SqlDataReader answer = sqlCommandScreen.ExecuteReader();
                     while (answer.Read())
                     {
-                        DateTime.Parse(
+                        
                         //fill info
-                        txtMoveDate.Text = DateTime.Parse(answer["FinalMoveDate"].ToString()).ToString("yyyy-MM-dd").Trim());
+                        txtMoveDate.Text = DateTime.Parse(answer["FinalMoveDate"].ToString()).ToString("yyyy-MM-dd").Trim();
                         rblPricingScource.SelectedValue = answer["PricingSource"].ToString().Trim();
                         txtQuantityMovers.Text = answer["QuantityMovers"].ToString().Trim();
                         txtQuantityTrucks.Text = answer["QuantityTrucks"].ToString().Trim();
@@ -319,7 +319,7 @@ namespace GreenValleyAuctions
             {
                 sqlQueryID = "UPDATE MovingScreen Set FinalMoveDate = @FinalMoveDate , PricingSource = @PricingScource, QuantityTrucks = @QuantityTrucks,QuantityMovers = @QuantityMovers," +
                     "Price = @Price,Consumables = @Consumbles,EstimatedHours = @EstimatedHours,ActualHours = @ActualHours,OriginMiles = @OriginMiles,DestMiles =@DestMiles,OtherMiles = @OtherMiles," +
-                    "TotalMiles = @TotalMiles,FuelCosts = @FuelCosts,InsuranceCosts = @InsuranceCosts,CostPerWorker = @CostPerWorker,Food = @Food ";
+                    "TotalMiles = @TotalMiles,FuelCosts = @FuelCosts,InsuranceCosts = @InsuranceCosts,CostPerWorker = @CostPerWorker,Food = @Food WHERE WorkFlowID = @ID ";
             }
             //Create sql command to receive ID
             SqlCommand sqlCommand = new SqlCommand();

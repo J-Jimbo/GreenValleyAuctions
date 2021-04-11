@@ -24,6 +24,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.TextBox txtItem;
 
         /// <summary>
+        /// rfvItme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvItme;
+
+        /// <summary>
         /// txtCost control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,24 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCost;
+
+        /// <summary>
+        /// rfvCost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCost;
+
+        /// <summary>
+        /// CVCost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CVCost;
 
         /// <summary>
         /// Table1 control.

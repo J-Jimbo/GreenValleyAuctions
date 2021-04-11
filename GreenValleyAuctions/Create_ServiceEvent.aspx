@@ -162,7 +162,7 @@
   <label for="sel1">Customer:</label>
   <div class="col-md-6">
   <asp:DropDownList ID="dplCustomer" runat="server" DataSourceID="datasrcCustomerList" DataTextField="customerName" 
-        DataValueField="customerID"  AutoPostBack="true" class="form-control"></asp:DropDownList>
+        DataValueField="customerID"  AutoPostBack="true" class="form-control" Enabled="false"></asp:DropDownList>
    <asp:CustomValidator ID="cvCustomer" runat="server" ErrorMessage="CustomValidator" ControlToValidate="dplCustomer" Text="Cannot have multiple events" ForeColor="Red" OnServerValidate="cvCustomer_ServerValidate" ></asp:CustomValidator>
                         
 </div>
@@ -193,7 +193,7 @@
            <asp:Button ID="btnNotes" runat="server" Text="Go to Notes"  OnClick="btnNotes_Click" CausesValidation="false" class="btn btn-primary btn-intake rounded-pill submit"/>
         </div>
         <div class="col-md-3 offset-md-0">
-            <asp:Button ID="btnBack" runat="server" Text="Return to Customer" OnClick="btnBack_Click" CausesValidation="false" class="btn btn-primary btn-intake rounded-pill submit" />
+            <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CausesValidation="false" class="btn btn-primary btn-intake rounded-pill submit" />
         </div>
         <div class="col-md-2 offset-md-0">
            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" CausesValidation="true" class="btn btn-primary btn-intake rounded-pill submit"/>
