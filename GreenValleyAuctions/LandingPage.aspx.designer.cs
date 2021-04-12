@@ -15,6 +15,15 @@ namespace Lab3
     {
 
         /// <summary>
+        /// logo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image logo;
+
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -42,15 +51,6 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Table Table1;
 
         /// <summary>
-        /// lblLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLogin;
-
-        /// <summary>
         /// btnEmpLogin control.
         /// </summary>
         /// <remarks>
@@ -60,13 +60,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Button btnEmpLogin;
 
         /// <summary>
-        /// btnRequest control.
+        /// btnCustomerLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRequest;
+        protected global::System.Web.UI.WebControls.Button btnCustomerLogin;
 
         /// <summary>
         /// lblquestion control.
@@ -85,14 +85,5 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlCreateAccount;
-
-        /// <summary>
-        /// lblWelcome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWelcome;
     }
 }

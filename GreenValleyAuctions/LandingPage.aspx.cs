@@ -50,9 +50,6 @@ namespace Lab3
             Response.Redirect("Customer_Login.aspx");
         }
 
-        protected void btnRequest_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Customer_Home.aspx");
-        }
+        
     }
 }

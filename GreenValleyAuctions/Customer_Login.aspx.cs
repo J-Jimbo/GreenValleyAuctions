@@ -69,7 +69,8 @@ namespace Lab3
             }
         }
 
-        protected void btnHome_Click(object sender, EventArgs e)
+        
+        protected void btnLanding_Click(object sender, EventArgs e)
         {
             Response.Redirect("LandingPage.aspx");
         }

@@ -105,7 +105,7 @@ namespace Lab3
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login_Page.aspx");
+            Response.Redirect("Customer_Login.aspx");
         }
 
         protected void cvFirstName_ServerValidate(object source, ServerValidateEventArgs args)
@@ -171,7 +171,7 @@ namespace Lab3
             string[] lastName = { "Jones", "Cool", "Berry", "Wright", "Madison" };
             string[] street = { "1787 Go Dukes Rd", "10 Maple Way", "20 Main St" };
             string[] zip = { "38469", "08740", "27548", "01129", "05380", "02340" };
-            string[] city = { "New York", "HarrisonBurg", "Chicago", "Trenton", "Boston", "D.C." };
+            string[] city = { "New York", "Harrisonburg", "Chicago", "Trenton", "Boston", "D.C." };
             string[] state = { "New York", "Virginia", "Massachusetts", "Washington", "New Jersey", "Illinois" };
             string[] phone = { "123 894 3628", "390 876 3467", "209 321 8710", "309 987 5437", "201 2303 2234", "675 873 2323" };
             string[] email = { "Dukes@mail.com", "purpleandgold@mail.com", "dukedog@mail.com", "JamesMadison@mail.com" };
@@ -227,6 +227,11 @@ namespace Lab3
             // Close conecctions
             queryAnswer.Close();
             sqlConnect.Close();
+        }
+
+        protected void BtnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LandingPage.aspx");
         }
     }
 }

@@ -78,6 +78,7 @@
     <Content Include="Auction_Scheduling.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom.css" />
+    <Content Include="Customer_Home.aspx" />
     <Content Include="images\antiquechair.jpeg" />
     <Content Include="images\antiquechair.png" />
     <Content Include="images\benhill.png" />
@@ -145,7 +146,7 @@
     <Content Include="Create_Employee.aspx" />
     <Content Include="Create_ServiceEvent.aspx" />
     <Content Include="Customer_History.aspx" />
-    <Content Include="Customer_Home.aspx" />
+    <Content Include="Customer_Request.aspx" />
     <Content Include="Customer_Info.aspx" />
     <Content Include="Customer_Login.aspx" />
     <Content Include="Customer_Search.aspx" />
@@ -347,6 +348,13 @@
     </Compile>
     <Compile Include="Customer_Home.aspx.designer.cs">
       <DependentUpon>Customer_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Request.aspx.cs">
+      <DependentUpon>Customer_Request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Request.aspx.designer.cs">
+      <DependentUpon>Customer_Request.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer_Info.aspx.cs">
       <DependentUpon>Customer_Info.aspx</DependentUpon>

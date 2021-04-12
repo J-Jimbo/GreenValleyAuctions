@@ -35,10 +35,10 @@
     <form  id="form1" runat="server">
         <div class="form-row">
         <div class="col-md-4 mb-3 offset-md-4 mt-2">
-            <asp:DropDownList ID="ddlSelectLoginType" runat="server" AutoPostBack="true">
+           <%-- <asp:DropDownList ID="ddlSelectLoginType" runat="server" AutoPostBack="true">
                             <asp:ListItem Text="Employee" Value="Employee"></asp:ListItem>
                             <asp:ListItem Text="Customer" Value="Customer"></asp:ListItem>
-            </asp:DropDownList>
+            </asp:DropDownList>--%>
         	<p> Username </p>
         <asp:TextBox ID="txtUserName" runat="server" Class="form-control"></asp:TextBox>
     </div>
