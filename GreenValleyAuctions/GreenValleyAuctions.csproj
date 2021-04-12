@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add_Inventory.aspx" />
+    <Content Include="Auction_Assessment.aspx" />
     <Content Include="Auction_Pick_Up.aspx" />
     <Content Include="Auction_Scheduling.aspx" />
     <Content Include="css\bootstrap.min.css" />
@@ -269,6 +270,13 @@
     </Compile>
     <Compile Include="Add_Inventory.aspx.designer.cs">
       <DependentUpon>Add_Inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auction_Assessment.aspx.cs">
+      <DependentUpon>Auction_Assessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auction_Assessment.aspx.designer.cs">
+      <DependentUpon>Auction_Assessment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Auction_Pick_Up.aspx.cs">
       <DependentUpon>Auction_Pick_Up.aspx</DependentUpon>

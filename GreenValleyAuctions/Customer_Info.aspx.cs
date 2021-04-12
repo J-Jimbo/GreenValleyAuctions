@@ -156,6 +156,7 @@ namespace GreenValleyAuctions
                     btnCreateServiceEvent.Visible = false;
                     btnAuctionPickup.Visible = false;
                     btnAuctionSchedule.Visible = false;
+                    btnAuctionAssessment.Visible = false;
                     btnAddInventory.Visible = false;
                 }
                 else if (queryResult["ServiceType"].ToString().Equals("Auction"))
@@ -170,6 +171,7 @@ namespace GreenValleyAuctions
                     btnMoveForm.Visible = false;
                     btnMoveScreen.Visible = false;
                     btnAuctionPickup.Visible = false;
+                    btnAuctionAssessment.Visible = false;
                     btnAuctionSchedule.Visible = false;
                     btnCompletion.Visible = false;
                     btnAddInventory.Visible = false;
@@ -183,6 +185,7 @@ namespace GreenValleyAuctions
                 btnMoveForm.Visible = false;
                 btnMoveScreen.Visible = false;
                 btnAuctionPickup.Visible = false;
+                btnAuctionAssessment.Visible = false;
                 btnAuctionSchedule.Visible = false;
                 btnCompletion.Visible = false;
                 btnAddInventory.Visible = false;
@@ -449,5 +452,9 @@ namespace GreenValleyAuctions
             sqlConnect.Close();
         }
 
+        protected void btnAuctionAssessment_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Auction_Assessment.aspx");
+        }
     }
 }

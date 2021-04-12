@@ -48,6 +48,11 @@
                             <asp:Button ID="btnAuctionSchedule" runat="server" Text="Create Auction Schedule" class="btn btn-primary btn-intake rounded-pill" OnClick="btnAuctionSchedule_Click"  width="200px"/>
                         </asp:TableCell>
                     </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Button ID="btnAuctionAssessment" runat="server" Text="Create Auction Assessment" class="btn btn-primary btn-intake rounded-pill" Width="200px" OnClick="btnAuctionAssessment_Click" />
+                        </asp:TableCell>
+                    </asp:TableRow>
                      <asp:TableRow>
                         <asp:TableCell>
                             <asp:Button ID="btnAuctionPickup" runat="server" Text="Create Auction PickUp" class="btn btn-primary btn-intake rounded-pill" OnClick="btnAuctionPickup_Click"  width="200px"/>
