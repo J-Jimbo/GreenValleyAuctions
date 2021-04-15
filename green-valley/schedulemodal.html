@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The Hub">
+      <meta name="author" content="Lindsey McKim">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Valley Employee Dashboard</title>
+
+    <!-- Bootstrap v4.4.1 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/92cf74d3dd.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <header class="row headernav"> <!-- Logo Starts Here -->
+        
+
+        <nav class="col-md-4"> <!-- header starts here - nav pills -->
+           <ul class="nav nav-pills justify-content-start">
+                  <li class="nav-item">
+                    <a class="nav-link" href="clients.html">Clients</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="warehouse.html">Warehouse</a>
+                  </li>
+
+                  
+                </ul>
+                </nav>
+
+                
+        
+
+          <div class ="col-md-2 offset-md-1">
+          <div class="logo3">
+          <img class="img-fluid logo" src="images/gvalogo.png" alt="Green Valley Auctions and Moving Logo">
+          </div>
+        </div><!-- end logo -->
+
+        <div class ="col-md-2 offset-md-1">
+        <a class="btn btn-primary btn-intake rounded-pill" href="newclientform.html" role="button" target="_blank">New Client</a>
+      </div>
+
+        <div class ="col-md-2">
+        <i class="fas fa-search fa-2x"></i>
+        <i class="fas fa-calendar-alt fa-2x"></i>
+        <a href="index.html"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+      </div>
+      </header> <!-- end row header -->
+
+      <br>
+      <br>
+
+   
+
+      <!-- SCHEDULING MODAL STARTS HERE -->
+
+        <!-- Button trigger modal -->
+        <div class=" heading col-md-2 schedule">
+      <button type="button" class="btn btn-primary btn-intake rounded-pill" data-toggle="modal" data-target="#exampleModalCenter">
+        Schedule
+      </button>
+      </div>
+     
+
+  
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title text-center" id="exampleModalLongTitle">Scheduling</h3>
+
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <!-- Search Customer -->
+                  <div class="modal-body">
+                  <div class="row">
+                  <div class="col-md-4">
+                    <p> Search Customer </p> </div>
+                    <div class="col-md-8 input-group">
+                  <div class="input-group">
+              <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" />
+              <button type="button" class="btn btn-outline-primary">search</button>
+            </div>
+            </div>
+            </div>
+
+            <br>
+            <br>
+
+
+            <!-- Customer Name -->
+                  <div class="row col-md-12">
+                    <p> Customer Name </p> </div>
+       
+                   <br>
+
+
+          <!-- Service Being Scheduled -->
+                  <div class="row">
+                  <div class="col-md-6">
+                  <p> Service Being Scheduled: </p>
+                  </div>
+                  <div class="col-md-6">
+            <select class="form-control" id="sel1">
+              <option>Move Assessment</option>
+              <option>Auction Walk Through</option>
+              <option>Packing</option>
+              <option>Move</option>
+              <option>Auction Pick Up</option>
+              <option>Aucrtion Bring In</option>
+              <option>Appraisal</option>
+              <option>Consignment Shop Pick Up</option>
+              <option>Consignment Shop Bring In</option>
+              <option>Trash Removal</option>
+            </select>
+          </div>
+        </div>
+
+          <br>
+          <!-- Potential Dates -->
+          <div class="row">
+       <div class="heading col-md-9">
+        <p>Potential Dates</p>
+        </div>
+      </div>
+          <div class="row">
+            <div class="col-md-3">
+          <p> Option 1</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+
+         <div class="row">
+            <div class="col-md-3">
+          <p> Option 2</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+          <p> Option 3</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="row">
+            <div class="col-md-3">
+          <p> Final Date</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+      
+
+          <br>
+
+
+      
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+              
+
+            <br>
+   
+  <!-- SCHEDULING MODAL ENDS HERE -->
+
+
+
+        
+  
+
+<!-- jQuery and Bootstrap links - do not delete! -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- end of do not delete -->
+
+    
+
+
+  </body>
