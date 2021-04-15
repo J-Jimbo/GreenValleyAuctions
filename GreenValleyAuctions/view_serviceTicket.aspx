@@ -13,7 +13,7 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                                <asp:DetailsView ID="dvWorkFlow" DataSourceID="datasrcWorkFlow" AutoGenerateEditButton="true" DataKeyNames="WorkFlowID" DefaultMode="Edit" runat="server" AllowPaging="true" OnDataBound="dvWorkFlow_DataBound">
+                                <asp:DetailsView ID="dvWorkFlow" DataSourceID="datasrcWorkFlow" AutoGenerateEditButton="true" DataKeyNames="WorkFlowID" DefaultMode="Edit" runat="server" AllowPaging="true" OnDataBound="dvWorkFlow_DataBound" OnItemUpdated="dvWorkFlow_ItemUpdated">
 
                                 </asp:DetailsView>
                         </asp:TableCell>

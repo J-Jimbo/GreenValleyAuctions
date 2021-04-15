@@ -40,9 +40,9 @@ namespace Lab2
                 while (queryResult.Read())
                 {
                     workID = int.Parse(queryResult["WorkFlowID"].ToString());
-                    ddlCustomer.SelectedValue = workID.ToString();
-                    ddlHistory.SelectedValue = workID.ToString();
-
+                        ddlCustomer.SelectedValue = workID.ToString();
+                        ddlHistory.SelectedValue = workID.ToString();
+                   
 
                 }
 
@@ -239,13 +239,59 @@ namespace Lab2
 
         protected void dvWorkFlow_DataBound(object sender, EventArgs e)
         {
-            
-            dvWorkFlow.Rows[0].Visible = false;
+            try
+            {
+                dvWorkFlow.Rows[0].Visible = false;
+            }
+            catch
+            {
+
+            }
         }
 
         protected void BtBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("Customer_Info.aspx");
+        }
+
+        protected void dvWorkFlow_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
+        {
+            //datasrcWorkFlow.SelectParameters["ID"].DefaultValue = Session["Customer"].ToString();
+            //On Page load grab customer info
+
+            string Query = "SELECT MAX(WorkFlowID) as WorkFlowID, C.CustomerID, WF.CurrentStatus from WorkFlow WF inner join Customer C  on WF.CustomerID=c.CustomerID where c.customerID = @ID group by C.CustomerID, WF.CurrentStatus; ";
+
+            //Define the connection to the Database
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+
+            //Create sql command 
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = Query;
+
+            sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryResult = sqlCommand.ExecuteReader();
+
+            int workID;
+            string currentStatus = "";
+            while (queryResult.Read())
+            {
+                workID = int.Parse(queryResult["WorkFlowID"].ToString());
+                currentStatus = queryResult["CurrentStatus"].ToString().Trim();
+
+            }
+
+            queryResult.Close();
+            sqlConnect.Close();
+
+            if (currentStatus.Equals("Completed"))
+            {
+                Response.Redirect("Customer_Info.aspx");
+
+            }
         }
     }
 }

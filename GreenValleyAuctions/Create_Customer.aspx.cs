@@ -354,51 +354,47 @@ namespace Lab2
 
         }
 
-        protected void cvFirstName_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            // query to search for last customer ID
-            string sqlQueryName = "select Trim(FirstName) + ' ' + Trim(LastName) as Name from Customer";
+        //protected void cvFirstName_ServerValidate(object source, ServerValidateEventArgs args)
+        //{
+        //    // query to search for last customer ID
+        //    string sqlQueryName = "select Trim(FirstName) + ' ' + Trim(LastName) as Name from Customer";
 
 
 
 
-            //Define the connection to the Database
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+        //    //Define the connection to the Database
+        //    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
 
-            //Create sql command to receive ID
-            SqlCommand sqlCommandName = new SqlCommand();
-            sqlCommandName.Connection = sqlConnect;
-            sqlCommandName.CommandType = CommandType.Text;
-            sqlCommandName.CommandText = sqlQueryName;
-            //open connection to send ID query 
-            sqlConnect.Open();
-            SqlDataReader queryAnswer = sqlCommandName.ExecuteReader();
+        //    //Create sql command to receive ID
+        //    SqlCommand sqlCommandName = new SqlCommand();
+        //    sqlCommandName.Connection = sqlConnect;
+        //    sqlCommandName.CommandType = CommandType.Text;
+        //    sqlCommandName.CommandText = sqlQueryName;
+        //    //open connection to send ID query 
+        //    sqlConnect.Open();
+        //    SqlDataReader queryAnswer = sqlCommandName.ExecuteReader();
 
-            // compare database to new customer, checking for repeats 
+        //    // compare database to new customer, checking for repeats 
 
-            while (queryAnswer.Read() == true)
-            {
-                if (queryAnswer.GetString(0).Equals(HttpUtility.HtmlEncode(txtFirstName.Text.Trim()) + ' ' + HttpUtility.HtmlEncode(txtLastName.Text.Trim())))
-                {
-                    args.IsValid = false;
-                    break;
-                }
-                else
-                    args.IsValid = true;
-            }
-            // Close conecctions
-            queryAnswer.Close();
-            sqlConnect.Close();
+        //    while (queryAnswer.Read() == true)
+        //    {
+        //        if (queryAnswer.GetString(0).Equals(HttpUtility.HtmlEncode(txtFirstName.Text.Trim()) + ' ' + HttpUtility.HtmlEncode(txtLastName.Text.Trim())))
+        //        {
+        //            args.IsValid = false;
+        //            break;
+        //        }
+        //        else
+        //            args.IsValid = true;
+        //    }
+        //    // Close conecctions
+        //    queryAnswer.Close();
+        //    sqlConnect.Close();
 
 
-        }
+        //}
 
-        protected void btnNext_Click(object sender, EventArgs e)
-        {
-            Session["ServiceRequest"] = null;
-            Response.Redirect("Create_ServiceEvent.aspx");
-        }
+       
 
         protected void ddlContact_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -417,10 +413,7 @@ namespace Lab2
             
         }
 
-        protected void btnNextProcess_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Create_ServiceEvent.aspx");
-        }
+        
 
         protected void cvServices_ServerValidate(object source, ServerValidateEventArgs args)
         {
@@ -469,6 +462,44 @@ namespace Lab2
                 rblPhoneType.CausesValidation = false;
 
             }
+        }
+
+        protected void CVemail_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            // query to search for last customer ID
+            string sqlQueryName = "select Trim(CustomerEmail) as Email from Customer";
+
+
+
+
+            //Define the connection to the Database
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+
+
+            //Create sql command to receive ID
+            SqlCommand sqlCommandName = new SqlCommand();
+            sqlCommandName.Connection = sqlConnect;
+            sqlCommandName.CommandType = CommandType.Text;
+            sqlCommandName.CommandText = sqlQueryName;
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryAnswer = sqlCommandName.ExecuteReader();
+
+            // compare database to new customer, checking for repeats 
+
+            while (queryAnswer.Read() == true)
+            {
+                if (queryAnswer.GetString(0).Equals(HttpUtility.HtmlEncode(txtEmail.Text.Trim())))
+                {
+                    args.IsValid = false;
+                    break;
+                }
+                else
+                    args.IsValid = true;
+            }
+            // Close conecctions
+            queryAnswer.Close();
+            sqlConnect.Close();
         }
     }
 

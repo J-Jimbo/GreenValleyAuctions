@@ -102,6 +102,7 @@ namespace Lab2
 
         protected void btnProcess_Click(object sender, EventArgs e)
         {
+            Session["ServiceRequest"] = null;
             Session["ServiceRequest"] = lbNotifications.SelectedValue.ToString();
             Response.Redirect("Create_Customer.aspx");
         }

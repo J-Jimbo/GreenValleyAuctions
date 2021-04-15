@@ -322,6 +322,8 @@ namespace GreenValleyAuctions
                 DateFinal.Visible = false;
                 ServiceComplete.Visible = false;
                 FollowUp.Visible = true;
+
+                btnEditServiceTicket.Visible = false;
             }
 
             ReviewResult.Close();

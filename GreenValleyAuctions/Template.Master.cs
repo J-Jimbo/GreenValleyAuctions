@@ -6,12 +6,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using System.Drawing;
+
 namespace Lab2
 {
     public partial class Template : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             //validate login
             if (Session["UserName"] != null)
             {

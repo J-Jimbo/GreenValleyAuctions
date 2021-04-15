@@ -149,7 +149,7 @@
           <div class="col-md-6">
                  <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ErrorMessage="RequiredFieldValidator" Text="Required" ControlToValidate="txtFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:CustomValidator ID="cvFirstName" runat="server" ErrorMessage="CustomValidator" ControlToValidate="txtFirstName" Text="Customer Exists" Forecolor="Red" OnServerValidate="cvFirstName_ServerValidate" ></asp:CustomValidator>
+<%--                <asp:CustomValidator ID="cvFirstName" runat="server" ErrorMessage="CustomValidator" ControlToValidate="txtFirstName" Text="Customer Exists" Forecolor="Red" OnServerValidate="cvFirstName_ServerValidate" ></asp:CustomValidator>--%>
           </div>
           <div class="col-md-6">
            <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
@@ -228,10 +228,7 @@
           <div class="col-md-6">
           <p> Email: </p>
             </div>
-         <%-- <div class="col-md-6">
-                        <asp:Button ID="btnNext" runat="server" Text="Go to Create Service Event" OnClick="btnNext_Click" CausesValidation="false"/>
-                        <asp:Button ID="btnNextProcess" runat="server" Text="Continue Processing Request" OnClick="btnNextProcess_Click" CausesValidation="false" Visible="false" />
-          </div>--%>
+        
           </div>
 
 
@@ -239,7 +236,8 @@
           <div class="col-md-6">
               <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
               <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="RequiredFieldValidator" Text ="Required" ControlToValidate="txtEmail" ForeColor="Red"></asp:RequiredFieldValidator>
-            </div>
+              <asp:CustomValidator ID="CVemail" Text="Email already exists" runat="server" ErrorMessage="CustomValidator" ControlToValidate="txtEmail" ForeColor="Red" OnServerValidate="CVemail_ServerValidate"></asp:CustomValidator>
+              </div>
           </div>
          <!-- How did you hear about us -->
           <div class="row">

@@ -10,8 +10,8 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
-                <asp:Button ID="btnYes" runat="server" Text="Confirm Logout" OnClick="btnYes_Click"/>
-                <asp:Button ID="btnNo" runat="server" Text="Return to Home" OnClick="btnNo_Click"/>
+                <asp:Button ID="btnYes" runat="server" Text="Confirm Logout" OnClick="btnYes_Click" Class="btn btn-primary btn-lg"/>
+                <asp:Button ID="btnNo" runat="server" Text="Return to Home" OnClick="btnNo_Click" Class="btn btn-primary btn-lg"/>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>

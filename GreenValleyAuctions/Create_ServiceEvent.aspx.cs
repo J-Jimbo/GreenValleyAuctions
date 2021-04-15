@@ -47,66 +47,6 @@ namespace Lab2
             }
 
             //-----------------------------------------
-            // continue workflow
-            if (Session["ServiceRequest"] != null && IsPostBack.Equals(false))
-                {
-                    dplCustomer.Enabled = false;
-                    dplServiceType.Enabled = false;
-
-                    //Get CustomerID
-                    String sqlQID = "Select MAX(CustomerID) as CID from Customer";
-
-                    //Parse Service request info
-
-                    string sqlQuery = "SELECT * from ServiceRequest sr inner join CustomerRequest cr on sr.CustomerRequestID = cr.CustomerRequestID where sr.CustomerRequestID = @CustomerRequestID";
-
-                    //Define the connection to the Database
-                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
-
-                    //Create sql command
-                    SqlCommand sqlCommandID = new SqlCommand();
-                    sqlCommandID.Connection = sqlConnect;
-                    sqlCommandID.CommandType = CommandType.Text;
-                    sqlCommandID.CommandText = sqlQID;
-
-                    //open connection to send ID query 
-                    sqlConnect.Open();
-                    SqlDataReader queryResponse = sqlCommandID.ExecuteReader();
-
-                    int CustomerID;
-                    while (queryResponse.Read())
-                    {
-                        CustomerID = int.Parse(queryResponse["CID"].ToString());
-                        dplCustomer.SelectedValue = CustomerID.ToString();
-                    }
-
-                    // Close conecctions
-                    queryResponse.Close();
-                    sqlConnect.Close();
-
-                    //Create sql command 
-                    SqlCommand sqlCommand = new SqlCommand();
-                    sqlCommand.Connection = sqlConnect;
-                    sqlCommand.CommandType = CommandType.Text;
-                    sqlCommand.CommandText = sqlQuery;
-                    sqlCommand.Parameters.AddWithValue("@CustomerRequestID", Session["ServiceRequest"].ToString());
-
-                    //open connection to send ID query 
-                    sqlConnect.Open();
-                    SqlDataReader queryValue = sqlCommand.ExecuteReader();
-
-                    while (queryValue.Read())
-                    {
-
-                        dplServiceType.SelectedValue = queryValue["ServiceType"].ToString();
-                    }
-
-                    // Close conecctions
-                    queryValue.Close();
-                    sqlConnect.Close();
-                    
-                }
-                
             
         }
 

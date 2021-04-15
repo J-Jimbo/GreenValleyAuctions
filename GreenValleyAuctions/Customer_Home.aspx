@@ -45,7 +45,9 @@
 				<div class ="col-md-2 offset-md-3">
 				<i class="fas fa-search fa-2x"></i>
 				<i class="fas fa-calendar-alt fa-2x"></i>
-				<a href="index.html"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+				<%--<a href="index.html"><i class="fas fa-sign-out-alt fa-2x"></i></a>--%>
+                    <asp:ImageButton ID="btnILogOut" runat="server" AlternateText=" "  class="fas fa-sign-out-alt fa-2x" OnClick="btnILogOut_Click" />
+<%--                <asp:Button  ID="btnLogOut"  runat="server" class="fas fa-sign-out-alt fa-2x" OnClick="btnLogOut_Click" />--%>
 			</div>
 
 
@@ -56,10 +58,34 @@
 
 			<div class="row profile1">
 			<div class ="col-md-3">
-				<img src="images/profileicon2.png" alt="Profile Icon" class="w-100" data-target="carouselExample" data-slide-to="1" style="width:80%"/>
-				<h3> Contact Information </h3>
-				<p> Email: stephaniejames@gmail.com </p>
-				<p> Phone: 540-123-4567 </p>
+<%--				<img src="images/profileicon2.png" alt="Profile Icon" class="w-100" data-target="carouselExample" data-slide-to="1" style="width:80%"/>--%>
+				<asp:Table ID="CustomerInfo" runat="server" BorderColor="Black"   >
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <h3> Contact Information </h3>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label ID="lblTAddress" runat="server" Text="Address: " ></asp:Label>
+                            <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                           <p> Email: 
+                            <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label></p>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <p><asp:Label ID="lblTPhone" runat="server" Text="Phone: "   ></asp:Label>
+                           <asp:Label ID="lblPhone" runat="server" Text=""></asp:Label></P>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    
+
+                </asp:Table>
                 <asp:Button ID="btnRequest" runat="server" Text="Submit Request" OnClick="btnRequest_Click" class="btn btn-primary btn-intake rounded-pill" />
 				<br/>
 				<br/>
@@ -72,37 +98,69 @@
 
 			<div class="jumbotron jumbotron-fluid col-md-9">
   			<div class="container">
-    			<h1 class="display-4">Stephanie James</h1>
-    			
-    			<img src="images/progressbar.png" alt="Progress Bar" class="w-100" data-target="carouselExample" data-slide-to="1" style="width:80%">
-    			<div class="row clientinfo">
-    		<div class="col-md-4">
-    			<h3>Client Information</h3>
-    			<p> Pick Up Date: 3/9/21 </p>
-    			<p> Bring In Date: 3/9/21 </p>
-    			<p> Look At Date: 3/10/21 </p>
-    			<p> Closing Date: 3/15/21 </p>
-    		</div>
-    			<div class="col-md-7 comments">
-    				<h3>Comments <i class="far fa-edit"></i></h3>
-    				<p> Contact made on 3/2/2021, 4:00PM; intake form complete. </p>
-    				<p> Tried contacting on 3/2/2021, 8:31AM to finish completing intake form. -Sierra </p>
-    				<p> Initial contact was made on 3/1/2021. -Laura </p>
-    			</div>
-    			</div>
-    			<div class="row media">
-    				<div class="col-md-6">
-    					<h3>Media </h3>
-    				<img src="images/woodenchair1.png" alt="Wooden Chair" class="w-100 chair" data-target="carouselExample" data-slide-to="1"/>
-    				<img src="images/antiquechair.png" alt="Antique Chair" class="w-100 chair" data-target="carouselExample" data-slide-to="1"/>
-    			</div>
-    			<div class ="col-md-3 offset-md-3">
-    				
-    				<br/> <br/> <br/> <br/> <br/> <br/> <br/>
-    				<button type="button" class="btn btn-primary rounded-pill">Save Changes</button>
-    			</div>
-
-    		</div>
+    			 <asp:Table ID="tblCInfo" runat="server" Width="70%"  Align="Right" >
+        <asp:TableRow>
+            <asp:TableCell ColumnSpan="2">
+                <h3><asp:Label ID="lblName" runat="server" Text="" Font-Bold="true"  ></asp:Label></h3>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <p><asp:Label ID="lblStatusBar" runat="server" Text="Status Bar: " Font-Bold="true" ></asp:Label></P>
+            </asp:TableCell>
+            <asp:TableCell>
+                            <asp:Image ID="InitialContact" runat="server" ImageUrl="images/progressbar2.png" Visible="false" Height="78px" Width="592px"/>
+                            <asp:Image ID="ServicePage" runat="server" ImageUrl="images/progressbar3.png" Visible="false"  Height="78px" Width="592px" />
+                            <asp:Image ID="DateFinal" runat="server" ImageUrl="images/progressbar4.png" Visible="false"  Height="78px" Width="592px"/>
+                            <asp:Image ID="ServiceComplete" runat="server" ImageUrl="images/progressbar5.png" Visible="false"  Height="78px" Width="592px" />
+                            <asp:Image ID="FollowUp" runat="server" ImageUrl="images/progressbar6.png" Visible="false"  Height="78px" Width="592px" />
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <p><asp:Label ID="lblClientInformation" runat="server" Text="Client Information" Font-Bold="true"></asp:Label></P>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+               <p> <asp:Label ID="lblTEngagement" runat="server" Text="Creation Date: "></asp:Label>
+                <asp:Label ID="lblEngagement" runat="server" Text=""></asp:Label></p>
+            </asp:TableCell>
+            <asp:TableCell>
+               <p> <asp:Label ID="lblTCompletion" runat="server" Text="Completion Date: "></asp:Label>
+                <asp:Label ID="lblCompletion" runat="server" Text=""></asp:Label></p>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <p><asp:Label ID="lblTCurrentStatus" runat="server" Text="Current Status: "></asp:Label>
+                <asp:Label ID="lblCurrentStatus" runat="server" Text=""></asp:Label></p>
+            </asp:TableCell>
+            <asp:TableCell>
+               <p> <asp:Label ID="lblTReview" runat="server" Text="Review: "></asp:Label>
+                <asp:Label ID="lblReview" runat="server" Text=""></asp:Label></p>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <P><asp:Label ID="lblTInitialNotes" runat="server" Text="Initial Notes: " Font-Bold="true"></asp:Label>
+                <asp:Label ID="lblInitialNotes" runat="server" Text="" ></asp:Label></P>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+               <p><asp:Label ID="lblItems" runat="server" Text="Items" Font-Bold="true"></asp:Label></p>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <p><asp:Label ID="lblMedia" runat="server" Text="Media: " Font-Bold="true" ></asp:Label></p>
+            </asp:TableCell>
+            <asp:TableCell ID="photoCell" Visible="false">
+                <p><asp:Image ID="imgtest" runat="server"  Height="100px" Width="100px" /></p>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
 
     		</div>
   			</div>
