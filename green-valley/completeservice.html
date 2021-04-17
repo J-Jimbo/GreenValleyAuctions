@@ -170,11 +170,45 @@
          </div>
 
           <br>
+          <br>
+
+
+           <!-- Employees Associated -->
+    <div class="row col-md-9">
+        <p> Employees Associated </p>
+      <div class="form-check form-check-inline offset-md-1">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Brad Campbell</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Sebastian</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Zach</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Greg</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Sam</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Scotty</label>
+      </div>
+    </div>
+
+    <br>
+
 
   <!-- Comments -->
             <div class="row col-md-12">
             <div class="col-md-2 mt-4">      
-              <p> Comments: </p>
+              <p> Additional Comments: </p>
             </div>
              <div class="col-md-6">
             <form>
@@ -189,6 +223,11 @@
         <br>
         <br>
         
+
+
+
+
+
        <!-- Service Experience -->
           <div class="row col-md-12">
             <div class="col-md-6">
@@ -196,81 +235,181 @@
             </div>
           </div>
 
+ <!-- POSITIVE EMAIL STARTS HERE -->
 
-           <!-- Positive Experience !-->
-           <div class="col-md-6">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="group1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" id="inlineCheckbox2" value="option3">
+ 	 <div class="row col-md-12">
+        <!-- Button trigger modal -->
+        <div class=" heading col-md-4 experience">
+      <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
+        Positive Experience?
+      </button>
+      </div>
+
+       <!-- Button trigger modal -->
+        <div class=" heading col-md-4 experience">
+      <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter2">
+        Negative Experience?
+      </button>
+      </div>
+
+  </div>
+     
+
+  
+
+          <!-- Positive Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header"><h3 class="modal-title text-center" id="exampleModalLongTitle">Positive Customer Experience</h3>
                   
-                <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                <div class="panel-heading">
-                  <label class="form-check-label" for="inlineCheckbox2">Positive</label>
-                </div>
-                </div>
-                </div>
-                </div>
+
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
 
-              <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-             <div class="row col-md-12">
-          <div class="col-md-8">
+      
+                <div class="row col-md-12">
+          <div class="col-md-12">
+          	<br>
       <form>
-        <div class="form-row">
-        <div class="col-md-12">
+        <div class="form-row col-md-12">
+        <div class="col-md-1">
+        <p> TO </p> 
+    </div>
+    	<div class="col-md-11">
         <input type="text" class="form-control" id="validationDefault05" placeholder="CUSTOMER EMAIL" required>
       </div>
+  </div>
+      <br>
+
+      <div class="form-row col-md-12">
+      <div class="col-md-11 offset-md-1">
+        <input type="text" class="form-control" id="validationDefault06" placeholder="SUBJECT" required>
+      </div>
         </div>
       </form>
+
+
+
           <form>
-            <div class="form-group">
+          	<div class="form-row col-md-12">
+            <div class="form-group col-md-11 offset-md-1">
           <label class= "Additional Notes"> </label>
-          <textarea class="form-control" id="exampleFormControlTextarea2" rows="6" placeholder="Email template addressed to the email for the customer and from that we can edit/personalize and send requesting a review."></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea2" rows="15" placeholder="Email template addressed to the email for the customer and from that we can edit/personalize and send requesting a review."></textarea>
             </div>
+        </div>
         </form>
-      </div>
-      </div>  
-      </div>
-      </div>
       
 
-              
-          
+      </div>
+      </div>  
 
-        <!-- Negative Experience !-->
-            <div class="col-md-6">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="group2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" id="inlineCheckbox5" value="option3">
-                  
-                <div class="panel panel-default">
-            <div class="panel-heading">
-                  <label class="form-check-label" for="inlineCheckbox5">Negative</label>
-              </div>
+          <br>
+
+
+      
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Send</button>
+                </div>
               </div>
             </div>
-        </div>
-             <div id="collapseTwo" class="panel-collapse collapse in">
-                <div class="panel-body">
-             <div class="row col-md-12">     
-          <div class="col-md-8">
-          <form>
-        <div class="form-row">
-        <div class="col-md-12">
-        <input type="text" class="form-control" id="validationDefault06" placeholder="greg@greenvalleyauctions.com; info@greenvalleymoving.com" required>
+          </div>
+        	
+        
+
+              
+
+            <br>
+   
+  <!-- POSITIVE EMAIL MODAL ENDS HERE -->
+
+
+
+  <!-- NEGATIVE EMAIL STARTS HERE -->
+
+       
+  
+
+          <!-- Negative Modal -->
+          <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header"><h3 class="modal-title text-center" id="exampleModalLongTitle1">Negative Customer Experience</h3>
+                  
+
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+      
+                <div class="row col-md-12">
+          <div class="col-md-12">
+          	<br>
+      <form>
+        <div class="form-row col-md-12">
+        <div class="col-md-1">
+        <p> TO </p> 
+    </div>
+    	<div class="col-md-11">
+        <input type="text" class="form-control" id="validationDefault07" placeholder="greg@greenvalleyauctions.com; info@greenvalleymoving.com" required>
+      </div>
+  </div>
+      <br>
+
+      <div class="form-row col-md-12">
+      <div class="col-md-11 offset-md-1">
+        <input type="text" class="form-control" id="validationDefault08" placeholder="SUBJECT" required>
       </div>
         </div>
       </form>
+
+
+
           <form>
-            <div class="form-group">
+          	<div class="form-row col-md-12">
+            <div class="form-group col-md-11 offset-md-1">
           <label class= "Additional Notes"> </label>
-          <textarea class="form-control" id="exampleFormControlTextarea3" rows="6" placeholder="Email template that is sent to greg@greenvalleyauctions.com AND info@greenvalleymoving.com."></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea3" rows="15" placeholder="Email template that is sent to greg@greenvalleyauctions.com AND info@greenvalleymoving.com."></textarea>
             </div>
+        </div>
         </form>
+      
+
       </div>
-    </div>  
-    </div>
-    </div>
+      </div>  
+
+
+          <br>
+
+
+      
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+        
+
+              
+
+            <br>
+   
+  <!-- NEGATIVE EMAIL MODAL ENDS HERE -->
+
+         
        
         
           
@@ -295,6 +434,8 @@
   </div>
   <br>
   <br>  
+
+
 
     
 
