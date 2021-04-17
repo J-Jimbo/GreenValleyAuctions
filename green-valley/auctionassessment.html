@@ -25,18 +25,18 @@
           
                  <div class="row">
                    <div class="col-md-1">
-                  
                     <a class="nav-link" href="profile1.html">Profile</a>
                  </div>
 
-            <div class="col-md-4 offset-md-1">
+
+            <div class="col-md-2 offset-md-1">
              <div class="button">
               <button class="btn btn-secondary" href="newclientform.html" type="button">Initial Conversation
               </button>
             </div>
             </div>
                   
-            <div class="col-md-2 offset-md-0">
+            <div class="col-md-1 offset-md-0">
              <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move
               </button>
@@ -51,7 +51,7 @@
             </div>
             </div>
 
-            <div class="col-md-2 ">
+            <div class="col-md-1 offset-md-1">
              <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Auction
               </button>
@@ -68,7 +68,7 @@
             </div>
             
 
-              <div class="col-md-2 ">
+              <div class="col-md-1 offset-md-1">
              <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Service Ticket
               </button>
@@ -78,31 +78,169 @@
               </div>
             </div>
             </div>
+
+              <!-- Button trigger modal -->
+        <div class="col-md-1 offset-md-2">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Schedule
+      </button>
+      </div>
+            </div>
             
-          </div>     
         </nav>
       </header>
+    
     <br>
 
 <!-- Heading -->
      <div class="text-center">
         <h3> Auction Assessment </h3>
       </div>
-<br>
 
-   <!-- Search Customer -->
-      <div class="row">
-        <p> Search Customer </p>
-        <div class="col-md-6 input-group">
-      <div class="input-group">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" />
-  <button type="button" class="btn btn-outline-primary">search</button>
-</div>
-</div>
+
+
+          <!-- SCHEDULING MODAL STARTS HERE-->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title text-center" id="exampleModalLongTitle">Scheduling</h3>
+
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <!-- Search Customer -->
+                  <div class="modal-body">
+                  <div class="row">
+                  <div class="col-md-4">
+                    <p> Search Customer </p> </div>
+                    <div class="col-md-8 input-group">
+                  <div class="input-group">
+              <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" />
+              <button type="button" class="btn btn-outline-primary">search</button>
+            </div>
+            </div>
+            </div>
+
+            <br>
+            <br>
+
+
+            <!-- Customer Name -->
+                  <div class="row col-md-12">
+                    <p> Customer Name </p> </div>
+       
+                   <br>
+
+
+          <!-- Service Being Scheduled -->
+                  <div class="row">
+                  <div class="col-md-6">
+                  <p> Service Being Scheduled: </p>
+                  </div>
+                  <div class="col-md-6">
+            <select class="form-control" id="sel1">
+              <option>Move Assessment</option>
+              <option>Auction Walk Through</option>
+              <option>Packing</option>
+              <option>Move</option>
+              <option>Auction Pick Up</option>
+              <option>Aucrtion Bring In</option>
+              <option>Appraisal</option>
+              <option>Consignment Shop Pick Up</option>
+              <option>Consignment Shop Bring In</option>
+              <option>Trash Removal</option>
+            </select>
+          </div>
+        </div>
+
+          <br>
+          <!-- Potential Dates -->
+          <div class="row">
+       <div class="heading col-md-9">
+        <p>Potential Dates</p>
+        </div>
+      </div>
+          <div class="row">
+            <div class="col-md-3">
+          <p> Option 1</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+
+         <div class="row">
+            <div class="col-md-3">
+          <p> Option 2</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+          <p> Option 3</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="row">
+            <div class="col-md-3">
+          <p> Final Date</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+      
+
+          <br>
+
+
+      
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         
-    </div>
 
-    <br>
+              
+
+
+   
+  <!-- SCHEDULING MODAL ENDS HERE -->
+
 
 
     <!-- Note Body -->
@@ -264,7 +402,7 @@
            <p> Why are you considering auction services? </p>
         </div>
         <div class="col-md-8">
-        <select class="form-control" id="sel1">
+        <select class="form-control" id="sel2">
         <option>Settling an estate</option>
         <option>Moving and need to downsize</option>
         <option>Just getting rid of some stuff</option>
