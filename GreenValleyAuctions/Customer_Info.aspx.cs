@@ -329,7 +329,7 @@ namespace GreenValleyAuctions
             ReviewResult.Close();
             sqlConnect.Close();
             //Images 
-            string Photo = "Select PhotoPath From Customer C inner join WorkFlow wf on C.CustomerID = wf.CustomerID inner join AuctionSchedulingForm asf on wf.WorkFlowID = asf.WorkFlowID inner join AuctionPhotos ap on asf.SchedulingFormID = ap.SchedulingFormID where C.CustomerID = @ID";
+            string Photo = "Select AP.PhotoPath as EmpPhoto, CP.PhotoPath as CustomerPhoto From Customer C inner join WorkFlow wf on C.CustomerID = wf.CustomerID full join AuctionSchedulingForm asf on wf.WorkFlowID = asf.WorkFlowID full join AuctionPhotos ap on asf.SchedulingFormID = ap.SchedulingFormID full join CustomerPhotos CP on C.CustomerID = CP.CustomerID where C.CustomerID = @ID";
 
             //Create sql command
             SqlCommand PhotoCommand = new SqlCommand();
@@ -344,7 +344,8 @@ namespace GreenValleyAuctions
 
             while (PhotoResult.Read())
             {
-                imgtest.ImageUrl = "~\\Auction_Photos\\" + PhotoResult["PhotoPath"].ToString();
+                imgCustomer.ImageUrl = "~\\Customer_Photos\\" + PhotoResult["CustomerPhoto"].ToString();
+                imgtest.ImageUrl = "~\\Auction_Photos\\" + PhotoResult["EmpPhoto"].ToString();
                 if(PhotoResult.HasRows)
                 {
                     photoCell.Visible = true;

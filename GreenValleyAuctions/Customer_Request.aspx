@@ -35,6 +35,9 @@
                     <asp:TableCell>
                         <asp:Button ID="btnSend" runat="server" Text="Send Request" OnClick="btnSend_Click" />
                     </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+                    </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
         </div>

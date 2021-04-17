@@ -193,13 +193,16 @@
                <p><asp:Label ID="lblItems" runat="server" Text="Items" Font-Bold="true"></asp:Label></p>
             </asp:TableCell>
         </asp:TableRow>
-        <asp:TableRow>
+        <asp:TableRow ID="photoCell" Visible="false">
             <asp:TableCell>
                 <p><asp:Label ID="lblMedia" runat="server" Text="Media: " Font-Bold="true" ></asp:Label></p>
             </asp:TableCell>
-            <asp:TableCell ID="photoCell" Visible="false">
-                <p><asp:Image ID="imgtest" runat="server"  Height="100px" Width="100px" /></p>
+            <asp:TableCell >
+                <asp:Image ID="imgtest" runat="server"  Height="100px" Width="100px" />
+                <asp:Image ID="imgCustomer" runat="server" Height="100px" Width="100px" />
+
             </asp:TableCell>
+            
         </asp:TableRow>
     </asp:Table>
 </asp:Content>

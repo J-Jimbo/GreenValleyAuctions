@@ -23,18 +23,56 @@ namespace GreenValleyAuctions
                 Session["NoCustomer"] = "You Must first Login or create an Account";
                 Response.Redirect("Customer_Login.aspx");
             }
-            
+            //on page load filter if recognized as client 
+            string QueryEmail = "Select * from Customer where CustomerEmail = @ID;";
 
-                //--------------------------------------------------------------
-                //On Page load grab customer info
+            //Define the connection to the Database
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
-                string sqlQuery = "Select trim(FirstName)+' '+trim(LastName) as Name,Phone,Email, trim(Street)+' '+trim(City)+' '+trim(State)+' '+trim(Zip) as CustomerAddress from CustomerRequest where Email = @ID;";
+            //Create sql command
+            SqlCommand sqlCommandEmail = new SqlCommand();
+            sqlCommandEmail.Connection = sqlConnect;
+            sqlCommandEmail.CommandType = CommandType.Text;
+            sqlCommandEmail.CommandText = QueryEmail;
 
-                //Define the connection to the Database
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+            sqlCommandEmail.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader QResponse = sqlCommandEmail.ExecuteReader();
 
-                //Create sql command
-                SqlCommand sqlCommandID = new SqlCommand();
+            string customer = "no";
+            while (QResponse.Read())
+            {
+                if (QResponse.HasRows.Equals(true))
+                {
+                    btnMedia.Visible = true;
+                    btnReview.Visible = true;
+                    customer = "yes";
+                }
+                else
+                {
+                    btnMedia.Visible = false;
+                    btnReview.Visible = false;
+                    customer = "no";
+                }
+                
+            }
+
+            // Close conecctions
+            QResponse.Close();
+            sqlConnect.Close();
+
+            //--------------------------------------------------------------
+            //On Page load grab customer info
+            string sqlQuery = "";
+            if (customer.Equals("no"))
+                sqlQuery = "Select trim(FirstName)+' '+trim(LastName) as Name,Phone,Email, trim(Street)+' '+trim(City)+' '+trim(State)+' '+trim(Zip) as CustomerAddress from CustomerRequest where Email = @ID;";
+            else
+                sqlQuery = "Select trim(FirstName)+' '+trim(LastName) as Name,CustomerPhone as Phone,CustomerEmail as Email,CustomerAddress from Customer where CustomerEmail = @ID; ";
+           
+
+            //Create sql command
+            SqlCommand sqlCommandID = new SqlCommand();
                 sqlCommandID.Connection = sqlConnect;
                 sqlCommandID.CommandType = CommandType.Text;
                 sqlCommandID.CommandText = sqlQuery;
@@ -244,12 +282,14 @@ namespace GreenValleyAuctions
                     DateFinal.Visible = false;
                     ServiceComplete.Visible = false;
                     FollowUp.Visible = true;
+
+                    btnReview.Enabled = true;
                 }
 
                 ReviewResult.Close();
                 sqlConnect.Close();
                 //Images 
-                string Photo = "Select PhotoPath From Customer C inner join WorkFlow wf on C.CustomerID = wf.CustomerID inner join AuctionSchedulingForm asf on wf.WorkFlowID = asf.WorkFlowID inner join AuctionPhotos ap on asf.SchedulingFormID = ap.SchedulingFormID where C.CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID)";
+                string Photo = "Select AP.PhotoPath as EmpPhoto, CP.PhotoPath as CustomerPhoto From Customer C inner join WorkFlow wf on C.CustomerID = wf.CustomerID full join AuctionSchedulingForm asf on wf.WorkFlowID = asf.WorkFlowID full join AuctionPhotos ap on asf.SchedulingFormID = ap.SchedulingFormID full join CustomerPhotos CP on C.CustomerID = CP.CustomerID where C.CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID)";
 
                 //Create sql command
                 SqlCommand PhotoCommand = new SqlCommand();
@@ -264,7 +304,8 @@ namespace GreenValleyAuctions
 
                 while (PhotoResult.Read())
                 {
-                    imgtest.ImageUrl = "~\\Auction_Photos\\" + PhotoResult["PhotoPath"].ToString();
+                    imgCustomer.ImageUrl= "~\\Customer_Photos\\" + PhotoResult["CustomerPhoto"].ToString();
+                    imgtest.ImageUrl = "~\\Auction_Photos\\" + PhotoResult["EmpPhoto"].ToString();
                     if (PhotoResult.HasRows)
                     {
                         photoCell.Visible = true;
@@ -284,12 +325,22 @@ namespace GreenValleyAuctions
 
         protected void btnMedia_Click(object sender, EventArgs e)
         {
-
+            if(btnUpload.Visible == false)
+            {
+                btnUpload.Visible = true;
+                fuPhotos.Visible = true;
+            }
+            else
+            {
+                btnUpload.Visible = false;
+                fuPhotos.Visible = false;
+            }
+            
         }
 
         protected void btnReview_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Customer_Review.aspx");
         }
 
         protected void btnRequest_Click(object sender, EventArgs e)
@@ -309,6 +360,44 @@ namespace GreenValleyAuctions
         {
             Session.Abandon();
             Response.Redirect("LandingPage.aspx?loggedOut=true");
+        }
+
+        protected void btnUpload_Click(object sender, EventArgs e)
+        {
+            foreach (HttpPostedFile file in fuPhotos.PostedFiles)
+            {
+                //Define the connection to the Database
+                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+
+                string FinalQuery = "Insert into CustomerPhotos(CustomerPhotoID, PhotoPath,CustomerID  )Values((Select ISNULL(max(CustomerPhotoID)+1,1) from CustomerPhotos), @PhotoPath,(Select CustomerID from Customer where CustomerEmail = @ID)); ";
+                //Create sql command 
+                SqlCommand sqlCommandUpdate = new SqlCommand();
+                sqlCommandUpdate.Connection = sqlConnect;
+                sqlCommandUpdate.CommandType = CommandType.Text;
+                sqlCommandUpdate.CommandText = FinalQuery;
+                sqlCommandUpdate.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+                // get string path
+
+                string strPath = Request.PhysicalApplicationPath + "Customer_Photos\\" + file.FileName.ToString();
+
+                try
+                {
+                    // save photo to directory
+                    fuPhotos.SaveAs(strPath);
+                    //put path into database
+                    sqlCommandUpdate.Parameters.AddWithValue("@PhotoPath", HttpUtility.HtmlEncode(file.FileName.ToString()));
+                    //open connection to send  query 
+                }
+                catch
+                {
+                    sqlCommandUpdate.Parameters.AddWithValue("@PhotoPath", HttpUtility.HtmlEncode("None"));
+                }
+                sqlConnect.Open();
+                SqlDataReader queryAnswer = sqlCommandUpdate.ExecuteReader();
+
+                queryAnswer.Close();
+                sqlConnect.Close();
+            }
         }
     }
 }

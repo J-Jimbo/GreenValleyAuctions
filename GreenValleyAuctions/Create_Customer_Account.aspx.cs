@@ -216,7 +216,7 @@ namespace Lab3
 
             while (queryAnswer.Read() == true)
             {
-                if (queryAnswer.GetString(0).Equals(HttpUtility.HtmlEncode(txtUserName.Text.Trim())))
+                if (queryAnswer.GetString(0).ToLower().Equals(HttpUtility.HtmlEncode(txtUserName.Text.Trim().ToLower())))
                 {
                     args.IsValid = false;
                     break;

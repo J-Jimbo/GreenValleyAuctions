@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lab3
+namespace GreenValleyAuctions
 {
 
 
-    public partial class Customer_Home
+    public partial class Customer_Review
     {
 
         /// <summary>
@@ -24,33 +24,6 @@ namespace Lab3
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// BtnLogout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLogout;
-
-        /// <summary>
-        /// BtnLanding control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLanding;
-
-        /// <summary>
-        /// lblRequest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRequest;
-
-        /// <summary>
         /// Table1 control.
         /// </summary>
         /// <remarks>
@@ -60,57 +33,111 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Table Table1;
 
         /// <summary>
-        /// lblService control.
+        /// lblTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblService;
+        protected global::System.Web.UI.WebControls.Label lblTitle;
 
         /// <summary>
-        /// dplServiceType control.
+        /// lblRate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dplServiceType;
+        protected global::System.Web.UI.WebControls.Label lblRate;
 
         /// <summary>
-        /// lblDescription control.
+        /// ddlRating control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRating;
 
         /// <summary>
-        /// txtDescription control.
+        /// lblComments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        protected global::System.Web.UI.WebControls.Label lblComments;
 
         /// <summary>
-        /// btnSend control.
+        /// txtComments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSend;
+        protected global::System.Web.UI.WebControls.TextBox txtComments;
 
         /// <summary>
-        /// lblStatus control.
+        /// lblOnline control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
+        protected global::System.Web.UI.WebControls.Label lblOnline;
+
+        /// <summary>
+        /// hlGoogle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlGoogle;
+
+        /// <summary>
+        /// hlFacebook control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlFacebook;
+
+        /// <summary>
+        /// hlYelp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlYelp;
+
+        /// <summary>
+        /// btnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSave;
+
+        /// <summary>
+        /// btnClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClear;
+
+        /// <summary>
+        /// btnBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }

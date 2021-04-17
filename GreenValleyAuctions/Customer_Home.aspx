@@ -89,10 +89,12 @@
                 <asp:Button ID="btnRequest" runat="server" Text="Submit Request" OnClick="btnRequest_Click" class="btn btn-primary btn-intake rounded-pill" />
 				<br/>
 				<br/>
-                <asp:Button ID="btnMedia" runat="server" Text="Upload Media" OnClick="btnMedia_Click" class="btn btn-primary btn-intake rounded-pill" />
+                <asp:Button ID="btnMedia" runat="server" Text="Upload Media" OnClick="btnMedia_Click" class="btn btn-primary btn-intake rounded-pill" Visible="false"/>
+				<asp:FileUpload ID="fuPhotos" runat="server" AllowMultiple="true" Visible="false" />
+                <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" Visible="false" class="btn btn-primary btn-intake rounded-pill" />
+                <br/>
 				<br/>
-				<br/>
-                <asp:Button ID="btnReview" runat="server" Text="Leave a Review" class="btn btn-primary btn-intake rounded-pill" OnClick="btnReview_Click" />
+                <asp:Button ID="btnReview" runat="server" Text="Leave a Review" class="btn btn-primary btn-intake rounded-pill" OnClick="btnReview_Click" Visible="false" Enabled="false" />
 			</div>
 
 
@@ -152,13 +154,15 @@
                <p><asp:Label ID="lblItems" runat="server" Text="Items" Font-Bold="true"></asp:Label></p>
             </asp:TableCell>
         </asp:TableRow>
-        <asp:TableRow>
+        <asp:TableRow ID="photoCell" Visible="false">
             <asp:TableCell>
                 <p><asp:Label ID="lblMedia" runat="server" Text="Media: " Font-Bold="true" ></asp:Label></p>
             </asp:TableCell>
-            <asp:TableCell ID="photoCell" Visible="false">
-                <p><asp:Image ID="imgtest" runat="server"  Height="100px" Width="100px" /></p>
+            <asp:TableCell >
+                <asp:Image ID="imgtest" runat="server"  Height="100px" Width="100px"  />
+                <asp:Image ID="imgCustomer" runat="server" Height="100px" Width="100px" />
             </asp:TableCell>
+           
         </asp:TableRow>
     </asp:Table>
 

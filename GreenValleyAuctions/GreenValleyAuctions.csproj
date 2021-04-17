@@ -79,6 +79,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom.css" />
     <Content Include="Customer_Home.aspx" />
+    <Content Include="Customer_Review.aspx" />
     <Content Include="images\antiquechair.jpeg" />
     <Content Include="images\antiquechair.png" />
     <Content Include="images\benhill.png" />
@@ -371,6 +372,13 @@
     <Compile Include="Customer_Login.aspx.designer.cs">
       <DependentUpon>Customer_Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer_Review.aspx.cs">
+      <DependentUpon>Customer_Review.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Review.aspx.designer.cs">
+      <DependentUpon>Customer_Review.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer_Search.aspx.cs">
       <DependentUpon>Customer_Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -509,6 +517,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auction_Photos\" />
+    <Folder Include="Customer_Photos\" />
     <Folder Include="js\" />
   </ItemGroup>
   <PropertyGroup>

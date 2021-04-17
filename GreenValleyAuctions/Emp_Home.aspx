@@ -19,7 +19,7 @@
     
 </head>
 <body>
-
+    <div class="home">
    <header class="row headernav"> <!-- Logo Starts Here -->
 				
 
@@ -287,7 +287,7 @@
     </div>
   </div>
 </div>
-
+</div>
 
 
 

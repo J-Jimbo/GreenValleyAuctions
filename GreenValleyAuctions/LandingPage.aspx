@@ -19,26 +19,24 @@
 </head>
 <body>
     <div class="justify-content-start"/>
-    
+    <asp:Label ID="lblStatus" runat="server" Text="" ></asp:Label>
     
     <div class="text-center">
         <asp:Image ID="logo" runat="server" ImageUrl="~/images/gvalogo.png" alt="Green Valley Auctions and Moving Logo" class="img-fluid logo2" />
     </div>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="lblStatus" runat="server" Text="" ></asp:Label>
-            <asp:Table ID="Table1" runat="server" Height="682px" Width="1283px">
-                <asp:TableRow HorizontalAlign="Center">
-                    <asp:TableCell VerticalAlign="Middle">
-                        <asp:Button ID="btnEmpLogin" runat="server" Text="Employee Login"  OnClick="btnEmpLogin_Click" Class="btn btn-primary btn-lg"/>
-                        <br />
-                        <asp:Button ID="btnCustomerLogin" runat="server" Text="Customer Login" OnClick="btnCustomerLogin_Click" Class="btn btn-primary btn-lg" />
-                        <p><asp:Label ID="lblquestion" runat="server" Text="New Customer?"></asp:Label></p>
-                        <asp:HyperLink ID="hlCreateAccount" runat="server" Text="Create Account" NavigateUrl="~/Create_Customer_Account.aspx"></asp:HyperLink>
-                    </asp:TableCell>
-                </asp:TableRow>
-                
-            </asp:Table>
+            
+        <div class ="text-center employee-btn">
+                <asp:Button ID="btnEmpLogin" runat="server" Text="Employee Login"  OnClick="btnEmpLogin_Click" Class="btn btn-primary btn-lg"/>
+        </div>
+
+        <div class ="text-center client-btn">
+                <asp:Button ID="btnCustomerLogin" runat="server" Text="Customer Login" OnClick="btnCustomerLogin_Click" Class="btn btn-primary btn-lg" />
+                <p><asp:Label ID="lblquestion" runat="server" Text="New Customer?"></asp:Label></p>
+                <asp:HyperLink ID="hlCreateAccount" runat="server" Text="Create Account" NavigateUrl="~/Create_Customer_Account.aspx"></asp:HyperLink>
+                    
+        </div>
         </div>
     </form>
     <footer>

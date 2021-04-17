@@ -239,10 +239,10 @@ namespace Lab2
                     sqlCommandCreate.Parameters.AddWithValue("@CustomerID", customerID);
                     sqlCommandCreate.Parameters.AddWithValue("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text));
                     sqlCommandCreate.Parameters.AddWithValue("@LastName", HttpUtility.HtmlEncode(txtLastName.Text));
-                    sqlCommandCreate.Parameters.AddWithValue("@Street", HttpUtility.HtmlEncode(txtStreet.Text));
-                    sqlCommandCreate.Parameters.AddWithValue("@City", HttpUtility.HtmlEncode(txtCIty.Text));
-                    sqlCommandCreate.Parameters.AddWithValue("@State", HttpUtility.HtmlEncode(txtState.Text));
-                    sqlCommandCreate.Parameters.AddWithValue("@Zip", HttpUtility.HtmlEncode(txtZip.Text));
+                    sqlCommandCreate.Parameters.AddWithValue("@Street", HttpUtility.HtmlEncode(txtStreet.Text).Trim());
+                    sqlCommandCreate.Parameters.AddWithValue("@City", HttpUtility.HtmlEncode(txtCIty.Text).Trim());
+                    sqlCommandCreate.Parameters.AddWithValue("@State", HttpUtility.HtmlEncode(txtState.Text).Trim());
+                    sqlCommandCreate.Parameters.AddWithValue("@Zip", HttpUtility.HtmlEncode(txtZip.Text).Trim());
                     sqlCommandCreate.Parameters.AddWithValue("@Phone", HttpUtility.HtmlEncode(txtPhone.Text));
                     sqlCommandCreate.Parameters.AddWithValue("@PhoneType", phoneType);
                     sqlCommandCreate.Parameters.AddWithValue("@Email", HttpUtility.HtmlEncode(txtEmail.Text));
@@ -311,6 +311,31 @@ namespace Lab2
                 lblCreateStatus.ForeColor = Color.Green;
                 lblCreateStatus.Font.Bold = true;
                 lblCreateStatus.Text = "Customer Created";
+
+
+                //if based on a request remove from employee home
+                if(Session["ServiceRequest"] != null)
+                {
+                    // query to search for last customer ID
+                    string edit = "Delete from ServiceRequest where CustomerRequestID = @ID;" +
+                        " Delete from  CustomerRequest  where CustomerRequestID = @ID;";
+
+                    
+
+                    //Create sql command to receive ID
+                    SqlCommand sqlCommandID = new SqlCommand();
+                    sqlCommandID.Connection = sqlConnect;
+                    sqlCommandID.CommandType = CommandType.Text;
+                    sqlCommandID.CommandText = edit;
+                    sqlCommandID.Parameters.AddWithValue("@ID", Session["ServiceRequest"].ToString());
+                    //open connection to send ID query 
+                    sqlConnect.Open();
+                    SqlDataReader queryValue = sqlCommandID.ExecuteReader();
+
+                    //Close Connection
+                    queryValue.Close();
+                    sqlConnect.Close();
+                }
             }
 
 

@@ -97,7 +97,7 @@ div.c {
 /* Header Navigation All */
 .headernav {
   padding-top:6px;
-     background-color: white;
+     
 }
 
 /* Logo */
@@ -442,3 +442,6 @@ input:checked + .slider:before {
     color: #98ab9d;
     background-color: white;
 } 
+.home {
+    background-color: white;
+}

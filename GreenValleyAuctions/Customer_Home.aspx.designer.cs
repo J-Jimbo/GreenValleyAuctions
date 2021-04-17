@@ -105,6 +105,24 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Button btnMedia;
 
         /// <summary>
+        /// fuPhotos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuPhotos;
+
+        /// <summary>
+        /// btnUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpload;
+
+        /// <summary>
         /// btnReview control.
         /// </summary>
         /// <remarks>
@@ -294,6 +312,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblItems;
 
         /// <summary>
+        /// photoCell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow photoCell;
+
+        /// <summary>
         /// lblMedia control.
         /// </summary>
         /// <remarks>
@@ -303,15 +330,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblMedia;
 
         /// <summary>
-        /// photoCell control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell photoCell;
-
-        /// <summary>
         /// imgtest control.
         /// </summary>
         /// <remarks>
@@ -319,5 +337,14 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgtest;
+
+        /// <summary>
+        /// imgCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgCustomer;
     }
 }

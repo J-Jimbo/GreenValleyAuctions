@@ -26,7 +26,9 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+	<div class="home">
 
+	
 	<header class="row headernav"> <!-- Logo Starts Here -->
 				
 
@@ -73,68 +75,6 @@
 
 
 
-
-
-
-
-
-
-	<%--old--%>
-
-    <%--<header class="row headernav" runat="server"> <!-- Logo Starts Here -->
-				
-
-				<nav class="col-md-5"> <!-- header starts here - nav pills -->
-					 <ul class="nav nav-pills justify-content-start">
-		             <li class="nav-item active">
-						<a class="nav-link" href="Create_Customer.aspx">New Customer</a>
-                          
-		              </li>
-						 <li class="nav-item active">
-						  <a class="nav-link" href="Customer_Search.aspx">Search Customer</a>
-						 
-		              </li>
-		              
-		              
-					
-		              
-		            </ul>
-		            </nav>
-				
-
-					<div class ="col-md-2 ">
-					<div class="logo3">
-					<a href="Emp_Home.aspx"><img class="img-fluid logo" src="images/gvalogo.png" alt="Green Valley Auctions and Moving Logo"></a>
-					</div>
-				</div><!-- end logo -->
- 
-				<div class ="col-md-2 offset-md-1">
-				<ul class="nav nav-pills ">
-               <li class="nav-item active">
-						<a class="nav-link" href="WareHouse.aspx">Warehouse</a>
-                          
-		              </li>
-				
-					</ul>
-			</div>
-
-				<div class ="col-md-3">
-				<i class="fas fa-search fa-1x"></i>
-				<i class="fas fa-calendar-alt fa-1x"></i>
-				<a class="nav-link" href="Confirm_Logout.aspx"><i class="fas fa-sign-out-alt fa-1x"></i></a>
-
-								
-			    <br />
-				<asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label>
-			</div>
-
-
-			</header> <!-- end row header -->--%>
-
-
-
-
-
     <form id="form1" runat="server">
 <%--		<asp:LinkButton  ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" Class="fas fa-sign-out-alt fa-2x" CausesValidation="false"> </asp:LinkButton>--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -154,5 +94,7 @@
          <br />
       
     </footer>
+	</div>
 </body>
+
 </html>

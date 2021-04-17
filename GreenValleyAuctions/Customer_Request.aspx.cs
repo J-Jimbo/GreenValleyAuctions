@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
+using System.Drawing;
 namespace Lab3
 {
     public partial class Customer_Home : System.Web.UI.Page
@@ -54,6 +55,10 @@ namespace Lab3
             // Close conecctions
             queryValue.Close();
             sqlConnect.Close();
+
+            lblStatus.Text = "Sent!";
+            lblStatus.ForeColor = Color.Green;
+            lblStatus.Font.Bold = true;
         }
 
         protected void BtnLogout_Click(object sender, EventArgs e)

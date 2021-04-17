@@ -15,6 +15,15 @@ namespace Lab3
     {
 
         /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+
+        /// <summary>
         /// logo control.
         /// </summary>
         /// <remarks>
@@ -31,24 +40,6 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// lblStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
-
-        /// <summary>
-        /// Table1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
 
         /// <summary>
         /// btnEmpLogin control.
