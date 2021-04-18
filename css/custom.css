@@ -97,7 +97,7 @@ div.c {
 /* Header Navigation All */
 .headernav {
   padding-top:6px;
-     background-color: white;
+    
 }
 
 /* Logo */
@@ -446,3 +446,29 @@ input:checked + .slider:before {
     background-color: white;
 } 
 
+/* Scrolling Note Sticky*/
+.sticky {
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fcf1d1;
+  padding: 50px;
+}
+
+.homepage {
+  background-color: white;
+}
+
+
+.searchicon {
+  padding-right: 15px;
+}
+
+.calendaricon {
+  padding-right: 15px;
+}
+
+.logouticon {
+  padding-right: 15px;
+}
