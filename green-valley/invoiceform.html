@@ -1,28 +1,251 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="Green Valley Auctions">
-	  	<meta name="author" content="Ana Hart">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Green Valley Moving Invoice </title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Green Valley Auctions">
+      <meta name="author" content="Lindsey McKim, Ana Hart">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Valley Auction Assessment Form</title>
 
-		<!-- Bootstrap v4.4.1 -->
-		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
-		<link href="css/custom.css" rel="stylesheet" type="text/css" media="screen">
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Oswald&display=swap" rel="stylesheet">
+    <!-- Bootstrap v4.4.1 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
-		<script src="https://kit.fontawesome.com/92cf74d3dd.js" crossorigin="anonymous">  
-    </script>
+    <script src="https://kit.fontawesome.com/92cf74d3dd.js" crossorigin="anonymous"></script>
 
-	</head>
+  </head>
 
-	<body>
+   <!-- FORM NAV STARTS HERE !-->
+  <body>
+<br>
+    <header class="row col-md-12"> <!-- Logo Starts Here -->
+        <nav class="justify-content-left"> <!-- header starts here - nav pills -->
+           
+          
+              <div class="row col-md-12">
+                   <div class="col-md-1">
+                    <a class="nav-link" href="profile1.html">Profile</a>
+                 </div>
+
+
+            <div class="col-md-2 offset-md-1">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> General
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="newclientform.html">Initial Conversation</a>
+                <a class="dropdown-item" href="customerhistory.html">Customer History</a>
+              </div>
+            </div>
+            </div>
+                  
+            <div class="col-md-1 offset-md-0">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="intakeform.html">Intake Form</a>
+                <a class="dropdown-item" href="moveassessment.html">Move Assessment</a>
+                <a class="dropdown-item" href="movingform.html">Moving Form</a>
+                <a class="dropdown-item" href="#">Move Assessment</a>
+                <a class="dropdown-item" href="moveschedulescreenform.html">Move Schedule</a>
+                <a class="dropdown-item" href="moveserviceorder.html">Move Service</a>
+                <a class="dropdown-item" href="completeservice.html">Complete Service</a>
+                <a class="dropdown-item" href="completionform.html">Completion Form</a>
+                <a class="dropdown-item" href="invoiceform.html">Invoice Form</a>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-md-1 offset-md-1">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Auction
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="intakeform.html">Intake Form</a>
+                <a class="dropdown-item" href="auctionassessment.html">Auction Assessment</a>
+                <a class="dropdown-item" href="auctionschedule.html">Auction Schedule</a>
+                <a class="dropdown-item" href="auctionserviceorder.html">Auction Service Order</a>
+                <a class="dropdown-item" href="auctionpickupform.html">Auction Pick Up Form</a>
+                <a class="dropdown-item" href="appraisalserviceorder.html">Appraisal Service Order</a>
+                <a class="dropdown-item" href="inventoryform.html">Inventory</a>
+                <a class="dropdown-item" href="addinventory.html">Add Inventory</a>
+                <a class="dropdown-item" href="completeservice.html">Complete Service</a>
+                <a class="dropdown-item" href="completionform.html">Completion Form</a>
+                <a class="dropdown-item" href="consignmentcontract.html">Consignment Contract</a>
+                <a class="dropdown-item" href="invoiceform.html">Invoice Form</a>
+                
+              </div>
+            </div>
+            </div>
+            
+
+              <div class="col-md-1 offset-md-1">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Service Ticket
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="createservice.html">Create Service</a>
+                <a class="dropdown-item" href="editserviceticket.html">Edit Service Ticket</a>
+              </div>
+            </div>
+            </div>
+
+        <!-- Button trigger modal -->
+        <div class="col-md-1 offset-md-2">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Schedule
+      </button>
+      </div>
+      </div>     
+      </nav>
+      </header>
+    
+    <br>
+
+
+        <!-- SCHEDULING MODAL STARTS HERE-->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title text-center" id="exampleModalLongTitle">Scheduling</h3>
+
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+            <!-- Customer Name -->
+                  <div class="modal-body">
+                  <div class="row">
+                  <div class="col-md-4">
+                    <p> Customer Name </p> </div></div></div>
+       
+                   <br>
+
+
+          <!-- Service Being Scheduled -->
+                  <div class="row col-md-12">
+                  <div class="col-md-6">
+                  <p> Service Being Scheduled: </p>
+                  </div>
+                  <div class="col-md-6">
+            <select class="form-control" id="sel1">
+              <option>Move Assessment</option>
+              <option>Auction Walk Through</option>
+              <option>Packing</option>
+              <option>Move</option>
+              <option>Auction Pick Up</option>
+              <option>Auction Bring In</option>
+              <option>Appraisal</option>
+              <option>Consignment Shop Pick Up</option>
+              <option>Consignment Shop Bring In</option>
+              <option>Trash Removal</option>
+            </select>
+          </div>
+        </div>
+
+          <br>
+          <!-- Potential Dates -->
+          <div class="row col-md-12">
+       <div class="heading col-md-9">
+        <p>Potential Dates</p>
+        </div>
+      </div>
+          <div class="row col-md-12">
+            <div class="col-md-3">
+          <p> Option 1</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+
+         <div class="row col-md-12">
+            <div class="col-md-3">
+          <p> Option 2</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+          <div class="row col-md-12">
+            <div class="col-md-3">
+          <p> Option 3</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="row col-md-12">
+            <div class="col-md-3">
+          <p> Final Date</p>
+            </div>
+          <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="DATE">
+            </div>
+        <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="TIME">
+            </div>
+          </div>
+      
+
+          <br>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+  <!-- SCHEDULING MODAL ENDS HERE -->
+
+   <!-- FORM NAV ENDS HERE !-->
+
+
+
+    <!-- Note Body -->
+
+<div class="sticky">
+  <div class="text-left">
+      <h3> Notes:</h3>
+    </div>
+    <form>
+      <div class="form-group">
+    <label class= "Additional Notes"> </label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" placeholder="The item we are handling is an ancient relic from the 10th century of Mongolia."></textarea>
+  </div>
+</form>
+</div>
+
 <br>
 
-  <div class="text-center">
- <h3> Invoice </h3>
-</div>
+  <div class="container-left col-md-8">
+        <div class="heading text-center">
+       <h3> Invoice </h3>
+      </div>
 
 
 
@@ -79,7 +302,11 @@
     </div>
   </div>
 </form>
+</div>
 
+<br>
+
+<div class="container-left col-md-8">
 
 <div class="row">
     <div class="col-md-6 text-center">
@@ -90,146 +317,171 @@
   <h3> Amount </h3>
   </div>
 </div>
+</div>
 
+<br>
 
 <form class="form-inline">
-    
+
 <!-- Moving Hours !-->
-    <div class="row">
-            <div class="col-md-5">
+    <div class="row col-md-8">
+      <div class="col-md-2">
        <p> Moving Hours: &#36;</p> 
      </div>
-      <div class="col-md-6"> 
-      <input type="text" class="form-control" style="width: 50%"> &#47;hr  
+      <div class="col-md-3"> 
+      <input type="text" class="form-control" style="width: 70%"> &#47;hr  
       </div>
-    </div>
+    
 
     <br>
 
-    <div class="row">
-            <div class="col-md-1">
-       <p> X </p> 
-     </div>
-      <div class="col-md-6"> 
-      <input type="text" class="form-control" style="width: 50%"> hrs.  
-      </div>
-    </div>
-
-    <br>
-
-    <div class="row">
-            <div class="col-md-5">
-      <input type="text" class="form-control" placeholder="AMOUNT">  
-      </div>
-    </div>
-
-<br>
+   
   
-  <div class="row">
-            <div class="col-md-5">
-       <p> Moving Hours: &#36;</p> 
-     </div>
-      <div class="col-md-6"> 
-      <input type="text" class="form-control" style="width: 50%"> &#47;hr  
+      <div class="col-md-2"> 
+      <input type="text" class="form-control" style="width: 70%" placeholder="HRS">  
       </div>
-    </div>
+
 
     <br>
 
-    <div class="row">
-            <div class="col-md-1">
-       <p> X </p> 
-     </div>
-      <div class="col-md-6"> 
-      <input type="text" class="form-control" style="width: 50%"> hrs.  
-      </div>
-    </div>
 
-    <br>
-
-    <div class="row">
-            <div class="col-md-5">
+      <div class="col-md-3 offset-md-1">
       <input type="text" class="form-control" placeholder="AMOUNT">  
       </div>
     </div>
+
+
+  <br> 
+  <br>
+  
+
+  <!-- Moving Hours !-->
+    <div class="row col-md-8">
+      <div class="col-md-2">
+       <p> Moving Hours: &#36;</p> 
+     </div>
+      <div class="col-md-3"> 
+      <input type="text" class="form-control" style="width: 70%"> &#47;hr  
+      </div>
+    
+
+    <br>
+
+   
+  
+      <div class="col-md-2"> 
+      <input type="text" class="form-control" style="width: 70%" placeholder="HRS"> 
+      </div>
+
+
+    <br>
+
+
+            <div class="col-md-3 offset-md-1">
+      <input type="text" class="form-control" placeholder="AMOUNT">  
+      </div>
+    </div>
+  
+
+
+      
   <!-- End Moving Hours !-->
 <br>
+<br>
+
 
   <!-- Packing Hours !-->
-    <div class="row">
-            <div class="col-md-5">
-       <p> Packing Hours: &#36; </p> 
+
+    <div class="row col-md-8">
+      <div class="col-md-2">
+       <p> Packing Hours: &#36;</p> 
      </div>
-      <div class="col-md-6"> 
-      <input type="text" class="form-control" style="width: 50%"> &#47;hr  
+      <div class="col-md-3"> 
+      <input type="text" class="form-control" style="width: 70%"> &#47;hr  
       </div>
-    </div>
+    
 
     <br>
 
-    <div class="row">
-            <div class="col-md-1">
-       <p> X </p> 
-     </div>
-      <div class="col-md-6"> 
-      <input type="text" class="form-control" style="width: 50%"> hrs.  
+   
+  
+      <div class="col-md-2"> 
+      <input type="text" class="form-control" style="width: 70%" placeholder="HRS">  
+      </div>
+
+
+    <br>
+
+
+            <div class="col-md-3 offset-md-1">
+      <input type="text" class="form-control" placeholder="AMOUNT">  
       </div>
     </div>
+
+
+  <br>
+  <br>
+  <br>
+
+
+
+
+  <!-- Packing Hours !-->
+  <div class="row col-md-8">
+      <div class="col-md-2">
+       <p> Packing Hours: &#36;</p> 
+     </div>
+      <div class="col-md-3"> 
+      <input type="text" class="form-control" style="width: 70%"> &#47;hr  
+      </div>
+    
+
+    <br>
+  
+      <div class="col-md-2"> 
+      <input type="text" class="form-control" style="width: 70%" placeholder="HRS">  
+      </div>
+
+
+    <br>
+
+
+            <div class="col-md-3 offset-md-1">
+      <input type="text" class="form-control" placeholder="AMOUNT">  
+      </div>
+    </div>
+  
+</form>
+
+
+      
+  <!-- End Packing Hours !-->
+
+
 
  <br>
 
-<div class="row">
-            <div class="col-md-5">
-      <input type="text" class="form-control" placeholder="AMOUNT">  
-      </div>
-    </div>
-
-<br>
-
-  
-  <div class="row">
-            <div class="col-md-5">
-       <p> Packing Hours: &#36; </p> 
-     </div>
-      <div class="col-md-6"> 
-      <input type="text" class="form-control" style="width: 50%"> &#47;hr  
-      </div>
-    </div>
-
-<br>
-
-    <div class="row">
-            <div class="col-md-1">
-       <p> X </p> 
-     </div>
-      <div class="col-md-6"> 
-      <input type="text" class="form-control" style="width: 50%"> hrs.  
-      </div>
-    </div>
-
-<br>
-
-<div class="row">
-            <div class="col-md-5">
-      <input type="text" class="form-control" placeholder="AMOUNT">  
-      </div>
-    </div>
-
-
-     <div class="row">
-            <div class="col-md-6">
+    <form class="form-inline">
+    <div class="row col-md-8">
+            <div class="col-md-2">
        <p> Supplies: &#36; </p> 
      </div>
       
-      <div class="col-md-2">
-              <input type="text" class="form-control" placeholder="">
-        </div>
+      <div class="col-md-6"> 
+      <input type="text" class="form-control" style="width: 70%">
     </div>
-  
+    
 
-            <div class="col-md-4 offset-md-4">
+    <br>
+  
+      
+
+
+            <div class="col-md-3 offset-md-0">
       <input type="text" class="form-control" placeholder="AMOUNT">  
       </div>
+    </div>
+  
 
     
 
@@ -238,16 +490,26 @@
   <!-- End Supplies !-->
 
 <br>
+<br>
+<br>
 
     <!-- Total !-->
 
-  <form>
-    <div class="form-row ">
-       <p> Total: </p> 
-      <div class="col-md-4"> 
-      <input type="text" class="form-control" id="validationDefault12" required> 
+  <form class="form-inline">
+    <div class="row col-md-8">
+            <div class="col-md-2">
+       <p> Total:  </p> 
+     </div>
+      
+      <div class="col-md-6"> 
+      <input type="text" class="form-control" style="width: 70%">
     </div>
-  </div>
+  
+    
+    </div>
+  
+
+    
 
 </form>
 
@@ -257,6 +519,7 @@
 <br>
 <br>
 
+  <div class="container-left col-md-8">
  <div class="text-center">
  <h3> Payment Information </h3>
  <p> Make checks payable to GVAM. Thank you for your business! </p>
@@ -265,7 +528,7 @@
 <br>
 
 <form>
-    <div class="row">
+    <div class="row col-md-12">
             <div class="col-md-2">
        <p> Cash Amount: </p> 
      </div>
@@ -277,8 +540,8 @@
 
 <br>
 
-<form>
-    <div class="row">
+  <form>
+    <div class="row col-md-12">
             <div class="col-md-2">
        <p> Check &#35; </p> 
      </div>
@@ -286,19 +549,20 @@
       <input type="text" class="form-control" id="validationDefault14" required> 
     </div>
 
-<div class="form-row ">
+  <div class="row">
       <div class="col-md-12"> 
       <input type="text" class="form-control" id="validationDefault15" placeholder="AMOUNT" required> 
     </div>
   </div>
 </div>
-
 </form>
+
 
 <br>
 
+
 <form>
-    <div class="row">
+    <div class="row col-md-12">
             <div class="col-md-2">
        <p> Credit Card Type: </p> 
      </div>
@@ -306,379 +570,343 @@
       <input type="text" class="form-control" id="validationDefault16" required> 
     </div>
 
-<div class="form-row ">
+<div class="row">
       <div class="col-md-12"> 
       <input type="text" class="form-control" id="validationDefault17" placeholder="AMOUNT" required> 
     </div>
   </div>
 </div>
-
 </form>
 
 
 <br>
+<br>
+
+<!-- Office Use Only !-->
 
  <div class="text-center">
  <h3> For Office Use Only</h3>
 </div>
 
-<form class="form-inline">
 
-    <div class="row">
-            <div class="col-md-5 ">
-       <p> Travel Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Travel Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<!-- Travel Time Start !-->
+
+    <div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Travel Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+
+          <div class="col-md-2">
+           <p> Travel Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Travel Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+
+          <div class="col-md-2">
+           <p> Travel Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
+
 
  
 
   
-  <div class="row">
-            <div class="col-md-5 ">
-       <p> Travel Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Travel Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-
-
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-
 <!-- End Row 1 !-->
 
-<!-- Row 2 !-->
+<!-- Load Time Start !-->
 
-     <div class="row">
-            <div class="col-md-5 ">
-       <p> Load Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Load Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Load Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
+          <div class="col-md-2">
+           <p> Load Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
+
+     <div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Load Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+
+          <div class="col-md-2">
+           <p> Load Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 <!-- End Row 2 !-->
 
-<!-- Row 3!-->
+<!-- Travel Time Start !-->
 
-<div class="row">
-            <div class="col-md-5 ">
-       <p> Travel Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Travel Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Travel Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
+          <div class="col-md-2">
+           <p> Travel Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 <!-- End Row 3 !-->
 
-<div class="row">
-            <div class="col-md-5 ">
-       <p> Unload Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Unload Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<!-- Unload Time Start !-->
+
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Unload Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+
+          <div class="col-md-2">
+           <p> Unload Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<!-- Travel Time Start !-->
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Travel Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
+          <div class="col-md-2">
+           <p>Travel Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
-<!-- Row 4 !-->
-<div class="row">
-            <div class="col-md-5 ">
-       <p> Travel Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Travel Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-
-
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 <!-- End Row 4 !-->
 
-<!-- Row 5 !-->
-<div class="row">
-            <div class="col-md-5 ">
-       <p> Travel Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Travel Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<!-- Travel Time Start !-->
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Travel Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
+          <div class="col-md-2">
+           <p> Travel Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 <!-- End Row 5 !-->
 
-<!-- Row 6 !-->
+<!-- Load Time Start !-->
 
-<div class="row">
-            <div class="col-md-5 ">
-       <p> Load Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Load Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Load Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
+          <div class="col-md-2">
+           <p> Load Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 <!-- End Row 6 !-->
 
-<!-- Row 7 !-->
+<!-- Travel Time Start !-->
 
-<div class="row">
-            <div class="col-md-5 ">
-       <p> Travel Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Travel Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Travel Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
+          <div class="col-md-2">
+           <p> Travel Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 <!-- End Row 7 !-->
 
-<!-- Row 8 !-->
+<!-- Unload Time Start !-->
 
-<div class="row">
-            <div class="col-md-5 ">
-       <p> Unload Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Unload Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Unload Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
+          <div class="col-md-2">
+           <p> Unload Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 <!-- End Row 8 !-->
 
-<!-- Row 9 !-->
+<!-- Travel Time Start !-->
 
-<div class="row">
-            <div class="col-md-5 ">
-       <p> Travel Time Start: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
-  
-    
-    <div class="row">
-            <div class="col-md-5 offset-md-1">
-       <p> Travel Time End: </p> 
-     </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+<div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Travel Time Start: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
+          <div class="col-md-2">
+           <p> Travel Time End: </p>
+        </div>
+        <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
 
-<div class="row">
-            <div class="col-md-4 offset-md-3">
-      <p> Hours: </p> 
-    </div>
-      <div class="col-md-1"> 
-      <input type="text" class="form-control">  
-      </div>
-    </div>
+            <div class="col-md-2">
+          <p> Hours: </p>
+            </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
 
 <!-- End Row 9 !-->
 
-</form>
+
 
 <br>
 <br>
@@ -709,6 +937,7 @@
         <a class="btn btn-primary btn-intake rounded-pill submit" href="profile1.html" role="button">Submit</a>
       </div>
   </div>
+</div>
 
   <br>
   <br>
@@ -718,14 +947,16 @@
 
 
 
-		<!-- jQuery and Bootstrap links - do not delete! -->
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<!-- end of do not delete -->
-
-		
 
 
-	</body>
+    <!-- jQuery and Bootstrap links - do not delete! -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- end of do not delete -->
+
+    
+
+
+  </body>
 
 </html>
