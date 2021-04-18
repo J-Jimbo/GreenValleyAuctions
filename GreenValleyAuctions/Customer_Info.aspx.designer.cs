@@ -177,6 +177,60 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Button btnCompletion;
 
         /// <summary>
+        /// moveprogress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow moveprogress;
+
+        /// <summary>
+        /// DDLMovingProg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDLMovingProg;
+
+        /// <summary>
+        /// MoveProgBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button MoveProgBtn;
+
+        /// <summary>
+        /// Auctionprogress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell Auctionprogress;
+
+        /// <summary>
+        /// ddlAuctionProg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAuctionProg;
+
+        /// <summary>
+        /// AuctionProgBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AuctionProgBtn;
+
+        /// <summary>
         /// btnNote control.
         /// </summary>
         /// <remarks>
@@ -231,6 +285,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblName;
 
         /// <summary>
+        /// moveimages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow moveimages;
+
+        /// <summary>
         /// lblStatusBar control.
         /// </summary>
         /// <remarks>
@@ -240,49 +303,211 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblStatusBar;
 
         /// <summary>
-        /// InitialContact control.
+        /// MoveImage1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image InitialContact;
+        protected global::System.Web.UI.WebControls.Image MoveImage1;
 
         /// <summary>
-        /// ServicePage control.
+        /// MoveImage2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ServicePage;
+        protected global::System.Web.UI.WebControls.Image MoveImage2;
 
         /// <summary>
-        /// DateFinal control.
+        /// MoveImage3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image DateFinal;
+        protected global::System.Web.UI.WebControls.Image MoveImage3;
 
         /// <summary>
-        /// ServiceComplete control.
+        /// MoveImage4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ServiceComplete;
+        protected global::System.Web.UI.WebControls.Image MoveImage4;
 
         /// <summary>
-        /// FollowUp control.
+        /// MoveImage5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image FollowUp;
+        protected global::System.Web.UI.WebControls.Image MoveImage5;
+
+        /// <summary>
+        /// MoveImage6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image MoveImage6;
+
+        /// <summary>
+        /// MoveImage7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image MoveImage7;
+
+        /// <summary>
+        /// MoveImage8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image MoveImage8;
+
+        /// <summary>
+        /// MoveImage9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image MoveImage9;
+
+        /// <summary>
+        /// auctionImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow auctionImages;
+
+        /// <summary>
+        /// lblAuctionBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAuctionBar;
+
+        /// <summary>
+        /// AuctionImage1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage1;
+
+        /// <summary>
+        /// AuctionImage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage2;
+
+        /// <summary>
+        /// AuctionImage3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage3;
+
+        /// <summary>
+        /// AuctionImage4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage4;
+
+        /// <summary>
+        /// AuctionImage5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage5;
+
+        /// <summary>
+        /// AuctionImage6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage6;
+
+        /// <summary>
+        /// AuctionImage7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage7;
+
+        /// <summary>
+        /// AuctionImage8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage8;
+
+        /// <summary>
+        /// AuctionImage9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage9;
+
+        /// <summary>
+        /// AuctionImage10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage10;
+
+        /// <summary>
+        /// AuctionImage11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage11;
+
+        /// <summary>
+        /// AuctionImage12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AuctionImage12;
 
         /// <summary>
         /// lblClientInformation control.

@@ -249,14 +249,14 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblDateEnd;
 
         /// <summary>
-        /// E&E control.
+        /// EE control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table E&E;
-        
+        protected global::System.Web.UI.WebControls.Table EE;
+
         /// <summary>
         /// lblEmp control.
         /// </summary>

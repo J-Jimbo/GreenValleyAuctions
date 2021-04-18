@@ -253,6 +253,23 @@ namespace Lab2
                 lblStatus.ForeColor = Color.Green;
                 lblStatus.Font.Bold = true;
                 lblStatus.Text = "Service Event Created";
+
+                //-------------------------------------------
+                string sqlProgressQuery = "Insert into WorkFlowProgress(WFProgressID ,AuctionProgress,MoveProgress,WorkFlowID)Values((Select ISNULL(max(WFProgressID)+1,1) from WorkFlowProgress),'0','0',@WorkFlow);";
+
+                //Create SQL command to send query
+                SqlCommand sqlCommandSProg = new SqlCommand();
+                sqlCommandSProg.Connection = sqlConnect;
+                sqlCommandSProg.CommandType = CommandType.Text;
+                sqlCommandSProg.CommandText = sqlProgressQuery;
+
+                sqlCommandSProg.Parameters.AddWithValue("@WorkFlow", workFlowID);
+                //Open connection to send query
+                sqlConnect.Open();
+                SqlDataReader querysend = sqlCommandSProg.ExecuteReader();
+                //Close Connection
+                querysend.Close();
+                sqlConnect.Close();
             }
 
             if(Session["ServiceRequest"] != null)

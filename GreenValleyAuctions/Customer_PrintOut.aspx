@@ -141,7 +141,7 @@
             </asp:TableRow>
         </asp:Table>
     <hr />
-    <asp:Table ID="E&E" runat="server">
+    <asp:Table ID="EE" runat="server">
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Label ID="lblEmp" runat="server" Text="Employees: "></asp:Label>
