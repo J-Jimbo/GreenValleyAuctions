@@ -468,10 +468,7 @@ namespace GreenValleyAuctions
 
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Customer_Info.aspx");
-        }
+        
         protected void cvnumMovers_ServerValidate(object source, ServerValidateEventArgs args)
         {
             if (int.Parse(txtQuantityMovers.Text) == lbMovers.Items.Count)

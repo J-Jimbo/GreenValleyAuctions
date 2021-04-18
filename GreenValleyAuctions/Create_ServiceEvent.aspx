@@ -2,6 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row">
+                   <div class="col-md-1">
+                    <a class="nav-link" href="Customer_Info.aspx">Profile</a>
+                 </div>
+
+          
+
+           <div class="col-md-1 offset-md-1">
+                    <a class="nav-link" href="Service_Ticket.aspx">Notes</a>
+                 </div>
+    </div>
     <!-- Heading -->
      <div class="text-center">
         <h3> Create Service </h3>
@@ -192,9 +203,7 @@
         <div class="col-md-2 offset-md-0">
            <asp:Button ID="btnNotes" runat="server" Text="Go to Notes"  OnClick="btnNotes_Click" CausesValidation="false" class="btn btn-primary btn-intake rounded-pill submit"/>
         </div>
-        <div class="col-md-3 offset-md-0">
-            <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CausesValidation="false" class="btn btn-primary btn-intake rounded-pill submit" />
-        </div>
+        
         <div class="col-md-2 offset-md-0">
            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" CausesValidation="true" class="btn btn-primary btn-intake rounded-pill submit"/>
         </div>

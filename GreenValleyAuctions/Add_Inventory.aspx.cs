@@ -86,10 +86,7 @@ namespace GreenValleyAuctions
             txtItem.Text = "";
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Customer_Info.aspx");
-        }
+        
 
         protected void ddlStorage_SelectedIndexChanged(object sender, EventArgs e)
         {

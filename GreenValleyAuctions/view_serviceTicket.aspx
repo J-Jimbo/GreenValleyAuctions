@@ -2,6 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row">
+                   <div class="col-md-1">
+                    <a class="nav-link" href="Customer_Info.aspx">Profile</a>
+                 </div>
+
+          
+
+           <div class="col-md-1 offset-md-1">
+                    <a class="nav-link" href="Service_Ticket.aspx">Notes</a>
+                 </div>
+    </div>
     <asp:Table ID="tblTbles" runat="server" Width="1181px">
         <asp:TableRow HorizontalAlign="Center">
             <asp:TableCell VerticalAlign="Top" >
@@ -81,11 +92,7 @@
                             <asp:Button ID="btnSaveSwitch" runat="server" Text="Save Employee Switch"   OnClick="btnSaveSwitch_Click"/>
                         </asp:TableCell>
                     </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Button ID="BtBack" runat="server" Text="Return to Customer"  OnClick="BtBack_Click"/>
-                        </asp:TableCell>
-                    </asp:TableRow>
+                   
                 </asp:Table>
             </asp:TableCell>
 

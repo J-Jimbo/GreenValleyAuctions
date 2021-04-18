@@ -268,6 +268,7 @@
                     <asp:ListItem Text="In Person" Value="In Person"></asp:ListItem>
                     <asp:ListItem Text="By Phone" Value="By Phone"></asp:ListItem>
                     <asp:ListItem Text="By Email" Value="By Email"></asp:ListItem>
+                    <asp:ListItem Text="Customer Portal" Value="Customer Portal"></asp:ListItem>
                     <asp:ListItem Text="Other" Value="Other"></asp:ListItem>
                 </asp:DropDownList>
                 <asp:Label ID="lblOther" runat="server" Text="Other: " Visible="false"></asp:Label>

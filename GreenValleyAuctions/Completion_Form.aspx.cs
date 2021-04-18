@@ -170,9 +170,6 @@ namespace GreenValleyAuctions
             txtAdditionalNotes.Text = notes[random.Next(0, notes.Length)];
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Customer_Info.aspx");
-        }
+        
     }
 }

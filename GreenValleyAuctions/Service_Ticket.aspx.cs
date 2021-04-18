@@ -122,9 +122,6 @@ namespace Lab2
             lblStatus.Text = "Note Succesfully Created";
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Customer_Info.aspx");
-        }
+        
     }
 }

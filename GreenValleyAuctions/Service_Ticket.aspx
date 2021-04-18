@@ -2,6 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row">
+                   <div class="col-md-1">
+                    <a class="nav-link" href="Customer_Info.aspx">Profile</a>
+                 </div>
+
+          
+    </div>
     <asp:Table ID="tblNote" runat="server" Width="674px">
         <asp:TableRow>
             <asp:TableCell ColumnSpan="2" >
@@ -32,11 +39,7 @@
             </asp:TableCell>
             
         </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>
-                <asp:Button ID="btnBack" runat="server" Text="Return to Customer" OnClick="btnBack_Click"  CausesValidation="false"/>
-            </asp:TableCell>
-        </asp:TableRow>
+        
     </asp:Table>
 
       <%--sql Data scources --%>

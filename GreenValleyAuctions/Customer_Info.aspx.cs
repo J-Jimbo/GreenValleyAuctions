@@ -72,33 +72,7 @@ namespace GreenValleyAuctions
             sqlConnect.Close();
 
 
-            ////----------------------------------------------------------------
-            ////Pulling Job Details onto customer profile 
-            //String ServiceRequestQuery = "SELECT ServiceType, DateCreated, Description FROM ServiceRequest";
-
-            ////Sql Command
-            //SqlCommand SRQCommand = new SqlCommand();
-            //SRQCommand.Connection = sqlConnect;
-            //SRQCommand.CommandType = CommandType.Text;
-            //SRQCommand.CommandText = ServiceRequestQuery;
-
-            //ServiceRequestQuery.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
-            ////open connection to send ID query 
-            //sqlConnect.Open();
-            //SqlDataReader queryINQuery = sqlINQuery.ExecuteReader();
-
-            //while (queryINQuery.Read())
-            //{
-            //    lblCurrentStatus.Text = queryINQuery["DateContacted"].ToString();
-            //    lblInitialNotes.Text = queryINQuery["ConversationNotes"].ToString();
-
-
-            //}
-            //// Close conecctions
-            //queryUResponse.Close();
-            //sqlConnect.Close();
-
-            //----------------------------------------------------------------
+            
             //Pulling Notes from seperate forms to put onto customer profile 
 
 
@@ -158,13 +132,15 @@ namespace GreenValleyAuctions
                     btnAuctionSchedule.Visible = false;
                     btnAuctionAssessment.Visible = false;
                     btnAddInventory.Visible = false;
+
+                    auction.Visible = false;
                 }
                 else if (queryResult["ServiceType"].ToString().Equals("Auction"))
                 {
                     btnCreateServiceEvent.Visible = false;
                     btnMoveForm.Visible = false;
                     btnMoveScreen.Visible = false;
-
+                    move.Visible = false;
                 }
                 else
                 {
@@ -175,6 +151,8 @@ namespace GreenValleyAuctions
                     btnAuctionSchedule.Visible = false;
                     btnCompletion.Visible = false;
                     btnAddInventory.Visible = false;
+                    auction.Visible = false;
+                    move.Visible = false;
                 }
 
 
@@ -458,6 +436,11 @@ namespace GreenValleyAuctions
         protected void btnAuctionAssessment_Click(object sender, EventArgs e)
         {
             Response.Redirect("Auction_Assessment.aspx");
+        }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Customer_PrintOut.aspx");
         }
     }
 }

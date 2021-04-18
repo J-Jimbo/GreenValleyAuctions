@@ -42,8 +42,10 @@
 		                <a class="nav-link" href="WareHouse.aspx">Warehouse</a>
 		              </li>
 
-		              
 		            </ul>
+
+					<%---------------------------------%>
+				
 		            </nav>
 				
 
@@ -71,8 +73,64 @@
 			
 
 			</header> <!-- end row header -->
+        <br />
+
+			
+                 <%--<div class="row">
+                   <div class="col-md-1">
+                    <a class="nav-link" href="profile1.html">Profile</a>
+                 </div>--%>
 
 
+            <%--<div class="col-md-2 offset-md-1">
+             <div class="button">
+              <button class="btn btn-secondary" href="newclientform.html" type="button">Initial Conversation
+              </button>
+            </div>
+            </div>--%>
+                  
+            <%--<div class="col-md-1 offset-md-0">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move Forms
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="Move_Schedule_Screen.html">Move Schedule</a>
+                <a class="dropdown-item" href="#">Move Assessment</a>
+                <a class="dropdown-item" href="Move_Form.html">Move Form</a>
+                <a class="dropdown-item" href="Completion_Form.html">Completion Form</a>
+
+              </div>
+            </div>
+            </div>
+
+            <div class="col-md-1 offset-md-1">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Auction Forms
+              </button>
+              <div class="dropdown-menu">
+                
+                
+                <a class="dropdown-item" href="Auction_Scheduling.aspx">Auction Scheduling</a>
+                <a class="dropdown-item" href="Auction_Assessment.aspx">Auction Assessment</a>
+                <a class="dropdown-item" href="Auction_Pick_Up.aspx">Auction Pick Up Form</a>
+                <a class="dropdown-item" href="Add_Inventory.aspx">Auction Inventory</a>
+                <a class="dropdown-item" href="Completion_Form.html">Completion Form</a>
+              </div>
+            </div>
+            </div>--%>
+            
+
+              <%--<div class="col-md-1 offset-md-1">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Service Ticket
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Create Service</a>
+                <a class="dropdown-item" href="#">Edit Service Ticket</a>
+              </div>
+            </div>
+            </div>--%>
+</div>
 
 
     <form id="form1" runat="server">
@@ -93,6 +151,7 @@
      <footer>
          <br />
       
+
     </footer>
 	</div>
 </body>

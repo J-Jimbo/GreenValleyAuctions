@@ -249,10 +249,7 @@ namespace Lab2
             }
         }
 
-        protected void BtBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Customer_Info.aspx");
-        }
+        
 
         protected void dvWorkFlow_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
         {

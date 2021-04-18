@@ -237,10 +237,7 @@ namespace GreenValleyAuctions
 
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Customer_Info.aspx");
-        }
+        
 
         protected void cblSheduled_SelectedIndexChanged(object sender, EventArgs e)
         {

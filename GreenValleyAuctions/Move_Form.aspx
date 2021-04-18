@@ -2,8 +2,29 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      
-    
+      <div class="row">
+                   <div class="col-md-1">
+                    <a class="nav-link" href="Customer_Info.aspx">Profile</a>
+                 </div>
+
+          <div class="col-md-1 offset-md-0">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move Forms
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="Move_Schedule_Screen.html">Move Schedule</a>
+                <a class="dropdown-item" href="#">Move Assessment</a>
+                <a class="dropdown-item" href="Move_Form.html">Move Form</a>
+                <a class="dropdown-item" href="Completion_Form.aspx">Completion Form</a>
+
+              </div>
+            </div>
+            </div>
+
+           <div class="col-md-1 offset-md-1">
+                    <a class="nav-link" href="Service_Ticket.aspx">Notes</a>
+                 </div>
+    </div>
     <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
         <asp:TableRow>
                 <asp:TableCell HorizontalAlign="center">
@@ -289,9 +310,7 @@
                 <asp:TableCell HorizontalAlign="Center">
                     <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click"/>
                 </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click"  CausesValidation="false"/>
-                </asp:TableCell>
+                
                 <asp:TableCell>
                     <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click"/>
                 </asp:TableCell>

@@ -2,6 +2,30 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <div class="row">
+                   <div class="col-md-1">
+                    <a class="nav-link" href="Customer_Info.aspx">Profile</a>
+                 </div>
+
+        <div class="col-md-1 offset-md-0">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Auction Forms
+              </button>
+              <div class="dropdown-menu">
+                
+                
+                <a class="dropdown-item" href="Auction_Scheduling.aspx">Auction Scheduling</a>
+                <a class="dropdown-item" href="Auction_Assessment.aspx">Auction Assessment</a>
+                <a class="dropdown-item" href="Auction_Pick_Up.aspx">Auction Pick Up Form</a>
+                <a class="dropdown-item" href="Add_Inventory.aspx">Auction Inventory</a>
+                <a class="dropdown-item" href="Completion_Form.aspx">Completion Form</a>
+              </div>
+            </div>
+            </div>
+          <div class="col-md-1 offset-md-1">
+                    <a class="nav-link" href="Service_Ticket.aspx">Notes</a>
+                 </div>
+        </div>
             <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
 
                 <asp:TableRow>
@@ -207,9 +231,7 @@
             <asp:TableCell>
                 <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" CausesValidation="false"/>
             </asp:TableCell>
-            <asp:TableCell>
-                <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CausesValidation="false" />
-            </asp:TableCell>
+            
         </asp:TableRow>
     </asp:Table>
      <%--sql Data Sources--%>

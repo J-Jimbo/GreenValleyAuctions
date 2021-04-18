@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="col-md-1">
+                    <a class="nav-link" href="Customer_Info.aspx">Profile</a>
+     </div>
+
      <asp:Table ID="tblCFCustomer" runat="server" HorizontalAlign="Center"  Width="600px"  >
                 <asp:TableRow>
                 <asp:TableCell>
@@ -121,7 +125,7 @@
             <asp:Table ID="tblsave" runat="server" HorizontalAlign ="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid">
                 <asp:TableRow>
                     <asp:TableCell>
-            <asp:Button ID="btnSave" Text="Save" runat="server" OnClick="btnSave_Click" /> </asp:TableCell> <asp:TableCell> <asp:Button ID="btnpopulate" OnClick="btnpopulate_Click" runat="server" Text="Populate" /> <asp:Button ID="btnHistory" runat="server" Text="Show History" OnClick="btnHistory_Click" /> <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CausesValidation="false" /></asp:TableCell>
+            <asp:Button ID="btnSave" Text="Save" runat="server" OnClick="btnSave_Click" /> </asp:TableCell> <asp:TableCell> <asp:Button ID="btnpopulate" OnClick="btnpopulate_Click" runat="server" Text="Populate" /> <asp:Button ID="btnHistory" runat="server" Text="Show History" OnClick="btnHistory_Click" /></asp:TableCell>
                 </asp:TableRow>
                 </asp:Table>
             <asp:Table ID="tblHistory" runat="server" HorizontalAlign="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid" Width="600px">

@@ -31,6 +31,8 @@ namespace Lab2
                 txtState.Enabled = false;
                 txtZip.Enabled = false;
                 txtPhone.Enabled = false;
+                ddlContact.SelectedValue = "Customer Portal";
+                ddlContact.Enabled = false;
                 //Parse Service request info
 
                 string sqlQuery = "SELECT * from CustomerRequest where CustomerRequestID = @CustomerRequestID";

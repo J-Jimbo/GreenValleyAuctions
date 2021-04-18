@@ -79,6 +79,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom.css" />
     <Content Include="Customer_Home.aspx" />
+    <Content Include="Customer_PrintOut.aspx" />
     <Content Include="Customer_Review.aspx" />
     <Content Include="images\antiquechair.jpeg" />
     <Content Include="images\antiquechair.png" />
@@ -350,6 +351,13 @@
     </Compile>
     <Compile Include="Customer_Home.aspx.designer.cs">
       <DependentUpon>Customer_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_PrintOut.aspx.cs">
+      <DependentUpon>Customer_PrintOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_PrintOut.aspx.designer.cs">
+      <DependentUpon>Customer_PrintOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer_Request.aspx.cs">
       <DependentUpon>Customer_Request.aspx</DependentUpon>

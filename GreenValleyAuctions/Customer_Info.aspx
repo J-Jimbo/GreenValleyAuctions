@@ -2,6 +2,49 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="row">
+                  
+
+
+         
+                  
+            <div id="move" runat="server" class="col-md-1 offset-md-0">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move Forms
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="Move_Schedule_Screen.html">Move Schedule</a>
+                <a class="dropdown-item" href="#">Move Assessment</a>
+                <a class="dropdown-item" href="Move_Form.html">Move Form</a>
+                <a class="dropdown-item" href="Completion_Form.aspx">Completion Form</a>
+
+              </div>
+            </div>
+            </div>
+
+            <div id="auction" runat="server" class="col-md-1 offset-md-0">
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Auction Forms
+              </button>
+              <div class="dropdown-menu">
+                
+                
+                <a class="dropdown-item" href="Auction_Scheduling.aspx">Auction Scheduling</a>
+                <a class="dropdown-item" href="Auction_Assessment.aspx">Auction Assessment</a>
+                <a class="dropdown-item" href="Auction_Pick_Up.aspx">Auction Pick Up Form</a>
+                <a class="dropdown-item" href="Add_Inventory.aspx">Auction Inventory</a>
+                <a class="dropdown-item" href="Completion_Form.aspx">Completion Form</a>
+              </div>
+            </div>
+            </div>
+            
+
+          </div>   
+
+
+
+
      <asp:Table ID="TableInception" runat="server" Align="Left" Width="30%">
         <asp:TableRow>
             <asp:TableCell>
@@ -13,14 +56,14 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Label ID="lblTAddress" runat="server" Text="Address: " ></asp:Label>
-                            <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="lblTAddress" runat="server" Text="Address: " ForeColor="Gray"></asp:Label>
+                            <asp:Label ID="lblAddress" runat="server" Text="" ForeColor="Gray"></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
                            <p> Email: 
-                            <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label></p>
+                            <asp:Label ID="lblEmail" runat="server" Text="" ></asp:Label></p>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
@@ -92,6 +135,12 @@
                      <asp:TableRow>
                         <asp:TableCell>
                             <asp:Button ID="btnCustomerHistory" runat="server" Text="View Customer History" class="btn btn-primary btn-intake rounded-pill" OnClick="btnCustomerHistory_Click"  width="200px" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <hr />
+                            <asp:Button ID="btnReport" runat="server" Text="Customer Print Out" OnClick="btnReport_Click" class="btn btn-primary btn-intake rounded-pill" />
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

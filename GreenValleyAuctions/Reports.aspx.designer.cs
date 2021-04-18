@@ -15,76 +15,49 @@ namespace Lab2
     {
 
         /// <summary>
-        /// tblCustomerSelection control.
+        /// tblReports control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblCustomerSelection;
+        protected global::System.Web.UI.WebControls.Table tblReports;
 
         /// <summary>
-        /// lblSelection control.
+        /// btnCustomerInteraction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSelection;
+        protected global::System.Web.UI.WebControls.Button btnCustomerInteraction;
 
         /// <summary>
-        /// ddlCustomer control.
+        /// btnReport1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCustomer;
+        protected global::System.Web.UI.WebControls.Button btnReport1;
 
         /// <summary>
-        /// CustomerGrid control.
+        /// btnReport2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView CustomerGrid;
+        protected global::System.Web.UI.WebControls.Button btnReport2;
 
         /// <summary>
-        /// tblServiceChart control.
+        /// Tableau control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblServiceChart;
-
-        /// <summary>
-        /// lblServiceChart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServiceChart;
-
-        /// <summary>
-        /// ddlService control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlService;
-
-        /// <summary>
-        /// ServiceGrid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ServiceGrid;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Tableau;
 
         /// <summary>
         /// datasrcCustomerList control.
