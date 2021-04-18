@@ -23,30 +23,37 @@
         <nav class="justify-content-left"> <!-- header starts here - nav pills -->
            
           
-                 <div class="row">
+              <div class="row col-md-12">
                    <div class="col-md-1">
                     <a class="nav-link" href="profile1.html">Profile</a>
                  </div>
 
 
             <div class="col-md-2 offset-md-1">
-             <div class="button">
-              <button class="btn btn-secondary" href="newclientform.html" type="button">Initial Conversation
+             <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> General
               </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="newclientform.html">Initial Conversation</a>
+                <a class="dropdown-item" href="customerhistory.html">Customer History</a>
+              </div>
             </div>
             </div>
                   
             <div class="col-md-1 offset-md-0">
              <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move
               </button>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="intakeform.html">Intake Form</a>
-                <a class="dropdown-item" href="movingform.html">Move Form</a>
-                <a class="dropdown-item" href="#">Move Service Order</a>
+                <a class="dropdown-item" href="moveassessment.html">Move Assessment</a>
+                <a class="dropdown-item" href="movingform.html">Moving Form</a>
                 <a class="dropdown-item" href="#">Move Assessment</a>
-                <a class="dropdown-item" href="appraisalserviceorder.html">Appraisal Service Order</a>
                 <a class="dropdown-item" href="moveschedulescreenform.html">Move Schedule</a>
+                <a class="dropdown-item" href="moveserviceorder.html">Move Service</a>
+                <a class="dropdown-item" href="completeservice.html">Complete Service</a>
+                <a class="dropdown-item" href="completionform.html">Completion Form</a>
+                <a class="dropdown-item" href="invoiceform.html">Invoice Form</a>
               </div>
             </div>
             </div>
@@ -57,12 +64,18 @@
               </button>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="intakeform.html">Intake Form</a>
-                <a class="dropdown-item" href="#">Auction Service Order</a>
                 <a class="dropdown-item" href="auctionassessment.html">Auction Assessment</a>
+                <a class="dropdown-item" href="auctionschedule.html">Auction Schedule</a>
+                <a class="dropdown-item" href="auctionserviceorder.html">Auction Service Order</a>
                 <a class="dropdown-item" href="auctionpickupform.html">Auction Pick Up Form</a>
-                <a class="dropdown-item" href="consignmentcontract.html">Consignment Contract</a>
-                <a class="dropdown-item" href="inventoryform.html">Auction Inventory</a>
                 <a class="dropdown-item" href="appraisalserviceorder.html">Appraisal Service Order</a>
+                <a class="dropdown-item" href="inventoryform.html">Inventory</a>
+                <a class="dropdown-item" href="addinventory.html">Add Inventory</a>
+                <a class="dropdown-item" href="completeservice.html">Complete Service</a>
+                <a class="dropdown-item" href="completionform.html">Completion Form</a>
+                <a class="dropdown-item" href="consignmentcontract.html">Consignment Contract</a>
+                <a class="dropdown-item" href="invoiceform.html">Invoice Form</a>
+                
               </div>
             </div>
             </div>
@@ -73,33 +86,26 @@
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Service Ticket
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Create Service</a>
-                <a class="dropdown-item" href="#">Edit Service Ticket</a>
+                <a class="dropdown-item" href="createservice.html">Create Service</a>
+                <a class="dropdown-item" href="editserviceticket.html">Edit Service Ticket</a>
               </div>
             </div>
             </div>
 
-              <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
         <div class="col-md-1 offset-md-2">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
         Schedule
       </button>
       </div>
-            </div>
-            
-        </nav>
+      </div>     
+      </nav>
       </header>
     
     <br>
 
-<!-- Heading -->
-     <div class="text-center">
-        <h3> Auction Assessment </h3>
-      </div>
 
-
-
-          <!-- SCHEDULING MODAL STARTS HERE-->
+        <!-- SCHEDULING MODAL STARTS HERE-->
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -111,9 +117,6 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-
-
-  
 
             <!-- Customer Name -->
                   <div class="modal-body">
@@ -136,7 +139,7 @@
               <option>Packing</option>
               <option>Move</option>
               <option>Auction Pick Up</option>
-              <option>Aucrtion Bring In</option>
+              <option>Auction Bring In</option>
               <option>Appraisal</option>
               <option>Consignment Shop Pick Up</option>
               <option>Consignment Shop Bring In</option>
@@ -209,9 +212,6 @@
 
           <br>
 
-
-      
-
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Save changes</button>
@@ -219,13 +219,7 @@
               </div>
             </div>
           </div>
-        
-        
 
-              
-
-
-   
   <!-- SCHEDULING MODAL ENDS HERE -->
 
 
@@ -247,6 +241,13 @@
 <br>
 
 
+<!-- Heading -->
+     <div class="text-center">
+        <h3> Auction Assessment </h3>
+      </div>
+
+
+<br>
 
 <div class="col-md-12">
 <div class="heading">
@@ -311,11 +312,11 @@
       </div>
 
       <div class="form-check form-check-inline offset-md-2 mt-4">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
           <label class="form-check-label">Yes</label>
         </div>
         <div class="form-check form-check-inline offset-md-0 mt-4">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
           <label class="form-check-label">No</label>
         </div>
         </div>
@@ -330,11 +331,11 @@
       </div>
 
       <div class="form-check form-check-inline offset-md-2 mt-4">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option1">
           <label class="form-check-label">Yes</label>
         </div>
         <div class="form-check form-check-inline offset-md-0 mt-4">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="option2">
           <label class="form-check-label">No</label>
         </div>
         </div>
@@ -349,11 +350,11 @@
       </div>
 
       <div class="form-check form-check-inline offset-md-2 mt-4">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option1">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio5" value="option1">
           <label class="form-check-label">Yes</label>
         </div>
         <div class="form-check form-check-inline offset-md-0 mt-4">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio6" value="option2">
           <label class="form-check-label">No</label>
         </div>
         </div>
