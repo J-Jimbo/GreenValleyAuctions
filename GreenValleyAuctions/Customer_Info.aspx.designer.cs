@@ -177,60 +177,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Button btnCompletion;
 
         /// <summary>
-        /// moveprogress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow moveprogress;
-
-        /// <summary>
-        /// DDLMovingProg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLMovingProg;
-
-        /// <summary>
-        /// MoveProgBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MoveProgBtn;
-
-        /// <summary>
-        /// Auctionprogress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell Auctionprogress;
-
-        /// <summary>
-        /// ddlAuctionProg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAuctionProg;
-
-        /// <summary>
-        /// AuctionProgBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AuctionProgBtn;
-
-        /// <summary>
         /// btnNote control.
         /// </summary>
         /// <remarks>
@@ -555,6 +501,15 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblCompletion;
 
         /// <summary>
+        /// btnEditProgress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditProgress;
+
+        /// <summary>
         /// lblTCurrentStatus control.
         /// </summary>
         /// <remarks>
@@ -591,6 +546,33 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblReview;
 
         /// <summary>
+        /// dropdowns control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell dropdowns;
+
+        /// <summary>
+        /// DDLMovingProg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDLMovingProg;
+
+        /// <summary>
+        /// ddlAuctionProg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAuctionProg;
+
+        /// <summary>
         /// lblTInitialNotes control.
         /// </summary>
         /// <remarks>
@@ -607,6 +589,33 @@ namespace GreenValleyAuctions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblInitialNotes;
+
+        /// <summary>
+        /// buttons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell buttons;
+
+        /// <summary>
+        /// AuctionProgBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AuctionProgBtn;
+
+        /// <summary>
+        /// MoveProgBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button MoveProgBtn;
 
         /// <summary>
         /// lblTRecordedNotes control.

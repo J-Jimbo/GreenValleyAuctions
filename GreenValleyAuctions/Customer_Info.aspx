@@ -83,99 +83,65 @@
                 <asp:Table ID="TableForms" runat="server">
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnCreateServiceEvent" runat="server" Text="Create Service Event" class="btn btn-primary btn-intake rounded-pill" OnClick="btnCreateServiceEvent_Click"  width="200px" />
+                            <asp:Button ID="btnCreateServiceEvent" runat="server" Text="Create Service Event" class="btn btn-primary btn-intake rounded-pill" OnClick="btnCreateServiceEvent_Click"  width="220px" />
                         </asp:TableCell>
                     </asp:TableRow>
                      <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnAuctionSchedule" runat="server" Text="Create Auction Schedule" class="btn btn-primary btn-intake rounded-pill" OnClick="btnAuctionSchedule_Click"  width="200px"/>
+                            <asp:Button ID="btnAuctionSchedule" runat="server" Text="Create Auction Schedule" class="btn btn-primary btn-intake rounded-pill" OnClick="btnAuctionSchedule_Click"  width="220px"/>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnAuctionAssessment" runat="server" Text="Create Auction Assessment" class="btn btn-primary btn-intake rounded-pill" Width="200px" OnClick="btnAuctionAssessment_Click" />
+                            <asp:Button ID="btnAuctionAssessment" runat="server" Text="Create Auction Assessment" class="btn btn-primary btn-intake rounded-pill" Width="220px" OnClick="btnAuctionAssessment_Click" />
                         </asp:TableCell>
                     </asp:TableRow>
                      <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnAuctionPickup" runat="server" Text="Create Auction PickUp" class="btn btn-primary btn-intake rounded-pill" OnClick="btnAuctionPickup_Click"  width="200px"/>
+                            <asp:Button ID="btnAuctionPickup" runat="server" Text="Create Auction PickUp" class="btn btn-primary btn-intake rounded-pill" OnClick="btnAuctionPickup_Click"  width="220px"/>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnAddInventory" runat="server" Text="Add Item" class="btn btn-primary btn-intake rounded-pill" OnClick="btnAddInventory_Click" Width="200px" />
+                            <asp:Button ID="btnAddInventory" runat="server" Text="Add Item" class="btn btn-primary btn-intake rounded-pill" OnClick="btnAddInventory_Click" Width="220px" />
                         </asp:TableCell>
                     </asp:TableRow>
                      <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnMoveForm" runat="server" Text="Create Move Form" class="btn btn-primary btn-intake rounded-pill" OnClick="btnMoveForm_Click" width="200px"/>
+                            <asp:Button ID="btnMoveForm" runat="server" Text="Create Move Form" class="btn btn-primary btn-intake rounded-pill" OnClick="btnMoveForm_Click" width="220px"/>
                         </asp:TableCell>
                     </asp:TableRow>
                      <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnMoveScreen" runat="server" Text="Create Move Screen" class="btn btn-primary btn-intake rounded-pill" OnClick="btnMoveScreen_Click"  width="200px"/>
+                            <asp:Button ID="btnMoveScreen" runat="server" Text="Create Move Screen" class="btn btn-primary btn-intake rounded-pill" OnClick="btnMoveScreen_Click"  width="220px"/>
                         </asp:TableCell>
                     </asp:TableRow>
                      <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Button ID="btnCompletion" runat="server" Text="Create Completion Form" class="btn btn-primary btn-intake rounded-pill" OnClick="btnCompletion_Click" width="200px"/>
+                            <asp:Button ID="btnCompletion" runat="server" Text="Create Completion Form" class="btn btn-primary btn-intake rounded-pill" OnClick="btnCompletion_Click" width="220px"/>
                         </asp:TableCell>
                     </asp:TableRow>
-                    <asp:TableRow ID="moveprogress" runat="server" Visible="false">
+                   
+                    <asp:TableRow>
                         <asp:TableCell>
-                            <asp:DropDownList ID="DDLMovingProg" runat="server" width="200px" class="form-control">
-                                <asp:ListItem text="Initial Contact" Value="1"></asp:ListItem>
-                                 <asp:ListItem text="Ready to Schedule Move Assesment" Value="2"></asp:ListItem>
-                                 <asp:ListItem text="Move Assessment Scheduled" Value="3"></asp:ListItem>
-                                 <asp:ListItem text="Initial Estimate Sent" Value="4"></asp:ListItem>
-                                 <asp:ListItem text="Waiting for Response" Value="5"></asp:ListItem>
-                                 <asp:ListItem text="Ready to Schedule Move Service" Value="6"></asp:ListItem>
-                                 <asp:ListItem text="Move Service Scheduled" Value="7"></asp:ListItem>
-                                <asp:ListItem text="Service Completed" Value="8"></asp:ListItem>
-                            </asp:DropDownList>
-                            <br />
-                            <asp:Button ID="MoveProgBtn" runat="server" Text="Update Move Progress" class="btn btn-primary btn-intake rounded-pill" OnClick="MoveProgBtn_Click" width="200px"/>
+                            <hr />
+                            <asp:Button ID="btnNote" runat="server" Text="Create Note" width="220px" class="btn btn-primary btn-intake rounded-pill"  OnClick="btnNote_Click"/>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Button ID="btnEditServiceTicket" runat="server" Text="Edit Service Ticket" class="btn btn-primary btn-intake rounded-pill" OnClick="btnEditServiceTicket_Click" width="220px"/>
                         </asp:TableCell>
                     </asp:TableRow>
                      <asp:TableRow>
-                        <asp:TableCell ID="Auctionprogress" runat="server" Visible="false">
-                             <asp:DropDownList ID="ddlAuctionProg" runat="server" width="200px" class="form-control">
-                                 <asp:ListItem text="Initial Contact" Value="1"></asp:ListItem>
-                                 <asp:ListItem text="Ready to Schedule Auction Assesment" Value="2"></asp:ListItem>
-                                 <asp:ListItem text="Auction Assessment Scheduled" Value="3"></asp:ListItem>
-                                 <asp:ListItem text="Present Auction Service Proposal" Value="4"></asp:ListItem>
-                                 <asp:ListItem text="Waiting for Response" Value="5"></asp:ListItem>
-                                 <asp:ListItem text="Ready to Schedule Auction Service" Value="6"></asp:ListItem>
-                                 <asp:ListItem text="Auction Pick Up Scheduled" Value="7"></asp:ListItem>
-                                 <asp:ListItem text="Trash Removal Scheduled" Value="8"></asp:ListItem>
-                                 <asp:ListItem text="Items in Storage" Value="9"></asp:ListItem>
-                                 <asp:ListItem text="Auction Scheduled" Value="10"></asp:ListItem>
-                                <asp:ListItem text="Service Completed" Value="11"></asp:ListItem>
-                            </asp:DropDownList>
-                            <br />
-                            <asp:Button ID="AuctionProgBtn" runat="server" Text="Update Auction Progress" class="btn btn-primary btn-intake rounded-pill" OnClick="AuctionProgBtn_Click" width="200px"/>
+                        <asp:TableCell>
+                            <asp:Button ID="btnCustomerHistory" runat="server" Text="View Customer History" class="btn btn-primary btn-intake rounded-pill" OnClick="btnCustomerHistory_Click"  width="220px" />
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
                             <hr />
-                            <asp:Button ID="btnNote" runat="server" Text="Create Note" width="200px" class="btn btn-primary btn-intake rounded-pill"  OnClick="btnNote_Click"/>
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Button ID="btnEditServiceTicket" runat="server" Text="Edit Service Ticket" class="btn btn-primary btn-intake rounded-pill" OnClick="btnEditServiceTicket_Click" width="200px"/>
-                        </asp:TableCell>
-                    </asp:TableRow>
-                     <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Button ID="btnCustomerHistory" runat="server" Text="View Customer History" class="btn btn-primary btn-intake rounded-pill" OnClick="btnCustomerHistory_Click"  width="200px" />
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <hr />
-                            <asp:Button ID="btnReport" runat="server" Text="Customer Print Out" OnClick="btnReport_Click" class="btn btn-primary btn-intake rounded-pill" />
+                            <asp:Button ID="btnReport" runat="server" Text="Customer Print Out" OnClick="btnReport_Click" class="btn btn-primary btn-intake rounded-pill" width="220px"/>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
@@ -214,7 +180,7 @@
         </asp:TableRow>
         <asp:TableRow ID="moveimages" runat="server" Visible="false">
             <asp:TableCell>
-                <p><asp:Label ID="lblStatusBar" runat="server" Text="Move Status Bar: " Font-Bold="true" ></asp:Label></P>
+                <p><asp:Label ID="lblStatusBar" runat="server" Text="Status Bar: " Font-Bold="true" ></asp:Label></P>
             </asp:TableCell>
             <asp:TableCell>
                <%-- move images--%>
@@ -233,7 +199,7 @@
         </asp:TableRow>
         <asp:TableRow ID="auctionImages" runat="server" Visible="false">
             <asp:TableCell>
-               <p><asp:Label ID="lblAuctionBar" runat="server" Text="Auction Status Bar: " Font-Bold="true" ></asp:Label></P>
+               <p><asp:Label ID="lblAuctionBar" runat="server" Text="Status Bar: " Font-Bold="true" ></asp:Label></P>
             </asp:TableCell>
             <asp:TableCell>
                  <%-- auction images--%>
@@ -258,12 +224,15 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
-               <p> <asp:Label ID="lblTEngagement" runat="server" Text="Pick Up Date: "></asp:Label>
+               <p> <asp:Label ID="lblTEngagement" runat="server" Text="Engagment Date: "></asp:Label>
                 <asp:Label ID="lblEngagement" runat="server" Text=""></asp:Label></p>
             </asp:TableCell>
             <asp:TableCell>
                <p> <asp:Label ID="lblTCompletion" runat="server" Text="Completion: "></asp:Label>
                 <asp:Label ID="lblCompletion" runat="server" Text=""></asp:Label></p>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="btnEditProgress" runat="server" Text="Edit Status Bar" class="btn btn-primary btn-intake rounded-pill" OnClick="btnEditProgress_Click" />
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -275,11 +244,43 @@
                <p> <asp:Label ID="lblTReview" runat="server" Text="Review: "></asp:Label>
                 <asp:Label ID="lblReview" runat="server" Text=""></asp:Label></p>
             </asp:TableCell>
+            <asp:TableCell ID="dropdowns" runat="server" Visible="false">
+                            <asp:DropDownList ID="DDLMovingProg" runat="server" width="100px" class="form-control" Visible="false">
+                                <asp:ListItem text="Initial Contact" Value="1"></asp:ListItem>
+                                 <asp:ListItem text="Ready to Schedule Move Assesment" Value="2"></asp:ListItem>
+                                 <asp:ListItem text="Move Assessment Scheduled" Value="3"></asp:ListItem>
+                                 <asp:ListItem text="Initial Estimate Sent" Value="4"></asp:ListItem>
+                                 <asp:ListItem text="Waiting for Response" Value="5"></asp:ListItem>
+                                 <asp:ListItem text="Ready to Schedule Move Service" Value="6"></asp:ListItem>
+                                 <asp:ListItem text="Move Service Scheduled" Value="7"></asp:ListItem>
+                                <asp:ListItem text="Service Completed" Value="8"></asp:ListItem>
+                            </asp:DropDownList>
+                             <asp:DropDownList ID="ddlAuctionProg" runat="server" width="100px" Visible="false" class="form-control">
+                                 <asp:ListItem text="Initial Contact" Value="1"></asp:ListItem>
+                                 <asp:ListItem text="Ready to Schedule Auction Assesment" Value="2"></asp:ListItem>
+                                 <asp:ListItem text="Auction Assessment Scheduled" Value="3"></asp:ListItem>
+                                 <asp:ListItem text="Present Auction Service Proposal" Value="4"></asp:ListItem>
+                                 <asp:ListItem text="Waiting for Response" Value="5"></asp:ListItem>
+                                 <asp:ListItem text="Ready to Schedule Auction Service" Value="6"></asp:ListItem>
+                                 <asp:ListItem text="Auction Pick Up Scheduled" Value="7"></asp:ListItem>
+                                 <asp:ListItem text="Trash Removal Scheduled" Value="8"></asp:ListItem>
+                                 <asp:ListItem text="Items in Storage" Value="9"></asp:ListItem>
+                                 <asp:ListItem text="Auction Scheduled" Value="10"></asp:ListItem>
+                                <asp:ListItem text="Service Completed" Value="11"></asp:ListItem>
+                            </asp:DropDownList>
+            </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
                 <P><asp:Label ID="lblTInitialNotes" runat="server" Text="Initial Notes: " Font-Bold="true"></asp:Label>
                 <asp:Label ID="lblInitialNotes" runat="server" Text="" ></asp:Label></P>
+            </asp:TableCell>
+            <asp:TableCell>
+
+            </asp:TableCell>
+            <asp:TableCell ID="buttons" runat="server" >
+                <asp:Button ID="AuctionProgBtn" runat="server" Text="Update" class="btn btn-primary btn-intake rounded-pill" Visible="false" OnClick="AuctionProgBtn_Click" />
+                <asp:Button ID="MoveProgBtn" runat="server" Text="Update" class="btn btn-primary btn-intake rounded-pill" OnClick="MoveProgBtn_Click" Visible="false" />
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>

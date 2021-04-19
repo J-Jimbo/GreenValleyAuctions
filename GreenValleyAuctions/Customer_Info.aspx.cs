@@ -66,6 +66,11 @@ namespace GreenValleyAuctions
                 lblCompletion.Text = queryUResponse["CompletionDate"].ToString();
                 lblCurrentStatus.Text = queryUResponse["CurrentStatus"].ToString();
                 lblReview.Text = queryUResponse["Review"].ToString();
+
+                if( queryUResponse["CompletionDate"].ToString() != null)
+                {
+                    btnEditServiceTicket.Visible = false;
+                }
             }
             // Close conecctions
             queryUResponse.Close();
@@ -134,7 +139,8 @@ namespace GreenValleyAuctions
                     btnAddInventory.Visible = false;
 
                     moveimages.Visible = true;
-                    moveprogress.Visible = true;
+                    DDLMovingProg.Visible = true;
+                    MoveProgBtn.Visible = true;
                     auction.Visible = false;
                 }
                 else if (queryResult["ServiceType"].ToString().Equals("Auction"))
@@ -145,7 +151,8 @@ namespace GreenValleyAuctions
                     move.Visible = false;
 
                     auctionImages.Visible = true;
-                    Auctionprogress.Visible = true;
+                    ddlAuctionProg.Visible = true;
+                    AuctionProgBtn.Visible = true;
                 }
                 else
                 {
@@ -240,39 +247,43 @@ namespace GreenValleyAuctions
 
 
 
-
-            string progress = "select * from WorkflowProgress where WorkFlowID = @ID";
-
-            //Define the connection to the Database
-
-
-            //Create sql command 
-            SqlCommand sqlCommandProg = new SqlCommand();
-            sqlCommandProg.Connection = sqlConnect;
-            sqlCommandProg.CommandType = CommandType.Text;
-            sqlCommandProg.CommandText = progress;
-
-            sqlCommandProg.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(workFLow.ToString()));
-            //open connection to send ID query 
-            
-            SqlDataReader queryprogress = sqlCommandProg.ExecuteReader();
-
-          
-            while (queryprogress.Read())
+            if(!IsPostBack)
             {
-                if(queryprogress.HasRows)
+                string progress = "select * from WorkflowProgress where WorkFlowID = @ID";
+
+                //Define the connection to the Database
+
+
+                //Create sql command 
+                SqlCommand sqlCommandProg = new SqlCommand();
+                sqlCommandProg.Connection = sqlConnect;
+                sqlCommandProg.CommandType = CommandType.Text;
+                sqlCommandProg.CommandText = progress;
+
+                sqlCommandProg.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(workFLow.ToString()));
+                //open connection to send ID query 
+
+                SqlDataReader queryprogress = sqlCommandProg.ExecuteReader();
+
+
+                while (queryprogress.Read())
                 {
-                    ddlAuctionProg.SelectedValue = queryprogress["AuctionProgress"].ToString();
-                    AuctionProgBtn_Click(sender, e);
-                    DDLMovingProg.SelectedValue = queryprogress["MoveProgress"].ToString();
-                    MoveProgBtn_Click(sender, e);
+                    if (queryprogress.HasRows)
+                    {
+
+                        ddlAuctionProg.SelectedValue = queryprogress["AuctionProgress"].ToString();
+                        AuctionProgBtn_Click(sender, e);
+                        DDLMovingProg.SelectedValue = queryprogress["MoveProgress"].ToString();
+                        MoveProgBtn_Click(sender, e);
+                    }
+
+
+
                 }
-
-
-
+                queryprogress.Close();
+                sqlConnect.Close();
             }
-            queryprogress.Close();
-            sqlConnect.Close();
+           
         }
 
         protected void btnCreateServiceEvent_Click(object sender, EventArgs e)
@@ -537,6 +548,9 @@ namespace GreenValleyAuctions
 
                 btnEditServiceTicket.Visible = false;
             }
+
+            dropdowns.Visible = false;
+            buttons.Visible = false;
         }
 
         protected void AuctionProgBtn_Click(object sender, EventArgs e)
@@ -771,6 +785,25 @@ namespace GreenValleyAuctions
 
                 btnEditServiceTicket.Visible = false;
             }
+
+            buttons.Visible = false;
+            dropdowns.Visible = false;
+        }
+
+        protected void btnEditProgress_Click(object sender, EventArgs e)
+        {
+            if (buttons.Visible == false)
+            {
+                buttons.Visible = true;
+                dropdowns.Visible = true;
+            }
+                
+            else
+            {
+                buttons.Visible = false;
+                dropdowns.Visible = false;
+            }
+                
         }
     }
 }
