@@ -431,9 +431,10 @@ input:checked + .slider:before {
 .sticky {
   background: white;
   position: fixed;
-  top: 0;
+  top: 65px;
   right: 0;
   background-color: #fcf1d1;
   padding: 50px;
 }
+
 
