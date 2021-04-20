@@ -15,6 +15,15 @@ namespace GreenValleyAuctions
     {
 
         /// <summary>
+        /// txtSideNotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSideNotes;
+
+        /// <summary>
         /// lblShowName control.
         /// </summary>
         /// <remarks>

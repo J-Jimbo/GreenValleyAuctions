@@ -12,9 +12,9 @@
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move Forms
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="Move_Schedule_Screen.html">Move Schedule</a>
+                <a class="dropdown-item" href="Move_Schedule_Screen.aspx">Move Schedule</a>
                 <a class="dropdown-item" href="#">Move Assessment</a>
-                <a class="dropdown-item" href="Move_Form.html">Move Form</a>
+                <a class="dropdown-item" href="Move_Form.aspx">Move Form</a>
                 <a class="dropdown-item" href="Completion_Form.aspx">Completion Form</a>
 
               </div>

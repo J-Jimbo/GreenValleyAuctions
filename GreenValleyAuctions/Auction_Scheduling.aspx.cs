@@ -110,7 +110,38 @@ namespace GreenValleyAuctions
                 {
 
                 }
+                //---------------
+                
+
+
+                //    string noteQuery = "Select * from SideNotes where WorkFlowID = (Select MAX(WorkFLowID) from WorkFLow where CustomerID = @ID);";
+
+                ////Define the connection to the Database
+                //SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+
+
+                ////Create sql command 
+                //SqlCommand sqlCommandSide = new SqlCommand();
+                //    sqlCommandSide.Connection = sqlConnection;
+                //    sqlCommandSide.CommandType = CommandType.Text;
+                //    sqlCommandSide.CommandText = noteQuery;
+                //    sqlCommandSide.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+
+
+                ////open connection to send ID query 
+                //sqlConnection.Open();
+                //    SqlDataReader querynoteResult = sqlCommandSide.ExecuteReader();
+                //    while (querynoteResult.Read())
+                //    {
+                //        txtSideNotes.Text = querynoteResult["Note"].ToString();
+                //    }
+
+                //    querynoteResult.Close();
+                //sqlConnection.Close();
+                
+                
             }
+
         }
 
        
@@ -121,40 +152,41 @@ namespace GreenValleyAuctions
         {
             if(cbLookAt.Checked.Equals(true))
             {
-                invForm.Visible = true;
-                RowLookAt.Visible = true;
-                truck.Visible = true;
-                accesbility.Visible = true;
-                driveway.Visible = true;
-                supplies.Visible = true;
-                Boxes.Visible = true;
-                Qtruck.Visible = true;
-                whichtrucks.Visible = true;
-                listTrucks.Visible = true;
-                Qmovers.Visible = true;
-                whichCrew.Visible = true;
-                listCrew.Visible = true;
-                AuctionDate.Visible = true;
-                noPostback.Visible = true;
+                lookat.Visible = true;
+                //invForm.Visible = true;
+                //RowLookAt.Visible = true;
+                //truck.Visible = true;
+                //accesbility.Visible = true;
+                //driveway.Visible = true;
+                //supplies.Visible = true;
+                //Boxes.Visible = true;
+                //Qtruck.Visible = true;
+                //whichtrucks.Visible = true;
+                //listTrucks.Visible = true;
+                //Qmovers.Visible = true;
+                //whichCrew.Visible = true;
+                //listCrew.Visible = true;
+                //AuctionDate.Visible = true;
+                //noPostback.Visible = true;
             }
             else
             {
-                
-                invForm.Visible = false;
-                RowLookAt.Visible = false;
-                truck.Visible = false;
-                accesbility.Visible = false;
-                driveway.Visible = false;
-                supplies.Visible = false;
-                Boxes.Visible = false;
-                Qtruck.Visible = false;
-                whichtrucks.Visible = false;
-                listTrucks.Visible = false;
-                Qmovers.Visible = false;
-                whichCrew.Visible = false;
-                listCrew.Visible = false;
-                AuctionDate.Visible = false;
-                noPostback.Visible = false;
+                lookat.Visible = false;
+                //invForm.Visible = false;
+                //RowLookAt.Visible = false;
+                //truck.Visible = false;
+                //accesbility.Visible = false;
+                //driveway.Visible = false;
+                //supplies.Visible = false;
+                //Boxes.Visible = false;
+                //Qtruck.Visible = false;
+                //whichtrucks.Visible = false;
+                //listTrucks.Visible = false;
+                //Qmovers.Visible = false;
+                //whichCrew.Visible = false;
+                //listCrew.Visible = false;
+                //AuctionDate.Visible = false;
+                //noPostback.Visible = false;
             }
         }
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -842,7 +874,31 @@ namespace GreenValleyAuctions
                 args.IsValid = true;
 
         }
+        //protected void txtSideNotes_TextChanged(object sender, EventArgs e)
+        //{
+        //    string Query = "UPDATE SideNotes SET Note = @Note where WorkFlowID = (Select MAX(WorkFLowID) from WorkFLow where CustomerID = @ID);";
 
-        
+        //    //Define the connection to the Database
+        //    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+
+        //    //Create sql command 
+        //    SqlCommand sqlCommand = new SqlCommand();
+        //    sqlCommand.Connection = sqlConnect;
+        //    sqlCommand.CommandType = CommandType.Text;
+        //    sqlCommand.CommandText = Query;
+
+
+        //    sqlCommand.Parameters.AddWithValue("@Note", HttpUtility.HtmlEncode(txtSideNotes.Text.ToString()));
+        //    sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+        //    //open connection to send ID query 
+        //    sqlConnect.Open();
+        //    SqlDataReader queryResult = sqlCommand.ExecuteReader();
+
+
+        //    queryResult.Close();
+        //    sqlConnect.Close();
+        //}
+
+
     }
 }

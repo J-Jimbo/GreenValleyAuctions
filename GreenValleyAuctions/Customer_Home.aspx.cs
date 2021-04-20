@@ -55,7 +55,7 @@ namespace GreenValleyAuctions
                     btnReview.Visible = false;
                     customer = "no";
                 }
-                
+
             }
 
             // Close conecctions
@@ -69,34 +69,33 @@ namespace GreenValleyAuctions
                 sqlQuery = "Select trim(FirstName)+' '+trim(LastName) as Name,Phone,Email, trim(Street)+' '+trim(City)+' '+trim(State)+' '+trim(Zip) as CustomerAddress from CustomerRequest where Email = @ID;";
             else
                 sqlQuery = "Select trim(FirstName)+' '+trim(LastName) as Name,CustomerPhone as Phone,CustomerEmail as Email,CustomerAddress from Customer where CustomerEmail = @ID; ";
-           
+
 
             //Create sql command
             SqlCommand sqlCommandID = new SqlCommand();
-                sqlCommandID.Connection = sqlConnect;
-                sqlCommandID.CommandType = CommandType.Text;
-                sqlCommandID.CommandText = sqlQuery;
+            sqlCommandID.Connection = sqlConnect;
+            sqlCommandID.CommandType = CommandType.Text;
+            sqlCommandID.CommandText = sqlQuery;
 
-                sqlCommandID.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
-                //open connection to send ID query 
-                sqlConnect.Open();
-                SqlDataReader queryResponse = sqlCommandID.ExecuteReader();
+            sqlCommandID.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryResponse = sqlCommandID.ExecuteReader();
 
 
-                while (queryResponse.Read())
-                {
-                    lblAddress.Text = queryResponse["CustomerAddress"].ToString();
-                    lblPhone.Text = queryResponse["Phone"].ToString();
-                    lblEmail.Text = queryResponse["Email"].ToString();
-                    lblName.Text = queryResponse["Name"].ToString();
-                }
-
-                // Close conecctions
-                queryResponse.Close();
-                sqlConnect.Close();
-
-            try
+            while (queryResponse.Read())
             {
+                lblAddress.Text = queryResponse["CustomerAddress"].ToString();
+                lblPhone.Text = queryResponse["Phone"].ToString();
+                lblEmail.Text = queryResponse["Email"].ToString();
+                lblName.Text = queryResponse["Name"].ToString();
+            }
+
+            // Close conecctions
+            queryResponse.Close();
+            sqlConnect.Close();
+
+           
                 //-----------------------------------------------------------------
                 // Page Load grab Customer Info
                 string QueryUpdate = "SELECT WorkFlowID, EngagmentDate, CompletionDate, Review, CurrentStatus, CustomerID FROM WorkFlow where CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID)";
@@ -115,7 +114,7 @@ namespace GreenValleyAuctions
                 while (queryUResponse.Read())
                 {
                     lblEngagement.Text = queryUResponse["EngagmentDate"].ToString();
-                    lblCompletion.Text = queryUResponse["CompletionDate"].ToString().Trim().Substring(0, queryUResponse["CompletionDate"].ToString().IndexOf(' '));
+                lblCompletion.Text = queryUResponse["CompletionDate"].ToString();
                     lblCurrentStatus.Text = queryUResponse["CurrentStatus"].ToString();
                     lblReview.Text = queryUResponse["Review"].ToString();
                 }
@@ -125,7 +124,8 @@ namespace GreenValleyAuctions
 
 
                 //----------------------------------
-
+            
+           
 
 
                 String InitialNotesQuery = "SELECT ConversationNotes, CustomerID FROM InitialContact where CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID)";
@@ -154,142 +154,334 @@ namespace GreenValleyAuctions
 
 
 
-                //----------------------------------------------------------------
+            //----------------------------------------------------------------
+            //----------------new progress bar
+            string progress = "select * from WorkflowProgress WFP inner join WorkFLow WF on WFP.WorkFlowID = WF.WorkFlowID inner join ServiceEvent SE on WF.WorkFlowID = SE.WorkFlowID where WF.CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID);";
+
+            //Define the connection to the Database
 
 
-                //PROGRESS BAR -- Initial Contact 
-                string ContactQuery = "select * from InitialContact  where CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID)";
+            //Create sql command 
+            SqlCommand sqlCommandProg = new SqlCommand();
+            sqlCommandProg.Connection = sqlConnect;
+            sqlCommandProg.CommandType = CommandType.Text;
+            sqlCommandProg.CommandText = progress;
 
-                //Create sql command
-                SqlCommand ContactCommand = new SqlCommand();
-                ContactCommand.Connection = sqlConnect;
-                ContactCommand.CommandType = CommandType.Text;
-                ContactCommand.CommandText = ContactQuery;
+            sqlCommandProg.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryprogress = sqlCommandProg.ExecuteReader();
 
-                ContactCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
-                //open connection to send ID query 
-                sqlConnect.Open();
-                SqlDataReader ContactResult = ContactCommand.ExecuteReader();
 
-                if (ContactResult.HasRows == true)
+            while (queryprogress.Read())
+            {
+                if (queryprogress.HasRows)
                 {
-                    InitialContact.Visible = true;
-                    ServicePage.Visible = false;
-                    DateFinal.Visible = false;
-                    ServiceComplete.Visible = false;
-                    FollowUp.Visible = false;
+
+                    if (queryprogress["ServiceType"].ToString().Trim() == "Moving")
+                    {
+
+
+
+
+                        //---------------------------------------
+                        if (queryprogress["MoveProgress"].ToString() == "1")
+                        {
+                            MoveImage1.Visible = false;
+                            MoveImage2.Visible = true;
+                            MoveImage3.Visible = false;
+                            MoveImage4.Visible = false;
+                            MoveImage5.Visible = false;
+                            MoveImage6.Visible = false;
+                            MoveImage7.Visible = false;
+                            MoveImage8.Visible = false;
+                            MoveImage9.Visible = false;
+                        }
+                        if (queryprogress["MoveProgress"].ToString() == "2")
+                        {
+                            MoveImage1.Visible = false;
+                            MoveImage2.Visible = false;
+                            MoveImage3.Visible = true;
+                            MoveImage4.Visible = false;
+                            MoveImage5.Visible = false;
+                            MoveImage6.Visible = false;
+                            MoveImage7.Visible = false;
+                            MoveImage8.Visible = false;
+                            MoveImage9.Visible = false;
+                        }
+
+                        if (queryprogress["MoveProgress"].ToString() == "3")
+                        {
+                            MoveImage1.Visible = false;
+                            MoveImage2.Visible = false;
+                            MoveImage3.Visible = false;
+                            MoveImage4.Visible = true;
+                            MoveImage5.Visible = false;
+                            MoveImage6.Visible = false;
+                            MoveImage7.Visible = false;
+                            MoveImage8.Visible = false;
+                            MoveImage9.Visible = false;
+                        }
+
+                        if (queryprogress["MoveProgress"].ToString() == "4")
+                        {
+                            MoveImage1.Visible = false;
+                            MoveImage2.Visible = false;
+                            MoveImage3.Visible = false;
+                            MoveImage4.Visible = false;
+                            MoveImage5.Visible = true;
+                            MoveImage6.Visible = false;
+                            MoveImage7.Visible = false;
+                            MoveImage8.Visible = false;
+                            MoveImage9.Visible = false;
+                        }
+
+                        if (queryprogress["MoveProgress"].ToString() == "5")
+                        {
+                            MoveImage1.Visible = false;
+                            MoveImage2.Visible = false;
+                            MoveImage3.Visible = false;
+                            MoveImage4.Visible = false;
+                            MoveImage5.Visible = false;
+                            MoveImage6.Visible = true;
+                            MoveImage7.Visible = false;
+                            MoveImage8.Visible = false;
+                            MoveImage9.Visible = false;
+
+                        }
+                        if (queryprogress["MoveProgress"].ToString() == "6")
+                        {
+                            MoveImage1.Visible = false;
+                            MoveImage2.Visible = false;
+                            MoveImage3.Visible = false;
+                            MoveImage4.Visible = false;
+                            MoveImage5.Visible = false;
+                            MoveImage6.Visible = false;
+                            MoveImage7.Visible = true;
+                            MoveImage8.Visible = false;
+                            MoveImage9.Visible = false;
+                        }
+                        if (queryprogress["MoveProgress"].ToString() == "7")
+                        {
+                            MoveImage1.Visible = false;
+                            MoveImage2.Visible = false;
+                            MoveImage3.Visible = false;
+                            MoveImage4.Visible = false;
+                            MoveImage5.Visible = false;
+                            MoveImage6.Visible = false;
+                            MoveImage7.Visible = false;
+                            MoveImage8.Visible = true;
+                            MoveImage9.Visible = false;
+                        }
+                        if (queryprogress["MoveProgress"].ToString() == "8")
+                        {
+                            MoveImage1.Visible = false;
+                            MoveImage2.Visible = false;
+                            MoveImage3.Visible = false;
+                            MoveImage4.Visible = false;
+                            MoveImage5.Visible = false;
+                            MoveImage6.Visible = false;
+                            MoveImage7.Visible = false;
+                            MoveImage8.Visible = false;
+                            MoveImage9.Visible = true;
+
+
+                        }
+                    }
+                    else
+                    {
+
+
+                        //--------------------------------------------------------
+                        if (queryprogress["AuctionProgress"].ToString() == "1")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = true;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "2")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = true;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "3")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = true;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "4")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = true;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "5")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = true;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "6")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = true;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "7")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = true;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "8")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = true;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "9")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = true;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "10")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = true;
+                            AuctionImage12.Visible = false;
+
+                        }
+                        if (queryprogress["AuctionProgress"].ToString() == "11")
+                        {
+                            AuctionImage1.Visible = false;
+                            AuctionImage2.Visible = false;
+                            AuctionImage3.Visible = false;
+                            AuctionImage4.Visible = false;
+                            AuctionImage5.Visible = false;
+                            AuctionImage6.Visible = false;
+                            AuctionImage7.Visible = false;
+                            AuctionImage8.Visible = false;
+                            AuctionImage9.Visible = false;
+                            AuctionImage10.Visible = false;
+                            AuctionImage11.Visible = false;
+                            AuctionImage12.Visible = true;
+
+
+                        }
+                    }
                 }
 
-                ContactResult.Close();
-                sqlConnect.Close();
-
-                // Progress Bar -- Date Option 
-                string DateOptionQuery = "SELECT * FROM ServiceEvent SE inner join WorkFlow WF on WF.WorkFLowID = SE.WorkFlowID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID) and SE.ServiceEndDate is null;";
-
-                //Create sql command
-                SqlCommand DateOptCommand = new SqlCommand();
-                DateOptCommand.Connection = sqlConnect;
-                DateOptCommand.CommandType = CommandType.Text;
-                DateOptCommand.CommandText = DateOptionQuery;
-
-                DateOptCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
-                //open connection to send ID query 
-                sqlConnect.Open();
-                SqlDataReader DateOptResult = DateOptCommand.ExecuteReader();
-
-                if (DateOptResult.HasRows == true)
-                {
-                    InitialContact.Visible = false;
-                    ServicePage.Visible = true;
-                    DateFinal.Visible = false;
-                    ServiceComplete.Visible = false;
-                    FollowUp.Visible = false;
-                }
-
-                DateOptResult.Close();
-                sqlConnect.Close();
-
-                //Progress Bar -- Final Dates 
-                string DateFinalQuery = "SELECT * FROM  WorkFlow WF inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID) and WF.CompletionDate is not null;";
-
-                //Create sql command
-                SqlCommand DateFinalCommand = new SqlCommand();
-                DateFinalCommand.Connection = sqlConnect;
-                DateFinalCommand.CommandType = CommandType.Text;
-                DateFinalCommand.CommandText = DateFinalQuery;
-
-                DateFinalCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
-                //open connection to send ID query 
-                sqlConnect.Open();
-                SqlDataReader DateFinalResult = DateFinalCommand.ExecuteReader();
-
-                if (DateFinalResult.HasRows == true)
-                {
-                    InitialContact.Visible = false;
-                    ServicePage.Visible = false;
-                    DateFinal.Visible = true;
-                    ServiceComplete.Visible = false;
-                    FollowUp.Visible = false;
-                }
-
-                DateFinalResult.Close();
-                sqlConnect.Close();
-
-                //Progress Bar -- Service Completed 
-                string CompletionQuery = "Select WF.WorkFlowID,Com.CustomerName,Cust.CustomerID from Customer as Cust inner join Workflow as WF on WF.CustomerID = Cust.CustomerID inner join CompletionForm as Com on Com.WorkFlowID = WF.WorkFlowID where cust.CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID);";
 
 
+            }
+            queryprogress.Close();
+            sqlConnect.Close();
 
-                //Create sql command
-                SqlCommand CompletionCommand = new SqlCommand();
-                CompletionCommand.Connection = sqlConnect;
-                CompletionCommand.CommandType = CommandType.Text;
-                CompletionCommand.CommandText = CompletionQuery;
-
-                CompletionCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
-                //open connection to send ID query 
-                sqlConnect.Open();
-                SqlDataReader CompletionResult = CompletionCommand.ExecuteReader();
-
-                if (CompletionResult.HasRows == true)
-                {
-                    InitialContact.Visible = false;
-                    ServicePage.Visible = false;
-                    DateFinal.Visible = false;
-                    ServiceComplete.Visible = true;
-                    FollowUp.Visible = false;
-                }
-
-                CompletionResult.Close();
-                sqlConnect.Close();
-
-                string ReviewQuery = "Select * from WorkFlow where CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID) and Review is not null";
-
-                SqlCommand ReviewCommand = new SqlCommand();
-                ReviewCommand.Connection = sqlConnect;
-                ReviewCommand.CommandType = CommandType.Text;
-                ReviewCommand.CommandText = ReviewQuery;
-
-                ReviewCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
-                //open connection to send ID query 
-                sqlConnect.Open();
-                SqlDataReader ReviewResult = ReviewCommand.ExecuteReader();
-
-                if (ReviewResult.HasRows == true)
-                {
-                    InitialContact.Visible = false;
-                    ServicePage.Visible = false;
-                    DateFinal.Visible = false;
-                    ServiceComplete.Visible = false;
-                    FollowUp.Visible = true;
-
-                    btnReview.Enabled = true;
-                }
-
-                ReviewResult.Close();
-                sqlConnect.Close();
-                //Images 
-                string Photo = "Select AP.PhotoPath as EmpPhoto, CP.PhotoPath as CustomerPhoto From Customer C inner join WorkFlow wf on C.CustomerID = wf.CustomerID full join AuctionSchedulingForm asf on wf.WorkFlowID = asf.WorkFlowID full join AuctionPhotos ap on asf.SchedulingFormID = ap.SchedulingFormID full join CustomerPhotos CP on C.CustomerID = CP.CustomerID where C.CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID)";
+           
+            //Images 
+            string Photo = "Select AP.PhotoPath as EmpPhoto, CP.PhotoPath as CustomerPhoto From Customer C inner join WorkFlow wf on C.CustomerID = wf.CustomerID full join AuctionSchedulingForm asf on wf.WorkFlowID = asf.WorkFlowID full join AuctionPhotos ap on asf.SchedulingFormID = ap.SchedulingFormID full join CustomerPhotos CP on C.CustomerID = CP.CustomerID where C.CustomerID = (Select CustomerID from Customer where CustomerEmail = @ID)";
 
                 //Create sql command
                 SqlCommand PhotoCommand = new SqlCommand();
@@ -304,7 +496,7 @@ namespace GreenValleyAuctions
 
                 while (PhotoResult.Read())
                 {
-                    imgCustomer.ImageUrl= "~\\Customer_Photos\\" + PhotoResult["CustomerPhoto"].ToString();
+                    imgCustomer.ImageUrl = "~\\Customer_Photos\\" + PhotoResult["CustomerPhoto"].ToString();
                     imgtest.ImageUrl = "~\\Auction_Photos\\" + PhotoResult["EmpPhoto"].ToString();
                     if (PhotoResult.HasRows)
                     {
@@ -314,18 +506,14 @@ namespace GreenValleyAuctions
 
                 PhotoResult.Close();
                 sqlConnect.Close();
-            }
-            catch
-            {
-                System.Diagnostics.Debug.WriteLine("Catch was triggered");
-            }
+            
 
 
         }
 
         protected void btnMedia_Click(object sender, EventArgs e)
         {
-            if(btnUpload.Visible == false)
+            if (btnUpload.Visible == false)
             {
                 btnUpload.Visible = true;
                 fuPhotos.Visible = true;
@@ -335,7 +523,7 @@ namespace GreenValleyAuctions
                 btnUpload.Visible = false;
                 fuPhotos.Visible = false;
             }
-            
+
         }
 
         protected void btnReview_Click(object sender, EventArgs e)
@@ -348,7 +536,7 @@ namespace GreenValleyAuctions
             Response.Redirect("Customer_Request.aspx");
         }
 
-        
+
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {

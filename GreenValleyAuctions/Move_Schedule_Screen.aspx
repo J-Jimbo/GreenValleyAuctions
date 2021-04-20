@@ -9,12 +9,12 @@
 
           <div class="col-md-1 offset-md-0">
              <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move Forms
+              <button class="btn btn-secondary dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Move Forms
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="Move_Schedule_Screen.html">Move Schedule</a>
+                <a class="dropdown-item" href="Move_Schedule_Screen.aspx">Move Schedule</a>
                 <a class="dropdown-item" href="#">Move Assessment</a>
-                <a class="dropdown-item" href="Move_Form.html">Move Form</a>
+                <a class="dropdown-item" href="Move_Form.aspx">Move Form</a>
                 <a class="dropdown-item" href="Completion_Form.aspx">Completion Form</a>
 
               </div>
@@ -24,6 +24,19 @@
            <div class="col-md-1 offset-md-1">
                     <a class="nav-link" href="Service_Ticket.aspx">Notes</a>
                  </div>
+
+        <div class="sticky">
+  <div class="text-left">
+      <h3> Notes:</h3>
+    </div>
+    <form>
+      <div class="form-group">
+    <label class= "Additional Notes"> </label>
+    <asp:TextBox ID="txtSideNotes" runat="server" class="form-control" placeholder="Notes" Wrap="true" TextMode="MultiLine" AutoPostBack="true" OnTextChanged="txtSideNotes_TextChanged"></asp:TextBox>
+<%--    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" placeholder="Notes"></textarea>--%>
+  </div>
+</form>
+</div>
     </div>
     <div class="text-center">
         		<h3> Move Schedule Screen Form </h3>
@@ -98,7 +111,7 @@
           
              <div class="col-md-4">
               <div class="dropdown">
-              <asp:DropDownList ID="ddlTrucks" runat="server" DataTextField="EquipmentName" DataValueField="EquipmentID" DataSourceID="datasrcTruckList" OnDataBound="ddlTrucks_DataBound"></asp:DropDownList>
+              <asp:DropDownList ID="ddlTrucks" runat="server" UseSubmitBehavior="false" DataTextField="EquipmentName" DataValueField="EquipmentID" DataSourceID="datasrcTruckList" OnDataBound="ddlTrucks_DataBound"></asp:DropDownList>
               <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
 </div>
 </div>
@@ -107,7 +120,7 @@
         </div>
         <div class="col-md-4">
               <div class="dropdown">
-              <asp:DropDownList ID="ddlMovers" runat="server"  DataTextField="Worker" DataValueField="EmployeeID" DataSourceID="datasrcMovers" OnDataBound="ddlMovers_DataBound"></asp:DropDownList>
+              <asp:DropDownList ID="ddlMovers" runat="server" UseSubmitBehavior="false"  DataTextField="Worker" DataValueField="EmployeeID" DataSourceID="datasrcMovers" OnDataBound="ddlMovers_DataBound"></asp:DropDownList>
               <asp:Label ID="lblMoverError" runat="server" Text=""></asp:Label>
 </div>
 </div>
@@ -116,17 +129,17 @@
 </div>
     <div class="row">
           <div class ="col-md-2 offset-md-2">
-          <asp:Button ID="btnAdd" runat="server" Text="Add Truck" OnClick="btnAdd_Click" CausesValidation="false" class="btn btn-primary btn-intake"/>
+          <asp:Button ID="btnAdd" runat="server" Text="Add Truck" UseSubmitBehavior="false" OnClick="btnAdd_Click" CausesValidation="false" class="btn btn-primary btn-intake"/>
         </div>
         <div class ="col-md-2 ">
-         <asp:Button ID="btnRemoveTruck" runat="server" Text="Remove Truck" OnClick="btnRemoveTruck_Click" CausesValidation="false" class="btn btn-primary btn-intake"/>
+         <asp:Button ID="btnRemoveTruck" runat="server" Text="Remove Truck" UseSubmitBehavior="false" OnClick="btnRemoveTruck_Click" CausesValidation="false" class="btn btn-primary btn-intake"/>
         </div>
 
          <div class ="col-md-2 offset-md-2">
-         <asp:Button ID="btnAddMover" runat="server" Text="Add Movers" OnClick="btnAddMover_Click" CausesValidation="false" class="btn btn-primary btn-intake"/>
+         <asp:Button ID="btnAddMover" runat="server" Text="Add Movers" UseSubmitBehavior="false" OnClick="btnAddMover_Click" CausesValidation="false" class="btn btn-primary btn-intake"/>
         </div>
         <div class ="col-md-2 ">
-          <asp:Button ID="btnRemove" runat="server" Text="Remove Movers" OnClick="btnRemove_Click" CausesValidation="false" class="btn btn-primary btn-intake"/>
+          <asp:Button ID="btnRemove" runat="server" Text="Remove Movers" UseSubmitBehavior="false" OnClick="btnRemove_Click" CausesValidation="false" class="btn btn-primary btn-intake"/>
         </div>
 
     </div>
@@ -136,13 +149,13 @@
             <asp:ListBox ID="lbTrucks" runat="server"></asp:ListBox>
         </div>
         <div class ="col-md-2 ">
-          <asp:CustomValidator ID="cvTrucks" runat="server" ErrorMessage="CustomValidator" Text="Trucks selected and number of trucks are not equal" OnServerValidate="cvTrucks_ServerValidate" ForeColor="Red" Display="Dynamic"></asp:CustomValidator>
+          <asp:CustomValidator ID="cvTrucks" runat="server" UseSubmitBehavior="false" ErrorMessage="CustomValidator" Text="Trucks selected and number of trucks are not equal" OnServerValidate="cvTrucks_ServerValidate" ForeColor="Red" Display="Dynamic"></asp:CustomValidator>
         </div>
         <div class ="col-md-2 offset-md-2">
-            <asp:ListBox ID="lbMovers" runat="server"></asp:ListBox>
+            <asp:ListBox ID="lbMovers" runat="server" ></asp:ListBox>
         </div>
         <div class ="col-md-2 ">
-           <asp:CustomValidator ID="cvnumMovers" runat="server" ErrorMessage="CustomValidator" Text="Movers selected and number of movers not equal" OnServerValidate="cvnumMovers_ServerValidate" ForeColor="Red"  Display="Dynamic"></asp:CustomValidator>
+           <asp:CustomValidator ID="cvnumMovers" runat="server" UseSubmitBehavior="false" ErrorMessage="CustomValidator" Text="Movers selected and number of movers not equal" OnServerValidate="cvnumMovers_ServerValidate" ForeColor="Red"  Display="Dynamic"></asp:CustomValidator>
         </div>
     </div>
 
@@ -288,16 +301,16 @@
 
     <div class="row">
           <div class ="col-md-2 ">
-                <asp:Button ID="btnpopulate" runat="server" Text="Populate" OnClick="btnpopulate_Click"  CausesValidation="false"  class="btn btn-primary btn-intake rounded-pill"/>
+                <asp:Button ID="btnpopulate" runat="server" UseSubmitBehavior="false" Text="Populate" OnClick="btnpopulate_Click"  CausesValidation="false"  class="btn btn-primary btn-intake rounded-pill"/>
       </div>
 
         <div class="col-md-2 offset-md-6">
 
-                <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click"  class="btn btn-primary btn-intake rounded-pill" />
+                <asp:Button ID="btnSave" runat="server" UseSubmitBehavior="false" Text="Save" OnClick="btnSave_Click"  class="btn btn-primary btn-intake rounded-pill" />
        </div>
 
        <div class="col-md-1">
-                <asp:Button ID="btnClear" runat="server" Text="Clear"  OnClick="btnClear_Click" CausesValidation="false"  class="btn btn-primary btn-intake rounded-pill"/>
+                <asp:Button ID="btnClear" runat="server" UseSubmitBehavior="false" Text="Clear"  OnClick="btnClear_Click" CausesValidation="false"  class="btn btn-primary btn-intake rounded-pill"/>
       </div>
     
 

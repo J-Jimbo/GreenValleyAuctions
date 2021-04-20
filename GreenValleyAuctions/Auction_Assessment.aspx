@@ -35,7 +35,8 @@
     <form>
       <div class="form-group">
     <label class= "Additional Notes"> </label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" placeholder="Notes"></textarea>
+    <asp:TextBox ID="txtSideNotes" runat="server" class="form-control" placeholder="Notes" Wrap="true" TextMode="MultiLine" AutoPostBack="true" OnTextChanged="txtSideNotes_TextChanged"></asp:TextBox>
+<%--    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" placeholder="Notes"></textarea>--%>
   </div>
 </form>
 </div>
@@ -141,7 +142,7 @@
            <!-- Bring In !-->
             <div class="col-md-6">
             <div class="form-check form-check-inline">
-                <asp:CheckBoxList ID="cblSheduled" runat="server" class="form-check-input" AutoPostBack="true" OnSelectedIndexChanged="cblSheduled_SelectedIndexChanged" >
+                <asp:CheckBoxList ID="cblSheduled" runat="server" class="form-check-input" UseSubmitBehavior="false" AutoPostBack="true" OnSelectedIndexChanged="cblSheduled_SelectedIndexChanged" >
                     <asp:ListItem Text="Bring In" Value="Bring In"></asp:ListItem>
                     <asp:ListItem Text="Auction Walk Through" Value="Auction Walk Through" ></asp:ListItem>
                     <asp:ListItem Text="Customer requests an Auction Look At" Value="Customer" ></asp:ListItem>
@@ -217,7 +218,7 @@
 		      <h3> Auction Assessment </h3></div>
 	        <div class="row col-md-6 mt-2">
         <div class="col-md-6">
-            <asp:Button ID="btnInventoryForm" runat="server" Text="Open Inventory Form" class="btn btn-primary btn-intake rounded-pill" />
+            <asp:Button ID="btnInventoryForm" runat="server" Text="Open Inventory Form"  UseSubmitBehavior="false" class="btn btn-primary btn-intake rounded-pill" />
 	         </div>    
 	    	</div>
 	    	</div>
@@ -429,7 +430,7 @@
     <div class="row col-md-12">
         <p> Special Equipment </p> </div>
       <div class="row col-md-10">
-            <asp:CheckBoxList ID="cblSupplies" runat="server" RepeatDirection="Vertical"  DataSourceID="datasrcSupplies" DataTextField="SupplyType" DataValueField="SupplyID" OnDataBound="cblSupplies_DataBound" ></asp:CheckBoxList>
+            <asp:CheckBoxList ID="cblSupplies" runat="server" RepeatDirection="Vertical"  DataSourceID="datasrcSupplies" UseSubmitBehavior="false" DataTextField="SupplyType" DataValueField="SupplyID" OnDataBound="cblSupplies_DataBound" ></asp:CheckBoxList>
 
       </div>
 
@@ -525,16 +526,16 @@
         
        <div class="row">
           <div class ="col-md-1">
-          <asp:Button ID="btnPopulate" runat="server" CausesValidation="false" Text="Populate" class="btn btn-primary btn-intake rounded-pill mediabutton" OnClick="btnPopulate_Click"/>
+          <asp:Button ID="btnPopulate" runat="server" UseSubmitBehavior="false" CausesValidation="false" Text="Populate" class="btn btn-primary btn-intake rounded-pill mediabutton" OnClick="btnPopulate_Click"/>
       </div>
 
         <div class="col-md-2">
 
-       <asp:Button ID="btnSave" runat="server" Text="Save" CausesValidation="true" class="btn btn-primary btn-intake rounded-pill mediabutton" OnClick="btnSave_Click"/>
+       <asp:Button ID="btnSave" runat="server" Text="Save" UseSubmitBehavior="false" CausesValidation="true" class="btn btn-primary btn-intake rounded-pill mediabutton" OnClick="btnSave_Click"/>
        </div>
 
        <div class="col-md-3">
-                            <asp:Button ID="btnClear"  runat="server" Text="Clear"  class="btn btn-primary btn-intake rounded-pill mediabutton"   OnClick="btnClear_Click" CausesValidation="false"/>
+                            <asp:Button ID="btnClear" UseSubmitBehavior="false"  runat="server" Text="Clear"  class="btn btn-primary btn-intake rounded-pill mediabutton"   OnClick="btnClear_Click" CausesValidation="false"/>
       </div>
     
 

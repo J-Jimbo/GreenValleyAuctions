@@ -269,6 +269,21 @@ namespace Lab2
                 SqlDataReader querysend = sqlCommandSProg.ExecuteReader();
                 //Close Connection
                 querysend.Close();
+                //------------------------------------
+                string sqlNotes = "Insert into SideNotes(NoteID ,WorkFlowID)Values((Select ISNULL(max(NoteID)+1,1) from SideNotes),@WorkFlow);";
+
+                //Create SQL command to send query
+                SqlCommand sqlCommandNotes = new SqlCommand();
+                sqlCommandNotes.Connection = sqlConnect;
+                sqlCommandNotes.CommandType = CommandType.Text;
+                sqlCommandNotes.CommandText = sqlNotes;
+
+                sqlCommandNotes.Parameters.AddWithValue("@WorkFlow", workFlowID);
+                //Open connection to send query
+                
+                SqlDataReader querynotes = sqlCommandNotes.ExecuteReader();
+                //Close Connection
+                querynotes.Close();
                 sqlConnect.Close();
             }
 

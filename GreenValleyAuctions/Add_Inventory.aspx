@@ -27,6 +27,21 @@
      <div class="col-md-1 offset-md-1">
                     <a class="nav-link" href="Service_Ticket.aspx">Notes</a>
                  </div>
+
+    <div class="sticky">
+  <div class="text-left">
+      <h3> Notes:</h3>
+    </div>
+    <form>
+      <div class="form-group">
+    <label class= "Additional Notes"> </label>
+    <asp:TextBox ID="txtSideNotes" runat="server" class="form-control" placeholder="Notes" Wrap="true" TextMode="MultiLine" AutoPostBack="true" OnTextChanged="txtSideNotes_TextChanged"></asp:TextBox>
+<%--    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" placeholder="Notes"></textarea>--%>
+  </div>
+</form>
+</div>
+
+
      <div class="text-center">
         		<h3> Add Inventory to Customer </h3>
       			</div>
@@ -55,7 +70,7 @@
                 <p><asp:Label ID="lblStorage" runat="server" Text="Select Location: " ></asp:Label><p />
             </asp:TableCell>
             <asp:TableCell>
-                <asp:DropDownList ID="ddlStorage" runat="server" OnSelectedIndexChanged="ddlStorage_SelectedIndexChanged" Class="form-control" AutoPostBack="true" >
+                <asp:DropDownList ID="ddlStorage" runat="server" UseSubmitBehavior="false" OnSelectedIndexChanged="ddlStorage_SelectedIndexChanged" Class="form-control" AutoPostBack="true" >
                     <asp:ListItem Text="Left" Value="L"></asp:ListItem>
                     <asp:ListItem Text="Right" Value="R"></asp:ListItem>
                     <asp:ListItem Text="Trailer" Value="T"></asp:ListItem>
@@ -84,16 +99,16 @@
 
         <div class="row">
           <div class ="col-md-2 ">
-                <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" class="btn btn-primary btn-intake rounded-pill mediabutton" CausesValidation="false" />
+                <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" UseSubmitBehavior="false" class="btn btn-primary btn-intake rounded-pill mediabutton" CausesValidation="false" />
       </div>
 
         <div class="col-md-2 offset-md-1">
 
-                <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click"  class="btn btn-primary btn-intake rounded-pill mediabutton"/>
+                <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" UseSubmitBehavior="false"  class="btn btn-primary btn-intake rounded-pill mediabutton"/>
        </div>
 
        <div class="col-md-2 offset-md-1">
-                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" class="btn btn-primary btn-intake rounded-pill mediabutton"  CausesValidation="false"/>
+                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" UseSubmitBehavior="false" class="btn btn-primary btn-intake rounded-pill mediabutton"  CausesValidation="false"/>
       </div>
 
       

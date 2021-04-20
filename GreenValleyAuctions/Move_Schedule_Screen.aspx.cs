@@ -85,11 +85,15 @@ namespace GreenValleyAuctions
                     }
 
                     answer.Close();
+
+
                 }
                 catch
                 {
 
                 }
+                
+
             }
             else
             {
@@ -126,6 +130,40 @@ namespace GreenValleyAuctions
 
             queryResult.Close();
             sqlConnect.Close();
+
+            //---------------
+            try
+            {
+
+
+                string noteQuery = "Select * from SideNotes where WorkFlowID = (Select MAX(WorkFLowID) from WorkFLow where CustomerID = @ID);";
+
+                //Define the connection to the Database
+
+
+                //Create sql command 
+                SqlCommand sqlCommandSide = new SqlCommand();
+                sqlCommandSide.Connection = sqlConnect;
+                sqlCommandSide.CommandType = CommandType.Text;
+                sqlCommandSide.CommandText = noteQuery;
+                sqlCommandSide.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+
+
+                //open connection to send ID query 
+                sqlConnect.Open();
+                SqlDataReader querynoteResult = sqlCommandSide.ExecuteReader();
+                while (querynoteResult.Read())
+                {
+                    txtSideNotes.Text = querynoteResult["Note"].ToString();
+                }
+
+                querynoteResult.Close();
+                sqlConnect.Close();
+            }
+            catch
+            {
+
+            }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -625,5 +663,31 @@ namespace GreenValleyAuctions
                 sqlConnect.Close();
             }
         }
+
+        protected void txtSideNotes_TextChanged(object sender, EventArgs e)
+        {
+            string Query = "UPDATE SideNotes SET Note = @Note where WorkFlowID = (Select MAX(WorkFLowID) from WorkFLow where CustomerID = @ID);";
+
+            //Define the connection to the Database
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
+
+            //Create sql command 
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = Query;
+
+
+            sqlCommand.Parameters.AddWithValue("@Note", HttpUtility.HtmlEncode(txtSideNotes.Text.ToString()));
+            sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //open connection to send ID query 
+            sqlConnect.Open();
+            SqlDataReader queryResult = sqlCommand.ExecuteReader();
+
+
+            queryResult.Close();
+            sqlConnect.Close();
+        }
+
     }
 }
