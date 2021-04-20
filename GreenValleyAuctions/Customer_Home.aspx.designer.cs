@@ -159,51 +159,6 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblStatusBar;
 
         /// <summary>
-        /// InitialContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image InitialContact;
-
-        /// <summary>
-        /// ServicePage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ServicePage;
-
-        /// <summary>
-        /// DateFinal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image DateFinal;
-
-        /// <summary>
-        /// ServiceComplete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ServiceComplete;
-
-        /// <summary>
-        /// FollowUp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image FollowUp;
-
-        /// <summary>
         /// MoveImage1 control.
         /// </summary>
         /// <remarks>

@@ -285,7 +285,7 @@ namespace GreenValleyAuctions
                             MoveImage8.Visible = false;
                             MoveImage9.Visible = true;
 
-
+                            btnReview.Enabled = true;
                         }
                     }
                     else
@@ -468,7 +468,7 @@ namespace GreenValleyAuctions
                             AuctionImage11.Visible = false;
                             AuctionImage12.Visible = true;
 
-
+                            btnReview.Enabled = true;
                         }
                     }
                 }

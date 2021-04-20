@@ -291,7 +291,17 @@
 
 
 
-
+    <div class ="row">
+    <div class ="heading col-md-3 offset-md-0">
+        <a class="btn btn-primary" href="Reports.aspx" role="button">View All Reports</a>
+      </div>
+    
+    
+    <div class ="heading col-md-4 offset-md-0">
+        <a class="btn btn-primary" href="Update_Movers.aspx" role="button">Settings</a>
+      </div>
+    </div>
+    
 
 
 

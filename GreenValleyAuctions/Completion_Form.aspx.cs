@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
+using System.Net.Mail;
 namespace GreenValleyAuctions
 {
     public partial class Completion_Form1 : System.Web.UI.Page
@@ -14,57 +15,63 @@ namespace GreenValleyAuctions
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
 
-        protected void btnSearch_Click(object sender, EventArgs e)
-        {
-            String sqlQuerySearch = "SELECT FirstName + LastName as 'CustomerName', CustomerAddress, CustomerPhone, CustomerEmail FROM Customer WHERE FirstName + LastName LIKE '%" + txtSearch.Text + "%'";
+            //Putting Basic Customer Infromation into Completion Form 
+            String sqlCustomerInformation = " SELECT Customer.CustomerID, Customer.FirstName, Customer.LastName, Customer.CustomerPhone, Customer.CustomerEmail, Customer.CustomerAddress, WorkFlow.CompletionDate, WorkFlow.WorkFlowID, ServiceEvent.ServiceType FROM Customer INNER JOIN WorkFlow ON Customer.CustomerID = WorkFlow.CustomerID INNER JOIN ServiceEvent ON WorkFlow.WorkFlowID = ServiceEvent.WorkFlowID where Customer.CustomerID = @ID";
 
-            //sql Connection
-            SqlConnection sqlConnectSearch = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
-            SqlDataAdapter sqlAdapterSearch = new SqlDataAdapter(sqlQuerySearch, sqlConnectSearch);
+            //Define the connection to the Database
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
 
-            DataTable dtforSearch = new DataTable();
-            sqlAdapterSearch.Fill(dtforSearch);
-            grdCustomerSearch.DataSource = dtforSearch;
-            grdCustomerSearch.DataBind();
-        }
+            //sql command
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = sqlCustomerInformation;
 
-        protected void btncalculate_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtSubtotal.Text) && !string.IsNullOrEmpty(txtaddexpenses.Text))
+            sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            sqlConnect.Open();
+            SqlDataReader queryCustomerInformation = sqlCommand.ExecuteReader();
+
+            while (queryCustomerInformation.Read())
             {
+                lblFirstName.Text = queryCustomerInformation["FirstName"].ToString();
+                lblLastName.Text = queryCustomerInformation["LastName"].ToString();
+                lblCPhoneNumber.Text = queryCustomerInformation["CustomerPhone"].ToString();
+                lblCAddress.Text = queryCustomerInformation["CustomerAddress"].ToString();
+                lblCEmail.Text = queryCustomerInformation["CustomerEmail"].ToString();
+                lblTService.Text = queryCustomerInformation["ServiceType"].ToString();
+                lblDService.Text = queryCustomerInformation["CompletionDate"].ToString();
+            }
 
-                txtTotalCost.Text = (Convert.ToInt32(txtSubtotal.Text) + Convert.ToInt32(txtaddexpenses.Text)).ToString();
-            }
-            else
-            {
+            queryCustomerInformation.Close();
+            sqlConnect.Close();
 
-                Response.Write("Please Enter Value");
-            }
+
+            ////Employees Associated 
+            //String sqlEmployee = " SELECT trim(Employee.EmployeeFirstName) + ' ' + trim(Employee.EmployeeLastName) AS EmployeeName, Customer.CustomerID, WorkFlow.WorkFlowID FROM WorkFlow INNER JOIN Customer ON WorkFlow.CustomerID = Customer.CustomerID INNER JOIN Employee ON WorkFlow.EmployeeID = Employee.EmployeeID where Customer.CustomerID = @ID";
+
+
+            ////sql command
+            //SqlCommand sqlCommand2 = new SqlCommand();
+            //sqlCommand2.Connection = sqlConnect;
+            //sqlCommand2.CommandType = CommandType.Text;
+            //sqlCommand2.CommandText = sqlEmployee;
+
+            //sqlCommand.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(Session["Customer"].ToString()));
+            //sqlConnect.Open();
+            //SqlDataReader queryEmployee = sqlCommand2.ExecuteReader();
+
+            //while (queryEmployee.Read())
+            //{
+            //    lblEmployeesAssociated.Text = queryEmployee["EmployeeName"].ToString();
+            //}
+
+            //queryEmployee.Close();
+            //sqlConnect.Close();
+
         }
 
-        protected void Rblpaymentreceived_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Rblpaymentreceived.SelectedItem.Value == "Partial")
-            {
-                ShowTextBoxes(true);
-                ShowLabel(true);
-            }
-            else
-            {
-                ShowTextBoxes(false);
-                ShowLabel(false);
-            }
-        }
-        private void ShowTextBoxes(bool value)
-        {
-            txtpartial.Visible = value;
-        }
-        private void ShowLabel(bool value)
-        {
-            lblPartial.Visible = value;
-        }
+
         protected void btnSave_Click(object sender, EventArgs e)
         {
             string Query = "select MAX(WF.WorkFlowID) as WFID from ServiceEvent SE inner join WorkFLow WF on SE.WorkFlowID = WF.CustomerID inner join Customer C on WF.CustomerID = C.CustomerID where C.CustomerID = @ID; ";
@@ -102,74 +109,52 @@ namespace GreenValleyAuctions
             sqlConnectCF.Open();
 
             //Saving Information into the Completion Form
-            sqlCommandCF.Parameters.AddWithValue("@CustomerName", HttpUtility.HtmlEncode(txtSearch.Text));
-            sqlCommandCF.Parameters.AddWithValue("@SubTotal", HttpUtility.HtmlEncode(txtSubtotal.Text));
-            sqlCommandCF.Parameters.AddWithValue("@AddExpenses", HttpUtility.HtmlEncode(txtaddexpenses.Text));
-            sqlCommandCF.Parameters.AddWithValue("@TotalCost", HttpUtility.HtmlEncode(txtTotalCost.Text));
-            sqlCommandCF.Parameters.AddWithValue("@PaidAmount", HttpUtility.HtmlEncode(Rblpaymentreceived.SelectedValue));
-            sqlCommandCF.Parameters.AddWithValue("@Remaining", HttpUtility.HtmlEncode(txtpartial.Text));
-            sqlCommandCF.Parameters.AddWithValue("@Employees", HttpUtility.HtmlEncode(RBLEmployees.SelectedValue));
-            sqlCommandCF.Parameters.AddWithValue("@Equipment", HttpUtility.HtmlEncode(RBLEquipment.SelectedValue));
             sqlCommandCF.Parameters.AddWithValue("@AdditonalNotes", HttpUtility.HtmlEncode(txtAdditionalNotes.Text));
+            sqlCommandCF.Parameters.AddWithValue("@Experience", HttpUtility.HtmlEncode(txtPositiveOrNegative.Text));
             sqlCommandCF.Parameters.AddWithValue("@ID", HttpUtility.HtmlEncode(workFLow));
 
 
+
             //Inserting form into the DB
-            String sqlQueryCF = "INSERT INTO CompletionForm(CustomerName, Subtotal, AdditonalExpenses, Total, PaidAmount, Remaining, AdditionalNotes, EmployeeID, EquipmentID,WorkFLowID) VALUES (@CustomerName,@SubTotal,@AddExpenses ,@TotalCost ,@PaidAmount ,@Remaining ,@AdditonalNotes ,@Employees , @Equipment,@ID )";
+            String sqlQueryCF = "INSERT INTO CompletionForm(AdditionalNotes, Experience, WorkFLowID) VALUES ( @AdditonalNotes, @Experience, @ID )";
             sqlCommandCF.CommandText = sqlQueryCF;
             SqlDataReader CFresults = sqlCommandCF.ExecuteReader();
             CFresults.Close();
             sqlConnectCF.Close();
 
 
-            
-        }
-
-        protected void btnHistory_Click(object sender, EventArgs e)
-        {
-            String sqlQueryHistory = "Select * from CompletionForm";
-
-            //Sql Connection 
-
-            SqlConnection sqlConnectHisotry = new SqlConnection(WebConfigurationManager.ConnectionStrings["GVA"].ConnectionString);
-            SqlDataAdapter sqlAdapterHistory = new SqlDataAdapter(sqlQueryHistory, sqlConnectHisotry);
-
-            DataTable dtforHistory = new DataTable();
-            sqlAdapterHistory.Fill(dtforHistory);
-            grdHistory.DataSource = dtforHistory;
-            grdHistory.DataBind();
 
         }
 
-        protected void btnpopulate_Click(object sender, EventArgs e)
+
+
+        protected void btnBack_Click(object sender, EventArgs e)
         {
-            // creaing random number
-            Random random = new Random();
+            Response.Redirect("Customer_Info.aspx");
+        }
 
-            //creating array to draw random data from
-            string[] money = { "400", "5000", "30", "200", "250", "10", "1000" };
-            string[] notes = { "none", "paid with check", " paid cash" };
-            //moneybased text boxes
-            txtSubtotal.Text = money[random.Next(0, money.Length)];
-            txtaddexpenses.Text = money[random.Next(0, money.Length)];
-
-            //employe based 
-            RBLEmployees.SelectedIndex = random.Next(0, 6);
-            RBLEquipment.SelectedIndex = random.Next(0, 7);
-            Rblpaymentreceived.SelectedIndex = random.Next(0, 3);
-
-            if (Rblpaymentreceived.SelectedValue.Equals("Partial"))
+        protected void btnSend_Click(object sender, EventArgs e)
+        {
+            try
             {
-                txtpartial.Visible = true;
-                txtpartial.Text = money[random.Next(0, money.Length)];
+                MailMessage mail = new MailMessage();
+                mail.To.Add(txtCustomerEmail.Text);
+                mail.From = new MailAddress("GreenValleyTest1@gmail.com");
+                mail.Subject = txtSubject.Text;
+                mail.Body = Request.Form["txtMessage"];
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new System.Net.NetworkCredential("GreenValleyTest1@gmail.com", "GreenValley1!");
+                smtp.EnableSsl = true;
+                lblMsg.Text = "Mail Sent !";
+                smtp.Send(mail);
             }
-            else
-                txtpartial.Visible = false;
+            catch
+            {
 
-            //notes
-            txtAdditionalNotes.Text = notes[random.Next(0, notes.Length)];
+            }
         }
-
-        
     }
 }

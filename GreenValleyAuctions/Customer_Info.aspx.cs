@@ -59,17 +59,75 @@ namespace GreenValleyAuctions
             //open connection to send ID query 
             sqlConnect.Open();
             SqlDataReader queryUResponse = sqlCommandU.ExecuteReader();
-
+            string reveiw;
             while (queryUResponse.Read())
             {
                 lblEngagement.Text = queryUResponse["EngagmentDate"].ToString();
                 lblCompletion.Text = queryUResponse["CompletionDate"].ToString();
                 lblCurrentStatus.Text = queryUResponse["CurrentStatus"].ToString();
-                lblReview.Text = queryUResponse["Review"].ToString();
+                reveiw = queryUResponse["Review"].ToString().Trim();
 
                 if( queryUResponse["CompletionDate"].ToString() != null)
                 {
                     btnEditServiceTicket.Visible = false;
+                }
+                if (reveiw.Equals("0"))
+                {
+                    noStar.Visible = true;
+                    OneStart.Visible = false;
+                    Start2.Visible = false;
+                    Star3.Visible = false;
+                    Star4.Visible = false;
+                    Star5.Visible = false;
+
+
+
+
+                }
+                if (reveiw.Equals("1"))
+                {
+                    noStar.Visible = false;
+                    OneStart.Visible = true;
+                    Start2.Visible = false;
+                    Star3.Visible = false;
+                    Star4.Visible = false;
+                    Star5.Visible = false;
+                }
+                if (reveiw.Equals("2"))
+                {
+                    noStar.Visible = false;
+                    OneStart.Visible = false;
+                    Start2.Visible = true;
+                    Star3.Visible = false;
+                    Star4.Visible = false;
+                    Star5.Visible = false;
+                }
+                if (reveiw.Equals("3"))
+                {
+                    noStar.Visible = false;
+                    OneStart.Visible = false;
+                    Start2.Visible = false;
+                    Star3.Visible = true;
+                    Star4.Visible = false;
+                    Star5.Visible = false;
+                }
+                if (reveiw.Equals("4"))
+                {
+                    noStar.Visible = false;
+                    OneStart.Visible = false;
+                    Start2.Visible = false;
+                    Star3.Visible = false;
+                    Star4.Visible = true;
+                    Star5.Visible = false;
+                }
+                if (reveiw.Equals("5"))
+                {
+                    noStar.Visible = false;
+                    OneStart.Visible = false;
+                    Start2.Visible = false;
+                    Star3.Visible = false;
+                    Star4.Visible = false;
+                    Star5.Visible = true;
                 }
             }
             // Close conecctions
@@ -142,6 +200,8 @@ namespace GreenValleyAuctions
                     DDLMovingProg.Visible = true;
                     MoveProgBtn.Visible = true;
                     auction.Visible = false;
+
+                    btnEditServiceTicket.Visible = true;
                 }
                 else if (queryResult["ServiceType"].ToString().Equals("Auction"))
                 {
@@ -153,6 +213,8 @@ namespace GreenValleyAuctions
                     auctionImages.Visible = true;
                     ddlAuctionProg.Visible = true;
                     AuctionProgBtn.Visible = true;
+
+                    btnEditServiceTicket.Visible = true;
                 }
                 else
                 {

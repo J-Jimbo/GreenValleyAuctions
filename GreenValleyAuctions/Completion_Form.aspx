@@ -6,134 +6,164 @@
                     <a class="nav-link" href="Customer_Info.aspx">Profile</a>
      </div>
 
-     <asp:Table ID="tblCFCustomer" runat="server" HorizontalAlign="Center"  Width="600px"  >
-                <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblSearch" runat="server" Text="Search Customer: "></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtSearch" runat="server" ></asp:TextBox>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Button ID="btnSearch" runat ="server" Text="-->" OnClick="btnSearch_Click" />
-                </asp:TableCell>
-                    </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:GridView ID="grdCustomerSearch" runat="server" AlternatingRowStyle="#eaaaff" EmptyDataText ="Customer Does Not Exist!"></asp:GridView>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="tblCFExpenses" runat="server" HorizontalAlign ="Center"  Width="600px" >
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblFinanceHeader" Text="Finances: " Font-Bold="true" runat="server" ></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblSubtotal" Text="Subtotal: " runat="server" ></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="txtSubtotal" runat="server" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lbladdexpenses" runat="server" Text="Additional Expenses Occured: "></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="txtaddexpenses" runat ="server" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblTotalCost" runat="server" Text="Total Cost: " ></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell> 
-                        <asp:TextBox ID="txtTotalCost" runat="server" ></asp:TextBox>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:Button Id="btncalculate" runat="server" Text="Total Cost" OnClick="btncalculate_Click"/>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblpaymentreceived" runat="server" Text="Payment Received? "></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:RadioButtonlist ID="Rblpaymentreceived" runat="server" RepeatDirection="Horizontal" AutoPostBack="true" OnSelectedIndexChanged="Rblpaymentreceived_SelectedIndexChanged">
-                            <asp:ListItem Value="Yes">Yes</asp:ListItem> 
-                            <asp:ListItem Value="No">No</asp:ListItem>
-                            <asp:ListItem Value="Partial">Partial</asp:ListItem>
-                            </asp:RadioButtonlist>
-                        <asp:Label ID="lblPartial" runat="server" Visible="false" Text="Remaining Amount: "></asp:Label>
-                        <asp:TextBox ID="txtpartial" runat="server" Visible="false" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="tblCFEmployees" runat="server" HorizontalAlign ="Center"  Width="600px" >
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblEEtitle" runat="server" Font-Bold="true" Text="Employees and Equipment Involved: "></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblEmployees" runat="server" Text="Employees Associated" ></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:RadioButtonList ID="RBLEmployees" runat="server" RepeatDirection="Horizontal">
-                            <asp:ListItem Value="1">Brad Campbell</asp:ListItem>
-                            <asp:ListItem Value="2">Sebastian</asp:ListItem>
-                            <asp:ListItem Value="3">Zach</asp:ListItem>
-                            <asp:ListItem Value="4">Greg</asp:ListItem>
-                            <asp:ListItem Value="5">Sam</asp:ListItem>
-                            <asp:ListItem Value="6">Scotty</asp:ListItem>
-                        </asp:RadioButtonList>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblEquipmentUsed" runat="server" Text="Equipment Used: " ></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:RadioButtonList ID="RBLEquipment" runat="server"  RepeatDirection="Horizontal">
-                            <asp:ListItem Value="1">2015</asp:ListItem>
-                            <asp:ListItem Value="2">2011</asp:ListItem>
-                            <asp:ListItem Value="3">Cube</asp:ListItem>
-                            <asp:ListItem Value="4">GMC</asp:ListItem>
-                            <asp:ListItem Value="5">Green</asp:ListItem>
-                            <asp:ListItem Value="6">Van</asp:ListItem>
-                            <asp:ListItem Value="7">Trailer</asp:ListItem>
-                        </asp:RadioButtonList>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="tblCFNotes" runat="server" HorizontalAlign ="Center"  Width="600px">
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblHeaderNotes" runat="server" Text="Additional Notes: " Font-Bold="true" ></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:TextBox ID="txtAdditionalNotes" runat="server" width="600" height="100" TextMode="MultiLine" Wrap="true"></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="tblsave" runat="server" HorizontalAlign ="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid">
-                <asp:TableRow>
-                    <asp:TableCell>
-            <asp:Button ID="btnSave" Text="Save" runat="server" OnClick="btnSave_Click" /> </asp:TableCell> <asp:TableCell> <asp:Button ID="btnpopulate" OnClick="btnpopulate_Click" runat="server" Text="Populate" /> <asp:Button ID="btnHistory" runat="server" Text="Show History" OnClick="btnHistory_Click" /></asp:TableCell>
-                </asp:TableRow>
-                </asp:Table>
-            <asp:Table ID="tblHistory" runat="server" HorizontalAlign="Center" BorderWidth="1" BorderColor="Black" BorderStyle="Solid" Width="600px">
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:GridView ID="grdHistory" runat="server" AlternatingRowStyle="#eaaaff" EmptyDataText ="No Recent Reports"></asp:GridView>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
+     
+
+ <div class="col-md-12">
+<div class="heading">
+      <h3> Contact Information </h3>
+    </div>
+
+
+		
+        <div class="form-row">
+        <div class="col-md-4 mb-3 mt-2">
+            <asp:Label ID="lblFirstName" runat="server" Text="" Class="form-control"></asp:Label>
+    </div>
+
+        <div class="col-md-4 mb-3 mt-2">
+        <asp:Label ID="lblLastName" runat="server" Text="" Class="form-control"></asp:Label>
+    </div>
+    </div>
+  
+
+        <div class="form-row">
+        <div class="col-md-4 mb-3">
+        <asp:Label ID="lblCPhoneNumber" runat="server" Text="" Class="form-control"></asp:Label>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <asp:Label ID="lblCEmail" runat="server" Text="" Class="form-control"></asp:Label>
+    </div>
+
+    <div class="col-md-8 mb-3">
+    <asp:Label ID="lblCAddress" runat="server" Text="" Class="form-control"></asp:Label>
+  </div>
+
+      </div>
+  </>
+</div>
+    <br>
+
+    <!-- Type of Service -->
+        <div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Type of Service: </p>
+            </div>
+          <div class="col-md-6">
+              <asp:Label ID="lblTService" runat="server" Text="" Class="form-control"></asp:Label>
+            </div>
+         </div>
+
+          <br>
+
+
+    <!-- Date of Service -->
+        <div class="row col-md-12">
+            <div class="col-md-2">
+          <p> Date of Service: </p>
+            </div>
+          <div class="col-md-6">
+              <asp:Label ID="lblDService" runat="server" Text="" Class="form-control" ></asp:Label>
+            </div>
+         </div>
+    <br>
+          <br>
+
+
+           <!-- Employees Associated -->
+    <div class="row col-md-12">
+        <div class="col-md-2">
+        <p> Employees Associated </p>
+            </div>
+     <div class="col-md-6">
+              <asp:Label ID="lblEmployeesAssociated" runat="server" Text="" Class="form-control" ></asp:Label>
+            </div>
+        </div>
+
+    <br>
+
+
+  <!-- Comments -->
+            <div class="row col-md-12">
+            <div class="col-md-2 mt-4">      
+              <p> Additional Comments: </p>
+            </div>
+             <div class="col-md-6">
+            
+              <div class="form-group">
+            <label class= "Additional Notes"> </label>
+                  <asp:TextBox ID="txtAdditionalNotes" runat="server" CssClass="form-control" ></asp:TextBox>
+         </div>
+        
+        </div>
+      </div>
+
+        <br>
+        <br>
+    <!-- Service Experience -->
+          <div class="row col-md-12">
+            <div class="col-md-6">
+          <h3> Service Experience </h3>
+            </div>
+          </div>
+
+
+ <!-- POSITIVE EMAIL STARTS HERE -->
+          <br />
+          <br />
+          <div class="form-row col-md-8">
+        <div class="col-md-2">
+        <asp:Label ID="lblExperienceQuality" runat="server" Text="Experience Quality?" CssClass="col-form-label" ></asp:Label> 
+    </div>
+    	<div class="col-md-6">
+            <asp:TextBox ID="txtPositiveOrNegative" runat="server" CssClass="form-control" placeholder="Positive or Negative?" ></asp:TextBox>
+      </div>
+  </div>
+          <div class="form-row col-md-8">
+        <div class="col-md-2">
+        <asp:Label ID="lblTo" runat="server" Text="To:" CssClass="col-form-label"></asp:Label> 
+    </div>
+    	<div class="col-md-6">
+            <asp:TextBox ID="txtCustomerEmail" runat="server" CssClass="form-control" placeholder="EMAIL" ></asp:TextBox>
+      </div>
+  </div>
+          <div class="form-row col-md-8">
+        <div class="col-md-2">
+        <asp:Label ID="lblSubject" runat="server" Text="Subject:" CssClass="col-form-label"></asp:Label> 
+    </div>
+    	<div class="col-md-6">
+        <asp:TextBox ID="txtSubject" runat="server" CssClass="form-control" placeholder="SUBJECT" ></asp:TextBox>
+      </div>
+  </div>
+    <div class="form-row col-md-8">
+        <div class="col-md-2">
+        <asp:Label ID="lblMsg" runat="server" Text="Message:" CssClass="col-form-label"></asp:Label> 
+    </div>
+    	<div class="col-md-6">
+        <asp:TextBox ID="txtMessage" runat="server" CssClass="form-control" placeholder="MESSAGE FOR EMAIL" TextMode="MultiLine" ></asp:TextBox>
+      </div>
+  </div>
+          <div class="row">
+            <div class="col-md-6">
+                <asp:Button ID="btnSend" runat="server" class="btn btn-primary btn-intake rounded-pill" Text="Send Email" OnClick="btnSend_Click"  />
+            </div>
+        </div>
+        <div>     
+
+      </div>
+
+  <!-- NEGATIVE EMAIL MODAL ENDS HERE -->
+     <br>
+          <br>
+  
+    
+ <!-- Save button -->  
+        <div class="row">
+          <div class ="col-md-3 offset-md-7">
+              <asp:Button ID="SaveCompletion" runat="server" Text="Save" class="btn btn-primary btn-intake rounded-pill"  OnClick="btnSave_Click"   />
+          </div>
+            </div>
+  <br>
+  <br>  
 
 </asp:Content>

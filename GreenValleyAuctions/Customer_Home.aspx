@@ -111,40 +111,36 @@
                 <p><asp:Label ID="lblStatusBar" runat="server" Text="Status Bar: " Font-Bold="true" ></asp:Label></P>
             </asp:TableCell>
             <asp:TableCell>
-                            <asp:Image ID="InitialContact" runat="server" ImageUrl="images/progressbar2.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="ServicePage" runat="server" ImageUrl="images/progressbar3.png" Visible="false"  Height="78px" Width="592px" />
-                            <asp:Image ID="DateFinal" runat="server" ImageUrl="images/progressbar4.png" Visible="false"  Height="78px" Width="592px"/>
-                            <asp:Image ID="ServiceComplete" runat="server" ImageUrl="images/progressbar5.png" Visible="false"  Height="78px" Width="592px" />
-                            <asp:Image ID="FollowUp" runat="server" ImageUrl="images/progressbar6.png" Visible="false"  Height="78px" Width="592px" />
+                           
 
                 <%--------------------%>
-                 <asp:Image ID="MoveImage1" runat="server" ImageUrl="/images/move status 1.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="MoveImage2" runat="server" ImageUrl="/images/move status 2.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="MoveImage3" runat="server" ImageUrl="/images/move status 3.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="MoveImage4" runat="server" ImageUrl="/images/move status 4.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="MoveImage5" runat="server" ImageUrl="/images/move status 5.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="MoveImage6" runat="server" ImageUrl="/images/move status 6.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="MoveImage7" runat="server" ImageUrl="/images/move status 7.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="MoveImage8" runat="server" ImageUrl="/images/move status 8.png" Visible="false" Height="78px" Width="592px"/>
-                            <asp:Image ID="MoveImage9" runat="server" ImageUrl="/images/move status 9.png" Visible="false" Height="78px" Width="592px"/>
+                 <asp:Image ID="MoveImage1" runat="server" ImageUrl="/images/move status 1.png" Visible="false" Height="110px" Width="594px"/>
+                            <asp:Image ID="MoveImage2" runat="server" ImageUrl="/images/move status 2.png" Visible="false" Height="110px" Width="594px"/>
+                            <asp:Image ID="MoveImage3" runat="server" ImageUrl="/images/move status 3.png" Visible="false" Height="110px" Width="594px"/>
+                            <asp:Image ID="MoveImage4" runat="server" ImageUrl="/images/move status 4.png" Visible="false" Height="110px" Width="594px"/>
+                            <asp:Image ID="MoveImage5" runat="server" ImageUrl="/images/move status 5.png" Visible="false" Height="110px" Width="594px"/>
+                            <asp:Image ID="MoveImage6" runat="server" ImageUrl="/images/move status 6.png" Visible="false" Height="110px" Width="594px"/>
+                            <asp:Image ID="MoveImage7" runat="server" ImageUrl="/images/move status 7.png" Visible="false" Height="110px" Width="594px"/>
+                            <asp:Image ID="MoveImage8" runat="server" ImageUrl="/images/move status 8.png" Visible="false" Height="110px" Width="594px"/>
+                            <asp:Image ID="MoveImage9" runat="server" ImageUrl="/images/move status 9.png" Visible="false" Height="110px" Width="594px"/>
 
-                <asp:Image ID="AuctionImage1" runat="server" ImageUrl="/images/auction status 1.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage2" runat="server" ImageUrl="/images/auction status 2.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage3" runat="server" ImageUrl="/images/auction status 3.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage4" runat="server" ImageUrl="/images/auction status 4.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage5" runat="server" ImageUrl="/images/auction status 5.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage6" runat="server" ImageUrl="/images/auction status 6.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage7" runat="server" ImageUrl="/images/auction status 7.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage8" runat="server" ImageUrl="/images/auction status 8.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage9" runat="server" ImageUrl="/images/auction status 9.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage10" runat="server" ImageUrl="/images/auction status 10.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage11" runat="server" ImageUrl="/images/auction status 11.png" Visible="false" Height="78px" Width="592px"/>
-                <asp:Image ID="AuctionImage12" runat="server" ImageUrl="/images/auction status 12.png" Visible="false" Height="78px" Width="592px"/>
+                <asp:Image ID="AuctionImage1" runat="server" ImageUrl="/images/auction status 1.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage2" runat="server" ImageUrl="/images/auction status 2.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage3" runat="server" ImageUrl="/images/auction status 3.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage4" runat="server" ImageUrl="/images/auction status 4.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage5" runat="server" ImageUrl="/images/auction status 5.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage6" runat="server" ImageUrl="/images/auction status 6.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage7" runat="server" ImageUrl="/images/auction status 7.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage8" runat="server" ImageUrl="/images/auction status 8.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage9" runat="server" ImageUrl="/images/auction status 9.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage10" runat="server" ImageUrl="/images/auction status 10.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage11" runat="server" ImageUrl="/images/auction status 11.png" Visible="false" Height="110px" Width="594px"/>
+                <asp:Image ID="AuctionImage12" runat="server" ImageUrl="/images/auction status 12.png" Visible="false" Height="110px" Width="594px"/>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
-                <p><asp:Label ID="lblClientInformation" runat="server" Text="Client Information" Font-Bold="true"></asp:Label></P>
+                <p><asp:Label ID="lblClientInformation" runat="server" Text="Client Information" Font-Bold="true"></asp:Label></p>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>

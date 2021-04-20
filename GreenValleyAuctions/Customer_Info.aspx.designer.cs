@@ -537,13 +537,58 @@ namespace GreenValleyAuctions
         protected global::System.Web.UI.WebControls.Label lblTReview;
 
         /// <summary>
-        /// lblReview control.
+        /// noStar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReview;
+        protected global::System.Web.UI.WebControls.Image noStar;
+
+        /// <summary>
+        /// OneStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image OneStart;
+
+        /// <summary>
+        /// Start2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Start2;
+
+        /// <summary>
+        /// Star3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Star3;
+
+        /// <summary>
+        /// Star4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Star4;
+
+        /// <summary>
+        /// Star5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Star5;
 
         /// <summary>
         /// dropdowns control.

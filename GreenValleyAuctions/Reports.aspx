@@ -6,13 +6,13 @@
     <asp:Table ID="tblReports" runat="server">
         <asp:TableRow>
             <asp:TableCell>
-                <asp:Button ID="btnCustomerInteraction" runat="server" Text="Customer Interaction" OnClick="btnCustomerInteraction_Click" />
+                <asp:Button ID="btnCustomerInteraction" runat="server" Text="Customer Interaction" OnClick="btnCustomerInteraction_Click" class="btn btn-primary btn-intake rounded-pill mediabutton" />
             </asp:TableCell>
             <asp:TableCell>
-                <asp:Button ID="btnReport1" runat="server" Text="Report" />
+                <asp:Button ID="btnCustomerContact" runat="server" Text="Customer Contact/Future Jobs" OnClick="btnCustomerContact_Click" class="btn btn-primary btn-intake rounded-pill mediabutton" />
             </asp:TableCell>
             <asp:TableCell>
-                <asp:Button ID="btnReport2" runat="server" Text="Report" />
+                <asp:Button ID="btnCustomerReport" runat="server" Text="Customer Report" OnClick="btnCustomerReport_Click" class="btn btn-primary btn-intake rounded-pill mediabutton" />
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
@@ -48,54 +48,123 @@
 
         </script>
     </div>
+    <div id="initalContact" runat="server" visible="false">
+        <div class="text-center">
+      <h3> Customer Reports </h3>
+    </div>
+    <div>
 
-<%--    -------------------Old Reports------------------------------------%>
-     <%--<%-- table for first report, customer--%>
-            <%--<asp:Table ID="tblCustomerSelection" runat="server">
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblSelection" runat="server" Text="Choose a Customer: "></asp:Label>
-                        <asp:DropDownList ID="ddlCustomer" runat="server" DataSourceID="datasrcCustomerList" DataTextField="customerName" 
-                            DataValueField="customerID"  OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-                    </asp:TableCell>
+    
+    <asp:Label ID="lblHistoryTitle" runat="server" Text="Select a button to view previous Services --> "></asp:Label>
+        <asp:Button ID="btnUpcomingJobs" runat="server" Text="Upcoming Jobs -->" OnClick="btnUpcomingJobs_Click1" CssClass="btn btn-primary" />
+        <asp:Button ID="Button1" runat="server" Text="Initial Contact -->" OnClick="btnInitialContact_Click1" CssClass="btn btn-primary"/>
+                    <br />
+                    <fieldset>
+                        <legend> Recorded Services for Selected Customers: </legend>
+                        <asp:GridView
+                            runat="server"
+                            ID="grdResults"
+                            AlternatingRowStyle-BackColor="LightGray"
+                            EmptyDataText ="No Results Found">
+
+                        </asp:GridView>
+                    </fieldset>
+        </div>
+
+    </div>
+    <div id="Customer" runat="server" visible="false">
+          <table>
+            <tr>
+                <td><p>Customer List</P></td>
+                <td><asp:DropDownList ID="ddlTest" runat="server" AutoPostBack="true" Class="form-control" ></asp:DropDownList></td>
+                <td><asp:Button ID="btnShowHistory" runat="server" Text="Show History" class="btn btn-primary btn-intake rounded-pill mediabutton" OnClick="btnShowHistory_Click" /></td>
+            </tr>
+            <tr>
+                <td><P>Ticket List:</P></td>
+                <td><asp:ListBox ID="lstBxTicketHistory" runat="server" AutoPostBack="true"></asp:ListBox></td>
+            </tr>
+            <tr>
+                <td><asp:Button ID="btnTicketSelect" runat="server" Text="Details" Class="btn btn-primary btn-intake rounded-pill mediabutton" OnClick="btnTicketSelect_Click" /></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                   <p><asp:Label ID="Label1" runat="server" Text="Pack Date:"></asp:Label>
+                    <asp:TextBox ID="txtBxPackDate" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+                <td>
+                   <p> <asp:Label ID="Label2" runat="server" Text="Move Date:"></asp:Label>
+                    <asp:TextBox ID="txtBxMoveDate" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+                <td>
+                  <p>  <asp:Label ID="Label3" runat="server" Text="Name:"></asp:Label>
+                    <asp:TextBox ID="txtBxFirstName" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+                <td>
+                   <p> <asp:Label ID="Label4" runat="server" Text="Move From:"></asp:Label>
+                    <asp:TextBox ID="txtBxMoveFrom" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <p> <asp:Label ID="Label5" runat="server" Text="Move To:"></asp:Label>
+                    <asp:TextBox ID="txtBxMoveTo" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+                <td>
+                    <p><asp:Label ID="Label6" runat="server" Text="Phone Number:"></asp:Label>
+                    <asp:TextBox ID="txtBxPhone" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+                <td>
+                    <p><asp:Label ID="Label7" runat="server" Text="Email:"></asp:Label>
+                    <asp:TextBox ID="txtBxEmail" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+                <td>
+                    <p><asp:Label ID="Label8" runat="server" Text="Add On Services:"></asp:Label>
+                    <asp:TextBox ID="txtBxAddOnServices" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <p> <asp:Label ID="Label9" runat="server" Text="Final Cost:"></asp:Label>
+                    <asp:TextBox ID="txtBxFinalCost" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+                <td>
+                    <p><asp:Label ID="Label10" runat="server" Text="Review:"></asp:Label>
+                    <asp:TextBox ID="txtBxReview" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+                <td>
+                    <p><asp:Label ID="Label12" runat="server" Text="Reference:"></asp:Label>
+                    <asp:TextBox ID="txtBxReference" runat="server" Class="form-control"></asp:TextBox></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <p> <asp:Label ID="Label13" runat="server" Text="Notes:"></asp:Label>
+                    <textarea ID="txtbxNotes" rows="5" cols="30" runat="server" Class="form-control"></textarea></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <p> <asp:Label ID="Label14" runat="server" Text="Movers:"></asp:Label></p>
                     
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:GridView ID="CustomerGrid" runat="server" EmptyDataText="No Data on Customer">
+                </td>
+                <td>
+                    <asp:ListBox ID="lstBxMovers" runat="server"></asp:ListBox>
+                </td>
+            </tr>
+           
+        </table>
 
-                        </asp:GridView>
-                    </asp:TableCell>
+    </div>
 
-                </asp:TableRow>
-            </asp:Table>
-            <br />
-            <hr />--%>
-           <%-- table for second report, service event--%>
-            <%--<asp:Table ID="tblServiceChart" runat="server">
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblServiceChart" runat="server" Text="Choose a Service Type: "></asp:Label>
-                        <asp:DropDownList ID="ddlService" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlService_SelectedIndexChanged">
-                            <asp:ListItem Text="Moving" Value="Moving"></asp:ListItem>
-                            <asp:ListItem Text="Auction" Value="Auction"></asp:ListItem>
-                        </asp:DropDownList>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:GridView ID="ServiceGrid" runat="server" EmptyDataText="No Customer selected">
-
-                        </asp:GridView>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>--%>
+    
 
 
-
-               <%--sql Data scources --%>--%>
+               <%--sql Data scources --%>
             <asp:SqlDataSource ID="datasrcCustomerList" runat="server" ConnectionString="<%$ ConnectionStrings:GVA %>" 
                 SelectCommand="SELECT FirstName + ' ' + LastName as customerName, customerID from Customer"></asp:SqlDataSource>
-
-
+    
+             
 </asp:Content>

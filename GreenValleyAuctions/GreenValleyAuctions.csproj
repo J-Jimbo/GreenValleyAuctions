@@ -103,6 +103,8 @@
     <Content Include="images\client5.jpeg" />
     <Content Include="images\client6.jpeg" />
     <Content Include="images\emilywilliams.png" />
+    <Content Include="images\five.png" />
+    <Content Include="images\four.png" />
     <Content Include="images\gvalogo.png" />
     <Content Include="images\jennylakes.png" />
     <Content Include="images\l.png" />
@@ -121,6 +123,7 @@
     <Content Include="images\move status 7.png" />
     <Content Include="images\move status 8.png" />
     <Content Include="images\move status 9.png" />
+    <Content Include="images\one.png" />
     <Content Include="images\profileicon.png" />
     <Content Include="images\profileicon1.png" />
     <Content Include="images\profileicon2.png" />
@@ -142,6 +145,7 @@
     <Content Include="images\stephaniejames.png" />
     <Content Include="images\TheHubLogo.png" />
     <Content Include="images\TheHubLogoPlain.png" />
+    <Content Include="images\three.png" />
     <Content Include="images\trailer.png" />
     <Content Include="images\trailer1.png" />
     <Content Include="images\trailer2.png" />
@@ -151,10 +155,12 @@
     <Content Include="images\trailer6.png" />
     <Content Include="images\trailer7.png" />
     <Content Include="images\trailer8.png" />
+    <Content Include="images\two.png" />
     <Content Include="images\tyleroaks.png" />
     <Content Include="images\woodenchair.jpeg" />
     <Content Include="images\woodenchair.png" />
     <Content Include="images\woodenchair1.png" />
+    <Content Include="images\zero.png" />
     <Content Include="test\client5.jpeg" />
     <Content Include="Completion_Form.aspx" />
     <Content Include="Confirm_Logout.aspx" />

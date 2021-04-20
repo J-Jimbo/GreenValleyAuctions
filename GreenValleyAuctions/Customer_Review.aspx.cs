@@ -77,5 +77,66 @@ namespace GreenValleyAuctions
         {
             Response.Redirect("Customer_Home.aspx");
         }
+
+        protected void ddlRating_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ddlRating.SelectedValue.Equals("0"))
+            {
+                noStar.Visible = true;
+                OneStart.Visible = false;
+                Start2.Visible = false;
+                Star3.Visible = false;
+                Star4.Visible = false;
+                Star5.Visible = false;
+                    
+
+
+            }
+            if (ddlRating.SelectedValue.Equals("1"))
+            {
+                noStar.Visible = false;
+                OneStart.Visible = true;
+                Start2.Visible = false;
+                Star3.Visible = false;
+                Star4.Visible = false;
+                Star5.Visible = false;
+            }
+            if (ddlRating.SelectedValue.Equals("2"))
+            {
+                noStar.Visible = false;
+                OneStart.Visible = false;
+                Start2.Visible = true;
+                Star3.Visible = false;
+                Star4.Visible = false;
+                Star5.Visible = false;
+            }
+            if (ddlRating.SelectedValue.Equals("3"))
+            {
+                noStar.Visible = false;
+                OneStart.Visible = false;
+                Start2.Visible = false;
+                Star3.Visible = true;
+                Star4.Visible = false;
+                Star5.Visible = false;
+            }
+            if (ddlRating.SelectedValue.Equals("4"))
+            {
+                noStar.Visible = false;
+                OneStart.Visible = false;
+                Start2.Visible = false;
+                Star3.Visible = false;
+                Star4.Visible = true;
+                Star5.Visible = false;
+            }
+            if (ddlRating.SelectedValue.Equals("5"))
+            {
+                noStar.Visible = false;
+                OneStart.Visible = false;
+                Start2.Visible = false;
+                Star3.Visible = false;
+                Star4.Visible = false;
+                Star5.Visible = true;
+            }
+        }
     }
 }
